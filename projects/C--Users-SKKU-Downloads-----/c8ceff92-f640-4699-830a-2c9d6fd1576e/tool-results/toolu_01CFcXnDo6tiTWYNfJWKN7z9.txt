@@ -1,0 +1,504 @@
+  1200→  Row 11:
+  1201→    C: '인하대'
+  1202→    D: 1
+  1203→
+  1204→  Row 12:
+  1205→    C: '이화여대'
+  1206→    D: 1
+  1207→
+  1208→  Row 13:
+  1209→    B: '유학.동양학과 요약'
+  1210→    D: 10
+  1211→    E: FORMULA==D7/D13  => 0.3
+  1212→    F: 1
+  1213→    G: FORMULA==4/11  => 0.36363636363636365
+  1214→
+  1215→  Row 14:
+  1216→    A: 302
+  1217→    B: '국어국문학과'
+  1218→    C: '성균관대'
+  1219→    D: 7
+  1220→
+  1221→  Row 15:
+  1222→    C: '서울대'
+  1223→    D: 5
+  1224→
+  1225→  --- ALL FORMULAS IN SHEET ---
+  1226→
+  1227→  Column E (74 formula cells):
+  1228→    Row 6: =D2/D6
+  1229→    Row 13: =D7/D13
+  1230→    Row 17: =D14/D17
+  1231→    Row 23: =D18/D23
+  1232→    Row 29: =D24/D29
+  1233→
+  1234→  Column G (40 formula cells):
+  1235→    Row 13: =4/11
+  1236→    Row 17: =8/14
+  1237→    Row 36: =3/4
+  1238→    Row 57: =3/6
+  1239→    Row 65: =22/40
+  1240→
+  1241→  Column I (6 formula cells):
+  1242→    Row 316: =16/42
+  1243→    Row 322: =6/10
+  1244→    Row 338: =13/30
+  1245→    Row 349: =17/38
+  1246→    Row 362: =3/4
+  1247→
+  1248→================================================================================
+  1249→DETAILED ANALYSIS: PV
+  1250→================================================================================
+  1251→  Dimensions: 607 rows x 4 columns (up to col D)
+  1252→
+  1253→  --- ALL COLUMN HEADERS (Row 1) ---
+  1254→    Col A   ( 1): '퇴직예정'
+  1255→    Col B   ( 2): '(비어 있음)'
+  1256→
+  1257→  --- ROW 2 ---
+  1258→
+  1259→  --- ALL DATA ROWS (1..20) ---
+  1260→  Row 1: A:'퇴직예정' | B:'(비어 있음)'
+  1261→  Row 3: A:'코드' | B:'채용분야' | C:'학사정리(2026)' | D:'개수 : 개인번호'
+  1262→  Row 4: A:101 | B:'학부대학(교양)' | C:'성균관대' | D:4
+  1263→  Row 5: C:'해외대' | D:2
+  1264→  Row 6: C:'서울대' | D:1
+  1265→  Row 7: C:'연세대' | D:1
+  1266→  Row 8: B:'학부대학(교양) 요약' | D:8
+  1267→  Row 9: A:'101 요약' | D:8
+  1268→  Row 10: A:202 | B:'유학.동양학과' | C:'성균관대' | D:3
+  1269→  Row 11: C:'서울대' | D:2
+  1270→  Row 12: C:'연세대' | D:2
+  1271→  Row 13: C:'고려대' | D:1
+  1272→  Row 14: C:'인하대' | D:1
+  1273→  Row 15: C:'이화여대' | D:1
+  1274→  Row 16: B:'유학.동양학과 요약' | D:10
+  1275→  Row 17: A:'202 요약' | D:10
+  1276→  Row 18: A:302 | B:'국어국문학과' | C:'성균관대' | D:7
+  1277→  Row 19: C:'서울대' | D:5
+  1278→  Row 20: C:'연세대' | D:1
+  1279→
+  1280→  --- PIVOT TABLE CHECK ---
+  1281→  Sheet type / pivot tables: checking...
+  1282→  PIVOT TABLES FOUND: [<openpyxl.pivot.table.TableDefinition object>
+  1283→Parameters:
+  1284→name='피벗 테이블1', cacheId=0, dataOnRows=False, dataPosition=None, dataCaption='값', grandTotalCaption=None, errorCaption=None, showError=False, missingCaption=None, showMissing=True, pageStyle=None, pivotTableStyle=None, vacatedStyle=None, tag=None, updatedVersion=7, minRefreshableVersion=3, asteriskTotals=False, showItems=True, editData=False, disableFieldList=False, showCalcMbrs=True, visualTotals=True, showMultipleLabel=True, showDataDropDown=True, showDrill=True, printDrill=False, showMemberPropertyTips=True, showDataTips=True, enableWizard=True, enableDrill=True, enableFieldProperties=True, preserveFormatting=True, useAutoFormatting=True, pageWrap=0, pageOverThenDown=False, subtotalHiddenItems=False, rowGrandTotals=True, colGrandTotals=True, fieldPrintTitles=False, itemPrintTitles=True, mergeItem=False, showDropZones=True, createdVersion=7, indent=0, showEmptyRow=False, showEmptyCol=False, showHeaders=True, compact=False, outline=False, outlineData=False, compactData=False, published=False, gridDropZones=False, immersive=True, multipleFieldFilters=False, chartFormat=0, rowHeaderCaption=None, colHeaderCaption=None, fieldListSortAscending=False, mdxSubqueries=False, customListSort=None, autoFormatId=None, applyNumberFormats=False, applyBorderFormats=False, applyFontFormats=False, applyPatternFormats=False, applyAlignmentFormats=False, applyWidthHeightFormats=True, id=None, location=<openpyxl.pivot.table.Location object>
+  1285→Parameters:
+  1286→ref='A3:D607', firstHeaderRow=1, firstDataRow=1, firstDataCol=3, rowPageCount=1, colPageCount=1, pivotFields=[<openpyxl.pivot.table.PivotField object>
+  1287→Parameters:
+  1288→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1289→Parameters:
+  1290→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1291→Parameters:
+  1292→name=None, axis=None, dataField=True, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=176, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1293→Parameters:
+  1294→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1295→Parameters:
+  1296→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1297→Parameters:
+  1298→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1299→Parameters:
+  1300→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1301→Parameters:
+  1302→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1303→Parameters:
+  1304→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1305→Parameters:
+  1306→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1307→Parameters:
+  1308→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1309→Parameters:
+  1310→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1311→Parameters:
+  1312→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1313→Parameters:
+  1314→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1315→Parameters:
+  1316→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1317→Parameters:
+  1318→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1319→Parameters:
+  1320→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1321→Parameters:
+  1322→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1323→Parameters:
+  1324→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1325→Parameters:
+  1326→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1327→Parameters:
+  1328→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1329→Parameters:
+  1330→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1331→Parameters:
+  1332→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1333→Parameters:
+  1334→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1335→Parameters:
+  1336→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1337→Parameters:
+  1338→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1339→Parameters:
+  1340→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1341→Parameters:
+  1342→name=None, axis=None, dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1343→Parameters:
+  1344→name=None, axis='axisRow', dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[<openpyxl.pivot.table.FieldItem object>
+  1345→Parameters:
+  1346→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=46, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1347→Parameters:
+  1348→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=7, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1349→Parameters:
+  1350→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=17, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1351→Parameters:
+  1352→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=37, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1353→Parameters:
+  1354→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=45, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1355→Parameters:
+  1356→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=41, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1357→Parameters:
+  1358→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=20, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1359→Parameters:
+  1360→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=22, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1361→Parameters:
+  1362→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=48, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1363→Parameters:
+  1364→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=27, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1365→Parameters:
+  1366→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=42, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1367→Parameters:
+  1368→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=24, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1369→Parameters:
+  1370→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=3, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1371→Parameters:
+  1372→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=5, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1373→Parameters:
+  1374→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=2, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1375→Parameters:
+  1376→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=40, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1377→Parameters:
+  1378→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=25, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1379→Parameters:
+  1380→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=29, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1381→Parameters:
+  1382→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=28, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1383→Parameters:
+  1384→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=33, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1385→Parameters:
+  1386→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=30, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1387→Parameters:
+  1388→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=34, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1389→Parameters:
+  1390→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=18, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1391→Parameters:
+  1392→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=15, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1393→Parameters:
+  1394→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=44, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1395→Parameters:
+  1396→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=0, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1397→Parameters:
+  1398→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=1, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1399→Parameters:
+  1400→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=16, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1401→Parameters:
+  1402→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=47, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1403→Parameters:
+  1404→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=32, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1405→Parameters:
+  1406→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=43, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1407→Parameters:
+  1408→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=26, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1409→Parameters:
+  1410→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=21, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1411→Parameters:
+  1412→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=23, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1413→Parameters:
+  1414→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=36, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1415→Parameters:
+  1416→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=35, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1417→Parameters:
+  1418→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=39, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1419→Parameters:
+  1420→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=6, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1421→Parameters:
+  1422→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=14, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1423→Parameters:
+  1424→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=56, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1425→Parameters:
+  1426→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=31, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1427→Parameters:
+  1428→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=52, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1429→Parameters:
+  1430→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=68, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1431→Parameters:
+  1432→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=66, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1433→Parameters:
+  1434→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=54, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1435→Parameters:
+  1436→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=55, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1437→Parameters:
+  1438→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=57, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1439→Parameters:
+  1440→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=19, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1441→Parameters:
+  1442→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=8, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1443→Parameters:
+  1444→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=50, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1445→Parameters:
+  1446→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=9, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1447→Parameters:
+  1448→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=49, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1449→Parameters:
+  1450→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=59, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1451→Parameters:
+  1452→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=61, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1453→Parameters:
+  1454→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=67, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1455→Parameters:
+  1456→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=4, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1457→Parameters:
+  1458→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=13, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1459→Parameters:
+  1460→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=62, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1461→Parameters:
+  1462→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=60, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1463→Parameters:
+  1464→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=53, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1465→Parameters:
+  1466→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=64, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1467→Parameters:
+  1468→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=58, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1469→Parameters:
+  1470→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=65, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1471→Parameters:
+  1472→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=51, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1473→Parameters:
+  1474→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=63, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1475→Parameters:
+  1476→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=12, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1477→Parameters:
+  1478→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=10, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1479→Parameters:
+  1480→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=11, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1481→Parameters:
+  1482→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=38, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1483→Parameters:
+  1484→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=72, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1485→Parameters:
+  1486→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=71, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1487→Parameters:
+  1488→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=70, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1489→Parameters:
+  1490→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=69, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1491→Parameters:
+  1492→n=None, t='default', h=None, s=None, sd=True, f=None, m=None, c=None, x=None, d=None, e=None], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1493→Parameters:
+  1494→name=None, axis='axisRow', dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[<openpyxl.pivot.table.FieldItem object>
+  1495→Parameters:
+  1496→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=3, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1497→Parameters:
+  1498→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=57, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1499→Parameters:
+  1500→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=50, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1501→Parameters:
+  1502→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=6, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1503→Parameters:
+  1504→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=74, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1505→Parameters:
+  1506→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=73, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1507→Parameters:
+  1508→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=1, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1509→Parameters:
+  1510→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=4, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1511→Parameters:
+  1512→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=49, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1513→Parameters:
+  1514→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=0, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1515→Parameters:
+  1516→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=15, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1517→Parameters:
+  1518→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=5, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1519→Parameters:
+  1520→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=16, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1521→Parameters:
+  1522→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=17, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1523→Parameters:
+  1524→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=2, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1525→Parameters:
+  1526→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=18, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1527→Parameters:
+  1528→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=51, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1529→Parameters:
+  1530→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=19, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1531→Parameters:
+  1532→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=9, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1533→Parameters:
+  1534→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=20, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1535→Parameters:
+  1536→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=21, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1537→Parameters:
+  1538→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=22, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1539→Parameters:
+  1540→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=10, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1541→Parameters:
+  1542→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=23, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1543→Parameters:
+  1544→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=24, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1545→Parameters:
+  1546→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=52, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1547→Parameters:
+  1548→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=25, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1549→Parameters:
+  1550→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=11, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1551→Parameters:
+  1552→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=26, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1553→Parameters:
+  1554→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=53, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1555→Parameters:
+  1556→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=54, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1557→Parameters:
+  1558→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=55, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1559→Parameters:
+  1560→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=27, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1561→Parameters:
+  1562→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=28, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1563→Parameters:
+  1564→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=29, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1565→Parameters:
+  1566→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=72, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1567→Parameters:
+  1568→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=56, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1569→Parameters:
+  1570→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=12, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1571→Parameters:
+  1572→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=30, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1573→Parameters:
+  1574→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=58, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1575→Parameters:
+  1576→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=31, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1577→Parameters:
+  1578→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=32, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1579→Parameters:
+  1580→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=59, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1581→Parameters:
+  1582→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=60, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1583→Parameters:
+  1584→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=61, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1585→Parameters:
+  1586→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=62, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1587→Parameters:
+  1588→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=8, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1589→Parameters:
+  1590→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=33, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1591→Parameters:
+  1592→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=34, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1593→Parameters:
+  1594→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=63, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1595→Parameters:
+  1596→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=64, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1597→Parameters:
+  1598→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=35, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1599→Parameters:
+  1600→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=36, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1601→Parameters:
+  1602→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=37, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1603→Parameters:
+  1604→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=7, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1605→Parameters:
+  1606→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=65, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1607→Parameters:
+  1608→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=38, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1609→Parameters:
+  1610→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=39, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1611→Parameters:
+  1612→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=67, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1613→Parameters:
+  1614→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=66, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1615→Parameters:
+  1616→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=68, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1617→Parameters:
+  1618→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=40, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1619→Parameters:
+  1620→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=14, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1621→Parameters:
+  1622→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=41, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1623→Parameters:
+  1624→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=13, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1625→Parameters:
+  1626→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=71, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1627→Parameters:
+  1628→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=42, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1629→Parameters:
+  1630→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=43, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1631→Parameters:
+  1632→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=44, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1633→Parameters:
+  1634→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=45, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1635→Parameters:
+  1636→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=46, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1637→Parameters:
+  1638→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=47, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1639→Parameters:
+  1640→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=48, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1641→Parameters:
+  1642→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=69, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1643→Parameters:
+  1644→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=70, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1645→Parameters:
+  1646→n=None, t='default', h=None, s=None, sd=True, f=None, m=None, c=None, x=None, d=None, e=None], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1647→Parameters:
+  1648→name=None, axis='axisPage', dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=True, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='manual', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[<openpyxl.pivot.table.FieldItem object>
+  1649→Parameters:
+  1650→n=None, t='data', h=True, s=None, sd=True, f=None, m=None, c=None, x=1, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1651→Parameters:
+  1652→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=0, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1653→Parameters:
+  1654→n=None, t='default', h=None, s=None, sd=True, f=None, m=None, c=None, x=None, d=None, e=None], autoSortScope=None, <openpyxl.pivot.table.PivotField object>
+  1655→Parameters:
+  1656→name=None, axis='axisRow', dataField=None, subtotalCaption=None, showDropDowns=True, hiddenLevel=None, uniqueMemberProperty=None, compact=False, allDrilled=None, numFmtId=None, outline=False, subtotalTop=True, dragToRow=True, dragToCol=True, multipleItemSelectionAllowed=None, dragToPage=True, dragToData=True, dragOff=True, showAll=False, insertBlankRow=None, serverField=None, insertPageBreak=None, autoShow=None, topAutoShow=True, hideNewItems=None, measureFilter=None, includeNewItemsInFilter=None, itemPageCount=10, sortType='descending', dataSourceSort=None, nonAutoSortDefault=None, rankBy=None, defaultSubtotal=True, sumSubtotal=None, countASubtotal=None, avgSubtotal=None, maxSubtotal=None, minSubtotal=None, productSubtotal=None, countSubtotal=None, stdDevSubtotal=None, stdDevPSubtotal=None, varSubtotal=None, varPSubtotal=None, showPropCell=None, showPropTip=None, showPropAsCaption=None, defaultAttributeDrillState=None, items=[<openpyxl.pivot.table.FieldItem object>
+  1657→Parameters:
+  1658→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=56, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1659→Parameters:
+  1660→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=39, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1661→Parameters:
+  1662→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=25, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1663→Parameters:
+  1664→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=3, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1665→Parameters:
+  1666→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=11, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1667→Parameters:
+  1668→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=57, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1669→Parameters:
+  1670→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=15, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1671→Parameters:
+  1672→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=44, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1673→Parameters:
+  1674→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=14, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1675→Parameters:
+  1676→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=13, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1677→Parameters:
+  1678→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=23, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1679→Parameters:
+  1680→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=2, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1681→Parameters:
+  1682→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=50, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1683→Parameters:
+  1684→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=43, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1685→Parameters:
+  1686→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=20, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1687→Parameters:
+  1688→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=17, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1689→Parameters:
+  1690→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=34, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1691→Parameters:
+  1692→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=33, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1693→Parameters:
+  1694→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=60, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1695→Parameters:
+  1696→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=27, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1697→Parameters:
+  1698→n=None, t='data', h=None, s=None, sd=True, f=None, m=None, c=None, x=21, d=None, e=None, <openpyxl.pivot.table.FieldItem object>
+  1699→Parameters:
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

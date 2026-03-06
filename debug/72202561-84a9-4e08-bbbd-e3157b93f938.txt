@@ -1,0 +1,173 @@
+2026-02-25T05:24:40.381Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-25T05:24:40.384Z [DEBUG] MDM settings load completed in 10ms
+2026-02-25T05:24:40.403Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-25T05:24:40.403Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-25T05:24:40.403Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-25T05:24:40.404Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-25T05:24:40.420Z [DEBUG] Using bash path: "C:\Users\SKKU\Documents\Git\bin\bash.exe"
+2026-02-25T05:24:40.435Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-25T05:24:40.438Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-25T05:24:40.439Z [DEBUG] [STARTUP] Running setup()...
+2026-02-25T05:24:40.482Z [DEBUG] Loading skills from: managed=C:\ProgramData\ClaudeCode\.claude\skills, user=C:\Users\SKKU\.claude\skills, project=[]
+2026-02-25T05:24:40.483Z [DEBUG] Error log sink initialized
+2026-02-25T05:24:40.505Z [DEBUG] Git remote URL: null
+2026-02-25T05:24:40.505Z [DEBUG] No git remote URL found
+2026-02-25T05:24:40.510Z [DEBUG] [STARTUP] setup() completed in 71ms
+2026-02-25T05:24:40.510Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-25T05:24:40.510Z [DEBUG] Loaded 0 unique skills (0 unconditional, 0 conditional, managed: 0, user: 0, project: 0, additional: 0, legacy commands: 0)
+2026-02-25T05:24:40.513Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default, Profile 1
+2026-02-25T05:24:40.513Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-02-25T05:24:40.513Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-02-25T05:24:40.513Z [DEBUG] Total plugin skills loaded: 0
+2026-02-25T05:24:40.513Z [DEBUG] Total plugin commands loaded: 0
+2026-02-25T05:24:40.513Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-02-25T05:24:40.513Z [DEBUG] Total plugin agents loaded: 0
+2026-02-25T05:24:40.517Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills, 3 bundled skills
+2026-02-25T05:24:40.519Z [DEBUG] [STARTUP] Commands and agents loaded in 9ms
+2026-02-25T05:24:40.531Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-02-25T05:24:40.540Z [DEBUG] [keybindings] KeybindingSetup initialized with 103 bindings, 0 warnings
+2026-02-25T05:24:40.576Z [DEBUG] [keybindings] Watching for changes to C:\Users\SKKU\.claude\keybindings.json
+2026-02-25T05:24:40.614Z [DEBUG] [Claude in Chrome] Found edge profiles: Default
+2026-02-25T05:24:40.616Z [DEBUG] [Claude in Chrome] Extension not found in any browser
+2026-02-25T05:24:40.627Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997080627
+2026-02-25T05:24:40.627Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:40.628Z [DEBUG] Temp file written successfully, size: 3968 bytes
+2026-02-25T05:24:40.629Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:40.629Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997080627 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:40.630Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:40.873Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997080873
+2026-02-25T05:24:40.873Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:40.873Z [DEBUG] Temp file written successfully, size: 3903 bytes
+2026-02-25T05:24:40.873Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:40.873Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997080873 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:40.874Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:41.010Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997081010
+2026-02-25T05:24:41.010Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:41.011Z [DEBUG] Temp file written successfully, size: 3901 bytes
+2026-02-25T05:24:41.011Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:41.011Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997081010 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:41.011Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:42.388Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997082388
+2026-02-25T05:24:42.389Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:42.389Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T05:24:42.389Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:42.389Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997082388 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:42.390Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:42.401Z [DEBUG] Grove: Using fresh cached config
+2026-02-25T05:24:42.422Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2026-02-25T05:24:42.423Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-02-25T05:24:42.423Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-02-25T05:24:42.704Z [DEBUG] [STARTUP] showSetupScreens() completed in 2173ms
+2026-02-25T05:24:42.704Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-25T05:24:42.704Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-25T05:24:42.704Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-25T05:24:42.705Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-25T05:24:42.705Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-25T05:24:42.706Z [DEBUG] Total LSP servers loaded: 0
+2026-02-25T05:24:42.706Z [DEBUG] [STARTUP] MCP configs loaded in 2271ms
+2026-02-25T05:24:42.710Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-25T05:24:42.710Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-25T05:24:42.711Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-02-25T05:24:42.711Z [DEBUG] Found 0 hook matchers in settings
+2026-02-25T05:24:42.711Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-02-25T05:24:42.711Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-02-25T05:24:42.711Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-02-25T05:24:42.711Z [DEBUG] LSP server manager initialized successfully
+2026-02-25T05:24:42.712Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-25T05:24:42.713Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-02-25T05:24:42.715Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997082715
+2026-02-25T05:24:42.715Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:42.716Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T05:24:42.716Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:42.716Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997082715 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:42.716Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:42.716Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-25T05:24:42.746Z [DEBUG] [keybindings] KeybindingSetup initialized with 103 bindings, 0 warnings
+2026-02-25T05:24:42.779Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997082779
+2026-02-25T05:24:42.779Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:42.780Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T05:24:42.780Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:42.780Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997082779 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:42.780Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:42.784Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997082784
+2026-02-25T05:24:42.784Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:42.785Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T05:24:42.785Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:42.785Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997082784 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:42.785Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:42.790Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-02-25T05:24:42.792Z [DEBUG] Official marketplace auto-install skipped: git_unavailable
+2026-02-25T05:24:42.793Z [DEBUG] performStartupChecks called
+2026-02-25T05:24:42.794Z [DEBUG] Starting background plugin installations
+2026-02-25T05:24:42.795Z [DEBUG] performBackgroundPluginInstallations called
+2026-02-25T05:24:42.798Z [DEBUG] No CLAUDE.md/rules files found
+2026-02-25T05:24:42.807Z [DEBUG] Watching for changes in setting files C:\Users\SKKU\.claude\settings.json...
+2026-02-25T05:24:42.827Z [DEBUG] [FileIndex] getProjectFiles called, respectGitignore=true
+2026-02-25T05:24:42.827Z [DEBUG] [FileIndex] getFilesUsingGit called
+2026-02-25T05:24:42.828Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-02-25T05:24:42.829Z [DEBUG] Showing marketplace git unavailable notification
+2026-02-25T05:24:42.831Z [DEBUG] [FileIndex] not a git repo, returning null
+2026-02-25T05:24:42.833Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-25T05:24:42.833Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-25T05:24:42.833Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-25T05:24:42.837Z [DEBUG] [FileIndex] git ls-files returned null, falling back to ripgrep
+2026-02-25T05:24:42.883Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-02-25T05:24:42.886Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=C:\Users\SKKU\AppData\Roaming\npm\node_modules\@anthropic-ai\claude-code\vendor\ripgrep\x64-win32\rg.exe)
+2026-02-25T05:24:42.889Z [DEBUG] [FileIndex] ripgrep: 0 files in 52ms
+2026-02-25T05:24:42.890Z [DEBUG] [FileIndex] Not in bundled mode, using Fuse.js fallback
+2026-02-25T05:24:42.890Z [DEBUG] [FileIndex] cache refresh completed in 64ms (0 files)
+2026-02-25T05:24:42.903Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-02-25T05:24:42.906Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-02-25T05:24:42.914Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1771997082914
+2026-02-25T05:24:42.914Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T05:24:42.914Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T05:24:42.915Z [DEBUG] Applied original permissions to temp file
+2026-02-25T05:24:42.915Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1771997082914 to C:\Users\SKKU\.claude.json
+2026-02-25T05:24:42.915Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T05:24:43.067Z [DEBUG] Org fast mode: disabled (extra_usage_disabled)
+2026-02-25T05:24:43.086Z [DEBUG] [claudeai-mcp] Fetched 2 servers
+2026-02-25T05:24:43.092Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_017Z4A5zCxAS7WXRkLpdFJcj
+2026-02-25T05:24:43.093Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_017Z4A5zCxAS7WXRkLpdFJcj
+2026-02-25T05:24:43.093Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-02-25T05:24:43.098Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-02-25T05:24:43.101Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01FTCKLfmJcJiBiu69TWZh9f
+2026-02-25T05:24:43.101Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01FTCKLfmJcJiBiu69TWZh9f
+2026-02-25T05:24:43.101Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-02-25T05:24:43.102Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-02-25T05:24:43.541Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy connection failed after 449ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYUEJmyNamaigEFowbm98"}
+2026-02-25T05:24:43.541Z [ERROR] MCP server "claude.ai Google Calendar" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYUEJmyNamaigEFowbm98"}
+2026-02-25T05:24:43.553Z [DEBUG] MCP server "claude.ai Google Calendar": Authentication required for claude.ai proxy server
+2026-02-25T05:24:43.562Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy connection failed after 461ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYUEJn3LYU2dwkNKk39Wn"}
+2026-02-25T05:24:43.562Z [ERROR] MCP server "claude.ai Gmail" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYUEJn3LYU2dwkNKk39Wn"}
+2026-02-25T05:24:43.562Z [DEBUG] MCP server "claude.ai Gmail": Authentication required for claude.ai proxy server
+2026-02-25T05:54:42.850Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-25T07:05:23.437Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-25T07:05:26.296Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2026-02-25T07:05:26.296Z [DEBUG] AutoUpdater: Using global update method
+2026-02-25T07:05:33.295Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1772003133295
+2026-02-25T07:05:33.296Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T07:05:33.297Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T07:05:33.297Z [DEBUG] Applied original permissions to temp file
+2026-02-25T07:05:33.297Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1772003133295 to C:\Users\SKKU\.claude.json
+2026-02-25T07:05:33.298Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T07:35:21.422Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-25T07:35:22.244Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2026-02-25T07:35:22.244Z [DEBUG] AutoUpdater: Using global update method
+2026-02-25T07:35:24.377Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1772004924377
+2026-02-25T07:35:24.377Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T07:35:24.378Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T07:35:24.378Z [DEBUG] Applied original permissions to temp file
+2026-02-25T07:35:24.378Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1772004924377 to C:\Users\SKKU\.claude.json
+2026-02-25T07:35:24.379Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T08:05:21.427Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-25T08:05:22.262Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2026-02-25T08:05:22.262Z [DEBUG] AutoUpdater: Using global update method
+2026-02-25T08:05:24.469Z [DEBUG] Writing to temp file: C:\Users\SKKU\.claude.json.tmp.33252.1772006724469
+2026-02-25T08:05:24.469Z [DEBUG] Preserving file permissions: 100666
+2026-02-25T08:05:24.470Z [DEBUG] Temp file written successfully, size: 4285 bytes
+2026-02-25T08:05:24.470Z [DEBUG] Applied original permissions to temp file
+2026-02-25T08:05:24.470Z [DEBUG] Renaming C:\Users\SKKU\.claude.json.tmp.33252.1772006724469 to C:\Users\SKKU\.claude.json
+2026-02-25T08:05:24.471Z [DEBUG] File C:\Users\SKKU\.claude.json written atomically
+2026-02-25T10:49:04.875Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-25T10:49:09.409Z [DEBUG] npm view failed with code 1
+2026-02-25T10:49:09.409Z [DEBUG] npm stderr: (empty)

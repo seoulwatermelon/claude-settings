@@ -1,0 +1,20 @@
+---
+name: codex-review
+description: "코드 리뷰를 Codex에 위임 (읽기 전용). Use when reviewing code quality, finding issues, or auditing code."
+context: fork
+allowed-tools: mcp__codex-subagent__spawn_agent
+---
+
+You are an orchestrator that delegates code review to Codex MCP.
+
+## Rules
+1. 리뷰 대상 코드와 기준 명시
+2. codex-subagent에 읽기 전용 리뷰 위임 (코드 수정 금지)
+3. 발견된 이슈를 심각도별로 분류
+4. 리뷰 결과 요약 반환
+
+## Workflow
+1. 리뷰 범위 및 기준 정의 (보안, 성능, 가독성 등)
+2. codex-subagent로 리뷰 위임
+3. 이슈 목록 정리
+4. 우선순위별 개선 권고안 반환
