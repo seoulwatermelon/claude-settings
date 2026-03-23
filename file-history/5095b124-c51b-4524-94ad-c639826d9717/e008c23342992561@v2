@@ -1,0 +1,139 @@
+export interface Degree {
+  school?: string;
+  major?: string;
+  degree_year?: number;
+  degree_type?: string;
+}
+
+export interface Career {
+  institution?: string;
+  position?: string;
+  period?: string;
+}
+
+export interface Candidate {
+  name: string;
+  birth_year?: number;
+  current_affiliation?: string;
+  current_position?: string;
+  major_field?: string;
+  total_papers?: number;
+  jcr_ratio?: number;
+  fwci?: number;
+  remarks?: string;
+  degrees?: Degree[];
+  careers?: Career[];
+}
+
+export interface HiringProgress {
+  progress_date?: string;
+  content?: string;
+  person_in_charge?: string;
+}
+
+export interface SubmissionInput {
+  department_name: string;
+  dean_name: string;
+  submitted_at: string;
+  department_plan?: string;
+  candidates: Candidate[];
+  hiringProgress: HiringProgress[];
+}
+
+export interface SubmissionRow {
+  id: number;
+  department_name: string;
+  dean_name: string;
+  submitted_at: string;
+  department_plan?: string;
+  status: string;
+  created_at: string;
+  candidate_count?: number;
+}
+
+export interface SubmissionDetail extends SubmissionRow {
+  candidates: (Candidate & { id: number; degrees: Degree[]; careers: Career[] })[];
+  hiringProgress: HiringProgress[];
+}
+
+// Internal DB row types (used in API route handlers)
+export interface CandidateDbRow {
+  id: number;
+  submission_id: number;
+  name: string;
+  birth_year?: number;
+  current_affiliation?: string;
+  current_position?: string;
+  major_field?: string;
+  total_papers?: number;
+  jcr_ratio?: number;
+  fwci?: number;
+  remarks?: string;
+  created_at?: string;
+}
+
+export interface DegreeDbRow {
+  id: number;
+  candidate_id: number;
+  school?: string;
+  major?: string;
+  degree_year?: number;
+  degree_type?: string;
+}
+
+export interface CareerDbRow {
+  id: number;
+  candidate_id: number;
+  institution?: string;
+  position?: string;
+  period?: string;
+}
+
+export interface ProgressDbRow {
+  id: number;
+  submission_id: number;
+  progress_date?: string;
+  content?: string;
+  person_in_charge?: string;
+}
+
+export interface ToHaejungRow {
+  id: number;
+  college: string | null;
+  department: string | null;
+  confirm_rate_26: string | null;
+  faculty_count_26: string | null;
+  new_hires: string | null;
+  retirees: string | null;
+  upcoming_retirements: string | null;
+  req_general: string | null;
+  req_dedicated: string | null;
+  req_external: string | null;
+  req_total: string | null;
+  invitation_field: string | null;
+  request_reason: string | null;
+  to_general: string | null;
+  to_dedicated: string | null;
+  to_external: string | null;
+  to_total: string | null;
+  adv_general: string | null;
+  adv_dedicated: string | null;
+  adv_external: string | null;
+  adv_total: string | null;
+  pres_general: string | null;
+  pres_dedicated: string | null;
+  pres_external: string | null;
+  pres_total: string | null;
+  assign_reason: string | null;
+  hq_opinion: string | null;
+  bigs: string | null;
+  to_req_25: string | null;
+  to_assign_25: string | null;
+  hire_regular_25: string | null;
+  hire_rolling_25: string | null;
+  hire_total_25: string | null;
+  note: string | null;
+  remark: string | null;
+  created_at: string | null;
+  updated_at: string | null;
+}

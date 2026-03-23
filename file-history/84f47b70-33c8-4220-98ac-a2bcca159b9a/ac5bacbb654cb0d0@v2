@@ -1,0 +1,49 @@
+CREATE TABLE IF NOT EXISTS submissions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  department_name TEXT NOT NULL,
+  dean_name TEXT NOT NULL,
+  submitted_at TEXT NOT NULL,
+  department_plan TEXT,
+  status TEXT DEFAULT 'submitted',
+  created_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS candidates (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  submission_id INTEGER NOT NULL REFERENCES submissions(id),
+  name TEXT NOT NULL,
+  birth_year INTEGER,
+  current_affiliation TEXT,
+  current_position TEXT,
+  major_field TEXT,
+  total_papers INTEGER,
+  jcr_ratio REAL,
+  fwci REAL,
+  remarks TEXT,
+  created_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS candidate_degrees (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  candidate_id INTEGER NOT NULL REFERENCES candidates(id),
+  school TEXT,
+  major TEXT,
+  degree_year INTEGER,
+  degree_type TEXT
+);
+
+CREATE TABLE IF NOT EXISTS candidate_careers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  candidate_id INTEGER NOT NULL REFERENCES candidates(id),
+  institution TEXT,
+  position TEXT,
+  period TEXT
+);
+
+CREATE TABLE IF NOT EXISTS hiring_progress (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  submission_id INTEGER NOT NULL REFERENCES submissions(id),
+  progress_date TEXT,
+  content TEXT,
+  person_in_charge TEXT
+);

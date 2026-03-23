@@ -1,0 +1,294 @@
+'use client';
+
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import DynamicTable, { ColumnDef } from '@/components/DynamicTable';
+import CandidateForm, { CandidateRow } from '@/components/CandidateForm';
+
+interface ProgressRow {
+  _id: string;
+  progress_date: string;
+  content: string;
+  person_in_charge: string;
+}
+
+interface BasicInfo {
+  department_name: string;
+  submitted_at: string;
+  dean_name: string;
+  department_plan: string;
+}
+
+const DEPARTMENTS = [
+  '반도체시스템공학과',
+  '전자전기공학부',
+  '소프트웨어학과',
+  '화학공학생명공학부',
+  '기계공학부',
+  '건설환경공학부',
+  '시스템경영공학과',
+  '수학과',
+  '물리학과',
+  '화학과',
+];
+
+const progressColumns: ColumnDef<ProgressRow>[] = [
+  { key: 'progress_date', label: '일자', type: 'date', width: '150px' },
+  { key: 'content', label: '진행내용', type: 'text' },
+  { key: 'person_in_charge', label: '담당자', type: 'text', width: '100px' },
+];
+
+const generateId = () => crypto.randomUUID();
+
+type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
+
+export default function DeanPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<BasicInfo>({
+    defaultValues: {
+      department_name: '',
+      submitted_at: new Date().toISOString().split('T')[0],
+      dean_name: '',
+      department_plan: '',
+    },
+  });
+
+  const [candidates, setCandidates] = useState<CandidateRow[]>([]);
+  const [progressRecords, setProgressRecords] = useState<ProgressRow[]>([]);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const addProgressRecord = () => {
+    setProgressRecords((prev) => [
+      ...prev,
+      {
+        _id: generateId(),
+        progress_date: new Date().toISOString().split('T')[0],
+        content: '',
+        person_in_charge: '',
+      },
+    ]);
+  };
+
+  const deleteProgressRecord = (id: string) => {
+    setProgressRecords((prev) => prev.filter((p) => p._id !== id));
+  };
+
+  const updateProgressRecord = (id: string, key: keyof ProgressRow, value: string) => {
+    setProgressRecords((prev) =>
+      prev.map((p) => (p._id === id ? { ...p, [key]: value } : p))
+    );
+  };
+
+  const onSubmit = async (basicInfo: BasicInfo) => {
+    if (candidates.length === 0) {
+      setSubmitStatus('error');
+      setSubmitMessage('최소 1명 이상의 후보자를 추가해야 합니다.');
+      return;
+    }
+
+    setSubmitStatus('loading');
+    setSubmitMessage('');
+
+    // Map frontend data to API schema
+    const payload = {
+      department_name: basicInfo.department_name,
+      submitted_at: basicInfo.submitted_at,
+      dean_name: basicInfo.dean_name,
+      department_plan: basicInfo.department_plan || undefined,
+      candidates: candidates.map((c) => ({
+        name: c.name,
+        birth_year: c.birth_year ? parseInt(c.birth_year) : undefined,
+        current_affiliation: c.current_affiliation || undefined,
+        current_position: c.current_position || undefined,
+        major_field: c.major_field || undefined,
+        total_papers: c.total_papers ? parseInt(c.total_papers) : undefined,
+        jcr_ratio: c.jcr_ratio ? parseFloat(c.jcr_ratio) : undefined,
+        fwci: c.fwci ? parseFloat(c.fwci) : undefined,
+        remarks: c.remarks || undefined,
+        degrees: c.degrees.map((d) => ({
+          school: d.school || undefined,
+          major: d.major || undefined,
+          degree_year: d.degree_year ? parseInt(d.degree_year) : undefined,
+          degree_type: d.degree_type || undefined,
+        })),
+        careers: c.careers.map((ca) => ({
+          institution: ca.institution || undefined,
+          position: ca.position || undefined,
+          period: ca.period || undefined,
+        })),
+      })),
+      hiringProgress: progressRecords.map((p) => ({
+        progress_date: p.progress_date || undefined,
+        content: p.content || undefined,
+        person_in_charge: p.person_in_charge || undefined,
+      })),
+    };
+
+    try {
+      const res = await fetch('/api/submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || '서버 오류가 발생했습니다.');
+      }
+
+      setSubmitStatus('success');
+      setSubmitMessage('심사요청서가 성공적으로 제출되었습니다. 관리자에게 전달되었습니다.');
+      reset();
+      setCandidates([]);
+      setProgressRecords([]);
+    } catch (err) {
+      setSubmitStatus('error');
+      setSubmitMessage(
+        err instanceof Error
+          ? `제출 중 오류: ${err.message}`
+          : '제출 중 알 수 없는 오류가 발생했습니다.'
+      );
+    }
+  };
+
+  return (
+    <div>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-900">교원 초빙 심사요청서 제출</h1>
+        <p className="mt-1 text-sm text-gray-500">
+          학과의 교원 초빙 후보자 정보를 입력하고 제출해주세요.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        {/* 기본 정보 섹션 */}
+        <div className="section-card">
+          <h2 className="section-title">기본 정보</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label className="form-label" htmlFor="department_name">
+                학과명 <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="department_name"
+                {...register('department_name', { required: '학과명을 선택해주세요.' })}
+                className={`form-input ${errors.department_name ? 'border-red-400' : ''}`}
+              >
+                <option value="">학과를 선택하세요</option>
+                {DEPARTMENTS.map((d) => (
+                  <option key={d} value={d}>
+                    {d}
+                  </option>
+                ))}
+              </select>
+              {errors.department_name && (
+                <p className="text-red-500 text-xs mt-1">{errors.department_name.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label className="form-label" htmlFor="submitted_at">
+                제출일 <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="submitted_at"
+                type="date"
+                {...register('submitted_at', { required: '제출일을 입력해주세요.' })}
+                className={`form-input ${errors.submitted_at ? 'border-red-400' : ''}`}
+              />
+              {errors.submitted_at && (
+                <p className="text-red-500 text-xs mt-1">{errors.submitted_at.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label className="form-label" htmlFor="dean_name">
+                학장명 <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="dean_name"
+                type="text"
+                placeholder="학장 성함을 입력하세요"
+                {...register('dean_name', {
+                  required: '학장명을 입력해주세요.',
+                  minLength: { value: 2, message: '2자 이상 입력해주세요.' },
+                })}
+                className={`form-input ${errors.dean_name ? 'border-red-400' : ''}`}
+              />
+              {errors.dean_name && (
+                <p className="text-red-500 text-xs mt-1">{errors.dean_name.message}</p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* 학과 발전 계획 섹션 */}
+        <div className="section-card">
+          <h2 className="section-title">학과 발전 계획</h2>
+          <div>
+            <label className="form-label" htmlFor="department_plan">
+              학과 발전 계획 및 교원 채용 필요성
+            </label>
+            <textarea
+              id="department_plan"
+              rows={6}
+              placeholder="학과의 발전 계획과 교원 채용의 필요성을 구체적으로 기술해주세요."
+              {...register('department_plan')}
+              className="form-input resize-y"
+            />
+          </div>
+        </div>
+
+        {/* 후보자 심사요청서 + 학위/경력 */}
+        <CandidateForm
+          candidates={candidates}
+          onCandidatesChange={setCandidates}
+        />
+
+        {/* 초빙 진행 경과 섹션 */}
+        <div className="section-card">
+          <h2 className="section-title">초빙 진행 경과</h2>
+          <DynamicTable
+            columns={progressColumns}
+            rows={progressRecords}
+            onAddRow={addProgressRecord}
+            onDeleteRow={deleteProgressRecord}
+            onUpdateRow={(id, key, value) =>
+              updateProgressRecord(id, key as keyof ProgressRow, value)
+            }
+            addLabel="+ 경과 추가"
+            emptyMessage="진행 경과가 없습니다. 경과를 추가해주세요."
+          />
+        </div>
+
+        {/* 제출 결과 메시지 */}
+        {submitStatus === 'success' && (
+          <div className="rounded-md bg-green-50 border border-green-200 p-4 mb-4">
+            <p className="text-sm text-green-700">✓ {submitMessage}</p>
+          </div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="rounded-md bg-red-50 border border-red-200 p-4 mb-4">
+            <p className="text-sm text-red-700">✕ {submitMessage}</p>
+          </div>
+        )}
+
+        {/* 제출 버튼 */}
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            disabled={submitStatus === 'loading'}
+            className="btn-primary px-8 py-3 text-base"
+          >
+            {submitStatus === 'loading' ? '제출 중...' : '심사요청서 제출'}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}

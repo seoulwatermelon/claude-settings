@@ -1,0 +1,583 @@
+"use client";
+
+import React, { useState } from "react";
+import type { UserRecord, UserRole } from "@/lib/types";
+
+type PermissionEntry = {
+  resource: string;
+  action: string;
+  allowed: boolean;
+};
+
+type Props = {
+  initialUsers: UserRecord[];
+  departments: Array<{ deptCode: string; deptName: string }>;
+  allPermissions: Record<string, PermissionEntry[]>;
+};
+
+const ROLES: UserRole[] = ["VIP", "ADMIN", "DEAN"];
+
+const RESOURCE_GROUPS: { title: string; resources: { key: string; label: string }[] }[] = [
+  {
+    title: "대시보드",
+    resources: [
+      { key: "dashboard", label: "채용현황 (요약/TO배분표/진행현황)" },
+    ],
+  },
+  {
+    title: "후보자",
+    resources: [{ key: "candidates", label: "후보자 관리" }],
+  },
+  {
+    title: "채용 절차",
+    resources: [
+      { key: "procedures", label: "채용 절차 상세" },
+      { key: "actions", label: "단계별 제출" },
+    ],
+  },
+  {
+    title: "관리",
+    resources: [
+      { key: "admin.data", label: "데이터 관리 (채용요청/워크플로우)" },
+    ],
+  },
+  {
+    title: "워크플로우",
+    resources: [
+      { key: "workflow.review", label: "초빙위원회 심사" },
+      { key: "workflow.advance", label: "다음 단계 승인" },
+    ],
+  },
+  {
+    title: "시스템",
+    resources: [
+      { key: "system.permissions", label: "권한 관리" },
+      { key: "system.users", label: "사용자 관리" },
+    ],
+  },
+  {
+    title: "기타",
+    resources: [{ key: "etc", label: "기타" }],
+  },
+];
+
+const ACTIONS = [
+  { key: "view", label: "보기" },
+  { key: "edit", label: "편집" },
+  { key: "delete", label: "삭제" },
+  { key: "export", label: "내보내기" },
+  { key: "import", label: "가져오기" },
+];
+
+function getRoleBadgeClass(role: string): string {
+  switch (role) {
+    case "VIP":
+      return "badge-complete";
+    case "ADMIN":
+      return "badge-progress";
+    case "DEAN":
+      return "badge-waiting";
+    default:
+      return "badge-waiting";
+  }
+}
+
+export function UserPermissionsPanel({ initialUsers, departments, allPermissions }: Props) {
+  const [users, setUsers] = useState(initialUsers);
+  const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
+  const [localPerms, setLocalPerms] = useState(allPermissions);
+  const [saving, setSaving] = useState(false);
+  const [permMessage, setPermMessage] = useState("");
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [dirty, setDirty] = useState(false);
+
+  // User creation form
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+    role: "DEAN" as UserRole,
+    departmentCode: departments[0]?.deptCode ?? "",
+  });
+  const [createMessage, setCreateMessage] = useState("");
+
+  const selectedUser = users.find((u) => u.id === selectedUserId) ?? null;
+  const activeRole = selectedUser?.role ?? "";
+
+  async function refreshUsers() {
+    const response = await fetch("/api/users");
+    const data = (await response.json()) as { users: UserRecord[] };
+    setUsers(data.users);
+  }
+
+  async function handleCreate(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const response = await fetch("/api/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    const data = (await response.json()) as { message?: string };
+    if (!response.ok) {
+      setCreateMessage(data.message ?? "사용자 생성에 실패했습니다.");
+      return;
+    }
+    setCreateMessage("사용자를 생성했습니다.");
+    setForm({
+      username: "",
+      password: "",
+      role: "DEAN",
+      departmentCode: departments[0]?.deptCode ?? "",
+    });
+    setShowCreateForm(false);
+    await refreshUsers();
+  }
+
+  async function handleRoleChange(user: UserRecord, newRole: UserRole) {
+    await fetch(`/api/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ role: newRole, departmentCode: newRole === "DEAN" ? user.departmentCode : null }),
+    });
+    await refreshUsers();
+    // Refresh all permissions
+    const permRes = await fetch("/api/permissions");
+    if (permRes.ok) {
+      const permData = (await permRes.json()) as {
+        permissions: Record<string, PermissionEntry[]>;
+      };
+      setLocalPerms(permData.permissions);
+    }
+    setDirty(false);
+    setPermMessage(`역할이 ${newRole}(으)로 변경되었습니다.`);
+  }
+
+  async function handlePresetClick(presetRole: UserRole) {
+    if (!selectedUser) return;
+    // Change user's role to the preset role
+    await handleRoleChange(selectedUser, presetRole);
+  }
+
+  function isAllowed(role: string, resource: string, action: string): boolean {
+    const perms = localPerms[role] || [];
+    const wildcard = perms.find((p) => p.resource === "*" && p.action === action);
+    if (wildcard) return wildcard.allowed;
+    const entry = perms.find((p) => p.resource === resource && p.action === action);
+    return entry?.allowed ?? false;
+  }
+
+  function toggle(resource: string, action: string) {
+    if (!activeRole) return;
+    const current = isAllowed(activeRole, resource, action);
+    setLocalPerms((prev) => {
+      const rolePerms = [...(prev[activeRole] || [])];
+      const idx = rolePerms.findIndex(
+        (p) => p.resource === resource && p.action === action
+      );
+      if (idx >= 0) {
+        rolePerms[idx] = { ...rolePerms[idx], allowed: !current };
+      } else {
+        rolePerms.push({ resource, action, allowed: !current });
+      }
+      return { ...prev, [activeRole]: rolePerms };
+    });
+    setDirty(true);
+    setPermMessage("");
+  }
+
+  async function savePermissions() {
+    if (!activeRole) return;
+    setSaving(true);
+    setPermMessage("");
+    const original = allPermissions[activeRole] || [];
+    const current = localPerms[activeRole] || [];
+    const changes: PermissionEntry[] = [];
+
+    for (const c of current) {
+      const orig = original.find(
+        (o) => o.resource === c.resource && o.action === c.action
+      );
+      if (!orig || orig.allowed !== c.allowed) {
+        changes.push(c);
+      }
+    }
+
+    if (changes.length > 0) {
+      await fetch("/api/permissions", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ role: activeRole, changes }),
+      });
+      setPermMessage("권한이 저장되었습니다.");
+      setDirty(false);
+    } else {
+      setPermMessage("변경사항이 없습니다.");
+    }
+    setSaving(false);
+  }
+
+  return (
+    <section>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+        <div>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+            사용자 관리
+          </h2>
+          <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+            사용자 계정과 역할별 권한을 통합 관리합니다
+          </p>
+        </div>
+      </div>
+
+      <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }} className="user-perm-layout">
+        {/* Left: User list */}
+        <div style={{ width: 280, flexShrink: 0 }} className="user-list-col">
+          <div style={{ marginBottom: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>사용자 목록</h3>
+            <button
+              className="btn-secondary"
+              style={{ fontSize: 11, padding: "4px 10px" }}
+              onClick={() => {
+                setShowCreateForm(!showCreateForm);
+                setCreateMessage("");
+              }}
+            >
+              {showCreateForm ? "취소" : "+ 사용자 추가"}
+            </button>
+          </div>
+
+          {/* Inline create form */}
+          {showCreateForm && (
+            <form
+              onSubmit={handleCreate}
+              className="card"
+              style={{
+                background: "var(--row-hover)",
+                border: "1px solid var(--divider)",
+                marginBottom: 12,
+                padding: 12,
+              }}
+            >
+              <div className="space-y-3">
+                <input
+                  value={form.username}
+                  onChange={(e) => setForm((c) => ({ ...c, username: e.target.value }))}
+                  placeholder="사용자명"
+                  className="input"
+                  style={{ width: "100%", fontSize: 12 }}
+                />
+                <input
+                  value={form.password}
+                  onChange={(e) => setForm((c) => ({ ...c, password: e.target.value }))}
+                  placeholder="임시 비밀번호"
+                  type="password"
+                  className="input"
+                  style={{ width: "100%", fontSize: 12 }}
+                />
+                <select
+                  value={form.role}
+                  onChange={(e) => setForm((c) => ({ ...c, role: e.target.value as UserRole }))}
+                  className="input"
+                  style={{ width: "100%", fontSize: 12 }}
+                >
+                  {ROLES.map((role) => (
+                    <option key={role} value={role}>
+                      {role}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={form.departmentCode}
+                  onChange={(e) => setForm((c) => ({ ...c, departmentCode: e.target.value }))}
+                  className="input"
+                  style={{ width: "100%", fontSize: 12 }}
+                >
+                  {departments.map((d) => (
+                    <option key={d.deptCode} value={d.deptCode}>
+                      {d.deptName}
+                    </option>
+                  ))}
+                </select>
+                <button className="btn-primary" style={{ width: "100%", fontSize: 12 }}>
+                  계정 생성
+                </button>
+                {createMessage && (
+                  <p style={{ fontSize: 11, color: "var(--primary-green)", margin: 0 }}>{createMessage}</p>
+                )}
+              </div>
+            </form>
+          )}
+
+          {/* User cards */}
+          <div className="space-y-2">
+            {users.map((user) => {
+              const isSelected = user.id === selectedUserId;
+              return (
+                <div
+                  key={user.id}
+                  onClick={() => {
+                    setSelectedUserId(user.id);
+                    setPermMessage("");
+                    setDirty(false);
+                    // Reset localPerms to allPermissions for fresh state
+                    setLocalPerms(allPermissions);
+                  }}
+                  className="card"
+                  style={{
+                    padding: "12px 14px",
+                    cursor: "pointer",
+                    background: isSelected ? "var(--light-green)" : "var(--card-bg)",
+                    border: isSelected ? "1.5px solid var(--primary-green)" : "1px solid var(--divider)",
+                    transition: "background 0.15s, border-color 0.15s",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <div>
+                      <p style={{ fontSize: 13, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+                        {user.username}
+                      </p>
+                      <p style={{ marginTop: 3, fontSize: 11, color: "var(--text-secondary)", margin: "3px 0 0" }}>
+                        {user.departmentCode ?? "전체"}
+                      </p>
+                    </div>
+                    <span
+                      className={getRoleBadgeClass(user.role)}
+                      style={{ fontSize: 10, padding: "2px 8px", borderRadius: 10 }}
+                    >
+                      {user.role}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Right: Permission panel */}
+        <div style={{ flex: 1, minWidth: 0 }} className="perm-panel-col">
+          {!selectedUser ? (
+            <div
+              className="card"
+              style={{
+                padding: "60px 20px",
+                textAlign: "center",
+                background: "var(--row-hover)",
+                border: "1px solid var(--divider)",
+              }}
+            >
+              <p style={{ fontSize: 14, color: "var(--text-secondary)", margin: 0 }}>
+                좌측에서 사용자를 선택하면 권한을 설정할 수 있습니다
+              </p>
+            </div>
+          ) : (
+            <div>
+              {/* Selected user header */}
+              <div
+                className="card"
+                style={{
+                  padding: "14px 18px",
+                  marginBottom: 16,
+                  background: "var(--row-hover)",
+                  border: "1px solid var(--divider)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: 12,
+                }}
+              >
+                <div>
+                  <p style={{ fontSize: 15, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+                    {selectedUser.username}
+                  </p>
+                  <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "4px 0 0" }}>
+                    현재 역할: <strong>{selectedUser.role}</strong>
+                    {selectedUser.departmentCode ? ` · ${selectedUser.departmentCode}` : ""}
+                  </p>
+                </div>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  <span style={{ fontSize: 11, color: "var(--text-secondary)", alignSelf: "center", marginRight: 4 }}>
+                    등급 프리셋:
+                  </span>
+                  {ROLES.map((role) => (
+                    <button
+                      key={role}
+                      onClick={() => handlePresetClick(role)}
+                      className={selectedUser.role === role ? "btn-primary" : "btn-secondary"}
+                      style={{ fontSize: 11, padding: "5px 14px" }}
+                    >
+                      {role}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Permission matrix */}
+              <div className="card" style={{ padding: 0, overflow: "auto", border: "1px solid var(--divider)", borderRadius: 10 }}>
+                <table style={{ width: "100%", borderSpacing: 0, borderCollapse: "separate", fontSize: 12 }}>
+                  <thead>
+                    <tr style={{ background: "#fafbfc" }}>
+                      <th
+                        style={{
+                          textAlign: "left",
+                          padding: "10px 14px",
+                          color: "#888",
+                          fontWeight: 500,
+                          fontSize: 11,
+                          width: "30%",
+                          position: "sticky",
+                          top: 0,
+                          zIndex: 10,
+                          background: "#fafbfc",
+                        }}
+                      >
+                        리소스
+                      </th>
+                      {ACTIONS.map((a) => (
+                        <th
+                          key={a.key}
+                          style={{
+                            textAlign: "center",
+                            padding: "10px 14px",
+                            color: "#888",
+                            fontWeight: 500,
+                            fontSize: 11,
+                            width: "14%",
+                            position: "sticky",
+                            top: 0,
+                            zIndex: 10,
+                            background: "#fafbfc",
+                          }}
+                        >
+                          {a.label}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {RESOURCE_GROUPS.map((group) => (
+                      <React.Fragment key={group.title}>
+                        <tr style={{ background: "#fafbfc" }}>
+                          <td
+                            colSpan={6}
+                            style={{
+                              padding: "8px 14px",
+                              fontSize: 10,
+                              color: "#888",
+                              fontWeight: 600,
+                              textTransform: "uppercase",
+                              letterSpacing: 0.5,
+                            }}
+                          >
+                            {group.title}
+                          </td>
+                        </tr>
+                        {group.resources.map((res) => (
+                          <tr key={res.key} style={{ borderTop: "1px solid #f0f0f0" }}>
+                            <td style={{ padding: "10px 14px", color: "#333" }}>
+                              {res.label}
+                            </td>
+                            {ACTIONS.map((action) => {
+                              const allowed = isAllowed(activeRole, res.key, action.key);
+                              return (
+                                <td key={action.key} style={{ textAlign: "center", padding: "10px 14px" }}>
+                                  <div
+                                    onClick={() => toggle(res.key, action.key)}
+                                    style={{
+                                      width: 20,
+                                      height: 20,
+                                      background: allowed ? "#1a6b4a" : "#e0e0e0",
+                                      borderRadius: 4,
+                                      margin: "0 auto",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      justifyContent: "center",
+                                      cursor: "pointer",
+                                    }}
+                                  >
+                                    {allowed && (
+                                      <span style={{ color: "#fff", fontSize: 12 }}>✓</span>
+                                    )}
+                                  </div>
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ))}
+                      </React.Fragment>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Legend + save */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: 16,
+                  marginTop: 12,
+                  fontSize: 11,
+                  color: "var(--text-secondary)",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  <div
+                    style={{
+                      width: 14,
+                      height: 14,
+                      background: "var(--primary-green)",
+                      borderRadius: 3,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <span style={{ color: "#fff", fontSize: 9 }}>&#10003;</span>
+                  </div>
+                  허용
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  <div style={{ width: 14, height: 14, background: "#e0e0e0", borderRadius: 3 }} />
+                  차단
+                </div>
+                <span style={{ color: "var(--text-disabled)" }}>|</span>
+                <span>클릭하여 토글 · 역할({activeRole})의 권한을 수정합니다</span>
+                <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center" }}>
+                  {permMessage && (
+                    <span style={{ color: "var(--primary-green)", fontWeight: 500 }}>
+                      {permMessage}
+                    </span>
+                  )}
+                  <button
+                    className="btn-primary"
+                    onClick={savePermissions}
+                    disabled={saving || !dirty}
+                    style={{ fontSize: 12, padding: "6px 18px" }}
+                  >
+                    {saving ? "저장 중..." : "변경사항 저장"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Responsive style */}
+      <style>{`
+        @media (max-width: 900px) {
+          .user-perm-layout {
+            flex-direction: column !important;
+          }
+          .user-list-col {
+            width: 100% !important;
+          }
+          .perm-panel-col {
+            width: 100% !important;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}

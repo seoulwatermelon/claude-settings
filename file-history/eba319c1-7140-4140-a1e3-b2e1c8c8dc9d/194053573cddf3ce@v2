@@ -1,0 +1,275 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""VBA 모듈을 시트 인덱스 기반으로 수정"""
+
+import win32com.client, os, time, sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+import openpyxl
+from datetime import datetime
+
+SRC = 'C:/Users/SKKU/Downloads/claudecode/professor_lab_move/교수회관 연구실 교원 명단_260317.xlsx'
+wb_src = openpyxl.load_workbook(SRC, data_only=True)
+ws_data = wb_src['data']
+ws_temp = wb_src['temporary']
+
+movers = []
+for row in range(2, ws_data.max_row + 1):
+    gender = ws_data.cell(row, 14).value
+    if gender and str(gender).strip() in ('남', '여'):
+        retire_raw = ws_data.cell(row, 13).value
+        retire_str = str(retire_raw) if retire_raw else ''
+        retire_year = None
+        try:
+            if isinstance(retire_raw, datetime):
+                retire_year = retire_raw.year
+            elif '(' in retire_str:
+                retire_year = int(retire_str.split('(')[1].split('.')[0])
+            elif '-' in retire_str:
+                retire_year = int(retire_str[:4])
+        except:
+            pass
+        movers.append({'college': ws_data.cell(row, 10).value or '', 'retire_year': retire_year})
+
+spaces = []
+for row in range(2, ws_temp.max_row + 1):
+    spaces.append({
+        'building': ws_temp.cell(row, 2).value or '',
+        'name': ws_temp.cell(row, 4).value or '',
+        'room_no': str(ws_temp.cell(row, 5).value or ''),
+        'area': str(ws_temp.cell(row, 6).value or ''),
+    })
+
+group_a = [m for m in movers if '경제' in m['college']]
+group_b = [m for m in movers if m not in group_a and m['retire_year'] and m['retire_year'] <= 2031]
+group_c = [m for m in movers if m not in group_a and m not in group_b]
+dasan = [s for s in spaces if '다산' in s['building']]
+non_dasan = [s for s in spaces if '다산' not in s['building']]
+wb_src.close()
+
+def spaces_to_vba(sp_list, var_name):
+    lines = []
+    for i, sp in enumerate(sp_list):
+        bld = sp['building'].replace('"', '""')
+        nm = sp['name'].replace('"', '""')
+        rn = sp['room_no'].replace('"', '""')
+        ar = sp['area'].replace('"', '""')
+        lines.append(f'    {var_name}({i}, 0) = "{bld}": {var_name}({i}, 1) = "{nm}": {var_name}({i}, 2) = "{rn}": {var_name}({i}, 3) = "{ar}"')
+    return '\n'.join(lines)
+
+dasan_vba = spaces_to_vba(dasan, 'spaces')
+nondasan_vba = spaces_to_vba(non_dasan, 'allSpaces')
+
+OUT = os.path.abspath('C:/Users/SKKU/Downloads/claudecode/professor_lab_move/교수연구실_랜덤추첨_버튼.xlsm')
+
+excel = win32com.client.Dispatch('Excel.Application')
+excel.Visible = False
+excel.DisplayAlerts = False
+
+wb = excel.Workbooks.Open(OUT)
+
+# 시트 순서 확인
+print('현재 시트 순서:')
+for i in range(1, wb.Sheets.Count + 1):
+    print(f'  {i}: {wb.Sheets(i).Name}')
+
+# 시트 재정렬: 현재 1=전체결과, 2=C, 3=B, 4=공간선택, 5=A, 6=추첨안내
+# 목표: 1=추첨안내, 2=A, 3=공간선택, 4=B, 5=C, 6=전체결과
+# 이름으로 참조하여 하나씩 이동
+target_order = ['추첨안내', 'A그룹_경제대학', '퇴직예정자_공간선택', 'B그룹_퇴직예정', 'C그룹_일반추첨', '전체결과']
+for idx, name in enumerate(target_order):
+    ws_move = wb.Sheets(name)
+    if idx == 0:
+        ws_move.Move(Before=wb.Sheets(1))
+    else:
+        ws_move.Move(After=wb.Sheets(idx))
+    time.sleep(0.3)
+
+print('\n정렬 후:')
+for i in range(1, wb.Sheets.Count + 1):
+    print(f'  {i}: {wb.Sheets(i).Name}')
+
+# 기존 모듈 삭제
+for comp in wb.VBProject.VBComponents:
+    if comp.Name == 'LotteryModule':
+        wb.VBProject.VBComponents.Remove(comp)
+        print('\n기존 LotteryModule 삭제')
+        break
+
+time.sleep(0.5)
+
+# 새 VBA (시트 인덱스 사용: 2=A, 3=공간선택, 4=B, 5=C, 6=전체결과)
+vba_lines = []
+vba_lines.append("Option Explicit")
+vba_lines.append("")
+vba_lines.append("Private Sub ShuffleArray(arr() As Long)")
+vba_lines.append("    Dim i As Long, j As Long, tmp As Long")
+vba_lines.append("    Randomize Timer")
+vba_lines.append("    For i = UBound(arr) To LBound(arr) + 1 Step -1")
+vba_lines.append("        j = Int((i - LBound(arr) + 1) * Rnd) + LBound(arr)")
+vba_lines.append("        tmp = arr(i): arr(i) = arr(j): arr(j) = tmp")
+vba_lines.append("    Next i")
+vba_lines.append("End Sub")
+vba_lines.append("")
+
+# A그룹
+vba_lines.append("Public Sub LotteryGroupA()")
+vba_lines.append("    Dim ws As Worksheet: Set ws = ThisWorkbook.Sheets(2)")
+vba_lines.append("    Dim wsR As Worksheet: Set wsR = ThisWorkbook.Sheets(6)")
+vba_lines.append(f"    Dim profCount As Long: profCount = {len(group_a)}")
+vba_lines.append(f"    Dim spaceCount As Long: spaceCount = {len(dasan)}")
+vba_lines.append(f"    Dim spaces(0 To {len(dasan)-1}, 0 To 3) As String")
+for i, sp in enumerate(dasan):
+    vba_lines.append(f'    spaces({i}, 0) = "{sp["building"]}": spaces({i}, 1) = "{sp["name"]}": spaces({i}, 2) = "{sp["room_no"]}": spaces({i}, 3) = "{sp["area"]}"')
+vba_lines.append("    Dim indices() As Long: ReDim indices(0 To spaceCount - 1)")
+vba_lines.append("    Dim k As Long")
+vba_lines.append("    For k = 0 To spaceCount - 1: indices(k) = k: Next k")
+vba_lines.append("    ShuffleArray indices")
+vba_lines.append("    Application.ScreenUpdating = False")
+vba_lines.append("    Dim i As Long")
+vba_lines.append("    For i = 0 To profCount - 1")
+vba_lines.append("        ws.Cells(4 + i, 9).Value = spaces(indices(i), 0)")
+vba_lines.append("        ws.Cells(4 + i, 10).Value = spaces(indices(i), 1)")
+vba_lines.append("        ws.Cells(4 + i, 11).Value = spaces(indices(i), 2)")
+vba_lines.append("        ws.Cells(4 + i, 12).Value = spaces(indices(i), 3)")
+vba_lines.append("        wsR.Cells(4 + i, 8).Value = spaces(indices(i), 0)")
+vba_lines.append("        wsR.Cells(4 + i, 9).Value = spaces(indices(i), 1)")
+vba_lines.append("        wsR.Cells(4 + i, 10).Value = spaces(indices(i), 2)")
+vba_lines.append("        wsR.Cells(4 + i, 11).Value = spaces(indices(i), 3)")
+vba_lines.append("    Next i")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_a)}, 12)).Interior.Color = RGB(200, 255, 200)")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_a)}, 12)).Font.Bold = True")
+vba_lines.append("    Application.ScreenUpdating = True")
+vba_lines.append(f'    MsgBox "A Group complete! {len(group_a)} assigned to Dasan", vbInformation, "A Group"')
+vba_lines.append("End Sub")
+vba_lines.append("")
+
+# B그룹
+vba_lines.append("Public Sub LotteryGroupB()")
+vba_lines.append("    Dim wsSel As Worksheet: Set wsSel = ThisWorkbook.Sheets(3)")
+vba_lines.append("    Dim ws As Worksheet: Set ws = ThisWorkbook.Sheets(4)")
+vba_lines.append("    Dim wsR As Worksheet: Set wsR = ThisWorkbook.Sheets(6)")
+vba_lines.append(f"    Dim profCount As Long: profCount = {len(group_b)}")
+vba_lines.append("    Dim selSpaces(0 To 7, 0 To 3) As String")
+vba_lines.append("    Dim selCount As Long: selCount = 0")
+vba_lines.append("    Dim r As Long")
+vba_lines.append(f"    For r = 5 To {4 + len(non_dasan)}")
+vba_lines.append('        If UCase(Trim(CStr(wsSel.Cells(r, 2).Value))) = "O" Then')
+vba_lines.append("            If selCount < 8 Then")
+vba_lines.append("                selSpaces(selCount, 0) = CStr(wsSel.Cells(r, 3).Value)")
+vba_lines.append("                selSpaces(selCount, 1) = CStr(wsSel.Cells(r, 5).Value)")
+vba_lines.append("                selSpaces(selCount, 2) = CStr(wsSel.Cells(r, 6).Value)")
+vba_lines.append("                selSpaces(selCount, 3) = CStr(wsSel.Cells(r, 7).Value)")
+vba_lines.append("                selCount = selCount + 1")
+vba_lines.append("            End If")
+vba_lines.append("        End If")
+vba_lines.append("    Next r")
+vba_lines.append("    If selCount <> 8 Then")
+vba_lines.append('        MsgBox "Select exactly 8 spaces! Current: " & selCount, vbExclamation, "Error"')
+vba_lines.append("        Exit Sub")
+vba_lines.append("    End If")
+vba_lines.append("    Dim indices() As Long: ReDim indices(0 To 7)")
+vba_lines.append("    Dim k As Long")
+vba_lines.append("    For k = 0 To 7: indices(k) = k: Next k")
+vba_lines.append("    ShuffleArray indices")
+vba_lines.append("    Application.ScreenUpdating = False")
+vba_lines.append("    Dim i As Long")
+vba_lines.append("    For i = 0 To profCount - 1")
+vba_lines.append("        ws.Cells(4 + i, 9).Value = selSpaces(indices(i), 0)")
+vba_lines.append("        ws.Cells(4 + i, 10).Value = selSpaces(indices(i), 1)")
+vba_lines.append("        ws.Cells(4 + i, 11).Value = selSpaces(indices(i), 2)")
+vba_lines.append("        ws.Cells(4 + i, 12).Value = selSpaces(indices(i), 3)")
+vba_lines.append(f"        Dim rr As Long: rr = 4 + {len(group_a)} + i")
+vba_lines.append("        wsR.Cells(rr, 8).Value = selSpaces(indices(i), 0)")
+vba_lines.append("        wsR.Cells(rr, 9).Value = selSpaces(indices(i), 1)")
+vba_lines.append("        wsR.Cells(rr, 10).Value = selSpaces(indices(i), 2)")
+vba_lines.append("        wsR.Cells(rr, 11).Value = selSpaces(indices(i), 3)")
+vba_lines.append("    Next i")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_b)}, 12)).Interior.Color = RGB(200, 255, 200)")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_b)}, 12)).Font.Bold = True")
+vba_lines.append("    Application.ScreenUpdating = True")
+vba_lines.append(f'    MsgBox "B Group complete! {len(group_b)} assigned", vbInformation, "B Group"')
+vba_lines.append("End Sub")
+vba_lines.append("")
+
+# C그룹
+vba_lines.append("Public Sub LotteryGroupC()")
+vba_lines.append("    Dim wsSel As Worksheet: Set wsSel = ThisWorkbook.Sheets(3)")
+vba_lines.append("    Dim ws As Worksheet: Set ws = ThisWorkbook.Sheets(5)")
+vba_lines.append("    Dim wsR As Worksheet: Set wsR = ThisWorkbook.Sheets(6)")
+vba_lines.append(f"    Dim profCount As Long: profCount = {len(group_c)}")
+vba_lines.append(f"    Dim allSpaces(0 To {len(non_dasan)-1}, 0 To 3) As String")
+for i, sp in enumerate(non_dasan):
+    vba_lines.append(f'    allSpaces({i}, 0) = "{sp["building"]}": allSpaces({i}, 1) = "{sp["name"]}": allSpaces({i}, 2) = "{sp["room_no"]}": allSpaces({i}, 3) = "{sp["area"]}"')
+vba_lines.append("    Dim remainSpaces() As String")
+vba_lines.append(f"    ReDim remainSpaces(0 To {len(non_dasan)-1}, 0 To 3)")
+vba_lines.append("    Dim remainCount As Long: remainCount = 0")
+vba_lines.append("    Dim r As Long")
+vba_lines.append(f"    For r = 5 To {4 + len(non_dasan)}")
+vba_lines.append('        If UCase(Trim(CStr(wsSel.Cells(r, 2).Value))) <> "O" Then')
+vba_lines.append("            remainSpaces(remainCount, 0) = allSpaces(r - 5, 0)")
+vba_lines.append("            remainSpaces(remainCount, 1) = allSpaces(r - 5, 1)")
+vba_lines.append("            remainSpaces(remainCount, 2) = allSpaces(r - 5, 2)")
+vba_lines.append("            remainSpaces(remainCount, 3) = allSpaces(r - 5, 3)")
+vba_lines.append("            remainCount = remainCount + 1")
+vba_lines.append("        End If")
+vba_lines.append("    Next r")
+vba_lines.append("    If remainCount < profCount Then")
+vba_lines.append('        MsgBox "Not enough spaces! " & remainCount & "/" & profCount, vbExclamation')
+vba_lines.append("        Exit Sub")
+vba_lines.append("    End If")
+vba_lines.append("    Dim indices() As Long: ReDim indices(0 To remainCount - 1)")
+vba_lines.append("    Dim k As Long")
+vba_lines.append("    For k = 0 To remainCount - 1: indices(k) = k: Next k")
+vba_lines.append("    ShuffleArray indices")
+vba_lines.append("    Application.ScreenUpdating = False")
+vba_lines.append("    Dim i As Long")
+vba_lines.append("    For i = 0 To profCount - 1")
+vba_lines.append("        ws.Cells(5 + i, 9).Value = remainSpaces(indices(i), 0)")
+vba_lines.append("        ws.Cells(5 + i, 10).Value = remainSpaces(indices(i), 1)")
+vba_lines.append("        ws.Cells(5 + i, 11).Value = remainSpaces(indices(i), 2)")
+vba_lines.append("        ws.Cells(5 + i, 12).Value = remainSpaces(indices(i), 3)")
+vba_lines.append(f"        Dim rr As Long: rr = 4 + {len(group_a)} + {len(group_b)} + i")
+vba_lines.append("        wsR.Cells(rr, 8).Value = remainSpaces(indices(i), 0)")
+vba_lines.append("        wsR.Cells(rr, 9).Value = remainSpaces(indices(i), 1)")
+vba_lines.append("        wsR.Cells(rr, 10).Value = remainSpaces(indices(i), 2)")
+vba_lines.append("        wsR.Cells(rr, 11).Value = remainSpaces(indices(i), 3)")
+vba_lines.append("    Next i")
+vba_lines.append(f"    ws.Range(ws.Cells(5, 9), ws.Cells({4+len(group_c)}, 12)).Interior.Color = RGB(200, 255, 200)")
+vba_lines.append(f"    ws.Range(ws.Cells(5, 9), ws.Cells({4+len(group_c)}, 12)).Font.Bold = True")
+vba_lines.append("    Application.ScreenUpdating = True")
+vba_lines.append(f'    MsgBox "C Group complete! {len(group_c)} assigned", vbInformation, "C Group"')
+vba_lines.append("End Sub")
+vba_lines.append("")
+
+# Reset
+vba_lines.append("Public Sub ResetAll()")
+vba_lines.append('    If MsgBox("Reset all results?", vbYesNo + vbQuestion, "Confirm") = vbNo Then Exit Sub')
+vba_lines.append("    Application.ScreenUpdating = False")
+vba_lines.append("    Dim ws As Worksheet")
+vba_lines.append("    Set ws = ThisWorkbook.Sheets(2)")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_a)}, 12)).ClearContents")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_a)}, 12)).Interior.Color = RGB(204, 242, 255)")
+vba_lines.append("    Set ws = ThisWorkbook.Sheets(4)")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_b)}, 12)).ClearContents")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 9), ws.Cells({3+len(group_b)}, 12)).Interior.Color = RGB(204, 242, 255)")
+vba_lines.append("    Set ws = ThisWorkbook.Sheets(5)")
+vba_lines.append(f"    ws.Range(ws.Cells(5, 9), ws.Cells({4+len(group_c)}, 12)).ClearContents")
+vba_lines.append(f"    ws.Range(ws.Cells(5, 9), ws.Cells({4+len(group_c)}, 12)).Interior.Color = RGB(204, 242, 255)")
+vba_lines.append("    Set ws = ThisWorkbook.Sheets(6)")
+vba_lines.append(f"    ws.Range(ws.Cells(4, 8), ws.Cells({3+len(movers)}, 11)).ClearContents")
+vba_lines.append("    Application.ScreenUpdating = True")
+vba_lines.append('    MsgBox "All cleared!", vbInformation, "Reset"')
+vba_lines.append("End Sub")
+
+vba_code = '\n'.join(vba_lines)
+
+module = wb.VBProject.VBComponents.Add(1)
+module.Name = 'LotteryModule'
+module.CodeModule.AddFromString(vba_code)
+print('VBA 모듈 추가 완료')
+
+wb.Save()
+wb.Close()
+excel.Quit()
+print('저장 완료!')

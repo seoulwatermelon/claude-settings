@@ -1,0 +1,32 @@
+import { requireUser, listUsers } from "@/lib/auth";
+import { checkPermission, getAllRoles, getPermissionsForRole } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getDepartmentOptions } from "@/lib/queries";
+import { UserPermissionsPanel } from "@/components/user-permissions-panel";
+
+export default async function UsersPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.users", "view")) {
+    redirect("/summary");
+  }
+
+  const users = listUsers();
+  const departments = getDepartmentOptions();
+
+  // Fetch all role permissions
+  const roles = getAllRoles();
+  const allPermissions: Record<string, { resource: string; action: string; allowed: boolean }[]> = {};
+  for (const role of roles) {
+    allPermissions[role] = getPermissionsForRole(role);
+  }
+
+  return (
+    <div>
+      <UserPermissionsPanel
+        initialUsers={users}
+        departments={departments}
+        allPermissions={allPermissions}
+      />
+    </div>
+  );
+}

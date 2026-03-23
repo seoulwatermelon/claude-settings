@@ -1,0 +1,8 @@
+{
+  "id": "14",
+  "subject": "Task 9: 메인 페이지 교체 + 레이아웃 업데이트",
+  "description": "app/page.tsx 대시보드로 교체, layout.tsx nav 업데이트",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

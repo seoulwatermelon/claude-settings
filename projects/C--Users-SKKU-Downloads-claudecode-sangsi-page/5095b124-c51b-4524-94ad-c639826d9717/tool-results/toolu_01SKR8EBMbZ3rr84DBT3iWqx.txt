@@ -1,0 +1,1508 @@
+     1→# TO 배정 대시보드 Implementation Plan
+     2→
+     3→> **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
+     4→
+     5→**Goal:** 메인 페이지(`/`)에 학과별 TO 배정 현황을 엑셀 표 형식으로 보여주고, 관리자가 Excel 업로드 또는 인라인 편집으로 데이터를 관리할 수 있게 한다.
+     6→
+     7→**Architecture:** `to_haejung` SQLite 테이블에 학과별 데이터를 저장하고, Next.js App Router API 라우트 3개(GET/POST upload/PATCH)로 CRUD를 처리한다. `TOHaejungTable` 컴포넌트가 읽기 전용(메인)/편집(관리자) 두 모드를 하나의 prop으로 처리한다.
+     8→
+     9→**Tech Stack:** Next.js **14** App Router, TypeScript, Tailwind CSS, better-sqlite3, xlsx@0.18.5
+    10→
+    11→> **Next.js 버전 참고:** 설치된 버전은 `^14.0.0`. `params`는 Next.js 15부터 Promise이므로, `{ params: { id: string } }` 동기 타입이 올바름.
+    12→
+    13→---
+    14→
+    15→## Chunk 1: DB 스키마 + 타입 + GET API
+    16→
+    17→### Task 1: `to_haejung` 테이블 스키마 추가
+    18→
+    19→**Files:**
+    20→- Modify: `database/schema.sql`
+    21→
+    22→- [ ] **Step 1: `schema.sql`에 `to_haejung` 테이블 DDL 추가**
+    23→
+    24→기존 파일 끝에 아래 내용을 추가한다:
+    25→
+    26→```sql
+    27→CREATE TABLE IF NOT EXISTS to_haejung (
+    28→  id INTEGER PRIMARY KEY AUTOINCREMENT,
+    29→  college TEXT,
+    30→  department TEXT,
+    31→  confirm_rate_26 TEXT,
+    32→  faculty_count_26 TEXT,
+    33→  new_hires TEXT,
+    34→  retirees TEXT,
+    35→  upcoming_retirements TEXT,
+    36→  req_general TEXT,
+    37→  req_dedicated TEXT,
+    38→  req_external TEXT,
+    39→  req_total TEXT,
+    40→  invitation_field TEXT,
+    41→  request_reason TEXT,
+    42→  to_general TEXT,
+    43→  to_dedicated TEXT,
+    44→  to_external TEXT,
+    45→  to_total TEXT,
+    46→  adv_general TEXT,
+    47→  adv_dedicated TEXT,
+    48→  adv_external TEXT,
+    49→  adv_total TEXT,
+    50→  pres_general TEXT,
+    51→  pres_dedicated TEXT,
+    52→  pres_external TEXT,
+    53→  pres_total TEXT,
+    54→  assign_reason TEXT,
+    55→  hq_opinion TEXT,
+    56→  bigs TEXT,
+    57→  to_req_25 TEXT,
+    58→  to_assign_25 TEXT,
+    59→  hire_regular_25 TEXT,
+    60→  hire_rolling_25 TEXT,
+    61→  hire_total_25 TEXT,
+    62→  note TEXT,
+    63→  remark TEXT,
+    64→  created_at TEXT DEFAULT (datetime('now')),
+    65→  updated_at TEXT DEFAULT (datetime('now'))
+    66→);
+    67→```
+    68→
+    69→> 참고: `lib/db.ts`의 `getDb()`는 cold start 시 `schema.sql` 전체를 `db.exec(schema)`로 실행한다. `CREATE TABLE IF NOT EXISTS`이므로 기존 DB가 있어도 안전하다. **변경 후 반드시 Next.js 프로세스를 재시작해야 새 테이블이 생성된다.**
+    70→
+    71→- [ ] **Step 2: 커밋**
+    72→
+    73→```bash
+    74→git add database/schema.sql
+    75→git commit -m "feat: add to_haejung table schema"
+    76→```
+    77→
+    78→---
+    79→
+    80→### Task 2: `ToHaejungRow` 타입 추가
+    81→
+    82→**Files:**
+    83→- Modify: `lib/types.ts`
+    84→
+    85→- [ ] **Step 1: `lib/types.ts` 끝에 타입 추가**
+    86→
+    87→```typescript
+    88→export interface ToHaejungRow {
+    89→  id: number;
+    90→  college: string | null;
+    91→  department: string | null;
+    92→  confirm_rate_26: string | null;
+    93→  faculty_count_26: string | null;
+    94→  new_hires: string | null;
+    95→  retirees: string | null;
+    96→  upcoming_retirements: string | null;
+    97→  req_general: string | null;
+    98→  req_dedicated: string | null;
+    99→  req_external: string | null;
+   100→  req_total: string | null;
+   101→  invitation_field: string | null;
+   102→  request_reason: string | null;
+   103→  to_general: string | null;
+   104→  to_dedicated: string | null;
+   105→  to_external: string | null;
+   106→  to_total: string | null;
+   107→  adv_general: string | null;
+   108→  adv_dedicated: string | null;
+   109→  adv_external: string | null;
+   110→  adv_total: string | null;
+   111→  pres_general: string | null;
+   112→  pres_dedicated: string | null;
+   113→  pres_external: string | null;
+   114→  pres_total: string | null;
+   115→  assign_reason: string | null;
+   116→  hq_opinion: string | null;
+   117→  bigs: string | null;
+   118→  to_req_25: string | null;
+   119→  to_assign_25: string | null;
+   120→  hire_regular_25: string | null;
+   121→  hire_rolling_25: string | null;
+   122→  hire_total_25: string | null;
+   123→  note: string | null;
+   124→  remark: string | null;
+   125→  updated_at: string | null;
+   126→}
+   127→```
+   128→
+   129→- [ ] **Step 2: 커밋**
+   130→
+   131→```bash
+   132→git add lib/types.ts
+   133→git commit -m "feat: add ToHaejungRow type"
+   134→```
+   135→
+   136→---
+   137→
+   138→### Task 3: GET `/api/to-haejung` 라우트
+   139→
+   140→**Files:**
+   141→- Create: `app/api/to-haejung/route.ts`
+   142→- Create: `__tests__/api/to-haejung.test.ts`
+   143→
+   144→- [ ] **Step 1: 테스트 파일 작성**
+   145→
+   146→`__tests__/api/to-haejung.test.ts`:
+   147→
+   148→```typescript
+   149→/**
+   150→ * @jest-environment node
+   151→ */
+   152→
+   153→import { NextRequest } from 'next/server';
+   154→
+   155→// mockPrepare를 모듈 스코프에 선언하여 테스트에서 직접 참조 가능하도록 함
+   156→const mockAll = jest.fn().mockReturnValue([]);
+   157→const mockPrepare = jest.fn().mockReturnValue({ all: mockAll });
+   158→
+   159→jest.mock('better-sqlite3', () => {
+   160→  const MockDB = jest.fn().mockImplementation(() => ({
+   161→    prepare: mockPrepare,
+   162→    exec: jest.fn(),
+   163→    pragma: jest.fn(),
+   164→  }));
+   165→  return MockDB;
+   166→});
+   167→
+   168→jest.mock('fs', () => ({
+   169→  existsSync: jest.fn().mockReturnValue(true),
+   170→  mkdirSync: jest.fn(),
+   171→  readFileSync: jest.fn().mockReturnValue(''),
+   172→}));
+   173→
+   174→import { GET } from '@/app/api/to-haejung/route';
+   175→
+   176→describe('GET /api/to-haejung', () => {
+   177→  it('returns 200 with array', async () => {
+   178→    const req = new NextRequest('http://localhost/api/to-haejung');
+   179→    const res = await GET(req);
+   180→    expect(res.status).toBe(200);
+   181→    const data = await res.json();
+   182→    expect(Array.isArray(data)).toBe(true);
+   183→  });
+   184→
+   185→  it('returns 500 on DB error', async () => {
+   186→    // mockPrepare는 모듈 최상위에서 선언된 변수를 직접 참조
+   187→    mockPrepare.mockImplementationOnce(() => {
+   188→      throw new Error('DB 오류');
+   189→    });
+   190→    const req = new NextRequest('http://localhost/api/to-haejung');
+   191→    const res = await GET(req);
+   192→    expect(res.status).toBe(500);
+   193→  });
+   194→});
+   195→```
+   196→
+   197→- [ ] **Step 2: 테스트 실행 → FAIL 확인**
+   198→
+   199→```bash
+   200→npx jest __tests__/api/to-haejung.test.ts --no-coverage
+   201→```
+   202→
+   203→Expected: FAIL (모듈 없음)
+   204→
+   205→- [ ] **Step 3: `app/api/to-haejung/route.ts` 구현**
+   206→
+   207→```typescript
+   208→import { NextRequest, NextResponse } from 'next/server';
+   209→import getDb from '@/lib/db';
+   210→import type { ToHaejungRow } from '@/lib/types';
+   211→
+   212→export async function GET(_req: NextRequest): Promise<NextResponse> {
+   213→  try {
+   214→    const db = getDb();
+   215→    const rows = db
+   216→      .prepare('SELECT * FROM to_haejung ORDER BY college, id')
+   217→      .all() as ToHaejungRow[];
+   218→    return NextResponse.json(rows);
+   219→  } catch (err) {
+   220→    return NextResponse.json(
+   221→      { error: err instanceof Error ? err.message : '조회 실패' },
+   222→      { status: 500 }
+   223→    );
+   224→  }
+   225→}
+   226→```
+   227→
+   228→- [ ] **Step 4: 테스트 재실행 → PASS 확인**
+   229→
+   230→```bash
+   231→npx jest __tests__/api/to-haejung.test.ts --no-coverage
+   232→```
+   233→
+   234→Expected: PASS
+   235→
+   236→- [ ] **Step 5: 커밋**
+   237→
+   238→```bash
+   239→git add app/api/to-haejung/route.ts __tests__/api/to-haejung.test.ts
+   240→git commit -m "feat: GET /api/to-haejung route"
+   241→```
+   242→
+   243→---
+   244→
+   245→## Chunk 2: Excel 업로드 POST API
+   246→
+   247→### Task 4: POST `/api/to-haejung/upload` 라우트
+   248→
+   249→**Files:**
+   250→- Create: `app/api/to-haejung/upload/route.ts`
+   251→- Create: `__tests__/api/to-haejung-upload.test.ts`
+   252→
+   253→Excel 헤더 → DB 컬럼 매핑 (정확한 헤더 문자열, `\n` 포함):
+   254→
+   255→| Excel 헤더 | DB 컬럼 |
+   256→|-----------|---------|
+   257→| `소속대학` | `college` |
+   258→| `구분` | `department` (null이면 `학과명` fallback) |
+   259→| `(가+나+다)\n적용 시\n교원확보율` | `confirm_rate_26` |
+   260→| `26.3월\n교원합계\n(가+나+다)` | `faculty_count_26` |
+   261→| `신규임용자_리스트` | `new_hires` |
+   262→| `퇴직자_리스트` | `retirees` |
+   263→| `정년퇴직_리스트` | `upcoming_retirements` |
+   264→| `TO요청_일반` | `req_general` |
+   265→| `TO요청_전담` | `req_dedicated` |
+   266→| `TO요청_외` | `req_external` |
+   267→| `TO요청_계` | `req_total` |
+   268→| `초빙분야_리스트` | `invitation_field` |
+   269→| `학과요청사유_리스트` | `request_reason` |
+   270→| `TO배정_일반` | `to_general` |
+   271→| `TO배정_전담` | `to_dedicated` |
+   272→| `TO배정_외` | `to_external` |
+   273→| `TO배정_계` | `to_total` |
+   274→| `첨단TO_일반` | `adv_general` |
+   275→| `첨단TO_전담` | `adv_dedicated` |
+   276→| `첨단TO_외` | `adv_external` |
+   277→| `첨단TO_계` | `adv_total` |
+   278→| `총장TO_일반` | `pres_general` |
+   279→| `총장TO_전담` | `pres_dedicated` |
+   280→| `총장TO_외` | `pres_external` |
+   281→| `총장TO_계` | `pres_total` |
+   282→| `배정사유` | `assign_reason` |
+   283→| `본부배정의견` | `hq_opinion` |
+   284→| `BIGs` | `bigs` |
+   285→| `TO신청25년` | `to_req_25` |
+   286→| `TO배정25년` | `to_assign_25` |
+   287→| `채용결과_정시` | `hire_regular_25` |
+   288→| `채용결과_상시` | `hire_rolling_25` |
+   289→| `채용결과_합계` | `hire_total_25` |
+   290→| `참고` | `note` |
+   291→| `비고` | `remark` |
+   292→
+   293→- [ ] **Step 1: 테스트 파일 작성**
+   294→
+   295→`__tests__/api/to-haejung-upload.test.ts`:
+   296→
+   297→```typescript
+   298→/**
+   299→ * @jest-environment node
+   300→ */
+   301→
+   302→import { NextRequest } from 'next/server';
+   303→
+   304→const mockRun = jest.fn();
+   305→const mockAll = jest.fn().mockReturnValue([]);
+   306→const mockPrepare = jest.fn().mockReturnValue({ run: mockRun, all: mockAll });
+   307→const mockTransaction = jest.fn().mockImplementation((fn: () => unknown) => fn);
+   308→const mockExec = jest.fn();
+   309→const mockPragma = jest.fn();
+   310→
+   311→jest.mock('better-sqlite3', () => {
+   312→  const MockDB = jest.fn().mockImplementation(() => ({
+   313→    prepare: mockPrepare,
+   314→    transaction: mockTransaction,
+   315→    exec: mockExec,
+   316→    pragma: mockPragma,
+   317→  }));
+   318→  return MockDB;
+   319→});
+   320→
+   321→jest.mock('fs', () => ({
+   322→  existsSync: jest.fn().mockReturnValue(true),
+   323→  mkdirSync: jest.fn(),
+   324→  readFileSync: jest.fn().mockReturnValue(''),
+   325→}));
+   326→
+   327→jest.mock('xlsx', () => ({
+   328→  read: jest.fn().mockReturnValue({
+   329→    SheetNames: ['Sheet1'],
+   330→    Sheets: { Sheet1: {} },
+   331→  }),
+   332→  utils: {
+   333→    sheet_to_json: jest.fn().mockReturnValue([
+   334→      { 소속대학: '문과대학', 구분: '국어국문학과' },
+   335→    ]),
+   336→  },
+   337→}));
+   338→
+   339→import { POST } from '@/app/api/to-haejung/upload/route';
+   340→
+   341→async function makeUploadRequest(fileBuffer: Buffer, filename = 'test.xlsx') {
+   342→  const formData = new FormData();
+   343→  const blob = new Blob([fileBuffer], {
+   344→    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+   345→  });
+   346→  formData.append('file', blob, filename);
+   347→  return new NextRequest('http://localhost/api/to-haejung/upload', {
+   348→    method: 'POST',
+   349→    body: formData,
+   350→  });
+   351→}
+   352→
+   353→describe('POST /api/to-haejung/upload', () => {
+   354→  beforeEach(() => jest.clearAllMocks());
+   355→
+   356→  it('returns 400 when no file provided', async () => {
+   357→    const formData = new FormData();
+   358→    const req = new NextRequest('http://localhost/api/to-haejung/upload', {
+   359→      method: 'POST',
+   360→      body: formData,
+   361→    });
+   362→    const res = await POST(req);
+   363→    expect(res.status).toBe(400);
+   364→  });
+   365→
+   366→  it('returns 400 for non-xlsx file', async () => {
+   367→    const formData = new FormData();
+   368→    const blob = new Blob(['data'], { type: 'text/plain' });
+   369→    formData.append('file', blob, 'test.csv');
+   370→    const req = new NextRequest('http://localhost/api/to-haejung/upload', {
+   371→      method: 'POST',
+   372→      body: formData,
+   373→    });
+   374→    const res = await POST(req);
+   375→    expect(res.status).toBe(400);
+   376→  });
+   377→
+   378→  it('returns 400 for .xlsx extension with wrong MIME type', async () => {
+   379→    // 확장자는 .xlsx지만 MIME이 text/plain → 서버는 둘 다 요구하므로 400
+   380→    const formData = new FormData();
+   381→    const blob = new Blob(['data'], { type: 'text/plain' });
+   382→    formData.append('file', blob, 'malicious.xlsx');
+   383→    const req = new NextRequest('http://localhost/api/to-haejung/upload', {
+   384→      method: 'POST',
+   385→      body: formData,
+   386→    });
+   387→    const res = await POST(req);
+   388→    expect(res.status).toBe(400);
+   389→  });
+   390→
+   391→  it('returns 400 when required columns are missing', async () => {
+   392→    // sheet_to_json이 소속대학/구분 없는 rows 반환
+   393→    const xlsx = jest.requireMock('xlsx');
+   394→    xlsx.utils.sheet_to_json.mockReturnValueOnce([{ 다른컬럼: '값' }]);
+   395→    const req = await makeUploadRequest(Buffer.from('fake-xlsx'));
+   396→    const res = await POST(req);
+   397→    expect(res.status).toBe(400);
+   398→  });
+   399→
+   400→  it('returns 400 when file exceeds 10MB', async () => {
+   401→    const bigBuffer = Buffer.alloc(11 * 1024 * 1024); // 11MB
+   402→    const req = await makeUploadRequest(bigBuffer);
+   403→    const res = await POST(req);
+   404→    expect(res.status).toBe(400);
+   405→  });
+   406→
+   407→  it('returns 200 and count on valid xlsx', async () => {
+   408→    const req = await makeUploadRequest(Buffer.from('fake-xlsx'));
+   409→    const res = await POST(req);
+   410→    expect(res.status).toBe(200);
+   411→    const data = await res.json();
+   412→    expect(data.ok).toBe(true);
+   413→    expect(typeof data.count).toBe('number');
+   414→  });
+   415→});
+   416→```
+   417→
+   418→- [ ] **Step 2: 테스트 실행 → FAIL 확인**
+   419→
+   420→```bash
+   421→npx jest __tests__/api/to-haejung-upload.test.ts --no-coverage
+   422→```
+   423→
+   424→Expected: FAIL (모듈 없음)
+   425→
+   426→- [ ] **Step 3: `app/api/to-haejung/upload/route.ts` 구현**
+   427→
+   428→```typescript
+   429→export const runtime = 'nodejs';
+   430→
+   431→import { NextRequest, NextResponse } from 'next/server';
+   432→import * as XLSX from 'xlsx';
+   433→import getDb from '@/lib/db';
+   434→
+   435→const COLUMN_MAP: Record<string, string> = {
+   436→  '소속대학': 'college',
+   437→  '구분': 'department',
+   438→  '(가+나+다)\n적용 시\n교원확보율': 'confirm_rate_26',
+   439→  '26.3월\n교원합계\n(가+나+다)': 'faculty_count_26',
+   440→  '신규임용자_리스트': 'new_hires',
+   441→  '퇴직자_리스트': 'retirees',
+   442→  '정년퇴직_리스트': 'upcoming_retirements',
+   443→  'TO요청_일반': 'req_general',
+   444→  'TO요청_전담': 'req_dedicated',
+   445→  'TO요청_외': 'req_external',
+   446→  'TO요청_계': 'req_total',
+   447→  '초빙분야_리스트': 'invitation_field',
+   448→  '학과요청사유_리스트': 'request_reason',
+   449→  'TO배정_일반': 'to_general',
+   450→  'TO배정_전담': 'to_dedicated',
+   451→  'TO배정_외': 'to_external',
+   452→  'TO배정_계': 'to_total',
+   453→  '첨단TO_일반': 'adv_general',
+   454→  '첨단TO_전담': 'adv_dedicated',
+   455→  '첨단TO_외': 'adv_external',
+   456→  '첨단TO_계': 'adv_total',
+   457→  '총장TO_일반': 'pres_general',
+   458→  '총장TO_전담': 'pres_dedicated',
+   459→  '총장TO_외': 'pres_external',
+   460→  '총장TO_계': 'pres_total',
+   461→  '배정사유': 'assign_reason',
+   462→  '본부배정의견': 'hq_opinion',
+   463→  'BIGs': 'bigs',
+   464→  'TO신청25년': 'to_req_25',
+   465→  'TO배정25년': 'to_assign_25',
+   466→  '채용결과_정시': 'hire_regular_25',
+   467→  '채용결과_상시': 'hire_rolling_25',
+   468→  '채용결과_합계': 'hire_total_25',
+   469→  '참고': 'note',
+   470→  '비고': 'remark',
+   471→};
+   472→
+   473→const DB_COLUMNS = Object.values(COLUMN_MAP).filter((v, i, a) => a.indexOf(v) === i);
+   474→
+   475→function toText(val: unknown): string | null {
+   476→  if (val === null || val === undefined) return null;
+   477→  const s = String(val).trim();
+   478→  return s === '' ? null : s;
+   479→}
+   480→
+   481→export async function POST(req: NextRequest): Promise<NextResponse> {
+   482→  let formData: FormData;
+   483→  try {
+   484→    formData = await req.formData();
+   485→  } catch {
+   486→    return NextResponse.json({ error: '요청 파싱 실패' }, { status: 400 });
+   487→  }
+   488→
+   489→  const file = formData.get('file') as File | null;
+   490→  if (!file) {
+   491→    return NextResponse.json({ error: '파일이 없습니다' }, { status: 400 });
+   492→  }
+   493→
+   494→  // 파일 크기 10MB 제한
+   495→  if (file.size > 10 * 1024 * 1024) {
+   496→    return NextResponse.json({ error: '파일 크기가 10MB를 초과합니다' }, { status: 400 });
+   497→  }
+   498→
+   499→  // 확장자 AND MIME 검증 (둘 다 만족해야 통과 — 우회 방지)
+   500→  const isXlsx =
+   501→    file.name.toLowerCase().endsWith('.xlsx') &&
+   502→    file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+   503→  if (!isXlsx) {
+   504→    return NextResponse.json({ error: '.xlsx 파일만 업로드 가능합니다' }, { status: 400 });
+   505→  }
+   506→
+   507→  try {
+   508→    const buffer = Buffer.from(await file.arrayBuffer());
+   509→    const wb = XLSX.read(buffer, { type: 'buffer' });
+   510→    const ws = wb.Sheets[wb.SheetNames[0]];
+   511→    const rawRows = XLSX.utils.sheet_to_json<Record<string, unknown>>(ws, { defval: null });
+   512→
+   513→    // 필수 컬럼 검증
+   514→    if (rawRows.length > 0) {
+   515→      const headers = Object.keys(rawRows[0]);
+   516→      if (!headers.includes('소속대학') || !headers.includes('구분')) {
+   517→        return NextResponse.json(
+   518→          { error: '필수 컬럼(소속대학, 구분)이 없습니다. RAW 데이터 형식의 파일을 업로드하세요.' },
+   519→          { status: 400 }
+   520→        );
+   521→      }
+   522→    }
+   523→
+   524→    // 매핑 + 중복 제거 (college, department 기준)
+   525→    const seen = new Set<string>();
+   526→    const rows: Record<string, string | null>[] = [];
+   527→    for (const raw of rawRows) {
+   528→      const row: Record<string, string | null> = {};
+   529→      for (const [excelHeader, dbCol] of Object.entries(COLUMN_MAP)) {
+   530→        row[dbCol] = toText(raw[excelHeader]);
+   531→      }
+   532→      // department fallback
+   533→      if (!row['department']) {
+   534→        row['department'] = toText(raw['학과명']);
+   535→      }
+   536→      const key = `${row['college']}||${row['department']}`;
+   537→      if (!seen.has(key)) {
+   538→        seen.add(key);
+   539→        rows.push(row);
+   540→      }
+   541→    }
+   542→
+   543→    const db = getDb();
+   544→    const insertCols = DB_COLUMNS.join(', ');
+   545→    const placeholders = DB_COLUMNS.map(() => '?').join(', ');
+   546→    const insertStmt = db.prepare(
+   547→      `INSERT INTO to_haejung (${insertCols}) VALUES (${placeholders})`
+   548→    );
+   549→
+   550→    const replaceAll = db.transaction(() => {
+   551→      db.prepare('DELETE FROM to_haejung').run();
+   552→      for (const row of rows) {
+   553→        const values = DB_COLUMNS.map((col) => row[col] ?? null);
+   554→        insertStmt.run(values);
+   555→      }
+   556→    });
+   557→    replaceAll();
+   558→
+   559→    return NextResponse.json({ ok: true, count: rows.length });
+   560→  } catch (err) {
+   561→    return NextResponse.json(
+   562→      { error: err instanceof Error ? err.message : '처리 실패' },
+   563→      { status: 500 }
+   564→    );
+   565→  }
+   566→}
+   567→```
+   568→
+   569→- [ ] **Step 4: 테스트 재실행 → PASS 확인**
+   570→
+   571→```bash
+   572→npx jest __tests__/api/to-haejung-upload.test.ts --no-coverage
+   573→```
+   574→
+   575→Expected: PASS
+   576→
+   577→- [ ] **Step 5: 커밋**
+   578→
+   579→```bash
+   580→git add app/api/to-haejung/upload/route.ts __tests__/api/to-haejung-upload.test.ts
+   581→git commit -m "feat: POST /api/to-haejung/upload - Excel import"
+   582→```
+   583→
+   584→---
+   585→
+   586→## Chunk 3: PATCH API (인라인 편집)
+   587→
+   588→### Task 5: PATCH `/api/to-haejung/[id]` 라우트
+   589→
+   590→**Files:**
+   591→- Create: `app/api/to-haejung/[id]/route.ts`
+   592→- Create: `__tests__/api/to-haejung-patch.test.ts`
+   593→
+   594→- [ ] **Step 1: 테스트 파일 작성**
+   595→
+   596→`__tests__/api/to-haejung-patch.test.ts`:
+   597→
+   598→```typescript
+   599→/**
+   600→ * @jest-environment node
+   601→ */
+   602→
+   603→import { NextRequest } from 'next/server';
+   604→
+   605→const mockRun = jest.fn().mockReturnValue({ changes: 1 });
+   606→const mockGet = jest.fn().mockReturnValue({ id: 1, college: '문과대학' });
+   607→const mockPrepare = jest.fn().mockReturnValue({ run: mockRun, get: mockGet });
+   608→const mockExec = jest.fn();
+   609→const mockPragma = jest.fn();
+   610→
+   611→jest.mock('better-sqlite3', () => {
+   612→  const MockDB = jest.fn().mockImplementation(() => ({
+   613→    prepare: mockPrepare,
+   614→    exec: mockExec,
+   615→    pragma: mockPragma,
+   616→  }));
+   617→  return MockDB;
+   618→});
+   619→
+   620→jest.mock('fs', () => ({
+   621→  existsSync: jest.fn().mockReturnValue(true),
+   622→  mkdirSync: jest.fn(),
+   623→  readFileSync: jest.fn().mockReturnValue(''),
+   624→}));
+   625→
+   626→import { PATCH } from '@/app/api/to-haejung/[id]/route';
+   627→
+   628→function makeRequest(body: unknown, id = '1') {
+   629→  return new NextRequest(`http://localhost/api/to-haejung/${id}`, {
+   630→    method: 'PATCH',
+   631→    headers: { 'Content-Type': 'application/json' },
+   632→    body: JSON.stringify(body),
+   633→  });
+   634→}
+   635→
+   636→describe('PATCH /api/to-haejung/[id]', () => {
+   637→  beforeEach(() => jest.clearAllMocks());
+   638→
+   639→  it('returns 200 on valid field update', async () => {
+   640→    const req = makeRequest({ college: '공과대학' });
+   641→    const res = await PATCH(req, { params: { id: '1' } });
+   642→    expect(res.status).toBe(200);
+   643→    const data = await res.json();
+   644→    expect(data.ok).toBe(true);
+   645→  });
+   646→
+   647→  it('returns 400 for unknown field (whitelist enforcement)', async () => {
+   648→    // __proto__는 JSON.stringify 시 사라지므로 명시적 미허용 필드명 사용
+   649→    const req = makeRequest({ malicious_field: 'value' });
+   650→    const res = await PATCH(req, { params: { id: '1' } });
+   651→    expect(res.status).toBe(400);
+   652→  });
+   653→
+   654→  it('returns 400 for non-integer id', async () => {
+   655→    const req = makeRequest({ college: '공과대학' }, 'abc');
+   656→    const res = await PATCH(req, { params: { id: 'abc' } });
+   657→    expect(res.status).toBe(400);
+   658→  });
+   659→
+   660→  it('returns 404 when id does not exist', async () => {
+   661→    mockRun.mockReturnValueOnce({ changes: 0 });
+   662→    const req = makeRequest({ college: '공과대학' }, '999');
+   663→    const res = await PATCH(req, { params: { id: '999' } });
+   664→    expect(res.status).toBe(404);
+   665→  });
+   666→
+   667→  it('returns 400 for empty body', async () => {
+   668→    const req = makeRequest({});
+   669→    const res = await PATCH(req, { params: { id: '1' } });
+   670→    expect(res.status).toBe(400);
+   671→  });
+   672→});
+   673→```
+   674→
+   675→- [ ] **Step 2: 테스트 실행 → FAIL 확인**
+   676→
+   677→```bash
+   678→npx jest __tests__/api/to-haejung-patch.test.ts --no-coverage
+   679→```
+   680→
+   681→Expected: FAIL (모듈 없음)
+   682→
+   683→- [ ] **Step 3: `app/api/to-haejung/[id]/route.ts` 구현**
+   684→
+   685→```typescript
+   686→import { NextRequest, NextResponse } from 'next/server';
+   687→import getDb from '@/lib/db';
+   688→
+   689→// 화이트리스트: SQL 인젝션 방지
+   690→const ALLOWED_FIELDS = new Set([
+   691→  'college', 'department', 'confirm_rate_26', 'faculty_count_26',
+   692→  'new_hires', 'retirees', 'upcoming_retirements',
+   693→  'req_general', 'req_dedicated', 'req_external', 'req_total',
+   694→  'invitation_field', 'request_reason',
+   695→  'to_general', 'to_dedicated', 'to_external', 'to_total',
+   696→  'adv_general', 'adv_dedicated', 'adv_external', 'adv_total',
+   697→  'pres_general', 'pres_dedicated', 'pres_external', 'pres_total',
+   698→  'assign_reason', 'hq_opinion', 'bigs',
+   699→  'to_req_25', 'to_assign_25',
+   700→  'hire_regular_25', 'hire_rolling_25', 'hire_total_25',
+   701→  'note', 'remark',
+   702→]);
+   703→
+   704→export async function PATCH(
+   705→  req: NextRequest,
+   706→  { params }: { params: { id: string } }
+   707→): Promise<NextResponse> {
+   708→  const id = Number(params.id);
+   709→  if (!Number.isInteger(id) || id <= 0) {
+   710→    return NextResponse.json({ error: '잘못된 ID' }, { status: 400 });
+   711→  }
+   712→
+   713→  let body: Record<string, unknown>;
+   714→  try {
+   715→    body = await req.json();
+   716→  } catch {
+   717→    return NextResponse.json({ error: '요청 파싱 실패' }, { status: 400 });
+   718→  }
+   719→
+   720→  const entries = Object.entries(body);
+   721→  if (entries.length === 0) {
+   722→    return NextResponse.json({ error: '수정할 필드가 없습니다' }, { status: 400 });
+   723→  }
+   724→
+   725→  // 화이트리스트 검증
+   726→  for (const [field] of entries) {
+   727→    if (!ALLOWED_FIELDS.has(field)) {
+   728→      return NextResponse.json({ error: `허용되지 않는 필드: ${field}` }, { status: 400 });
+   729→    }
+   730→  }
+   731→
+   732→  const setClauses = entries.map(([field]) => `${field} = ?`).join(', ');
+   733→  const values = entries.map(([, val]) => (val === undefined ? null : String(val)));
+   734→
+   735→  try {
+   736→    const db = getDb();
+   737→    const result = db
+   738→      .prepare(`UPDATE to_haejung SET ${setClauses}, updated_at = datetime('now') WHERE id = ?`)
+   739→      .run([...values, id]);
+   740→
+   741→    if (result.changes === 0) {
+   742→      return NextResponse.json({ error: '해당 ID가 없습니다' }, { status: 404 });
+   743→    }
+   744→    return NextResponse.json({ ok: true });
+   745→  } catch (err) {
+   746→    return NextResponse.json(
+   747→      { error: err instanceof Error ? err.message : '수정 실패' },
+   748→      { status: 500 }
+   749→    );
+   750→  }
+   751→}
+   752→```
+   753→
+   754→- [ ] **Step 4: 테스트 재실행 → PASS 확인**
+   755→
+   756→```bash
+   757→npx jest __tests__/api/to-haejung-patch.test.ts --no-coverage
+   758→```
+   759→
+   760→Expected: PASS
+   761→
+   762→- [ ] **Step 5: 커밋**
+   763→
+   764→```bash
+   765→git add app/api/to-haejung/[id]/route.ts __tests__/api/to-haejung-patch.test.ts
+   766→git commit -m "feat: PATCH /api/to-haejung/[id] - inline edit"
+   767→```
+   768→
+   769→---
+   770→
+   771→## Chunk 4: TOHaejungTable 컴포넌트
+   772→
+   773→### Task 6: `TOHaejungTable.tsx` 구현
+   774→
+   775→**Files:**
+   776→- Create: `components/TOHaejungTable.tsx`
+   777→- Create: `__tests__/components/TOHaejungTable.test.tsx`
+   778→
+   779→이 컴포넌트는 두 가지 모드를 갖는다:
+   780→- `editable={false}` (기본): 읽기 전용 표
+   781→- `editable={true}`: 셀 더블클릭 → input 전환 → Enter/blur → `onSave` 호출
+   782→
+   783→헤더 구조 (2단, colspan/rowspan):
+   784→
+   785→```
+   786→[소속대학] [학과명] [교원확보율 ─┬─확보율 ─┬─교원수] [신규임용자] [퇴직자] [정년퇴직]
+   787→                                [요청 ─┬─일반─┬─전담─┬─外─┬─계] [초빙분야] [학과요청사유]
+   788→                                [일반TO배정 ─┬─일반─...─계] [첨단TO ─┬─...─계] [총장TO ─┬─...─계]
+   789→                                [배정사유] [본부배정의견] [BIGs]
+   790→                                [25년TO신청] [25년TO배정] [25년채용결과 ─┬─정시─┬─상시─┬─합계]
+   791→                                [참고] [비고]
+   792→```
+   793→
+   794→- [ ] **Step 1: 테스트 파일 작성**
+   795→
+   796→`__tests__/components/TOHaejungTable.test.tsx`:
+   797→
+   798→```typescript
+   799→import React from 'react';
+   800→import { render, screen, fireEvent } from '@testing-library/react';
+   801→import TOHaejungTable from '@/components/TOHaejungTable';
+   802→import type { ToHaejungRow } from '@/lib/types';
+   803→
+   804→const mockRows: ToHaejungRow[] = [
+   805→  {
+   806→    id: 1,
+   807→    college: '문과대학',
+   808→    department: '국어국문학과',
+   809→    confirm_rate_26: '62.1%',
+   810→    faculty_count_26: '14',
+   811→    new_hires: '이혜령',
+   812→    retirees: null,
+   813→    upcoming_retirements: '권인한, 정우택',
+   814→    req_general: '2',
+   815→    req_dedicated: null,
+   816→    req_external: null,
+   817→    req_total: '2',
+   818→    invitation_field: '디지털인문학',
+   819→    request_reason: 'AI 시대 대응',
+   820→    to_general: '1',
+   821→    to_dedicated: null,
+   822→    to_external: null,
+   823→    to_total: '1',
+   824→    adv_general: null,
+   825→    adv_dedicated: null,
+   826→    adv_external: null,
+   827→    adv_total: null,
+   828→    pres_general: null,
+   829→    pres_dedicated: null,
+   830→    pres_external: null,
+   831→    pres_total: null,
+   832→    assign_reason: null,
+   833→    hq_opinion: '미참여',
+   834→    bigs: '미참여',
+   835→    to_req_25: '2',
+   836→    to_assign_25: '1',
+   837→    hire_regular_25: '0',
+   838→    hire_rolling_25: '0',
+   839→    hire_total_25: '0',
+   840→    note: null,
+   841→    remark: null,
+   842→    updated_at: null,
+   843→  },
+   844→];
+   845→
+   846→describe('TOHaejungTable', () => {
+   847→  it('renders table with row data', () => {
+   848→    render(<TOHaejungTable rows={mockRows} />);
+   849→    expect(screen.getByText('국어국문학과')).toBeInTheDocument();
+   850→    expect(screen.getByText('문과대학')).toBeInTheDocument();
+   851→  });
+   852→
+   853→  it('shows all column group headers', () => {
+   854→    render(<TOHaejungTable rows={mockRows} />);
+   855→    expect(screen.getByText('소속대학')).toBeInTheDocument();
+   856→    expect(screen.getByText('학과명')).toBeInTheDocument();
+   857→    expect(screen.getByText(/일반TO 배정/)).toBeInTheDocument();
+   858→  });
+   859→
+   860→  it('renders empty state when no rows', () => {
+   861→    render(<TOHaejungTable rows={[]} />);
+   862→    expect(screen.getByText(/데이터가 없습니다/)).toBeInTheDocument();
+   863→  });
+   864→
+   865→  it('calls onSave on cell double-click and Enter in editable mode', async () => {
+   866→    const onSave = jest.fn().mockResolvedValue(undefined);
+   867→    render(<TOHaejungTable rows={mockRows} editable onSave={onSave} />);
+   868→    const cell = screen.getByText('국어국문학과');
+   869→    fireEvent.doubleClick(cell);
+   870→    const input = screen.getByDisplayValue('국어국문학과');
+   871→    fireEvent.change(input, { target: { value: '새학과명' } });
+   872→    fireEvent.keyDown(input, { key: 'Enter' });
+   873→    expect(onSave).toHaveBeenCalledWith(1, { department: '새학과명' });
+   874→  });
+   875→});
+   876→```
+   877→
+   878→- [ ] **Step 2: 테스트 실행 → FAIL 확인**
+   879→
+   880→```bash
+   881→npx jest __tests__/components/TOHaejungTable.test.tsx --no-coverage
+   882→```
+   883→
+   884→Expected: FAIL
+   885→
+   886→- [ ] **Step 3: `components/TOHaejungTable.tsx` 구현**
+   887→
+   888→```tsx
+   889→'use client';
+   890→
+   891→import React, { useState } from 'react';
+   892→import type { ToHaejungRow } from '@/lib/types';
+   893→
+   894→interface Props {
+   895→  rows: ToHaejungRow[];
+   896→  editable?: boolean;
+   897→  onSave?: (id: number, fields: Record<string, string>) => Promise<void>;
+   898→}
+   899→
+   900→// 긴 텍스트 컬럼 목록
+   901→const LONG_TEXT_COLS = new Set([
+   902→  'invitation_field', 'request_reason', 'assign_reason', 'hq_opinion', 'note', 'remark',
+   903→]);
+   904→
+   905→// 편집 가능한 셀 컴포넌트 (TOHaejungTable 밖에 module-level로 정의 — hooks 안정성 보장)
+   906→function EditableCell({
+   907→  rowId,
+   908→  field,
+   909→  value,
+   910→  onSave,
+   911→}: {
+   912→  rowId: number;
+   913→  field: string;
+   914→  value: string | null;
+   915→  onSave?: (id: number, fields: Record<string, string>) => Promise<void>;
+   916→}) {
+   917→  const [editing, setEditing] = useState(false);
+   918→  const [draft, setDraft] = useState(value ?? '');
+   919→  const [dirty, setDirty] = useState(false);  // 변경됐지만 아직 저장 전
+   920→  const [saving, setSaving] = useState(false);
+   921→  const [saved, setSaved] = useState(false);
+   922→  const isLong = LONG_TEXT_COLS.has(field);
+   923→
+   924→  const commit = async () => {
+   925→    if (!dirty || !onSave) {
+   926→      setEditing(false);
+   927→      setDirty(false);
+   928→      return;
+   929→    }
+   930→    setSaving(true);
+   931→    await onSave(rowId, { [field]: draft });
+   932→    setSaving(false);
+   933→    setDirty(false);
+   934→    setSaved(true);
+   935→    setEditing(false);
+   936→    setTimeout(() => setSaved(false), 500);
+   937→  };
+   938→
+   939→  if (editing) {
+   940→    const commonProps = {
+   941→      value: draft,
+   942→      onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+   943→        setDraft(e.target.value);
+   944→        setDirty(e.target.value !== (value ?? ''));
+   945→      },
+   946→      onBlur: commit,
+   947→      autoFocus: true,
+   948→      className: 'w-full border border-blue-400 rounded px-1 text-xs bg-yellow-50',
+   949→    };
+   950→    return isLong ? (
+   951→      <textarea
+   952→        {...commonProps}
+   953→        onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); commit(); } }}
+   954→        rows={3}
+   955→      />
+   956→    ) : (
+   957→      <input
+   958→        {...commonProps}
+   959→        onKeyDown={(e) => { if (e.key === 'Enter') commit(); }}
+   960→        type="text"
+   961→      />
+   962→    );
+   963→  }
+   964→
+   965→  const displayVal = value ?? '';
+   966→  // 저장 전 변경된 셀: 노란 배경 / 저장 완료: 초록 배경
+   967→  const bgClass = saved ? 'bg-green-100' : dirty ? 'bg-yellow-100' : '';
+   968→
+   969→  return (
+   970→    <div
+   971→      onDoubleClick={() => { setEditing(true); setDraft(value ?? ''); setDirty(false); }}
+   972→      className={`cursor-default select-none ${bgClass} ${saving ? 'opacity-50' : ''} ${
+   973→        isLong ? 'max-w-[160px] truncate overflow-hidden' : ''
+   974→      }`}
+   975→      title={isLong ? displayVal : undefined}
+   976→    >
+   977→      {displayVal || <span className="text-gray-300">—</span>}
+   978→    </div>
+   979→  );
+   980→}
+   981→
+   982→// 읽기 전용 셀
+   983→function ReadCell({ value, field }: { value: string | null; field: string }) {
+   984→  const isLong = LONG_TEXT_COLS.has(field);
+   985→  const displayVal = value ?? '';
+   986→  return (
+   987→    <div
+   988→      className={isLong ? 'max-w-[160px] truncate overflow-hidden' : ''}
+   989→      title={isLong ? displayVal : undefined}
+   990→    >
+   991→      {displayVal || <span className="text-gray-300">—</span>}
+   992→    </div>
+   993→  );
+   994→}
+   995→
+   996→export default function TOHaejungTable({ rows, editable = false, onSave }: Props) {
+   997→  // Cell을 render 함수 내부에 정의하지 않고 인라인 삼항으로 처리
+   998→  // (내부 정의 시 매 render마다 새 컴포넌트 타입이 생성되어 EditableCell의 hooks 상태가 초기화됨)
+   999→
+  1000→  return (
+  1001→    <div className="overflow-x-auto w-full">
+  1002→      <table className="min-w-max border-collapse text-xs whitespace-nowrap">
+  1003→        <thead>
+  1004→          {/* 1단 헤더 (그룹) */}
+  1005→          <tr className="bg-blue-700 text-white">
+  1006→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">소속대학</th>
+  1007→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">학과명</th>
+  1008→            <th colSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">교원확보율<br/>(2026.3.1기준)</th>
+  1009→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">신규임용자<br/>('23~'26)</th>
+  1010→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">퇴직자<br/>('23~'25)</th>
+  1011→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">정년퇴직예정<br/>('25~'28)</th>
+  1012→            <th colSpan={4} className="border border-blue-600 px-2 py-1.5 text-center">요청</th>
+  1013→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">초빙분야</th>
+  1014→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">학과요청사유</th>
+  1015→            <th colSpan={4} className="border border-blue-600 px-2 py-1.5 text-center">일반TO 배정(안)</th>
+  1016→            <th colSpan={4} className="border border-blue-600 px-2 py-1.5 text-center">첨단학과신설<br/>특별TO 배정(안)</th>
+  1017→            <th colSpan={4} className="border border-blue-600 px-2 py-1.5 text-center">총장TO 배정(안)</th>
+  1018→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">배정사유</th>
+  1019→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">본부 배정의견</th>
+  1020→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">BIGs</th>
+  1021→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">25년<br/>TO신청</th>
+  1022→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">25년<br/>TO배정</th>
+  1023→            <th colSpan={3} className="border border-blue-600 px-2 py-1.5 text-center">25년 채용결과</th>
+  1024→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">참고</th>
+  1025→            <th rowSpan={2} className="border border-blue-600 px-2 py-1.5 text-center">비고</th>
+  1026→          </tr>
+  1027→          {/* 2단 헤더 (서브) */}
+  1028→          <tr className="bg-blue-600 text-white">
+  1029→            <th className="border border-blue-500 px-2 py-1 text-center">확보율</th>
+  1030→            <th className="border border-blue-500 px-2 py-1 text-center">교원수</th>
+  1031→            <th className="border border-blue-500 px-2 py-1 text-center">일반</th>
+  1032→            <th className="border border-blue-500 px-2 py-1 text-center">전담</th>
+  1033→            <th className="border border-blue-500 px-2 py-1 text-center">外</th>
+  1034→            <th className="border border-blue-500 px-2 py-1 text-center">계</th>
+  1035→            <th className="border border-blue-500 px-2 py-1 text-center">일반</th>
+  1036→            <th className="border border-blue-500 px-2 py-1 text-center">전담</th>
+  1037→            <th className="border border-blue-500 px-2 py-1 text-center">外</th>
+  1038→            <th className="border border-blue-500 px-2 py-1 text-center">계</th>
+  1039→            <th className="border border-blue-500 px-2 py-1 text-center">일반</th>
+  1040→            <th className="border border-blue-500 px-2 py-1 text-center">전담</th>
+  1041→            <th className="border border-blue-500 px-2 py-1 text-center">外</th>
+  1042→            <th className="border border-blue-500 px-2 py-1 text-center">계</th>
+  1043→            <th className="border border-blue-500 px-2 py-1 text-center">일반</th>
+  1044→            <th className="border border-blue-500 px-2 py-1 text-center">전담</th>
+  1045→            <th className="border border-blue-500 px-2 py-1 text-center">外</th>
+  1046→            <th className="border border-blue-500 px-2 py-1 text-center">계</th>
+  1047→            <th className="border border-blue-500 px-2 py-1 text-center">정시</th>
+  1048→            <th className="border border-blue-500 px-2 py-1 text-center">상시</th>
+  1049→            <th className="border border-blue-500 px-2 py-1 text-center">합계</th>
+  1050→          </tr>
+  1051→        </thead>
+  1052→        <tbody>
+  1053→          {rows.length === 0 ? (
+  1054→            <tr>
+  1055→              <td colSpan={35} className="px-4 py-8 text-center text-gray-400 border border-gray-200">
+  1056→                데이터가 없습니다. 관리자 페이지에서 Excel을 업로드하세요.
+  1057→              </td>
+  1058→            </tr>
+  1059→          ) : (
+  1060→            rows.map((row, i) => (
+  1061→              <tr
+  1062→                key={row.id}
+  1063→                className={i % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50'}
+  1064→              >
+  1065→                {(
+  1066→                  [
+  1067→                    'college', 'department', 'confirm_rate_26', 'faculty_count_26',
+  1068→                    'new_hires', 'retirees', 'upcoming_retirements',
+  1069→                    'req_general', 'req_dedicated', 'req_external', 'req_total',
+  1070→                    'invitation_field', 'request_reason',
+  1071→                    'to_general', 'to_dedicated', 'to_external', 'to_total',
+  1072→                    'adv_general', 'adv_dedicated', 'adv_external', 'adv_total',
+  1073→                    'pres_general', 'pres_dedicated', 'pres_external', 'pres_total',
+  1074→                    'assign_reason', 'hq_opinion', 'bigs',
+  1075→                    'to_req_25', 'to_assign_25',
+  1076→                    'hire_regular_25', 'hire_rolling_25', 'hire_total_25',
+  1077→                    'note', 'remark',
+  1078→                  ] as (keyof ToHaejungRow)[]
+  1079→                ).map((field) => (
+  1080→                  <td
+  1081→                    key={field}
+  1082→                    className="border border-gray-200 px-2 py-1.5 text-center align-middle"
+  1083→                  >
+  1084→                    {editable ? (
+  1085→                      <EditableCell
+  1086→                        rowId={row.id}
+  1087→                        field={field}
+  1088→                        value={row[field] as string | null}
+  1089→                        onSave={onSave}
+  1090→                      />
+  1091→                    ) : (
+  1092→                      <ReadCell value={row[field] as string | null} field={field} />
+  1093→                    )}
+  1094→                  </td>
+  1095→                ))}
+  1096→              </tr>
+  1097→            ))
+  1098→          )}
+  1099→        </tbody>
+  1100→      </table>
+  1101→    </div>
+  1102→  );
+  1103→}
+  1104→```
+  1105→
+  1106→- [ ] **Step 4: 테스트 재실행 → PASS 확인**
+  1107→
+  1108→```bash
+  1109→npx jest __tests__/components/TOHaejungTable.test.tsx --no-coverage
+  1110→```
+  1111→
+  1112→Expected: PASS
+  1113→
+  1114→- [ ] **Step 5: 커밋**
+  1115→
+  1116→```bash
+  1117→git add components/TOHaejungTable.tsx __tests__/components/TOHaejungTable.test.tsx
+  1118→git commit -m "feat: TOHaejungTable component with editable mode"
+  1119→```
+  1120→
+  1121→---
+  1122→
+  1123→## Chunk 5: 업로드 컴포넌트 + 관리자 탭
+  1124→
+  1125→### Task 7: `TOHaejungUpload.tsx` 컴포넌트
+  1126→
+  1127→**Files:**
+  1128→- Create: `components/TOHaejungUpload.tsx`
+  1129→
+  1130→```tsx
+  1131→'use client';
+  1132→
+  1133→import React, { useRef, useState } from 'react';
+  1134→
+  1135→interface Props {
+  1136→  onSuccess: () => void;
+  1137→}
+  1138→
+  1139→export default function TOHaejungUpload({ onSuccess }: Props) {
+  1140→  const fileRef = useRef<HTMLInputElement>(null);
+  1141→  const [status, setStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  1142→  const [uploading, setUploading] = useState(false);
+  1143→
+  1144→  const handleUpload = async () => {
+  1145→    const file = fileRef.current?.files?.[0];
+  1146→    if (!file) {
+  1147→      setStatus({ type: 'error', message: '파일을 선택해주세요.' });
+  1148→      return;
+  1149→    }
+  1150→    if (!file.name.endsWith('.xlsx')) {
+  1151→      setStatus({ type: 'error', message: '.xlsx 파일만 업로드 가능합니다.' });
+  1152→      return;
+  1153→    }
+  1154→    const confirmed = window.confirm('기존 데이터가 모두 교체됩니다. 계속하시겠습니까?');
+  1155→    if (!confirmed) return;
+  1156→
+  1157→    setUploading(true);
+  1158→    setStatus(null);
+  1159→    const formData = new FormData();
+  1160→    formData.append('file', file);
+  1161→    try {
+  1162→      const res = await fetch('/api/to-haejung/upload', { method: 'POST', body: formData });
+  1163→      const data = await res.json();
+  1164→      if (!res.ok) throw new Error(data.error ?? '업로드 실패');
+  1165→      setStatus({ type: 'success', message: `${data.count}개 행이 성공적으로 임포트되었습니다.` });
+  1166→      if (fileRef.current) fileRef.current.value = '';
+  1167→      onSuccess();
+  1168→    } catch (err) {
+  1169→      setStatus({ type: 'error', message: err instanceof Error ? err.message : '업로드 실패' });
+  1170→    } finally {
+  1171→      setUploading(false);
+  1172→    }
+  1173→  };
+  1174→
+  1175→  return (
+  1176→    <div className="space-y-3">
+  1177→      <div className="flex items-center gap-3">
+  1178→        <input
+  1179→          ref={fileRef}
+  1180→          type="file"
+  1181→          accept=".xlsx"
+  1182→          className="block text-sm text-gray-600 file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:bg-blue-50 file:text-blue-700 file:cursor-pointer hover:file:bg-blue-100"
+  1183→        />
+  1184→        <button
+  1185→          type="button"
+  1186→          onClick={handleUpload}
+  1187→          disabled={uploading}
+  1188→          className="px-4 py-2 bg-blue-700 text-white text-sm rounded hover:bg-blue-800 disabled:opacity-50"
+  1189→        >
+  1190→          {uploading ? '업로드 중...' : '업로드'}
+  1191→        </button>
+  1192→      </div>
+  1193→      {status && (
+  1194→        <div
+  1195→          className={`rounded p-3 text-sm ${
+  1196→            status.type === 'success'
+  1197→              ? 'bg-green-50 border border-green-200 text-green-800'
+  1198→              : 'bg-red-50 border border-red-200 text-red-700'
+  1199→          }`}
+  1200→        >
+  1201→          {status.message}
+  1202→        </div>
+  1203→      )}
+  1204→    </div>
+  1205→  );
+  1206→}
+  1207→```
+  1208→
+  1209→- [ ] **Step 1: 위 코드로 파일 생성 후 빌드 오류 없는지 확인**
+  1210→
+  1211→```bash
+  1212→npx tsc --noEmit
+  1213→```
+  1214→
+  1215→Expected: 오류 없음
+  1216→
+  1217→---
+  1218→
+  1219→### Task 8: 관리자 페이지 탭 추가 (`app/admin/page.tsx`)
+  1220→
+  1221→**Files:**
+  1222→- Modify: `app/admin/page.tsx`
+  1223→
+  1224→기존 `page.tsx`는 서버 컴포넌트이므로, 탭 상태 관리를 위해 `'use client'`를 추가하고 기존 `AdminDashboard` import와 함께 새 탭 UI를 구성한다.
+  1225→
+  1226→- [ ] **Step 1: `app/admin/page.tsx` 교체**
+  1227→
+  1228→> **참고:** 이 코드에는 `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8` 래퍼가 포함되어 있지 않다. Chunk 6에서 `app/layout.tsx`의 `<main>`을 `w-full`로 변경할 때 이 페이지 최상위 div에 `className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"` 래퍼를 추가해야 한다.
+  1229→
+  1230→```tsx
+  1231→'use client';
+  1232→
+  1233→import React, { useState, useEffect, useCallback } from 'react';
+  1234→import AdminDashboard from '@/components/AdminDashboard';
+  1235→import TOHaejungTable from '@/components/TOHaejungTable';
+  1236→import TOHaejungUpload from '@/components/TOHaejungUpload';
+  1237→import type { ToHaejungRow } from '@/lib/types';
+  1238→
+  1239→type Tab = 'submissions' | 'to-haejung';
+  1240→
+  1241→export default function AdminPage() {
+  1242→  const [tab, setTab] = useState<Tab>('submissions');
+  1243→  const [rows, setRows] = useState<ToHaejungRow[]>([]);
+  1244→  const [loading, setLoading] = useState(false);
+  1245→  const [loadError, setLoadError] = useState<string | null>(null);
+  1246→
+  1247→  const loadRows = useCallback(async () => {
+  1248→    setLoading(true);
+  1249→    setLoadError(null);
+  1250→    try {
+  1251→      const res = await fetch('/api/to-haejung');
+  1252→      if (!res.ok) throw new Error(`서버 오류 (${res.status})`);
+  1253→      setRows(await res.json());
+  1254→    } catch (err) {
+  1255→      setLoadError(err instanceof Error ? err.message : '데이터 로드 실패');
+  1256→    } finally {
+  1257→      setLoading(false);
+  1258→    }
+  1259→  }, []);
+  1260→
+  1261→  useEffect(() => {
+  1262→    if (tab === 'to-haejung') loadRows();
+  1263→  }, [tab, loadRows]);
+  1264→
+  1265→  const handleSave = async (id: number, fields: Record<string, string>) => {
+  1266→    const res = await fetch(`/api/to-haejung/${id}`, {
+  1267→      method: 'PATCH',
+  1268→      headers: { 'Content-Type': 'application/json' },
+  1269→      body: JSON.stringify(fields),
+  1270→    });
+  1271→    if (!res.ok) {
+  1272→      const data = await res.json();
+  1273→      throw new Error(data.error ?? '저장 실패');
+  1274→    }
+  1275→    setRows((prev) => prev.map((r) => (r.id === id ? { ...r, ...fields } : r)));
+  1276→  };
+  1277→
+  1278→  return (
+  1279→    <div>
+  1280→      <div className="mb-6">
+  1281→        <h1 className="text-2xl font-bold text-gray-900">관리자 대시보드</h1>
+  1282→      </div>
+  1283→
+  1284→      {/* 탭 */}
+  1285→      <div className="flex border-b border-gray-200 mb-6">
+  1286→        <button
+  1287→          type="button"
+  1288→          onClick={() => setTab('submissions')}
+  1289→          className={`px-5 py-2.5 text-sm font-medium -mb-px border-b-2 transition-colors ${
+  1290→            tab === 'submissions'
+  1291→              ? 'border-blue-700 text-blue-700'
+  1292→              : 'border-transparent text-gray-500 hover:text-gray-700'
+  1293→          }`}
+  1294→        >
+  1295→          제출 현황
+  1296→        </button>
+  1297→        <button
+  1298→          type="button"
+  1299→          onClick={() => setTab('to-haejung')}
+  1300→          className={`px-5 py-2.5 text-sm font-medium -mb-px border-b-2 transition-colors ${
+  1301→            tab === 'to-haejung'
+  1302→              ? 'border-blue-700 text-blue-700'
+  1303→              : 'border-transparent text-gray-500 hover:text-gray-700'
+  1304→          }`}
+  1305→        >
+  1306→          TO 배정 관리
+  1307→        </button>
+  1308→      </div>
+  1309→
+  1310→      {tab === 'submissions' && <AdminDashboard />}
+  1311→
+  1312→      {tab === 'to-haejung' && (
+  1313→        <div className="space-y-6">
+  1314→          {/* 업로드 섹션 */}
+  1315→          <div className="bg-white rounded-lg shadow p-5">
+  1316→            <h2 className="text-base font-semibold text-gray-800 mb-3">Excel 업로드</h2>
+  1317→            <p className="text-xs text-gray-500 mb-3">
+  1318→              RAW 데이터 형식(.xlsx)을 업로드하면 기존 TO 배정 데이터가 전체 교체됩니다.
+  1319→            </p>
+  1320→            <TOHaejungUpload onSuccess={loadRows} />
+  1321→          </div>
+  1322→
+  1323→          {/* 테이블 섹션 */}
+  1324→          <div className="bg-white rounded-lg shadow p-5">
+  1325→            <div className="flex items-center justify-between mb-3">
+  1326→              <h2 className="text-base font-semibold text-gray-800">TO 배정 현황 (편집 가능)</h2>
+  1327→              <p className="text-xs text-gray-400">셀을 더블클릭하면 편집할 수 있습니다</p>
+  1328→            </div>
+  1329→            {loading ? (
+  1330→              <div className="py-8 text-center text-gray-400 text-sm">로딩 중...</div>
+  1331→            ) : loadError ? (
+  1332→              <div className="rounded bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+  1333→                {loadError}
+  1334→              </div>
+  1335→            ) : (
+  1336→              <TOHaejungTable rows={rows} editable onSave={handleSave} />
+  1337→            )}
+  1338→          </div>
+  1339→        </div>
+  1340→      )}
+  1341→    </div>
+  1342→  );
+  1343→}
+  1344→```
+  1345→
+  1346→- [ ] **Step 2: 타입 오류 확인**
+  1347→
+  1348→```bash
+  1349→npx tsc --noEmit
+  1350→```
+  1351→
+  1352→Expected: 오류 없음
+  1353→
+  1354→- [ ] **Step 3: 커밋**
+  1355→
+  1356→```bash
+  1357→git add components/TOHaejungUpload.tsx app/admin/page.tsx
+  1358→git commit -m "feat: TO배정 관리 탭 + Excel 업로드 컴포넌트"
+  1359→```
+  1360→
+  1361→---
+  1362→
+  1363→## Chunk 6: 메인 페이지 + 레이아웃 네비 업데이트
+  1364→
+  1365→### Task 9: 메인 페이지 (`app/page.tsx`) 교체
+  1366→
+  1367→**Files:**
+  1368→- Modify: `app/page.tsx`
+  1369→- Modify: `app/layout.tsx`
+  1370→
+  1371→- [ ] **Step 1: `app/page.tsx` 교체 — 리다이렉트 제거, 대시보드 렌더링**
+  1372→
+  1373→```tsx
+  1374→'use client';
+  1375→
+  1376→import React, { useState, useEffect } from 'react';
+  1377→import TOHaejungTable from '@/components/TOHaejungTable';
+  1378→import type { ToHaejungRow } from '@/lib/types';
+  1379→
+  1380→export default function HomePage() {
+  1381→  const [rows, setRows] = useState<ToHaejungRow[]>([]);
+  1382→  const [loading, setLoading] = useState(true);
+  1383→  const [error, setError] = useState<string | null>(null);
+  1384→
+  1385→  useEffect(() => {
+  1386→    fetch('/api/to-haejung')
+  1387→      .then((r) => {
+  1388→        if (!r.ok) throw new Error(`서버 오류 (${r.status})`);
+  1389→        return r.json();
+  1390→      })
+  1391→      .then(setRows)
+  1392→      .catch((err) => setError(err.message))
+  1393→      .finally(() => setLoading(false));
+  1394→  }, []);
+  1395→
+  1396→  return (
+  1397→    <div className="w-full px-4 py-6">
+  1398→      <div className="mb-5">
+  1399→        <h1 className="text-xl font-bold text-gray-900">2027 TO 배정 현황</h1>
+  1400→        <p className="text-sm text-gray-500 mt-0.5">학과별 교원 TO 배정 현황표</p>
+  1401→      </div>
+  1402→
+  1403→      {loading ? (
+  1404→        <div className="py-12 text-center text-gray-400">데이터를 불러오는 중...</div>
+  1405→      ) : error ? (
+  1406→        <div className="rounded bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+  1407→          {error}
+  1408→        </div>
+  1409→      ) : (
+  1410→        <TOHaejungTable rows={rows} />
+  1411→      )}
+  1412→    </div>
+  1413→  );
+  1414→}
+  1415→```
+  1416→
+  1417→- [ ] **Step 2: `app/layout.tsx` — nav에 "TO 배정 현황" 링크 추가, `<main>` max-w 조건 처리**
+  1418→
+  1419→`<main className="max-w-7xl ...">` → 메인 페이지는 `w-full`이 필요하므로 `<main>`의 `max-w-7xl`을 제거하고 각 하위 페이지가 자체적으로 max-w를 적용하도록 변경.
+  1420→
+  1421→`app/layout.tsx` 수정:
+  1422→- `<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">` → `<main className="w-full">`
+  1423→- `/dean` 페이지(`app/dean/page.tsx`)에 `max-w-3xl mx-auto px-4 py-8` 래퍼 추가
+  1424→- `/admin` 페이지(`app/admin/page.tsx`)의 최상위 div에 `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8` 추가
+  1425→
+  1426→nav 링크 추가:
+  1427→```tsx
+  1428→<Link href="/" className="text-white hover:bg-primary-dark px-3 py-2 rounded-md text-sm font-medium transition-colors">
+  1429→  TO 배정 현황
+  1430→</Link>
+  1431→```
+  1432→
+  1433→- [ ] **Step 3: `/dean` 페이지 레이아웃 래퍼 확인 후 필요시 추가**
+  1434→
+  1435→```bash
+  1436→# dean 페이지에 max-w 래퍼가 없으면 app/dean/page.tsx 최상위에 추가
+  1437→# <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> 로 감싸기
+  1438→```
+  1439→
+  1440→- [ ] **Step 4: 타입 오류 없는지 확인**
+  1441→
+  1442→```bash
+  1443→npx tsc --noEmit
+  1444→```
+  1445→
+  1446→Expected: 오류 없음
+  1447→
+  1448→- [ ] **Step 5: 전체 테스트 통과 확인**
+  1449→
+  1450→```bash
+  1451→npx jest --no-coverage
+  1452→```
+  1453→
+  1454→Expected: PASS (기존 테스트 포함)
+  1455→
+  1456→- [ ] **Step 6: 커밋**
+  1457→
+  1458→```bash
+  1459→git add app/page.tsx app/layout.tsx app/dean/page.tsx
+  1460→git commit -m "feat: 메인 페이지를 TO 배정 대시보드로 교체, nav 업데이트"
+  1461→```
+  1462→
+  1463→---
+  1464→
+  1465→## Chunk 7: 최종 통합 검증
+  1466→
+  1467→### Task 10: 수동 통합 테스트
+  1468→
+  1469→- [ ] **Step 1: 개발 서버 시작 (프로세스 재시작으로 신규 테이블 생성)**
+  1470→
+  1471→```bash
+  1472→npm run dev
+  1473→```
+  1474→
+  1475→- [ ] **Step 2: 메인 페이지 확인 (`http://localhost:3000`)**
+  1476→
+  1477→- 2단 헤더 표 렌더링 확인
+  1478→- "데이터가 없습니다. 관리자 페이지에서 Excel을 업로드하세요." 문구 확인
+  1479→
+  1480→- [ ] **Step 3: 관리자 페이지 Excel 업로드 테스트 (`http://localhost:3000/admin`)**
+  1481→
+  1482→- "TO 배정 관리" 탭 클릭
+  1483→- `reference/통합_RAW_데이터_0310_1023.xlsx` 업로드
+  1484→- 성공 메시지 및 행 수 확인
+  1485→- 테이블에 데이터 출력 확인
+  1486→
+  1487→- [ ] **Step 4: 메인 페이지 데이터 출력 확인**
+  1488→
+  1489→- 업로드 후 `http://localhost:3000` 새로고침
+  1490→- 학과별 데이터가 표 형식으로 출력되는지 확인
+  1491→- 긴 텍스트 셀 hover tooltip 동작 확인
+  1492→
+  1493→- [ ] **Step 5: 인라인 편집 테스트**
+  1494→
+  1495→- 관리자 탭에서 셀 더블클릭 → 입력 전환 확인
+  1496→- 값 변경 후 Enter → 노란 배경 → 초록 배경 → 원복 확인
+  1497→
+  1498→- [ ] **Step 6: 최종 커밋**
+  1499→
+  1500→```bash
+  1501→git add -A
+  1502→git commit -m "feat: TO 배정 대시보드 구현 완료"
+  1503→```
+  1504→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,162 @@
+<h2>레이아웃 구조 & 사이드바 네비게이션</h2>
+<p class="subtitle">역할별 사이드바 메뉴 구성과 전체 레이아웃을 확인하세요</p>
+
+<div class="section">
+  <h3>전체 레이아웃</h3>
+  <div class="mockup">
+    <div class="mockup-header">공통 레이아웃 구조</div>
+    <div class="mockup-body" style="padding:0; display:flex; min-height:400px; background:#fafbfc;">
+      <!-- Sidebar -->
+      <div style="width:240px; background:#ffffff; border-right:1px solid #e5e7eb; padding:20px 0; flex-shrink:0;">
+        <!-- Logo -->
+        <div style="padding:0 20px 20px; border-bottom:1px solid #e5e7eb; margin-bottom:16px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:32px; height:32px; background:#1a6b4a; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:14px;">S</div>
+            <div>
+              <div style="font-weight:600; font-size:14px; color:#111;">교원채용 시스템</div>
+              <div style="font-size:11px; color:#888;">성균관대학교</div>
+            </div>
+          </div>
+        </div>
+        <!-- Menu items -->
+        <div style="padding:0 12px;">
+          <div style="padding:8px 12px; background:#f0faf5; border-radius:8px; color:#1a6b4a; font-size:13px; font-weight:500; margin-bottom:4px; cursor:pointer;">📊 현황 요약</div>
+          <div style="padding:8px 12px; color:#555; font-size:13px; margin-bottom:4px; cursor:pointer; border-radius:8px;">📋 TO 배분표</div>
+          <div style="padding:8px 12px; color:#555; font-size:13px; margin-bottom:4px; cursor:pointer; border-radius:8px;">🔄 채용 진행현황</div>
+          <div style="padding:8px 12px; color:#555; font-size:13px; margin-bottom:4px; cursor:pointer; border-radius:8px;">👤 후보자 관리</div>
+          <div style="padding:0 12px; margin:16px 0 8px;"><div style="font-size:10px; color:#aaa; text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">관리</div></div>
+          <div style="padding:8px 12px; color:#555; font-size:13px; margin-bottom:4px; cursor:pointer; border-radius:8px;">⚙️ 데이터 관리</div>
+          <div style="padding:8px 12px; color:#555; font-size:13px; margin-bottom:4px; cursor:pointer; border-radius:8px;">🔐 권한 관리</div>
+          <div style="padding:8px 12px; color:#555; font-size:13px; margin-bottom:4px; cursor:pointer; border-radius:8px;">👥 사용자 관리</div>
+        </div>
+        <!-- User -->
+        <div style="position:absolute; bottom:0; left:0; width:240px; padding:16px 20px; border-top:1px solid #e5e7eb; background:#fff;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:28px; height:28px; background:#1a6b4a; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:11px;">관</div>
+            <div>
+              <div style="font-size:12px; font-weight:500; color:#333;">관리자</div>
+              <div style="font-size:10px; color:#999;">SUPER_ADMIN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main content -->
+      <div style="flex:1; padding:24px 32px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+          <div>
+            <h2 style="font-size:20px; font-weight:600; color:#111; margin:0;">현황 요약</h2>
+            <p style="font-size:13px; color:#888; margin:4px 0 0;">전체 채용 현황을 한눈에 확인합니다</p>
+          </div>
+          <button class="mock-button" style="background:#1a6b4a; color:white; border:none; padding:8px 16px; border-radius:8px; font-size:13px;">Excel 내보내기</button>
+        </div>
+        <!-- KPI Cards -->
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px;">
+          <div style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:20px;">
+            <div style="font-size:12px; color:#888;">전체 채용건</div>
+            <div style="font-size:28px; font-weight:700; color:#111; margin-top:4px;">47</div>
+            <div style="font-size:11px; color:#1a6b4a; margin-top:4px;">▲ 12% vs 전년</div>
+          </div>
+          <div style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:20px;">
+            <div style="font-size:12px; color:#888;">진행 중</div>
+            <div style="font-size:28px; font-weight:700; color:#c2a96a; margin-top:4px;">23</div>
+            <div style="font-size:11px; color:#888; margin-top:4px;">48.9%</div>
+          </div>
+          <div style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:20px;">
+            <div style="font-size:12px; color:#888;">완료</div>
+            <div style="font-size:28px; font-weight:700; color:#1a6b4a; margin-top:4px;">18</div>
+            <div style="font-size:11px; color:#888; margin-top:4px;">38.3%</div>
+          </div>
+          <div style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:20px;">
+            <div style="font-size:12px; color:#888;">대기</div>
+            <div style="font-size:28px; font-weight:700; color:#666; margin-top:4px;">6</div>
+            <div style="font-size:11px; color:#888; margin-top:4px;">12.8%</div>
+          </div>
+        </div>
+        <!-- Content placeholder -->
+        <div style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:24px;">
+          <div style="font-size:14px; font-weight:500; color:#333; margin-bottom:16px;">최근 활동</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fafbfc; border-radius:8px;">
+              <div style="width:8px; height:8px; background:#1a6b4a; border-radius:50%;"></div>
+              <div style="font-size:13px; color:#333;">컴퓨터공학과 — 조교수 채용 절차 3단계 완료</div>
+              <div style="margin-left:auto; font-size:11px; color:#999;">2시간 전</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fafbfc; border-radius:8px;">
+              <div style="width:8px; height:8px; background:#c2a96a; border-radius:50%;"></div>
+              <div style="font-size:13px; color:#333;">경영학과 — 새 후보자 등록</div>
+              <div style="margin-left:auto; font-size:11px; color:#999;">5시간 전</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fafbfc; border-radius:8px;">
+              <div style="width:8px; height:8px; background:#e5e7eb; border-radius:50%;"></div>
+              <div style="font-size:13px; color:#333;">물리학과 — TO 배분 승인 대기</div>
+              <div style="margin-left:auto; font-size:11px; color:#999;">1일 전</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:32px;">
+  <h3>역할별 사이드바 메뉴 비교</h3>
+  <div class="split">
+    <div class="mockup">
+      <div class="mockup-header">SUPER_ADMIN / ADMIN</div>
+      <div class="mockup-body" style="padding:16px; background:#fff;">
+        <div style="font-size:13px; display:flex; flex-direction:column; gap:6px;">
+          <div style="padding:8px 12px; background:#f0faf5; border-radius:6px; color:#1a6b4a;">📊 현황 요약</div>
+          <div style="padding:8px 12px; color:#555;">📋 TO 배분표</div>
+          <div style="padding:8px 12px; color:#555;">🔄 채용 진행현황</div>
+          <div style="padding:8px 12px; color:#555;">👤 후보자 관리</div>
+          <div style="margin:8px 0 4px; padding:0 12px;"><span style="font-size:10px; color:#aaa; font-weight:600;">관리</span></div>
+          <div style="padding:8px 12px; color:#555;">⚙️ 데이터 관리 (DB 시트)</div>
+          <div style="padding:8px 12px; color:#555;">📐 워크플로우 매트릭스</div>
+          <div style="margin:8px 0 4px; padding:0 12px;"><span style="font-size:10px; color:#aaa; font-weight:600;">시스템</span></div>
+          <div style="padding:8px 12px; color:#555;">🔐 권한 관리</div>
+          <div style="padding:8px 12px; color:#555;">👥 사용자 관리</div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">DEAN (학과장)</div>
+      <div class="mockup-body" style="padding:16px; background:#fff;">
+        <div style="font-size:13px; display:flex; flex-direction:column; gap:6px;">
+          <div style="padding:8px 12px; background:#f0faf5; border-radius:6px; color:#1a6b4a;">📊 학과 현황</div>
+          <div style="padding:8px 12px; color:#555;">🔄 채용 진행현황</div>
+          <div style="padding:8px 12px; color:#555;">👤 후보자 관리</div>
+          <div style="padding:8px 12px; color:#555;">📝 채용 요청 (상시)</div>
+          <div style="padding:8px 12px; color:#555;">✅ 단계별 제출</div>
+        </div>
+        <div style="margin-top:24px; padding:12px; background:#fafbfc; border-radius:8px; border:1px dashed #ddd;">
+          <div style="font-size:11px; color:#888;">소속: 컴퓨터공학과</div>
+          <div style="font-size:11px; color:#888;">자기 학과 데이터만 표시</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:32px;">
+  <h3>라우트 구조 (App Router)</h3>
+  <div class="mockup">
+    <div class="mockup-header">Next.js App Router 경로 매핑</div>
+    <div class="mockup-body" style="padding:20px; background:#fff; font-family:monospace; font-size:12px; line-height:2;">
+      <div style="color:#888;">app/</div>
+      <div style="color:#888;">├── layout.tsx <span style="color:#1a6b4a; font-family:sans-serif;">← 사이드바 + 메인 영역 공통 레이아웃</span></div>
+      <div style="color:#888;">├── (auth)/login/page.tsx <span style="color:#1a6b4a; font-family:sans-serif;">← 로그인 (사이드바 없음)</span></div>
+      <div style="color:#888;">├── (dashboard)/</div>
+      <div style="color:#888;">│   ├── summary/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 현황 요약 (KPI)</span></div>
+      <div style="color:#888;">│   ├── allocation/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← TO 배분표</span></div>
+      <div style="color:#888;">│   └── progress/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 채용 진행현황</span></div>
+      <div style="color:#888;">├── candidates/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 후보자 관리</span></div>
+      <div style="color:#888;">├── procedures/[requestId]/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 채용 절차 상세</span></div>
+      <div style="color:#888;">├── (admin)/</div>
+      <div style="color:#888;">│   ├── data-sheet/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 데이터 관리 (DB 시트)</span></div>
+      <div style="color:#888;">│   └── workflow/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 워크플로우 매트릭스</span></div>
+      <div style="color:#888;">└── (system)/</div>
+      <div style="color:#888;">    ├── permissions/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 권한 매트릭스</span></div>
+      <div style="color:#888;">    └── users/page.tsx <span style="color:#c2a96a; font-family:sans-serif;">← 사용자 관리</span></div>
+    </div>
+  </div>
+</div>

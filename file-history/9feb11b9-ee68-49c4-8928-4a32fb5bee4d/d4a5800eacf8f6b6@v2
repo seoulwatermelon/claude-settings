@@ -1,0 +1,1023 @@
+# 모바일 반응형 + 워크플로우 + 스프레드시트 UX 구현 계획
+
+> **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** 교원채용 시스템을 모바일 반응형으로 전환하고, 메뉴를 5개로 통합하며, 모든 테이블에 스프레드시트 UX를 적용하고, 상시채용 후보자 상세검증 워크플로우를 구현한다.
+
+**Architecture:** 사이드바를 180px로 축소하고 768px 미만에서 햄버거 메뉴로 전환한다. SpreadsheetTable 공통 컴포넌트를 만들어 모든 테이블에 적용하고, 채용현황/데이터관리 페이지를 탭 기반으로 통합한다. review_decisions 테이블과 워크플로우 심사 API를 추가한다.
+
+**Tech Stack:** Next.js 16, React 19, TypeScript 5, Tailwind CSS 4, SQLite (better-sqlite3), XLSX
+
+**Spec:** `docs/superpowers/specs/2026-03-19-mobile-workflow-spreadsheet-design.md`
+
+---
+
+## Chunk 1: 사이드바 반응형 + 레이아웃 (1~2단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Modify | `components/sidebar.tsx` | 180px 축소 + 모바일 햄버거 메뉴 |
+| Modify | `app/layout.tsx` | marginLeft 180px + 반응형 조정 |
+| Modify | `app/globals.css` | 반응형 미디어 쿼리 추가 |
+
+---
+
+### Task 1: 사이드바 180px 축소 + 모바일 반응형
+
+**Files:**
+- Modify: `components/sidebar.tsx`
+- Modify: `app/layout.tsx`
+- Modify: `app/globals.css`
+
+- [ ] **Step 1: sidebar.tsx를 반응형으로 재작성**
+
+사이드바 컴포넌트를 수정한다:
+- 데스크톱(≥768px): width 180px 고정 사이드바
+- 모바일(<768px): 상단 48px 딥그린 바 + 햄버거 토글 → 전체 화면 오버레이 메뉴
+
+```tsx
+// components/sidebar.tsx 핵심 변경사항
+
+// 1. useState 추가
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const [isMobile, setIsMobile] = useState(false);
+
+// 2. useEffect로 반응형 감지
+useEffect(() => {
+  const mq = window.matchMedia("(max-width: 767px)");
+  setIsMobile(mq.matches);
+  const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+  mq.addEventListener("change", handler);
+  return () => mq.removeEventListener("change", handler);
+}, []);
+
+// 3. 메뉴 항목 클릭 시 모바일 메뉴 닫기
+// Link onClick에 () => setMobileMenuOpen(false) 추가
+
+// 4. isMobile이면 상단바 + 오버레이 렌더링, 아니면 기존 aside 렌더링
+// aside width를 220 → 180으로 변경
+```
+
+모바일 상단 바 구조:
+```tsx
+// 모바일: 상단 고정 바
+<div style={{
+  position: "fixed", top: 0, left: 0, right: 0, height: 48,
+  background: "#0a1f14", display: "flex", alignItems: "center",
+  justifyContent: "space-between", padding: "0 16px", zIndex: 50,
+}}>
+  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <Image src="/logo_SKKU_colored.png" ... width={24} height={24} />
+    <span style={{ color: "#fff", fontSize: 13, fontWeight: 600 }}>교원채용</span>
+  </div>
+  <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{ background: "none", border: "none", color: "#fff", fontSize: 20, cursor: "pointer" }}>
+    {mobileMenuOpen ? "✕" : "☰"}
+  </button>
+</div>
+
+// 모바일: 오버레이 메뉴 (mobileMenuOpen일 때만)
+{mobileMenuOpen && (
+  <div style={{
+    position: "fixed", top: 48, left: 0, right: 0, bottom: 0,
+    background: "#0a1f14", zIndex: 49, overflowY: "auto",
+    padding: "12px 8px",
+  }}>
+    {/* 기존 nav 메뉴 항목 동일 렌더링 */}
+    {/* 하단: UserMenu 컴포넌트 */}
+  </div>
+)}
+```
+
+- [ ] **Step 2: layout.tsx의 marginLeft를 반응형으로 변경**
+
+```tsx
+// app/layout.tsx
+// 기존: marginLeft: 220
+// 변경: CSS 클래스로 반응형 적용
+
+<main className="main-content">
+  {children}
+</main>
+```
+
+- [ ] **Step 3: globals.css에 반응형 유틸리티 추가**
+
+```css
+/* app/globals.css에 추가 */
+.main-content {
+  margin-left: 180px;
+  padding: 24px 28px;
+  background: #f5f6f8;
+  min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    margin-left: 0;
+    margin-top: 48px;
+    padding: 16px;
+  }
+}
+```
+
+- [ ] **Step 4: 개발 서버에서 확인**
+
+Run: `npm run dev`
+
+- 브라우저 폭을 줄여서 768px 미만에서 햄버거 메뉴 전환 확인
+- 데스크톱에서 180px 사이드바 확인
+- 모바일 메뉴 열기/닫기, 페이지 이동 시 자동 닫힘 확인
+
+- [ ] **Step 5: 커밋**
+
+```bash
+git add components/sidebar.tsx app/layout.tsx app/globals.css
+git commit -m "feat: responsive sidebar — 180px desktop, hamburger on mobile
+
+Shrink sidebar from 220px to 180px. Below 768px, replace with
+top bar (48px) + full-screen overlay menu. Menu auto-closes on
+navigation."
+```
+
+---
+
+## Chunk 2: 메뉴 통합 + 페이지 재구성 (3단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Create | `app/dashboard/page.tsx` | 채용현황 페이지 (3탭) |
+| Create | `components/dashboard-tabs.tsx` | 탭 전환 클라이언트 컴포넌트 |
+| Create | `app/data/page.tsx` | 데이터 관리 페이지 (3탭) |
+| Create | `components/data-tabs.tsx` | 데이터 관리 탭 전환 |
+| Modify | `components/sidebar.tsx` | 메뉴를 5개로 변경 |
+| Modify | `lib/permissions.ts` | 리소스명 통합 (dashboard, admin.data) |
+| Modify | `app/page.tsx` | / → /dashboard 리다이렉트 |
+| Delete | `app/summary/page.tsx` | /dashboard로 통합 |
+| Delete | `app/allocation/page.tsx` | /dashboard로 통합 |
+| Delete | `app/progress/page.tsx` | /dashboard로 통합 |
+| Delete | `app/data-sheet/page.tsx` | /data로 통합 |
+| Delete | `app/workflow/page.tsx` | /data로 통합 |
+
+---
+
+### Task 2: 사이드바 메뉴 5개로 변경
+
+**Files:**
+- Modify: `components/sidebar.tsx`
+
+- [ ] **Step 1: ADMIN_MENU와 DEAN_MENU를 5개 메뉴로 변경**
+
+```typescript
+const ADMIN_MENU: MenuSection[] = [
+  {
+    items: [
+      { icon: LayoutDashboard, label: "채용현황", href: "/dashboard", resource: "dashboard" },
+      { icon: Users, label: "후보자 관리", href: "/candidates", resource: "candidates" },
+      { icon: Database, label: "데이터 관리", href: "/data", resource: "admin.data" },
+    ],
+  },
+  {
+    label: "시스템",
+    items: [
+      { icon: Shield, label: "권한 관리", href: "/permissions", resource: "system.permissions" },
+      { icon: UserCog, label: "사용자 관리", href: "/users", resource: "system.users" },
+    ],
+  },
+];
+
+const DEAN_MENU: MenuSection[] = [
+  {
+    items: [
+      { icon: LayoutDashboard, label: "채용현황", href: "/dashboard", resource: "dashboard" },
+      { icon: Users, label: "후보자 관리", href: "/candidates", resource: "candidates" },
+    ],
+  },
+];
+```
+
+- [ ] **Step 2: 커밋**
+
+```bash
+git add components/sidebar.tsx
+git commit -m "feat: consolidate sidebar to 5 menu items"
+```
+
+---
+
+### Task 3: 권한 리소스 마이그레이션
+
+**Files:**
+- Create: `scripts/migrate-resources.ts`
+- Modify: `lib/permissions.ts`
+
+- [ ] **Step 1: 마이그레이션 스크립트 작성**
+
+```typescript
+// scripts/migrate-resources.ts
+import Database from "better-sqlite3";
+import path from "path";
+
+const DB_PATH = path.join(process.cwd(), "data", "recruiting.db");
+const db = new Database(DB_PATH);
+db.pragma("journal_mode = WAL");
+
+db.exec(`
+  -- 리소스 통합
+  UPDATE permissions SET resource = 'dashboard'
+  WHERE resource IN ('dashboard.summary', 'dashboard.allocation', 'dashboard.progress');
+
+  UPDATE permissions SET resource = 'admin.data'
+  WHERE resource IN ('admin.data-sheet', 'admin.workflow');
+
+  -- 중복 제거
+  DELETE FROM permissions WHERE id NOT IN (
+    SELECT MIN(id) FROM permissions GROUP BY role, resource, action
+  );
+
+  -- 워크플로우 권한 추가
+  INSERT OR IGNORE INTO permissions (role, resource, action, allowed) VALUES
+    ('ADMIN', 'workflow.review', 'view', 0),
+    ('ADMIN', 'workflow.review', 'edit', 0),
+    ('ADMIN', 'workflow.advance', 'view', 1),
+    ('ADMIN', 'workflow.advance', 'edit', 1),
+    ('DEAN', 'workflow.review', 'view', 0),
+    ('DEAN', 'workflow.review', 'edit', 0),
+    ('DEAN', 'workflow.advance', 'view', 0),
+    ('DEAN', 'workflow.advance', 'edit', 0);
+`);
+
+console.log("Resource migration complete.");
+db.close();
+```
+
+- [ ] **Step 2: 마이그레이션 실행**
+
+Run: `npx tsx scripts/migrate-resources.ts`
+
+- [ ] **Step 3: lib/permissions.ts에서 RESOURCES 목록 업데이트**
+
+`getViewableResources()`와 `createRole()`에서 사용하는 RESOURCES 배열을 업데이트:
+
+```typescript
+const RESOURCES = [
+  "dashboard",
+  "candidates",
+  "procedures", "actions",
+  "admin.data",
+  "system.permissions", "system.users",
+  "workflow.review", "workflow.advance",
+  "etc",
+];
+```
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add scripts/migrate-resources.ts lib/permissions.ts
+git commit -m "feat: migrate permission resources — consolidate dashboard and admin"
+```
+
+---
+
+### Task 4: 채용현황 페이지 (/dashboard) — 3탭
+
+**Files:**
+- Create: `app/dashboard/page.tsx`
+- Create: `components/dashboard-tabs.tsx`
+- Modify: `app/page.tsx`
+
+- [ ] **Step 1: dashboard-tabs.tsx 클라이언트 컴포넌트 작성**
+
+```tsx
+// components/dashboard-tabs.tsx
+"use client";
+
+import { useState } from "react";
+import SummaryPage from "@/components/summary-page";
+import { AllocationTable } from "@/components/allocation-table";
+import ProgressBoard from "@/components/progress-board";
+import type { AuthUser, DashboardColumn, DashboardRow, DashboardDetail, UserRecord } from "@/lib/types";
+
+type KpiData = { total: number; inProgress: number; completed: number; waiting: number };
+type ActivityItem = { id: number; deptName: string; description: string; status: "complete" | "progress" | "waiting"; timeAgo: string };
+
+type Props = {
+  kpi: KpiData;
+  recentActivity: ActivityItem[];
+  columns: DashboardColumn[];
+  rows: DashboardRow[];
+  initialDetail: DashboardDetail | null;
+  currentUser: AuthUser;
+  users: UserRecord[];
+  departments: Array<{ deptCode: string; deptName: string }>;
+};
+
+const TABS = [
+  { key: "summary", label: "요약" },
+  { key: "allocation", label: "TO 배분표" },
+  { key: "progress", label: "진행현황" },
+] as const;
+
+export default function DashboardTabs(props: Props) {
+  const [activeTab, setActiveTab] = useState<string>("summary");
+
+  return (
+    <div>
+      {/* 탭 헤더 */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 20 }}>
+        {TABS.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            style={{
+              padding: "8px 20px",
+              borderRadius: 6,
+              fontSize: 13,
+              fontWeight: activeTab === tab.key ? 600 : 400,
+              background: activeTab === tab.key ? "#0a1f14" : "#fff",
+              color: activeTab === tab.key ? "#fff" : "#333",
+              border: activeTab === tab.key ? "none" : "1px solid #e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* 탭 콘텐츠 */}
+      {activeTab === "summary" && (
+        <SummaryPage kpi={props.kpi} recentActivity={props.recentActivity} />
+      )}
+      {activeTab === "allocation" && (
+        <AllocationTable
+          columns={props.columns}
+          rows={props.rows}
+          initialDetail={props.initialDetail}
+          currentUser={props.currentUser}
+          users={props.users}
+          departments={props.departments}
+        />
+      )}
+      {activeTab === "progress" && (
+        <ProgressBoard rows={props.rows} currentUser={props.currentUser} />
+      )}
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: dashboard 서버 페이지 작성**
+
+```tsx
+// app/dashboard/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getDashboardColumns, getDashboardRows, getDashboardDetail, listUsers, getDepartmentOptions } from "@/lib/queries";
+import DashboardTabs from "@/components/dashboard-tabs";
+
+export default async function DashboardPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "dashboard", "view")) {
+    redirect("/login");
+  }
+
+  const columns = getDashboardColumns();
+  const rows = getDashboardRows(user);
+  const initialDetail = rows[0] ? getDashboardDetail(rows[0].id, user) : null;
+  const users = (user.role === "VIP" || user.role === "ADMIN") ? listUsers() : [];
+  const departments = (user.role === "VIP" || user.role === "ADMIN") ? getDepartmentOptions() : [];
+
+  // KPI 계산
+  const requestRows = rows.filter((r) => {
+    const raw = JSON.parse(r.rawJson || "{}");
+    return raw.requestId != null;
+  });
+  const total = requestRows.length;
+  const completed = requestRows.filter((r) => {
+    const vals = r.values || {};
+    const step = vals["현재단계"] as string || "";
+    return step.includes("완료");
+  }).length;
+  const waiting = requestRows.filter((r) => {
+    const vals = r.values || {};
+    const step = vals["현재단계"] as string || "";
+    return !step || step === "";
+  }).length;
+  const inProgress = total - completed - waiting;
+  const kpi = { total, inProgress, completed, waiting };
+
+  // 최근 활동
+  const recentActivity = requestRows.slice(0, 5).map((r, i) => {
+    const vals = r.values || {};
+    return {
+      id: r.id,
+      deptName: r.deptName || "",
+      description: `${vals["초빙분야"] || "채용"} ${vals["현재단계"] || "진행중"}`,
+      status: (String(vals["현재단계"] || "").includes("완료") ? "complete" : vals["현재단계"] ? "progress" : "waiting") as "complete" | "progress" | "waiting",
+      timeAgo: `${i + 1}일 전`,
+    };
+  });
+
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: "#111", margin: 0 }}>채용현황</h2>
+        <p style={{ fontSize: 12, color: "#888", margin: "2px 0 0" }}>채용 요약, TO 배분, 진행 현황을 한눈에 확인합니다</p>
+      </div>
+      <DashboardTabs
+        kpi={kpi}
+        recentActivity={recentActivity}
+        columns={columns}
+        rows={rows}
+        initialDetail={initialDetail}
+        currentUser={user}
+        users={users}
+        departments={departments}
+      />
+    </div>
+  );
+}
+```
+
+- [ ] **Step 3: app/page.tsx를 /dashboard로 리다이렉트**
+
+```tsx
+// app/page.tsx
+import { redirect } from "next/navigation";
+export default function Home() {
+  redirect("/dashboard");
+}
+```
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add app/dashboard/page.tsx components/dashboard-tabs.tsx app/page.tsx
+git commit -m "feat: add /dashboard with 3 tabs (summary, TO allocation, progress)"
+```
+
+---
+
+### Task 5: 데이터 관리 페이지 (/data) — 3탭
+
+**Files:**
+- Create: `app/data/page.tsx`
+- Create: `components/data-tabs.tsx`
+
+- [ ] **Step 1: data-tabs.tsx 클라이언트 컴포넌트 작성**
+
+```tsx
+// components/data-tabs.tsx
+"use client";
+
+import { useState } from "react";
+import { AdminRequestSheet } from "@/components/admin-request-sheet";
+import { AdminWorkflowTable } from "@/components/admin-workflow-table";
+import type { AdminRequestSheetRow, AdminWorkflowColumn, AdminWorkflowMatrixRow } from "@/lib/types";
+
+type Props = {
+  requestSheetRows: AdminRequestSheetRow[];
+  workflowColumns: AdminWorkflowColumn[];
+  workflowRows: AdminWorkflowMatrixRow[];
+};
+
+const TABS = [
+  { key: "requests", label: "채용요청" },
+  { key: "workflow", label: "워크플로우" },
+] as const;
+
+export default function DataTabs(props: Props) {
+  const [activeTab, setActiveTab] = useState<string>("requests");
+
+  return (
+    <div>
+      <div style={{ display: "flex", gap: 4, marginBottom: 20 }}>
+        {TABS.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            style={{
+              padding: "8px 20px",
+              borderRadius: 6,
+              fontSize: 13,
+              fontWeight: activeTab === tab.key ? 600 : 400,
+              background: activeTab === tab.key ? "#0a1f14" : "#fff",
+              color: activeTab === tab.key ? "#fff" : "#333",
+              border: activeTab === tab.key ? "none" : "1px solid #e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === "requests" && (
+        <AdminRequestSheet initialRows={props.requestSheetRows} />
+      )}
+      {activeTab === "workflow" && (
+        <AdminWorkflowTable columns={props.workflowColumns} initialRows={props.workflowRows} />
+      )}
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: data 서버 페이지 작성**
+
+```tsx
+// app/data/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getAdminRequestSheet, getAdminWorkflowMatrix } from "@/lib/queries";
+import DataTabs from "@/components/data-tabs";
+
+export default async function DataPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "admin.data", "view")) {
+    redirect("/dashboard");
+  }
+
+  const requestSheetRows = getAdminRequestSheet();
+  const { columns: workflowColumns, rows: workflowRows } = getAdminWorkflowMatrix();
+
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: "#111", margin: 0 }}>데이터 관리</h2>
+        <p style={{ fontSize: 12, color: "#888", margin: "2px 0 0" }}>채용요청 데이터와 워크플로우를 관리합니다</p>
+      </div>
+      <DataTabs
+        requestSheetRows={requestSheetRows}
+        workflowColumns={workflowColumns}
+        workflowRows={workflowRows}
+      />
+    </div>
+  );
+}
+```
+
+- [ ] **Step 3: 이전 라우트 삭제**
+
+```bash
+rm app/summary/page.tsx
+rm app/allocation/page.tsx
+rm app/progress/page.tsx
+rm app/data-sheet/page.tsx
+rm app/workflow/page.tsx
+```
+
+이전 컴포넌트 파일들(summary-page.tsx, allocation-table.tsx, progress-board.tsx)은 유지 — dashboard-tabs에서 import하여 사용.
+
+- [ ] **Step 4: 빌드 확인**
+
+Run: `npm run build`
+
+삭제된 라우트에 대한 import 에러가 없는지 확인. 에러가 있으면 해당 import 경로를 수정.
+
+- [ ] **Step 5: 커밋**
+
+```bash
+git add app/data/ components/data-tabs.tsx
+git rm app/summary/page.tsx app/allocation/page.tsx app/progress/page.tsx app/data-sheet/page.tsx app/workflow/page.tsx
+git commit -m "feat: consolidate pages — /dashboard (3 tabs) + /data (2 tabs)
+
+Remove /summary, /allocation, /progress, /data-sheet, /workflow.
+Merge into /dashboard (요약/TO배분표/진행현황) and /data (채용요청/워크플로우)."
+```
+
+---
+
+## Chunk 3: DB 스키마 + 워크플로우 API (4단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Modify | `db/schema.sql` | review_decisions 테이블 추가 |
+| Create | `scripts/migrate-review-decisions.ts` | 마이그레이션 스크립트 |
+| Create | `lib/review-decisions.ts` | 심사 CRUD 함수 |
+| Create | `app/api/review-decisions/route.ts` | GET/POST 심사 API |
+| Create | `app/api/review-decisions/[id]/route.ts` | PATCH 심사 API |
+| Create | `app/api/workflow/advance/route.ts` | 단계 진행 API |
+
+---
+
+### Task 6: review_decisions 테이블 생성
+
+**Files:**
+- Modify: `db/schema.sql`
+- Create: `scripts/migrate-review-decisions.ts`
+
+- [ ] **Step 1: schema.sql에 review_decisions 추가**
+
+`db/schema.sql` 끝에 추가:
+
+```sql
+CREATE TABLE IF NOT EXISTS review_decisions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  request_id INTEGER NOT NULL,
+  candidate_id INTEGER NOT NULL,
+  step_key TEXT NOT NULL,
+  reviewer_id INTEGER NOT NULL,
+  decision TEXT,
+  comment TEXT,
+  review_data_json TEXT DEFAULT '{}',
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (request_id) REFERENCES recruitment_requests (id) ON DELETE CASCADE,
+  FOREIGN KEY (candidate_id) REFERENCES candidate_profiles (id) ON DELETE CASCADE,
+  FOREIGN KEY (reviewer_id) REFERENCES users (id) ON DELETE CASCADE,
+  UNIQUE(request_id, candidate_id, step_key, reviewer_id)
+);
+```
+
+- [ ] **Step 2: 마이그레이션 스크립트 작성 및 실행**
+
+```typescript
+// scripts/migrate-review-decisions.ts
+import Database from "better-sqlite3";
+import path from "path";
+
+const DB_PATH = path.join(process.cwd(), "data", "recruiting.db");
+const db = new Database(DB_PATH);
+db.pragma("journal_mode = WAL");
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS review_decisions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    request_id INTEGER NOT NULL,
+    candidate_id INTEGER NOT NULL,
+    step_key TEXT NOT NULL,
+    reviewer_id INTEGER NOT NULL,
+    decision TEXT,
+    comment TEXT,
+    review_data_json TEXT DEFAULT '{}',
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (request_id) REFERENCES recruitment_requests (id) ON DELETE CASCADE,
+    FOREIGN KEY (candidate_id) REFERENCES candidate_profiles (id) ON DELETE CASCADE,
+    FOREIGN KEY (reviewer_id) REFERENCES users (id) ON DELETE CASCADE,
+    UNIQUE(request_id, candidate_id, step_key, reviewer_id)
+  );
+`);
+
+console.log("review_decisions table created.");
+db.close();
+```
+
+Run: `npx tsx scripts/migrate-review-decisions.ts`
+
+- [ ] **Step 3: 커밋**
+
+```bash
+git add db/schema.sql scripts/migrate-review-decisions.ts
+git commit -m "feat: add review_decisions table for workflow review tracking"
+```
+
+---
+
+### Task 7: 심사 CRUD 함수 + API
+
+**Files:**
+- Create: `lib/review-decisions.ts`
+- Create: `app/api/review-decisions/route.ts`
+- Create: `app/api/review-decisions/[id]/route.ts`
+- Create: `app/api/workflow/advance/route.ts`
+
+- [ ] **Step 1: lib/review-decisions.ts 작성**
+
+```typescript
+// lib/review-decisions.ts
+import { getDb } from "./db";
+
+export type ReviewDecision = {
+  id: number;
+  requestId: number;
+  candidateId: number;
+  stepKey: string;
+  reviewerId: number;
+  decision: string | null;
+  comment: string | null;
+  reviewDataJson: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type ReviewRow = {
+  id: number;
+  request_id: number;
+  candidate_id: number;
+  step_key: string;
+  reviewer_id: number;
+  decision: string | null;
+  comment: string | null;
+  review_data_json: string;
+  created_at: string;
+  updated_at: string;
+};
+
+function mapRow(row: ReviewRow): ReviewDecision {
+  return {
+    id: row.id,
+    requestId: row.request_id,
+    candidateId: row.candidate_id,
+    stepKey: row.step_key,
+    reviewerId: row.reviewer_id,
+    decision: row.decision,
+    comment: row.comment,
+    reviewDataJson: row.review_data_json,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
+export function getReviewDecisions(requestId: number, stepKey?: string): ReviewDecision[] {
+  const db = getDb();
+  if (stepKey) {
+    return (db.prepare(
+      "SELECT * FROM review_decisions WHERE request_id = ? AND step_key = ? ORDER BY created_at"
+    ).all(requestId, stepKey) as ReviewRow[]).map(mapRow);
+  }
+  return (db.prepare(
+    "SELECT * FROM review_decisions WHERE request_id = ? ORDER BY created_at"
+  ).all(requestId) as ReviewRow[]).map(mapRow);
+}
+
+export function createReviewDecision(data: {
+  requestId: number;
+  candidateId: number;
+  stepKey: string;
+  reviewerId: number;
+  decision?: string;
+  comment?: string;
+  reviewDataJson?: string;
+}): ReviewDecision {
+  const db = getDb();
+  const result = db.prepare(`
+    INSERT INTO review_decisions (request_id, candidate_id, step_key, reviewer_id, decision, comment, review_data_json)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(request_id, candidate_id, step_key, reviewer_id)
+    DO UPDATE SET decision = excluded.decision, comment = excluded.comment,
+      review_data_json = excluded.review_data_json, updated_at = CURRENT_TIMESTAMP
+  `).run(
+    data.requestId, data.candidateId, data.stepKey, data.reviewerId,
+    data.decision || null, data.comment || null, data.reviewDataJson || "{}"
+  );
+  return getReviewDecisionById(Number(result.lastInsertRowid))!;
+}
+
+export function updateReviewDecision(id: number, data: {
+  decision?: string;
+  comment?: string;
+  reviewDataJson?: string;
+}): ReviewDecision | null {
+  const db = getDb();
+  db.prepare(`
+    UPDATE review_decisions SET
+      decision = COALESCE(?, decision),
+      comment = COALESCE(?, comment),
+      review_data_json = COALESCE(?, review_data_json),
+      updated_at = CURRENT_TIMESTAMP
+    WHERE id = ?
+  `).run(data.decision || null, data.comment || null, data.reviewDataJson || null, id);
+  return getReviewDecisionById(id);
+}
+
+export function getReviewDecisionById(id: number): ReviewDecision | null {
+  const db = getDb();
+  const row = db.prepare("SELECT * FROM review_decisions WHERE id = ?").get(id) as ReviewRow | undefined;
+  return row ? mapRow(row) : null;
+}
+
+export function allCandidatesReviewed(requestId: number, stepKey: string): boolean {
+  const db = getDb();
+  const candidateCount = db.prepare(
+    "SELECT COUNT(*) as c FROM candidate_profiles WHERE request_id = ?"
+  ).get(requestId) as { c: number };
+  const reviewedCount = db.prepare(
+    "SELECT COUNT(*) as c FROM review_decisions WHERE request_id = ? AND step_key = ? AND decision IS NOT NULL"
+  ).get(requestId, stepKey) as { c: number };
+  return candidateCount.c > 0 && reviewedCount.c >= candidateCount.c;
+}
+```
+
+- [ ] **Step 2: API 라우트 작성**
+
+```typescript
+// app/api/review-decisions/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { getReviewDecisions, createReviewDecision } from "@/lib/review-decisions";
+
+export async function GET(req: NextRequest) {
+  const user = await requireUser();
+  const requestId = Number(req.nextUrl.searchParams.get("requestId"));
+  const stepKey = req.nextUrl.searchParams.get("stepKey") || undefined;
+  if (!requestId) return NextResponse.json({ error: "requestId required" }, { status: 400 });
+  const decisions = getReviewDecisions(requestId, stepKey);
+  return NextResponse.json(decisions);
+}
+
+export async function POST(req: NextRequest) {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "workflow.review", "edit")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+  const body = await req.json();
+  const decision = createReviewDecision({ ...body, reviewerId: user.id });
+  return NextResponse.json(decision);
+}
+```
+
+```typescript
+// app/api/review-decisions/[id]/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { updateReviewDecision } from "@/lib/review-decisions";
+
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "workflow.review", "edit")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+  const { id } = await params;
+  const body = await req.json();
+  const updated = updateReviewDecision(Number(id), body);
+  if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  return NextResponse.json(updated);
+}
+```
+
+```typescript
+// app/api/workflow/advance/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { allCandidatesReviewed } from "@/lib/review-decisions";
+import { getDb } from "@/lib/db";
+import { getNextStatus, getProcedureType, PROCEDURE_STEPS } from "@/lib/constants";
+
+export async function POST(req: NextRequest) {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "workflow.advance", "edit")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+
+  const { requestId } = await req.json();
+  const db = getDb();
+  const request = db.prepare("SELECT * FROM recruitment_requests WHERE id = ?").get(requestId) as any;
+  if (!request) return NextResponse.json({ error: "Request not found" }, { status: 404 });
+
+  const currentStatus = request.status;
+  const procedureType = getProcedureType(request.hiring_type);
+  const nextStatus = getNextStatus(procedureType, currentStatus);
+
+  if (!nextStatus) {
+    return NextResponse.json({ error: "이미 마지막 단계입니다" }, { status: 400 });
+  }
+
+  // 현재 단계에서 모든 후보자 심사 완료 확인
+  const currentStepKey = PROCEDURE_STEPS[procedureType]?.find(s => s.title === currentStatus)?.stepKey;
+  if (currentStepKey && !allCandidatesReviewed(requestId, currentStepKey)) {
+    return NextResponse.json({ error: "모든 후보자 심사를 완료해주세요" }, { status: 400 });
+  }
+
+  db.prepare("UPDATE recruitment_requests SET status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?")
+    .run(nextStatus, requestId);
+
+  return NextResponse.json({ success: true, newStatus: nextStatus });
+}
+```
+
+- [ ] **Step 3: 빌드 확인**
+
+Run: `npm run build`
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add lib/review-decisions.ts app/api/review-decisions/ app/api/workflow/
+git commit -m "feat: add review decisions API and workflow advance endpoint
+
+CRUD for review_decisions table. POST /api/workflow/advance to move
+recruitment requests to next stage (requires all candidates reviewed)."
+```
+
+---
+
+## Chunk 4: 테이블 스크롤 수정 (1단계 일부)
+
+### Task 8: 테이블 sticky header/column 수정
+
+**Files:**
+- Modify: `components/dashboard-shell.tsx`
+- Modify: `components/candidate-management-table.tsx`
+- Modify: `components/admin-request-sheet.tsx`
+- Modify: `components/admin-workflow-table.tsx`
+
+- [ ] **Step 1: 각 테이블 컴포넌트에서 sticky 패턴 통일**
+
+모든 테이블 컴포넌트에 동일 패턴 적용:
+
+1. 스크롤 컨테이너: 단일 `div`에 `overflow: auto`, `max-height` 지정
+2. `<table>` 에 `border-separate border-spacing-0` 적용
+3. `<thead>` 의 모든 `<th>`: `sticky top-0 z-10` + 배경색 명시 (`background: #fafbfc` 또는 `var(--header-bg)`)
+4. 첫 번째 열 `<th>`: `sticky left-0 z-[15]` (교차점)
+5. 첫 번째 열 `<td>`: `sticky left-0 z-[5]` + 배경색 명시 (`background: #fff` 또는 행 배경색)
+6. 중첩 스크롤 div가 있으면 단일로 합침
+
+각 파일에서 이 패턴에 어긋나는 부분을 찾아 수정한다. 특히:
+- `background: transparent` 또는 배경색이 없는 sticky 요소
+- `border-collapse` 사용 시 `border-separate border-spacing-0`으로 교체
+- 중복 overflow 컨테이너
+
+- [ ] **Step 2: 브라우저에서 스크롤 테스트**
+
+Run: `npm run dev`
+
+각 테이블 페이지에서:
+- 상하 스크롤 → 헤더가 상단에 고정되는지
+- 좌우 스크롤 → 첫 열이 좌측에 고정되는지
+- 대각선 스크롤 → 교차점이 깨지지 않는지
+
+- [ ] **Step 3: 커밋**
+
+```bash
+git add components/dashboard-shell.tsx components/candidate-management-table.tsx components/admin-request-sheet.tsx components/admin-workflow-table.tsx
+git commit -m "fix: unify sticky header/column pattern across all tables
+
+Single scroll container, explicit backgrounds on sticky elements,
+correct z-index hierarchy (corner: 15, header: 10, first-col: 5)."
+```
+
+---
+
+## Chunk 5: 최종 정리
+
+### Task 9: 정리 + 빌드 확인
+
+- [ ] **Step 1: 사용하지 않는 컴포넌트/라우트 정리**
+
+삭제 확인:
+- `app/summary/page.tsx` — 삭제됨
+- `app/allocation/page.tsx` — 삭제됨
+- `app/progress/page.tsx` — 삭제됨
+- `app/data-sheet/page.tsx` — 삭제됨
+- `app/workflow/page.tsx` — 삭제됨
+
+유지 확인:
+- `components/summary-page.tsx` — dashboard-tabs에서 사용
+- `components/allocation-table.tsx` — dashboard-tabs에서 사용
+- `components/progress-board.tsx` — dashboard-tabs에서 사용
+- `components/admin-request-sheet.tsx` — data-tabs에서 사용
+- `components/admin-workflow-table.tsx` — data-tabs에서 사용
+
+- [ ] **Step 2: 전체 페이지 검증**
+
+Run: `npm run dev`
+
+| URL | 동작 |
+|-----|------|
+| `/dashboard` | 3탭 (요약/TO배분표/진행현황) |
+| `/candidates` | 후보자 관리 |
+| `/data` | 2탭 (채용요청/워크플로우) |
+| `/permissions` | 권한 매트릭스 |
+| `/users` | 사용자 관리 |
+| `/procedures/[id]` | 채용 절차 상세 |
+| `/login` | 로그인 (사이드바 없음) |
+| 모바일 (768px 미만) | 햄버거 메뉴 |
+
+- [ ] **Step 3: 빌드 확인**
+
+Run: `npm run build`
+
+에러 없이 통과 확인.
+
+- [ ] **Step 4: CLAUDE_HANDOFF.md 업데이트**
+
+변경사항 반영:
+- 사이드바 180px + 모바일 반응형
+- 메뉴 5개 (채용현황, 후보자관리, 데이터관리, 권한관리, 사용자관리)
+- /dashboard (3탭), /data (2탭) 구조
+- review_decisions 테이블 + 워크플로우 API
+- 권한 리소스 통합 (dashboard, admin.data, workflow.review, workflow.advance)
+
+- [ ] **Step 5: 최종 커밋**
+
+```bash
+git add -A
+git commit -m "chore: cleanup and update handoff docs after refactoring"
+```

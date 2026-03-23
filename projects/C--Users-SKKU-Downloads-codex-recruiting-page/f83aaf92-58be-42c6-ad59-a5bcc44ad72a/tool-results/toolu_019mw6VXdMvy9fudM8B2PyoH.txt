@@ -1,0 +1,179 @@
+C:\Users\SKKU\Downloads\codex\recruiting_page\proxy.ts:7:export function proxy(request: NextRequest) {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:93:        "proxy-authenticate"?: string | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:94:        "proxy-authorization"?: string | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:171:        "proxy-authenticate"?: string | string[] | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:172:        "proxy-authorization"?: string | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:407:         * reverse proxy in front.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:436:         * reverse proxy in front.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\http.d.ts:1294:         * `max-forwards`, `proxy-authorization`, `referer`, `retry-after`, `server`, or `user-agent` are discarded.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\vm.d.ts:991:         * the returned object is a proxy-like object to the global object in the newly created context with
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\util.d.ts:2164:     * const proxy = new Proxy(target, {});
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@types\node\util.d.ts:2166:     * util.types.isProxy(proxy);  // Returns true
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@typescript-eslint\types\dist\lib.d.ts:1:[Omitted long matching line]
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\@typescript-eslint\scope-manager\dist\lib\es2015.proxy.d.ts:2:export declare const es2015_proxy: LibDefinition;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\experimental\testmode\proxy.d.ts:1:export * from '../../dist/experimental/testmode/proxy'
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\sharp\lib\index.d.ts:73:        "proxy-libintl"?: string | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\node_modules\postcss\lib\processor.d.ts:57:   * Parses source CSS and returns a `LazyResult` Promise proxy.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\node_modules\postcss\lib\processor.d.ts:73:   * @return Promise proxy.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\next-devtools\userspace\app\forward-logs-utils.d.ts:6: * - if we read a proxy that throws (no way to detect if something is a proxy), explain to the user we can't read this data
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\node_modules\postcss\lib\no-work-result.d.ts:14: * A Promise proxy for the result of PostCSS transformations.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\telemetry\events\build.d.ts:81:    middlewareCount: number;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\node_modules\postcss\lib\lazy-result.d.ts:14: * A Promise proxy for the result of PostCSS transformations.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack-config.d.ts:103:export default function getBaseWebpackConfig(dir: string, { buildId, encryptionKey, config, compilerType, dev, entrypoints, isDevFallback, pagesDir, reactProductionProfiling, rewrites, originalRewrites, originalRedirects, runWebpackSpan, appDir, middlewareMatchers, noMangling, jsConfig, jsConfigPath, resolvedBaseUrl, supportedBrowsers, clientRouterFilters, fetchCacheKeyPrefix, isCompileMode, previewProps, }: {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack-config.d.ts:120:    middlewareMatchers?: ProxyMatcher[];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\undici-types\util.d.ts:11:   * @param obj Object to specify a proxy object. Used to assign parsed values.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\analysis\get-page-static-info.d.ts:16:     * The matcher for the proxy. Read more: [Next.js Docs: Proxy `matcher`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#matcher),
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\analysis\get-page-static-info.d.ts:17:     * [Next.js Docs: Proxy matching paths](https://nextjs.org/docs/app/building-your-application/routing/proxy#matching-paths)
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\analysis\get-page-static-info.d.ts:21:     * The regions that the proxy should run in.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\analysis\get-page-static-info.d.ts:38:    middleware?: ProxyConfig;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\analysis\get-page-static-info.d.ts:53:    middleware?: ProxyConfig;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\undici-types\proxy-agent.d.ts:25:    proxyTls?: buildConnector.BuildOptions;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\adapter\build-complete.d.ts:6:import type { MiddlewareManifest } from '../webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\adapter\build-complete.d.ts:194:     * `MIDDLEWARE` represents the middleware output if present
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\adapter\build-complete.d.ts:203:             * matchers are the configured matchers for middleware
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\adapter\build-complete.d.ts:216:    middleware?: AdapterOutput['MIDDLEWARE'];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\adapter\build-complete.d.ts:303:export declare function handleBuildComplete({ dir, config, buildId, configOutDir, distDir, pageKeys, tracingRoot, adapterPath, appPageKeys, staticPages, nextVersion, hasStatic404, hasStatic500, routesManifest, serverPropsPages, hasNodeMiddleware, prerenderManifest, middlewareManifest, requiredServerFiles, hasInstrumentationHook, functionsConfigManifest, }: {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\adapter\build-complete.d.ts:322:    middlewareManifest: MiddlewareManifest;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\undici-types\index.d.ts:16:import ProxyAgent from'./proxy-agent'
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\undici-types\index.d.ts:17:import EnvHttpProxyAgent from './env-http-proxy-agent'
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\entries.d.ts:122: * For example ['/middleware.ts'] is turned into  { '/middleware': `${ROOT_DIR_ALIAS}/middleware.ts` }
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\entries.d.ts:158:    middleware?: Partial<ProxyConfig>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\entries.d.ts:163:    middlewareConfig?: ProxyConfig;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\entries.d.ts:170:    layer: "middleware";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\entries.d.ts:211:    middlewareMatchers: undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\define-env.d.ts:20:    middlewareMatchers: ProxyMatcher[] | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\define-env.d.ts:31:export declare function getDefineEnv({ isTurbopack, clientRouterFilters, config, dev, distDir, projectPath, fetchCacheKeyPrefix, hasRewrites, isClient, isEdgeServer, isNodeServer, middlewareMatchers, omitNonDeterministic, rewrites, }: DefineEnvOptions): SerializedDefineEnv;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\next-devtools\server\middleware-response.d.ts:2:export declare const middlewareResponse: {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\load-entrypoint.d.ts:17:export declare function loadEntrypoint(entrypoint: 'app-page' | 'app-route' | 'edge-app-route' | 'edge-ssr' | 'edge-ssr-app' | 'middleware' | 'pages' | 'pages-api', replacements: Record<`VAR_${string}`, string>, injections?: Record<string, string>, imports?: Record<string, string | null>): Promise<string>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:6:import type { MiddlewareManifest } from './webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:31:export declare function isMiddlewareFilename(file?: string | null): file is "middleware" | "proxy" | "src/middleware" | "src/proxy";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:69:}, pageInfos: Map<string, PageInfo>, { pagesDir, pageExtensions, middlewareManifest, functionsConfigManifest, useStaticPages404, hasGSPAndRevalidateZero, }: {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:73:    middlewareManifest: MiddlewareManifest;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:140:export declare function copyTracedFiles(dir: string, distDir: string, pageKeys: readonly string[], appPageKeys: readonly string[] | undefined, tracingRoot: string, serverConfig: NextConfigRuntime, middlewareManifest: MiddlewareManifest, hasNodeMiddleware: boolean, hasInstrumentationHook: boolean, staticPages: Set<string>): Promise<void>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:144:export declare function isMiddlewareFile(file: string): file is "/middleware" | "/src/middleware" | "/proxy" | "/src/proxy";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\utils.d.ts:145:export declare function isProxyFile(file: string): file is "/proxy" | "/src/proxy";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\turborepo-access-trace\types.d.ts:38: * A function that restores the original state of a proxy
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\swc\types.d.ts:112:    middleware?: Middleware;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\swc\types.d.ts:310:    middleware: Middleware | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-app-loader\index.d.ts:20:    middlewareConfig: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\swc\index.d.ts:22:export declare function createDefineEnv({ isTurbopack, clientRouterFilters, config, dev, distDir, projectPath, fetchCacheKeyPrefix, hasRewrites, middlewareMatchers, rewrites, }: Omit<DefineEnvOptions, 'isClient' | 'isNodeOrEdgeCompilation' | 'isEdgeServer' | 'isNodeServer'>): DefineEnv;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\swc\generated-native.d.ts:288:  middleware?: NapiMiddleware
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\turbopack\manifest-loader.d.ts:1:import type { MiddlewareManifest } from '../../../build/webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\turbopack\manifest-loader.d.ts:19:    private middlewareManifests;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\turbopack\manifest-loader.d.ts:53:    loadMiddlewareManifest(pageName: string, type: 'pages' | 'app' | 'middleware' | 'instrumentation'): boolean;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\turbopack\entry-key.d.ts:4: * `root` -> middleware / instrumentation
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\get-module-build-info.d.ts:32:    middlewareConfig: ProxyConfig;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\plugins\middleware-plugin.d.ts:18:    middleware: {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\segment-config\middleware\middleware-config.d.ts:4:     * The matcher for the middleware.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\segment-config\middleware\middleware-config.d.ts:13:     * The regions that the middleware should run in.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\zod\src\v4\classic\tests\lazy.test.ts:55:test("lazy proxy", () => {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.d.ts:10:    middlewareConfig: ProxyConfig;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.d.ts:18:    middlewareConfig: ProxyConfig;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.d.ts:36:     * The middleware config for this route.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.d.ts:38:    middlewareConfigBase64: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.d.ts:63:     * The middleware config for this route.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.d.ts:65:    middlewareConfigBase64: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-middleware-loader.d.ts:8:    middlewareConfig: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-middleware-loader.d.ts:12:export default function middlewareLoader(this: any): Promise<string>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:27:export declare const MIDDLEWARE_FILENAME = "middleware";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:28:export declare const MIDDLEWARE_LOCATION_REGEXP = "(?:src/)?middleware";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:29:export declare const PROXY_FILENAME = "proxy";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:30:export declare const PROXY_LOCATION_REGEXP = "(?:src/)?proxy";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:36:export declare const RSC_MOD_REF_PROXY_ALIAS = "private-next-rsc-mod-ref-proxy";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:89:     * The layer for the middleware code.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:91:    readonly middleware: "middleware";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:121:        serverOnly: ("middleware" | "rsc" | "action-browser" | "instrument")[];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:124:        bundled: ("shared" | "middleware" | "rsc" | "ssr" | "action-browser" | "instrument" | "app-pages-browser")[];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\constants.d.ts:133:    middleware: "middleware";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\lib\load-custom-routes.d.ts:53:export declare function checkCustomRoutes(routes: Redirect[] | Header[] | Rewrite[] | Middleware[], type: RouteType | 'middleware'): void;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-edge-ssr-loader\index.d.ts:19:    middlewareConfig: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-edge-function-loader.d.ts:7:    middlewareConfig: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\build\webpack\loaders\next-edge-app-route-loader\index.d.ts:7:    middlewareConfig: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\typescript\lib\lib.webworker.d.ts:5820: * The **`MediaSourceHandle`** interface of the Media Source Extensions API is a proxy for a MediaSource that can be transferred from a dedicated worker back to the main thread and attached to a media element via its HTMLMediaElement.srcObject property.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testmode\playwright\next-worker-fixture.d.ts:1:import type { FetchHandlerResult } from '../proxy';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testmode\playwright\next-worker-fixture.d.ts:4:    proxyPort: number;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testmode\playwright\index.d.ts:10:export type { FetchHandlerResult } from '../proxy';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testmode\context.d.ts:3:    proxyPort: number;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testing\server\middleware-testing-utils.d.ts:3:import type { MiddlewareConfigMatcherInput } from '../../../build/segment-config/middleware/middleware-config';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testing\server\middleware-testing-utils.d.ts:8: * Checks whether the middleware config will match the provide URL and request
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testing\server\middleware-testing-utils.d.ts:10: * unit tests to assert that middleware is matching (and therefore executing)
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\experimental\testing\server\index.d.ts:2:export * from './middleware-testing-utils';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\constants.d.ts:43:     * `MIDDLEWARE` represents the middleware output if present
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\constants.d.ts:70:export declare const MIDDLEWARE_MANIFEST = "middleware-manifest.json";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\constants.d.ts:86:export declare const MIDDLEWARE_BUILD_MANIFEST = "middleware-build-manifest";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\shared\lib\constants.d.ts:87:export declare const MIDDLEWARE_REACT_LOADABLE_MANIFEST = "middleware-react-loadable-manifest";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\typescript\lib\lib.es2015.proxy.d.ts:52:     * @param receiver The proxy or an object that inherits from the proxy.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\typescript\lib\lib.es2015.proxy.d.ts:117:    revocable<T extends object>(target: T, handler: ProxyHandler<T>): { proxy: T; revoke: () => void; };
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\typescript\lib\lib.es2015.d.ts:25:/// <reference lib="es2015.proxy" />
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\typescript\lib\lib.dom.d.ts:15823:     * The **`contentWindow`** read-only property of the HTMLObjectElement interface returns a WindowProxy representing the window proxy of the object element's nested browsing context, if any; otherwise null.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\typescript\lib\lib.dom.d.ts:20482: * The **`MediaSourceHandle`** interface of the Media Source Extensions API is a proxy for a MediaSource that can be transferred from a dedicated worker back to the main thread and attached to a media element via its HTMLMediaElement.srcObject property.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\base-server.d.ts:3:import type { MiddlewareRouteMatch } from '../shared/lib/router/utils/middleware-route-matcher';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\postcss\lib\processor.d.ts:57:   * Parses source CSS and returns a `LazyResult` Promise proxy.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\postcss\lib\processor.d.ts:73:   * @return Promise proxy.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\postcss\lib\no-work-result.d.ts:14: * A Promise proxy for the result of PostCSS transformations.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\postcss\lib\lazy-result.d.ts:14: * A Promise proxy for the result of PostCSS transformations.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\types.d.ts:11:export type { MiddlewareConfigInput as MiddlewareConfig } from '../../build/segment-config/middleware/middleware-config';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\types.d.ts:12:export type { MiddlewareConfigInput as ProxyConfig } from '../../build/segment-config/middleware/middleware-config';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\types.d.ts:50: * Read more: [Next.js Docs: Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware)
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\types.d.ts:59: * Read more: [Next.js Docs: Proxy](https://nextjs.org/docs/app/building-your-application/routing/middleware)
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\spec-extension\request.d.ts:17:     * Read more: https://nextjs.org/docs/messages/middleware-request-page
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\spec-extension\request.d.ts:23:     * Read more: https://nextjs.org/docs/messages/middleware-parse-user-agent
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\spec-extension\fetch-event.d.ts:34:     * Read more: https://nextjs.org/docs/messages/middleware-new-signature
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\spec-extension\fetch-event.d.ts:40:     * Read more: https://nextjs.org/docs/messages/middleware-new-signature
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\sandbox\sandbox.d.ts:2:import type { EdgeFunctionDefinition } from '../../../build/webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\compiled\@next\font\dist\google\get-proxy-agent.d.ts:3: * If the http(s)_proxy environment variables is set, return a proxy agent.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\sandbox\fetch-inline-assets.d.ts:1:import type { EdgeFunctionDefinition } from '../../../build/webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\web\sandbox\context.d.ts:1:import type { EdgeFunctionDefinition } from '../../../build/webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\instrumentation\types.d.ts:4:    routeType: 'render' | 'route' | 'action' | 'proxy';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:270:     * @deprecated Use `proxyPrefetch` instead.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:272:    middlewarePrefetch?: 'strict' | 'flexible';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:273:    proxyPrefetch?: 'strict' | 'flexible';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:285:    proxyTimeout?: number;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:411:     * If you need to set a proxy, Turbopack [respects the common `HTTP_PROXY` and `HTTPS_PROXY`
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:539:         * when you have reverse proxy in front of your app.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:570:     * Enables `fetch` requests to be proxied to the experimental test proxy server
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:675:     * Body size limit for request bodies with middleware configured.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:678:     * @deprecated Use `proxyClientMaxBodySize` instead.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:680:    middlewareClientMaxBodySize?: SizeLimit;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:682:     * Body size limit for request bodies with proxy configured.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:685:    proxyClientMaxBodySize?: SizeLimit;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:1206:        proxyPrefetch: "flexible";
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:1218:        proxyTimeout: undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:1264:        proxyClientMaxBodySize: number;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-shared.d.ts:1302:[Omitted long matching line]
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-schema.d.ts:79:    middlewarePrefetch: z.ZodOptional<z.ZodEnum<["strict", "flexible"]>>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-schema.d.ts:80:    proxyPrefetch: z.ZodOptional<z.ZodEnum<["strict", "flexible"]>>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-schema.d.ts:81:    middlewareClientMaxBodySize: z.ZodOptional<z.ZodType<SizeLimit, z.ZodTypeDef, SizeLimit>>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-schema.d.ts:82:    proxyClientMaxBodySize: z.ZodOptional<z.ZodType<SizeLimit, z.ZodTypeDef, SizeLimit>>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\config-schema.d.ts:93:    proxyTimeout: z.ZodOptional<z.ZodNumber>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:5:import type { MiddlewareManifest } from '../build/webpack/plugins/middleware-plugin';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:34:    protected middlewareManifestPath: string;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:145:    /** Returns the middleware routing item if there is one. */
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:155:        /** Whether we should look for a middleware or not */
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:156:        middleware: boolean;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:174:     * Checks if a middleware exists. This method is useful for the development
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:176:     * middleware manifest.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:181:     * It will make sure that the root middleware or an edge function has been compiled
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:191:     * This method gets all middleware matchers and execute them when the request
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\next-server.d.ts:192:     * matches. It will make sure that each middleware exists and is compiled and
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\hot-middleware.d.ts:16:    private middlewareLatestStats;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\hot-middleware.d.ts:27:     * To sync we use the most recent stats but also we append middleware
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\hot-middleware.d.ts:28:     * errors. This is because it is possible that middleware fails to compile
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\hot-reloader-webpack.d.ts:30:    protected middlewares: ((req: IncomingMessage, res: ServerResponse, next: () => void) => Promise<void>)[];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\hot-reloader-types.d.ts:19:    MIDDLEWARE_CHANGES = "middlewareChanges",
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\next-dev-server.d.ts:51:    private middleware?;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\dev\next-dev-server.d.ts:73:        middlewareList: MiddlewareRoutingItem[];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\request\headers.d.ts:7: * [Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware).
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\request-meta.d.ts:68:     * The cookies that were added by middleware and were added to the response.
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\request-meta.d.ts:70:    middlewareCookie?: string[];
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\request-meta.d.ts:158:     * Whether the request is a middleware invocation
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\request-meta.d.ts:160:    middlewareInvoke?: boolean;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\trace\constants.d.ts:43:    proxyRequest = "NextNodeServer.proxyRequest",
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\patch-set-header.d.ts:6: * Ensure cookies set in middleware are merged and not overridden by API
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\esm\build\swc\generated-native.d.ts:288:  middleware?: NapiMiddleware
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\router-utils\filesystem.d.ts:4:import type { MiddlewareRouteMatch } from '../../../shared/lib/router/utils/middleware-route-matcher';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\router-utils\filesystem.d.ts:72:    middlewareMatcher: MiddlewareRouteMatch | undefined;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\router-utils\proxy-request.d.ts:4:export declare function proxyRequest(req: IncomingMessage, res: ServerResponse | Duplex, parsedUrl: NextUrlWithParsedQuery, upgradeHead?: Buffer, reqBody?: any, proxyTimeout?: number | null): Promise<boolean>;
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.d.ts:5:import type { MiddlewareRouteMatch } from '../../../shared/lib/router/utils/middleware-route-matcher';
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.d.ts:39:    middleware?: {
+C:\Users\SKKU\Downloads\codex\recruiting_page\node_modules\next\dist\server\lib\router-utils\types.d.ts:1:export type PropagateToWorkersField = 'actualMiddlewareFile' | 'actualInstrumentationHookFile' | 'reloadMatchers' | 'loadEnvConfig' | 'appPathRoutes' | 'middleware' | 'renderOpts';

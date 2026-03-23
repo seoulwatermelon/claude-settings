@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "plugins": {
+    "superpowers@superpowers-marketplace": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\SKKU\\.claude\\plugins\\cache\\superpowers-marketplace\\superpowers\\5.0.1",
+        "version": "5.0.1",
+        "installedAt": "2026-03-11T04:29:25.922Z",
+        "lastUpdated": "2026-03-11T04:29:25.922Z",
+        "gitCommitSha": "5ef73d25b71e69e63a74eae359fb26c7a6ac8fc0"
+      }
+    ],
+    "everything-claude-code@everything-claude-code": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\SKKU\\.claude\\plugins\\cache\\everything-claude-code\\everything-claude-code\\1.9.0",
+        "version": "1.9.0",
+        "installedAt": "2026-03-23T00:32:38.409Z",
+        "lastUpdated": "2026-03-23T00:32:38.409Z",
+        "gitCommitSha": "0f22cb4450087dfa3999815573d6b197b1f2bab0"
+      }
+    ]
+  }
+}

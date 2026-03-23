@@ -1,0 +1,208 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css');
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --deep-green: #0a1f14;
+  --primary-green: #1a6b4a;
+  --gold: #c2a96a;
+  --light-green: #e8f5ee;
+
+  /* Surface */
+  --page-bg: #f5f6f8;
+  --card-bg: #ffffff;
+  --row-hover: #fafbfc;
+  --header-bg: #fafbfc;
+  --divider: #f0f0f0;
+
+  /* Text */
+  --text-title: #111111;
+  --text-body: #333333;
+  --text-secondary: #888888;
+  --text-disabled: #bbbbbb;
+
+  /* Status */
+  --status-complete: #1a6b4a;
+  --status-progress: #c2a96a;
+  --status-error: #e74c3c;
+  --status-waiting: #bbbbbb;
+  --status-review: #3b5fc0;
+
+  /* Sidebar */
+  --sidebar-bg: #0a1f14;
+  --sidebar-text: #9bb5a6;
+  --sidebar-text-active: #ffffff;
+  --sidebar-hover: rgba(255, 255, 255, 0.1);
+  --sidebar-section: #4a6e5a;
+
+  /* Legacy compat */
+  --background: var(--page-bg);
+  --foreground: var(--text-body);
+  --surface: var(--card-bg);
+  --surface-strong: var(--card-bg);
+  --line: var(--divider);
+  --line-strong: var(--divider);
+  --primary: var(--primary-green);
+  --primary-strong: var(--deep-green);
+  --accent: var(--gold);
+  --muted-green: var(--light-green);
+}
+
+@theme inline {
+  --color-background: #f5f6f8;
+  --color-foreground: #333333;
+  --font-sans: 'Pretendard', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  --font-mono: "Consolas", "SFMono-Regular", monospace;
+}
+
+/* Force light mode — disable Tailwind's automatic dark mode */
+@custom-variant dark (&:is(.____dark));
+
+html {
+  color-scheme: light;
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  background: #f5f6f8;
+  color: var(--text-body);
+  margin: 0;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+select,
+textarea,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(26, 107, 74, 0.25);
+  color: #111111;
+}
+
+::-moz-selection {
+  background: rgba(26, 107, 74, 0.25);
+  color: #111111;
+}
+
+td,
+th,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+li,
+a,
+code {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  caret-color: var(--text-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--deep-green);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--text-body);
+  border: 1px solid #ddd;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-danger {
+  background: var(--status-error);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Badge */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.badge-complete { background: var(--light-green); color: var(--status-complete); }
+.badge-progress { background: #fef6e6; color: #b8941f; }
+.badge-error { background: #fdeaea; color: #c0392b; }
+.badge-waiting { background: #f0f0f0; color: var(--text-secondary); }
+.badge-review { background: #e8edfb; color: var(--status-review); }
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Input */
+.input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 12px;
+  background: var(--card-bg);
+  color: var(--text-body);
+  outline: none;
+}
+
+/* Text Link */
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 18px;
+}

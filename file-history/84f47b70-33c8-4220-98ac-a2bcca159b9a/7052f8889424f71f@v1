@@ -1,0 +1,71 @@
+/**
+ * @jest-environment node
+ */
+
+import { NextRequest } from 'next/server';
+
+jest.mock('better-sqlite3', () => {
+  const mockSubmission = {
+    id: 1,
+    department_name: '소프트웨어학과',
+    dean_name: '홍길동',
+    submitted_at: '2024-03-15',
+    status: 'submitted',
+    created_at: '2024-03-15T09:00:00',
+  };
+
+  const mockGet = jest.fn().mockReturnValue(mockSubmission);
+  const mockAll = jest.fn().mockReturnValue([]);
+  const mockPrepare = jest.fn().mockReturnValue({ get: mockGet, all: mockAll });
+  const mockExec = jest.fn();
+  const mockPragma = jest.fn();
+  const MockDB = jest.fn().mockImplementation(() => ({
+    prepare: mockPrepare,
+    exec: mockExec,
+    pragma: mockPragma,
+  }));
+  return MockDB;
+});
+
+jest.mock('fs', () => ({
+  existsSync: jest.fn().mockReturnValue(true),
+  mkdirSync: jest.fn(),
+  readFileSync: jest.fn().mockReturnValue(''),
+}));
+
+import { GET } from '@/app/api/submissions/[id]/route';
+
+function makeRequest(id: string): NextRequest {
+  return new NextRequest(`http://localhost/api/submissions/${id}`);
+}
+
+describe('GET /api/submissions/[id]', () => {
+  it('존재하는 id → 상세 데이터 반환', async () => {
+    const req = makeRequest('1');
+    const res = await GET(req, { params: { id: '1' } });
+    expect(res.status).toBe(200);
+    const json = await res.json();
+    expect(json).toHaveProperty('id');
+    expect(json).toHaveProperty('candidates');
+    expect(json).toHaveProperty('hiringProgress');
+  });
+
+  it('숫자가 아닌 id → 400 에러', async () => {
+    const req = makeRequest('abc');
+    const res = await GET(req, { params: { id: 'abc' } });
+    expect(res.status).toBe(400);
+  });
+
+  it('존재하지 않는 id → 404 에러', async () => {
+    // get이 undefined 반환하도록 재모킹
+    const db = require('@/lib/db').default;
+    const originalPrepare = db.prepare.bind(db);
+    db.prepare = jest.fn().mockReturnValue({ get: jest.fn().mockReturnValue(undefined), all: jest.fn().mockReturnValue([]) });
+
+    const req = makeRequest('9999');
+    const res = await GET(req, { params: { id: '9999' } });
+    expect(res.status).toBe(404);
+
+    db.prepare = originalPrepare;
+  });
+});

@@ -1,0 +1,518 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""교수연구실 랜덤추첨 엑셀 파일 생성"""
+
+import openpyxl
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side, numbers
+from openpyxl.utils import get_column_letter
+from datetime import datetime
+import copy
+
+SRC = 'C:/Users/SKKU/Downloads/claudecode/professor_lab_move/교수회관 연구실 교원 명단_260317.xlsx'
+OUT = 'C:/Users/SKKU/Downloads/claudecode/professor_lab_move/교수연구실_랜덤추첨.xlsx'
+
+# ─── 스타일 정의 ───
+thin = Side(style='thin')
+border_all = Border(left=thin, right=thin, top=thin, bottom=thin)
+header_font = Font(name='맑은 고딕', bold=True, size=11, color='FFFFFF')
+header_fill = PatternFill(start_color='2E74B5', end_color='2E74B5', fill_type='solid')
+title_font = Font(name='맑은 고딕', bold=True, size=16)
+subtitle_font = Font(name='맑은 고딕', bold=True, size=12)
+body_font = Font(name='맑은 고딕', size=10)
+highlight_fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')  # 노란색
+group_a_fill = PatternFill(start_color='E2EFDA', end_color='E2EFDA', fill_type='solid')  # 초록
+group_b_fill = PatternFill(start_color='D6DCE4', end_color='D6DCE4', fill_type='solid')  # 회색
+group_c_fill = PatternFill(start_color='DAEEF3', end_color='DAEEF3', fill_type='solid')  # 파랑
+select_fill = PatternFill(start_color='FCE4EC', end_color='FCE4EC', fill_type='solid')    # 핑크
+result_fill = PatternFill(start_color='E8F5E9', end_color='E8F5E9', fill_type='solid')    # 연초록
+center_align = Alignment(horizontal='center', vertical='center', wrap_text=True)
+left_align = Alignment(horizontal='left', vertical='center', wrap_text=True)
+
+def style_header(ws, row, max_col, font=header_font, fill=header_fill):
+    for col in range(1, max_col + 1):
+        cell = ws.cell(row, col)
+        cell.font = font
+        cell.fill = fill
+        cell.alignment = center_align
+        cell.border = border_all
+
+def style_body(ws, row, max_col, fill=None):
+    for col in range(1, max_col + 1):
+        cell = ws.cell(row, col)
+        cell.font = body_font
+        cell.alignment = center_align
+        cell.border = border_all
+        if fill:
+            cell.fill = fill
+
+# ─── 원본 데이터 로드 ───
+wb_src = openpyxl.load_workbook(SRC, data_only=True)
+ws_data = wb_src['data']
+ws_temp = wb_src['temporary']
+
+# 이전 대상자 (성별 남/여)
+movers = []
+for row in range(2, ws_data.max_row + 1):
+    gender = ws_data.cell(row, 14).value  # N열
+    if gender and str(gender).strip() in ('남', '여'):
+        retire_raw = ws_data.cell(row, 13).value
+        retire_str = str(retire_raw) if retire_raw else ''
+        retire_year = None
+        try:
+            if isinstance(retire_raw, datetime):
+                retire_year = retire_raw.year
+            elif '(' in retire_str:
+                retire_year = int(retire_str.split('(')[1].split('.')[0])
+            elif '-' in retire_str:
+                retire_year = int(retire_str[:4])
+        except:
+            pass
+
+        movers.append({
+            'name': ws_data.cell(row, 9).value,
+            'college': ws_data.cell(row, 10).value,
+            'major': ws_data.cell(row, 11).value,
+            'room': ws_data.cell(row, 4).value,
+            'retire': retire_str[:10],
+            'retire_year': retire_year,
+            'gender': str(gender).strip(),
+        })
+
+# 임시공간 목록
+spaces = []
+for row in range(2, ws_temp.max_row + 1):
+    spaces.append({
+        'no': ws_temp.cell(row, 1).value,
+        'building': ws_temp.cell(row, 2).value,
+        'floor': ws_temp.cell(row, 3).value,
+        'name': ws_temp.cell(row, 4).value,
+        'room_no': ws_temp.cell(row, 5).value,
+        'area': ws_temp.cell(row, 6).value,
+        'note': ws_temp.cell(row, 11).value or '',
+    })
+
+# 그룹 분류
+group_a = [m for m in movers if m['college'] and '경제' in m['college']]  # 경제대학
+group_b = [m for m in movers if m not in group_a and m['retire_year'] and m['retire_year'] <= 2031]  # 퇴직예정
+group_c = [m for m in movers if m not in group_a and m not in group_b]  # 일반
+
+dasan_spaces = [s for s in spaces if '다산' in str(s['building'])]
+ihouse_spaces = [s for s in spaces if '인터' in str(s['building'])]
+jungang_spaces = [s for s in spaces if '중앙' in str(s['building'])]
+
+# ─── 새 워크북 생성 ───
+wb = openpyxl.Workbook()
+
+# ================================================================
+# Sheet 1: 추첨 안내
+# ================================================================
+ws1 = wb.active
+ws1.title = '추첨안내'
+ws1.sheet_properties.tabColor = '2E74B5'
+
+ws1.merge_cells('A1:H1')
+ws1.cell(1, 1, '인사캠 교수연구실 배정 랜덤추첨').font = Font(name='맑은 고딕', bold=True, size=20)
+ws1.cell(1, 1).alignment = Alignment(horizontal='center', vertical='center')
+ws1.row_dimensions[1].height = 45
+
+ws1.merge_cells('A3:H3')
+ws1.cell(3, 1, '2026. 3. 26.(목) 14:00  |  교원인사팀 (600주년기념관 2층 10213호)').font = Font(name='맑은 고딕', size=12)
+ws1.cell(3, 1).alignment = Alignment(horizontal='center')
+
+info = [
+    (5, '■ 추첨 개요'),
+    (6, f'  - 이전 대상 교원: 총 {len(movers)}명 (교수회관 재실 교원)'),
+    (7, f'  - 임시공간: 총 {len(spaces)}개 (I-하우스 {len(ihouse_spaces)}개 + 다산경제관 {len(dasan_spaces)}개 + 중앙학술정보관 {len(jungang_spaces)}개)'),
+    (9, '■ 추첨 그룹'),
+    (10, f'  [A그룹] 경제대학 교원: {len(group_a)}명 → 다산경제관 {len(dasan_spaces)}개 중 랜덤 배정'),
+    (11, f'  [B그룹] 2031년 내 퇴직예정 교원 (경제대학 제외): {len(group_b)}명 → 지정 공간 중 랜덤 배정'),
+    (12, f'  [C그룹] 일반 추첨 대상: {len(group_c)}명 → 나머지 공간 중 랜덤 배정'),
+    (14, '■ 추첨 방법'),
+    (15, '  1. [퇴직예정자 공간선택] 시트에서 B그룹용 8개 공간을 선택합니다 (선택열에 "O" 입력)'),
+    (16, '  2. 각 추첨 시트에서 "추첨번호" 열의 RAND() 함수로 랜덤 순서를 부여합니다'),
+    (17, '  3. F9 키를 누르면 랜덤 값이 재계산됩니다 (= 새로운 추첨)'),
+    (18, '  4. 확정 후, 추첨번호 열을 복사 → 값으로 붙여넣기하여 결과를 고정합니다'),
+    (20, '■ 시트 구성'),
+    (21, '  - [A그룹_경제대학]: 경제대학 교원 → 다산경제관 랜덤 배정'),
+    (22, '  - [퇴직예정자 공간선택]: B그룹용 8개 공간 선택'),
+    (23, '  - [B그룹_퇴직예정]: 퇴직예정 교원 → 선택 공간 랜덤 배정'),
+    (24, '  - [C그룹_일반추첨]: 일반 교원 → 잔여 공간 랜덤 배정'),
+    (25, '  - [전체결과]: 전 그룹 배정 결과 통합'),
+]
+for r, text in info:
+    ws1.merge_cells(f'A{r}:H{r}')
+    c = ws1.cell(r, 1, text)
+    if text.startswith('■'):
+        c.font = Font(name='맑은 고딕', bold=True, size=12)
+    elif text.startswith('  ['):
+        c.font = Font(name='맑은 고딕', bold=True, size=10)
+    else:
+        c.font = Font(name='맑은 고딕', size=10)
+
+ws1.column_dimensions['A'].width = 100
+
+# ================================================================
+# Sheet 2: A그룹_경제대학 (5명 → 다산경제관 7개)
+# ================================================================
+ws_a = wb.create_sheet('A그룹_경제대학')
+ws_a.sheet_properties.tabColor = '70AD47'
+
+ws_a.merge_cells('A1:J1')
+ws_a.cell(1, 1, '[A그룹] 경제대학 교원 → 다산경제관 랜덤 배정').font = subtitle_font
+ws_a.cell(1, 1).fill = group_a_fill
+ws_a.cell(1, 1).alignment = Alignment(horizontal='center', vertical='center')
+ws_a.row_dimensions[1].height = 30
+
+# 교원 목록 (좌측)
+headers_prof = ['순번', '성명', '대학', '전공', '현 호실', '정년일', '추첨번호', '추첨순위']
+for ci, h in enumerate(headers_prof, 1):
+    ws_a.cell(3, ci, h)
+style_header(ws_a, 3, len(headers_prof))
+
+for i, prof in enumerate(group_a):
+    r = 4 + i
+    ws_a.cell(r, 1, i + 1)
+    ws_a.cell(r, 2, prof['name'])
+    ws_a.cell(r, 3, prof['college'])
+    ws_a.cell(r, 4, prof['major'])
+    ws_a.cell(r, 5, prof['room'])
+    ws_a.cell(r, 6, prof['retire'])
+    ws_a.cell(r, 7).value = f'=RAND()'
+    ws_a.cell(r, 7).number_format = '0.00000'
+    ws_a.cell(r, 8).value = f'=RANK(G{r},G$4:G${3+len(group_a)})'
+    style_body(ws_a, r, len(headers_prof))
+    ws_a.cell(r, 7).fill = highlight_fill
+    ws_a.cell(r, 8).fill = highlight_fill
+
+# 공간 목록 (우측, K열~)
+ws_a.cell(3, 11, '배정순번')
+ws_a.cell(3, 12, '건물명')
+ws_a.cell(3, 13, '공간명')
+ws_a.cell(3, 14, '호실번호')
+ws_a.cell(3, 15, '면적(㎡)')
+ws_a.cell(3, 16, '배정 교원')
+for ci in range(11, 17):
+    ws_a.cell(3, ci).font = header_font
+    ws_a.cell(3, ci).fill = PatternFill(start_color='70AD47', end_color='70AD47', fill_type='solid')
+    ws_a.cell(3, ci).alignment = center_align
+    ws_a.cell(3, ci).border = border_all
+
+for i, sp in enumerate(dasan_spaces):
+    r = 4 + i
+    ws_a.cell(r, 11, i + 1)
+    ws_a.cell(r, 12, sp['building'])
+    ws_a.cell(r, 13, sp['name'])
+    ws_a.cell(r, 14, sp['room_no'])
+    ws_a.cell(r, 15, sp['area'])
+    # 배정 교원: 추첨순위가 i+1인 교원의 이름
+    ws_a.cell(r, 16).value = f'=IFERROR(INDEX(B$4:B${3+len(group_a)},MATCH({i+1},H$4:H${3+len(group_a)},0)),"-")'
+    for ci in range(11, 17):
+        ws_a.cell(r, ci).font = body_font
+        ws_a.cell(r, ci).alignment = center_align
+        ws_a.cell(r, ci).border = border_all
+    ws_a.cell(r, 16).fill = result_fill
+    ws_a.cell(r, 16).font = Font(name='맑은 고딕', bold=True, size=11)
+
+# 열 너비
+for ci, w in enumerate([6, 10, 12, 14, 9, 12, 10, 10, 2, 2, 9, 14, 14, 12, 10, 14], 1):
+    ws_a.column_dimensions[get_column_letter(ci)].width = w
+
+# ================================================================
+# Sheet 3: 퇴직예정자 공간선택
+# ================================================================
+ws_sel = wb.create_sheet('퇴직예정자 공간선택')
+ws_sel.sheet_properties.tabColor = 'FFC000'
+
+ws_sel.merge_cells('A1:L1')
+ws_sel.cell(1, 1, '[B그룹용] 퇴직예정 교원 배정 공간 선택 (8개 선택)').font = subtitle_font
+ws_sel.cell(1, 1).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
+ws_sel.cell(1, 1).alignment = Alignment(horizontal='center', vertical='center')
+ws_sel.row_dimensions[1].height = 30
+
+ws_sel.merge_cells('A2:L2')
+ws_sel.cell(2, 1, '※ "선택" 열에 O를 입력하여 8개 공간을 지정하세요. 선택된 공간에서 퇴직예정 교원 8명이 랜덤 배정됩니다.').font = Font(name='맑은 고딕', size=10, color='FF0000')
+
+headers_sel = ['No', '선택', '건물명', '층수', '공간명', '호실번호', '면적(㎡)', '화장실', '베란다', '싱크대', '창문', '비고']
+for ci, h in enumerate(headers_sel, 1):
+    ws_sel.cell(4, ci, h)
+style_header(ws_sel, 4, len(headers_sel), fill=PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid'), font=Font(name='맑은 고딕', bold=True, size=11, color='000000'))
+
+# I-하우스 + 중앙학술정보관 (다산경제관 제외)
+non_dasan = [s for s in spaces if '다산' not in str(s['building'])]
+for i, sp in enumerate(non_dasan):
+    r = 5 + i
+    ws_sel.cell(r, 1, sp['no'])
+    ws_sel.cell(r, 2, '')  # 선택 열 (사용자가 O 입력)
+    ws_sel.cell(r, 3, sp['building'])
+    ws_sel.cell(r, 4, sp['floor'])
+    ws_sel.cell(r, 5, sp['name'])
+    ws_sel.cell(r, 6, sp['room_no'])
+    ws_sel.cell(r, 7, sp['area'])
+    # temporary 시트에서 추가 정보
+    src_row = None
+    for sr in range(2, ws_temp.max_row + 1):
+        if ws_temp.cell(sr, 5).value == sp['room_no']:
+            src_row = sr
+            break
+    if src_row:
+        ws_sel.cell(r, 8, ws_temp.cell(src_row, 7).value or '')
+        ws_sel.cell(r, 9, ws_temp.cell(src_row, 8).value or '')
+        ws_sel.cell(r, 10, ws_temp.cell(src_row, 9).value or '')
+        ws_sel.cell(r, 11, ws_temp.cell(src_row, 10).value or '')
+    ws_sel.cell(r, 12, sp['note'])
+    style_body(ws_sel, r, len(headers_sel))
+    # 선택 열 스타일
+    ws_sel.cell(r, 2).fill = select_fill
+    ws_sel.cell(r, 2).font = Font(name='맑은 고딕', bold=True, size=12, color='FF0000')
+
+# 선택 개수 카운트
+cnt_row = 5 + len(non_dasan) + 1
+ws_sel.cell(cnt_row, 1, '선택 개수:').font = Font(name='맑은 고딕', bold=True, size=11)
+ws_sel.cell(cnt_row, 2).value = f'=COUNTIF(B5:B{4+len(non_dasan)},"O")'
+ws_sel.cell(cnt_row, 2).font = Font(name='맑은 고딕', bold=True, size=14, color='FF0000')
+
+for ci, w in enumerate([6, 8, 18, 8, 18, 12, 10, 10, 8, 10, 8, 12], 1):
+    ws_sel.column_dimensions[get_column_letter(ci)].width = w
+
+# ================================================================
+# Sheet 4: B그룹_퇴직예정
+# ================================================================
+ws_b = wb.create_sheet('B그룹_퇴직예정')
+ws_b.sheet_properties.tabColor = '808080'
+
+ws_b.merge_cells('A1:J1')
+ws_b.cell(1, 1, '[B그룹] 2031년 내 퇴직예정 교원 → 선택 공간 랜덤 배정').font = subtitle_font
+ws_b.cell(1, 1).fill = group_b_fill
+ws_b.cell(1, 1).alignment = Alignment(horizontal='center', vertical='center')
+ws_b.row_dimensions[1].height = 30
+
+# 교원 목록
+headers_b = ['순번', '성명', '대학', '전공', '현 호실', '정년일', '추첨번호', '추첨순위']
+for ci, h in enumerate(headers_b, 1):
+    ws_b.cell(3, ci, h)
+style_header(ws_b, 3, len(headers_b), fill=PatternFill(start_color='808080', end_color='808080', fill_type='solid'))
+
+for i, prof in enumerate(group_b):
+    r = 4 + i
+    ws_b.cell(r, 1, i + 1)
+    ws_b.cell(r, 2, prof['name'])
+    ws_b.cell(r, 3, prof['college'])
+    ws_b.cell(r, 4, prof['major'])
+    ws_b.cell(r, 5, prof['room'])
+    ws_b.cell(r, 6, prof['retire'])
+    ws_b.cell(r, 7).value = '=RAND()'
+    ws_b.cell(r, 7).number_format = '0.00000'
+    ws_b.cell(r, 8).value = f'=RANK(G{r},G$4:G${3+len(group_b)})'
+    style_body(ws_b, r, len(headers_b))
+    ws_b.cell(r, 7).fill = highlight_fill
+    ws_b.cell(r, 8).fill = highlight_fill
+
+# 선택된 공간 참조 (우측 K열~)
+# 퇴직예정자 공간선택 시트에서 "O" 표시된 공간을 SMALL+IF 배열수식으로 참조
+ws_b.cell(3, 11, '배정순번')
+ws_b.cell(3, 12, '건물명')
+ws_b.cell(3, 13, '공간명')
+ws_b.cell(3, 14, '호실번호')
+ws_b.cell(3, 15, '면적(㎡)')
+ws_b.cell(3, 16, '배정 교원')
+
+sel_sheet = '퇴직예정자 공간선택'
+for ci in range(11, 17):
+    ws_b.cell(3, ci).font = header_font
+    ws_b.cell(3, ci).fill = PatternFill(start_color='808080', end_color='808080', fill_type='solid')
+    ws_b.cell(3, ci).alignment = center_align
+    ws_b.cell(3, ci).border = border_all
+
+# 8개 선택 공간 표시 (사용자가 선택하면 여기에 반영)
+for i in range(8):
+    r = 4 + i
+    ws_b.cell(r, 11, i + 1)
+    # SMALL+IF 배열수식으로 선택된 공간 참조
+    sel_range_b = f"'{sel_sheet}'!B$5:B${4+len(non_dasan)}"
+    sel_range_c = f"'{sel_sheet}'!C$5:C${4+len(non_dasan)}"
+    sel_range_e = f"'{sel_sheet}'!E$5:E${4+len(non_dasan)}"
+    sel_range_f = f"'{sel_sheet}'!F$5:F${4+len(non_dasan)}"
+    sel_range_g = f"'{sel_sheet}'!G$5:G${4+len(non_dasan)}"
+    sel_range_row = f"'{sel_sheet}'!A$5:A${4+len(non_dasan)}"
+
+    # 건물명
+    ws_b.cell(r, 12).value = f'=IFERROR(INDEX({sel_range_c},SMALL(IF({sel_range_b}="O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    # 공간명
+    ws_b.cell(r, 13).value = f'=IFERROR(INDEX({sel_range_e},SMALL(IF({sel_range_b}="O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    # 호실번호
+    ws_b.cell(r, 14).value = f'=IFERROR(INDEX({sel_range_f},SMALL(IF({sel_range_b}="O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    # 면적
+    ws_b.cell(r, 15).value = f'=IFERROR(INDEX({sel_range_g},SMALL(IF({sel_range_b}="O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    # 배정 교원
+    ws_b.cell(r, 16).value = f'=IFERROR(INDEX(B$4:B${3+len(group_b)},MATCH({i+1},H$4:H${3+len(group_b)},0)),"-")'
+
+    for ci in range(11, 17):
+        ws_b.cell(r, ci).font = body_font
+        ws_b.cell(r, ci).alignment = center_align
+        ws_b.cell(r, ci).border = border_all
+    ws_b.cell(r, 16).fill = result_fill
+    ws_b.cell(r, 16).font = Font(name='맑은 고딕', bold=True, size=11)
+
+for ci, w in enumerate([6, 10, 14, 14, 9, 12, 10, 10, 2, 2, 9, 18, 18, 12, 10, 14], 1):
+    ws_b.column_dimensions[get_column_letter(ci)].width = w
+
+# ================================================================
+# Sheet 5: C그룹_일반추첨
+# ================================================================
+ws_c = wb.create_sheet('C그룹_일반추첨')
+ws_c.sheet_properties.tabColor = '4472C4'
+
+ws_c.merge_cells('A1:J1')
+ws_c.cell(1, 1, f'[C그룹] 일반 교원 → I-하우스/중앙학술정보관 잔여 공간 랜덤 배정 ({len(group_c)}명)').font = subtitle_font
+ws_c.cell(1, 1).fill = group_c_fill
+ws_c.cell(1, 1).alignment = Alignment(horizontal='center', vertical='center')
+ws_c.row_dimensions[1].height = 30
+
+ws_c.merge_cells('A2:J2')
+ws_c.cell(2, 1, '※ B그룹 선택 공간을 제외한 잔여 공간에서 추첨합니다. [퇴직예정자 공간선택] 시트에서 B그룹 공간을 먼저 선택하세요.').font = Font(name='맑은 고딕', size=10, color='FF0000')
+
+# 교원 목록
+headers_c = ['순번', '성명', '대학', '전공', '현 호실', '정년일', '추첨번호', '추첨순위']
+for ci, h in enumerate(headers_c, 1):
+    ws_c.cell(4, ci, h)
+style_header(ws_c, 4, len(headers_c), fill=PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid'))
+
+for i, prof in enumerate(group_c):
+    r = 5 + i
+    ws_c.cell(r, 1, i + 1)
+    ws_c.cell(r, 2, prof['name'])
+    ws_c.cell(r, 3, prof['college'])
+    ws_c.cell(r, 4, prof['major'])
+    ws_c.cell(r, 5, prof['room'])
+    ws_c.cell(r, 6, prof['retire'])
+    ws_c.cell(r, 7).value = '=RAND()'
+    ws_c.cell(r, 7).number_format = '0.00000'
+    ws_c.cell(r, 8).value = f'=RANK(G{r},G$5:G${4+len(group_c)})'
+    style_body(ws_c, r, len(headers_c))
+    ws_c.cell(r, 7).fill = highlight_fill
+    ws_c.cell(r, 8).fill = highlight_fill
+
+# 잔여 공간 목록 (우측 K열~)
+# B그룹 선택 공간을 제외한 나머지 (다산경제관도 제외)
+ws_c.cell(4, 11, '배정순번')
+ws_c.cell(4, 12, '건물명')
+ws_c.cell(4, 13, '공간명')
+ws_c.cell(4, 14, '호실번호')
+ws_c.cell(4, 15, '면적(㎡)')
+ws_c.cell(4, 16, '배정 교원')
+for ci in range(11, 17):
+    ws_c.cell(4, ci).font = header_font
+    ws_c.cell(4, ci).fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
+    ws_c.cell(4, ci).alignment = center_align
+    ws_c.cell(4, ci).border = border_all
+
+# 잔여 공간: 선택 시트에서 "O"가 아닌 공간들
+# SMALL+IF 배열수식으로 선택 안 된 공간 참조
+remaining_count = len(non_dasan) - 8  # 87 - 8 = 79
+for i in range(remaining_count):
+    r = 5 + i
+    ws_c.cell(r, 11, i + 1)
+
+    sel_range_b = f"'{sel_sheet}'!B$5:B${4+len(non_dasan)}"
+    sel_range_c = f"'{sel_sheet}'!C$5:C${4+len(non_dasan)}"
+    sel_range_e = f"'{sel_sheet}'!E$5:E${4+len(non_dasan)}"
+    sel_range_f = f"'{sel_sheet}'!F$5:F${4+len(non_dasan)}"
+    sel_range_g = f"'{sel_sheet}'!G$5:G${4+len(non_dasan)}"
+
+    # 건물명 (선택 안 된 것 중 i+1번째)
+    ws_c.cell(r, 12).value = f'=IFERROR(INDEX({sel_range_c},SMALL(IF({sel_range_b}<>"O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    ws_c.cell(r, 13).value = f'=IFERROR(INDEX({sel_range_e},SMALL(IF({sel_range_b}<>"O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    ws_c.cell(r, 14).value = f'=IFERROR(INDEX({sel_range_f},SMALL(IF({sel_range_b}<>"O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    ws_c.cell(r, 15).value = f'=IFERROR(INDEX({sel_range_g},SMALL(IF({sel_range_b}<>"O",ROW({sel_range_b})-ROW(INDEX({sel_range_b},1))+1),{i+1})),"")'
+    # 배정 교원
+    ws_c.cell(r, 16).value = f'=IFERROR(INDEX(B$5:B${4+len(group_c)},MATCH({i+1},H$5:H${4+len(group_c)},0)),"-")'
+
+    for ci in range(11, 17):
+        ws_c.cell(r, ci).font = body_font
+        ws_c.cell(r, ci).alignment = center_align
+        ws_c.cell(r, ci).border = border_all
+    ws_c.cell(r, 16).fill = result_fill
+    ws_c.cell(r, 16).font = Font(name='맑은 고딕', bold=True, size=11)
+
+for ci, w in enumerate([6, 10, 14, 14, 9, 12, 10, 10, 2, 2, 9, 18, 18, 12, 10, 14], 1):
+    ws_c.column_dimensions[get_column_letter(ci)].width = w
+
+# ================================================================
+# Sheet 6: 전체결과
+# ================================================================
+ws_r = wb.create_sheet('전체결과')
+ws_r.sheet_properties.tabColor = 'FF0000'
+
+ws_r.merge_cells('A1:I1')
+ws_r.cell(1, 1, '교수연구실 배정 랜덤추첨 전체 결과').font = Font(name='맑은 고딕', bold=True, size=16)
+ws_r.cell(1, 1).alignment = Alignment(horizontal='center', vertical='center')
+ws_r.row_dimensions[1].height = 40
+
+headers_r = ['No', '그룹', '성명', '대학', '전공', '현 호실', '배정 건물', '배정 공간', '배정 호실']
+for ci, h in enumerate(headers_r, 1):
+    ws_r.cell(3, ci, h)
+style_header(ws_r, 3, len(headers_r), fill=PatternFill(start_color='C00000', end_color='C00000', fill_type='solid'))
+
+# A그룹 참조
+no = 1
+for i in range(len(group_a)):
+    r = 4 + i
+    ws_r.cell(r, 1, no)
+    ws_r.cell(r, 2, 'A-경제대학')
+    ws_r.cell(r, 3, f"='A그룹_경제대학'!B{4+i}")
+    ws_r.cell(r, 4, f"='A그룹_경제대학'!C{4+i}")
+    ws_r.cell(r, 5, f"='A그룹_경제대학'!D{4+i}")
+    ws_r.cell(r, 6, f"='A그룹_경제대학'!E{4+i}")
+    # 배정 정보: 추첨순위 기반
+    rank_ref = f"'A그룹_경제대학'!H{4+i}"
+    ws_r.cell(r, 7).value = f"=IFERROR(INDEX('A그룹_경제대학'!L$4:L$10,{rank_ref}),\"\")"
+    ws_r.cell(r, 8).value = f"=IFERROR(INDEX('A그룹_경제대학'!M$4:M$10,{rank_ref}),\"\")"
+    ws_r.cell(r, 9).value = f"=IFERROR(INDEX('A그룹_경제대학'!N$4:N$10,{rank_ref}),\"\")"
+    style_body(ws_r, r, len(headers_r), fill=group_a_fill)
+    no += 1
+
+# B그룹 참조
+base_r = 4 + len(group_a)
+for i in range(len(group_b)):
+    r = base_r + i
+    ws_r.cell(r, 1, no)
+    ws_r.cell(r, 2, 'B-퇴직예정')
+    ws_r.cell(r, 3, f"='B그룹_퇴직예정'!B{4+i}")
+    ws_r.cell(r, 4, f"='B그룹_퇴직예정'!C{4+i}")
+    ws_r.cell(r, 5, f"='B그룹_퇴직예정'!D{4+i}")
+    ws_r.cell(r, 6, f"='B그룹_퇴직예정'!E{4+i}")
+    rank_ref = f"'B그룹_퇴직예정'!H{4+i}"
+    ws_r.cell(r, 7).value = f"=IFERROR(INDEX('B그룹_퇴직예정'!L$4:L$11,{rank_ref}),\"\")"
+    ws_r.cell(r, 8).value = f"=IFERROR(INDEX('B그룹_퇴직예정'!M$4:M$11,{rank_ref}),\"\")"
+    ws_r.cell(r, 9).value = f"=IFERROR(INDEX('B그룹_퇴직예정'!N$4:N$11,{rank_ref}),\"\")"
+    style_body(ws_r, r, len(headers_r), fill=group_b_fill)
+    no += 1
+
+# C그룹 참조
+base_r = 4 + len(group_a) + len(group_b)
+for i in range(len(group_c)):
+    r = base_r + i
+    ws_r.cell(r, 1, no)
+    ws_r.cell(r, 2, 'C-일반')
+    ws_r.cell(r, 3, f"='C그룹_일반추첨'!B{5+i}")
+    ws_r.cell(r, 4, f"='C그룹_일반추첨'!C{5+i}")
+    ws_r.cell(r, 5, f"='C그룹_일반추첨'!D{5+i}")
+    ws_r.cell(r, 6, f"='C그룹_일반추첨'!E{5+i}")
+    rank_ref = f"'C그룹_일반추첨'!H{5+i}"
+    ws_r.cell(r, 7).value = f"=IFERROR(INDEX('C그룹_일반추첨'!L$5:L${4+remaining_count},{rank_ref}),\"\")"
+    ws_r.cell(r, 8).value = f"=IFERROR(INDEX('C그룹_일반추첨'!M$5:M${4+remaining_count},{rank_ref}),\"\")"
+    ws_r.cell(r, 9).value = f"=IFERROR(INDEX('C그룹_일반추첨'!N$5:N${4+remaining_count},{rank_ref}),\"\")"
+    style_body(ws_r, r, len(headers_r), fill=group_c_fill)
+    no += 1
+
+for ci, w in enumerate([6, 14, 10, 14, 14, 10, 18, 18, 14], 1):
+    ws_r.column_dimensions[get_column_letter(ci)].width = w
+
+# ─── 저장 ───
+wb.save(OUT)
+print(f'Done: {OUT}')
+print(f'  - 이전 대상: {len(movers)}명')
+print(f'  - A그룹(경제대학): {len(group_a)}명 → 다산경제관 {len(dasan_spaces)}개')
+print(f'  - B그룹(퇴직예정): {len(group_b)}명 → 선택 8개 공간')
+print(f'  - C그룹(일반): {len(group_c)}명 → 잔여 {remaining_count}개 공간')
+print(f'  - 시트: 추첨안내, A그룹_경제대학, 퇴직예정자 공간선택, B그룹_퇴직예정, C그룹_일반추첨, 전체결과')

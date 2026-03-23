@@ -1,0 +1,138 @@
+export const runtime = 'nodejs';
+
+import { NextRequest, NextResponse } from 'next/server';
+import * as XLSX from 'xlsx';
+import getDb from '@/lib/db';
+
+const COLUMN_MAP: Record<string, string> = {
+  '소속대학': 'college',
+  '구분': 'department',
+  '(가+나+다)\n적용 시\n교원확보율': 'confirm_rate_26',
+  '26.3월\n교원합계\n(가+나+다)': 'faculty_count_26',
+  '신규임용자_리스트': 'new_hires',
+  '퇴직자_리스트': 'retirees',
+  '정년퇴직_리스트': 'upcoming_retirements',
+  'TO요청_일반': 'req_general',
+  'TO요청_전담': 'req_dedicated',
+  'TO요청_외': 'req_external',
+  'TO요청_계': 'req_total',
+  '초빙분야_리스트': 'invitation_field',
+  '학과요청사유_리스트': 'request_reason',
+  'TO배정_일반': 'to_general',
+  'TO배정_전담': 'to_dedicated',
+  'TO배정_외': 'to_external',
+  'TO배정_계': 'to_total',
+  '첨단TO_일반': 'adv_general',
+  '첨단TO_전담': 'adv_dedicated',
+  '첨단TO_외': 'adv_external',
+  '첨단TO_계': 'adv_total',
+  '총장TO_일반': 'pres_general',
+  '총장TO_전담': 'pres_dedicated',
+  '총장TO_외': 'pres_external',
+  '총장TO_계': 'pres_total',
+  '배정사유': 'assign_reason',
+  '본부배정의견': 'hq_opinion',
+  'BIGs': 'bigs',
+  'TO신청25년': 'to_req_25',
+  'TO배정25년': 'to_assign_25',
+  '채용결과_정시': 'hire_regular_25',
+  '채용결과_상시': 'hire_rolling_25',
+  '채용결과_합계': 'hire_total_25',
+  '참고': 'note',
+  '비고': 'remark',
+};
+
+const DB_COLUMNS = Object.values(COLUMN_MAP);
+
+function toText(val: unknown): string | null {
+  if (val === null || val === undefined) return null;
+  const s = String(val).trim();
+  return s === '' ? null : s;
+}
+
+export async function POST(req: NextRequest): Promise<NextResponse> {
+  let formData: FormData;
+  try {
+    formData = await req.formData();
+  } catch {
+    return NextResponse.json({ error: '요청 파싱 실패' }, { status: 400 });
+  }
+
+  const file = formData.get('file') as File | null;
+  if (!file) {
+    return NextResponse.json({ error: '파일이 없습니다' }, { status: 400 });
+  }
+
+  if (file.size > 10 * 1024 * 1024) {
+    return NextResponse.json({ error: '파일 크기가 10MB를 초과합니다' }, { status: 400 });
+  }
+
+  // 확장자 AND MIME 검증 (둘 다 만족해야 통과 — 우회 방지)
+  const isXlsx =
+    file.name.toLowerCase().endsWith('.xlsx') &&
+    file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+  if (!isXlsx) {
+    return NextResponse.json({ error: '.xlsx 파일만 업로드 가능합니다' }, { status: 400 });
+  }
+
+  try {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const wb = XLSX.read(buffer, { type: 'buffer' });
+    const ws = wb.Sheets[wb.SheetNames[0]];
+    const rawRows = XLSX.utils.sheet_to_json<Record<string, unknown>>(ws, { defval: null });
+
+    if (rawRows.length === 0) {
+      return NextResponse.json({ error: '파일에 데이터가 없습니다' }, { status: 400 });
+    }
+
+    const headers = Object.keys(rawRows[0]);
+    if (!headers.includes('소속대학') || !headers.includes('구분')) {
+      return NextResponse.json(
+        { error: '필수 컬럼(소속대학, 구분)이 없습니다. RAW 데이터 형식의 파일을 업로드하세요.' },
+        { status: 400 }
+      );
+    }
+
+    // 매핑 + 중복 제거 (college, department 기준)
+    const seen = new Set<string>();
+    const rows: Record<string, string | null>[] = [];
+    for (const raw of rawRows) {
+      const row: Record<string, string | null> = {};
+      for (const [excelHeader, dbCol] of Object.entries(COLUMN_MAP)) {
+        row[dbCol] = toText(raw[excelHeader]);
+      }
+      // department fallback
+      if (!row['department']) {
+        row['department'] = toText(raw['학과명']);
+      }
+      const key = `${row['college']}||${row['department']}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        rows.push(row);
+      }
+    }
+
+    const db = getDb();
+    const insertCols = DB_COLUMNS.join(', ');
+    const placeholders = DB_COLUMNS.map(() => '?').join(', ');
+    const insertStmt = db.prepare(
+      `INSERT INTO to_haejung (${insertCols}) VALUES (${placeholders})`
+    );
+
+    const replaceAll = db.transaction(() => {
+      db.prepare('DELETE FROM to_haejung').run();
+      for (const row of rows) {
+        const values = DB_COLUMNS.map((col) => row[col] ?? null);
+        insertStmt.run(values);
+      }
+    });
+    replaceAll();
+
+    return NextResponse.json({ ok: true, count: rows.length });
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : '처리 실패' },
+      { status: 500 }
+    );
+  }
+}

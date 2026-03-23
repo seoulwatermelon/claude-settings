@@ -1,0 +1,270 @@
+# TO 배정 대시보드 설계 문서
+
+**작성일:** 2026-03-13
+**프로젝트:** 교원 상시채용 원스톱 관리 시스템
+**기능:** 2027 TO 배정 현황 대시보드 + 관리자 편집
+
+---
+
+## 1. 개요
+
+엑셀 파일(`통합_RAW_데이터_0310_1023.xlsx`)의 표 구조를 웹 대시보드로 구현한다.
+메인 페이지(`/`)가 TO 배정 현황 표를 보여주고, 관리자는 Excel 업로드 또는 인라인 편집으로 데이터를 관리한다.
+
+---
+
+## 2. 화면 구성
+
+### 2-1. 메인 페이지 (`/`) — TO 배정 대시보드
+
+- 기존 `/dean` 리다이렉트를 제거하고 TO 배정 대시보드를 렌더링
+- 엑셀 원본과 동일한 2단 헤더(병합 헤더 + 서브헤더) 구조
+- 학과당 1행, 소속대학별 행 그룹 (배경색 교대 적용)
+- 가로 스크롤 지원 (컬럼이 많으므로 `overflow-x-auto`)
+- `app/layout.tsx`의 `<main>` 태그는 TO 배정 페이지에서 `max-w-7xl` 제약이 좁으므로, 메인 페이지(`/`)에 한해 `max-w-full`로 확장. 구현 방법: `app/page.tsx`가 자체 레이아웃 래퍼를 사용하거나, `<main>` 대신 페이지 컴포넌트가 전체 너비를 직접 점유.
+- 네비게이션 링크: 상단 레이아웃(`app/layout.tsx`)의 기존 nav에 `/` 링크를 "TO 배정 현황"으로 추가하고, `/dean` 링크도 유지
+
+#### 컬럼 구조 (엑셀 완전 동일)
+
+| 그룹 헤더 | 서브컬럼 | DB 컬럼명 |
+|-----------|---------|-----------|
+| 소속대학 | — | `college` |
+| 학과명 | — | `department` |
+| 교원확보율(2026.3.1기준) | 확보율(%), 교원수(명) | `confirm_rate_26`, `faculty_count_26` |
+| 최근 3년간 신규임용자('23~'26) | — | `new_hires` |
+| 최근 3년간 퇴직자('23~'25) | — | `retirees` |
+| 향후 정년퇴직 예정자('25~'28) | — | `upcoming_retirements` |
+| 요청 | 일반 / 전담 / 外 / 계 | `req_general`, `req_dedicated`, `req_external`, `req_total` |
+| 초빙분야 | — | `invitation_field` |
+| 학과요청사유 | — | `request_reason` |
+| 일반TO 배정(안) | 일반 / 전담 / 外 / 계 | `to_general`, `to_dedicated`, `to_external`, `to_total` |
+| 첨단학과신설 특별 TO 배정(안) | 일반 / 전담 / 外 / 계 | `adv_general`, `adv_dedicated`, `adv_external`, `adv_total` |
+| 총장TO 배정(안) | 일반 / 전담 / 外 / 계 | `pres_general`, `pres_dedicated`, `pres_external`, `pres_total` |
+| 배정사유 | — | `assign_reason` |
+| 본부 배정의견 | — | `hq_opinion` |
+| BIGs(전임비율 제외) | — | `bigs` |
+| 25년 TO신청(명) | — | `to_req_25` |
+| 25년 TO배정(명) | — | `to_assign_25` |
+| 25년 채용결과(명) | 정시 / 상시 / 합계 | `hire_regular_25`, `hire_rolling_25`, `hire_total_25` |
+| 참고(2025학년도 채용경과 등) | — | `note` |
+| 비고(BK 및 대형과제) | — | `remark` |
+
+#### 긴 텍스트 셀 처리
+
+`invitation_field`, `request_reason`, `assign_reason`, `hq_opinion`, `note`, `remark` 컬럼은 텍스트가 길므로:
+- `max-w-[160px]`, `truncate`, `overflow-hidden` 적용
+- native `title` 속성으로 hover 시 전체 텍스트 표시
+
+---
+
+### 2-2. 관리자 TO 배정 관리 탭 (`/admin`)
+
+기존 관리자 페이지에 **"TO 배정 관리"** 탭을 추가한다. 인증/접근 제어는 기존 `/admin` 페이지와 동일한 방식으로 처리한다(현재 별도 인증 없음 — 별도 과제로 분리).
+
+#### Excel 업로드
+- 파일 선택(`.xlsx` 한정) → 업로드 버튼
+- 서버에서 `xlsx` 라이브러리(기존 `package.json`에 포함, v0.18.5)로 파싱 → `to_haejung` 테이블 전체 교체 (DELETE ALL + INSERT)
+- 업로드 전 확인 다이얼로그: "기존 데이터가 모두 교체됩니다. 계속하시겠습니까?"
+- 서버측 검증:
+  - MIME 타입 확인 (`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`)
+  - 파일 크기 10MB 이하
+  - 클라이언트: `file.name.endsWith('.xlsx')` 검사 후 submit (브라우저 `accept` 속성 우회 대응)
+  - 필수 컬럼(`소속대학`, `구분`) 존재 여부 확인 → 없으면 400 오류 반환
+  - 누락 컬럼은 null로 처리 (업로드 중단하지 않음)
+- 성공/실패: 인라인 상태 메시지(기존 AdminDashboard의 패턴과 동일, 별도 라이브러리 없이)
+
+#### 인라인 셀 편집
+- 메인 대시보드와 동일한 표를 관리자 탭에도 표시 (편집 모드 prop)
+- 셀 더블클릭 → `<input>` 또는 `<textarea>`로 전환
+- Enter 또는 포커스 아웃 → 해당 행 PATCH 저장
+- 저장 전 변경된 셀: 노란 배경 강조
+- 저장 완료: 초록 배경 → 0.5초 후 원복
+- 동시 편집 충돌: 단일 관리자 사용 가정으로 별도 처리 없음
+- 탭 구현: `app/admin/page.tsx`에 `useState`로 탭 상태 관리. `AdminDashboard` 컴포넌트는 수정하지 않고, page 레벨에서 탭 전환으로 `<AdminDashboard />` / `<TOHaejungAdminView />` 분기 렌더링
+
+---
+
+## 3. 데이터 구조
+
+### 3-1. DB 테이블: `to_haejung`
+
+```sql
+CREATE TABLE IF NOT EXISTS to_haejung (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  college TEXT,
+  department TEXT,
+  confirm_rate_26 TEXT,
+  faculty_count_26 TEXT,
+  new_hires TEXT,
+  retirees TEXT,
+  upcoming_retirements TEXT,
+  req_general TEXT,
+  req_dedicated TEXT,
+  req_external TEXT,
+  req_total TEXT,
+  invitation_field TEXT,
+  request_reason TEXT,
+  to_general TEXT,
+  to_dedicated TEXT,
+  to_external TEXT,
+  to_total TEXT,
+  adv_general TEXT,
+  adv_dedicated TEXT,
+  adv_external TEXT,
+  adv_total TEXT,
+  pres_general TEXT,
+  pres_dedicated TEXT,
+  pres_external TEXT,
+  pres_total TEXT,
+  assign_reason TEXT,
+  hq_opinion TEXT,
+  bigs TEXT,
+  to_req_25 TEXT,
+  to_assign_25 TEXT,
+  hire_regular_25 TEXT,
+  hire_rolling_25 TEXT,
+  hire_total_25 TEXT,
+  note TEXT,
+  remark TEXT,
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+```
+
+> **숫자 컬럼도 TEXT로 저장:** "미신청", "미배정", "α" 같은 비숫자 값이 존재하기 때문
+
+> **마이그레이션 전략:** `schema.sql`에 `CREATE TABLE IF NOT EXISTS`로 추가. 기존 `sangsi.db`가 있으면 앱 재시작 시 자동으로 신규 테이블만 생성. ALTER TABLE 불필요.
+
+> **중복 방지:** 업로드 시 `DELETE FROM to_haejung` 후 전체 INSERT로 처리하므로 중복 방지됨. 소스 Excel에 중복 행이 있으면 그대로 삽입되므로, 파싱 시 `(college, department)` 기준으로 중복 제거 적용.
+
+### 3-2. Excel → DB 매핑 (RAW 데이터 기준)
+
+업로드되는 파일은 `통합_RAW_데이터_0310_1023.xlsx` 형식 기준. 1행이 헤더. 아래는 정확한 헤더 텍스트 → DB 컬럼 매핑:
+
+| DB 컬럼 | RAW Excel 헤더 (정확한 텍스트) | 비고 |
+|---------|-------------------------------|------|
+| `college` | `소속대학` | |
+| `department` | `구분` | 값이 null/빈 문자열이면 동일 행의 `학과명` 컬럼 값으로 fallback (`학과명`도 null이면 null 저장) |
+| `confirm_rate_26` | `(가+나+다)\n적용 시\n교원확보율` | |
+| `faculty_count_26` | `26.3월\n교원합계\n(가+나+다)` | |
+| `new_hires` | `신규임용자_리스트` | |
+| `retirees` | `퇴직자_리스트` | |
+| `upcoming_retirements` | `정년퇴직_리스트` | |
+| `req_general` | `TO요청_일반` | |
+| `req_dedicated` | `TO요청_전담` | |
+| `req_external` | `TO요청_외` | |
+| `req_total` | `TO요청_계` | |
+| `invitation_field` | `초빙분야_리스트` | |
+| `request_reason` | `학과요청사유_리스트` | |
+| `to_general` | `TO배정_일반` | |
+| `to_dedicated` | `TO배정_전담` | |
+| `to_external` | `TO배정_외` | |
+| `to_total` | `TO배정_계` | |
+| `adv_general` | `첨단TO_일반` | |
+| `adv_dedicated` | `첨단TO_전담` | |
+| `adv_external` | `첨단TO_외` | |
+| `adv_total` | `첨단TO_계` | |
+| `pres_general` | `총장TO_일반` | |
+| `pres_dedicated` | `총장TO_전담` | |
+| `pres_external` | `총장TO_외` | |
+| `pres_total` | `총장TO_계` | |
+| `assign_reason` | `배정사유` | |
+| `hq_opinion` | `본부배정의견` | |
+| `bigs` | `BIGs` | |
+| `to_req_25` | `TO신청25년` | |
+| `to_assign_25` | `TO배정25년` | |
+| `hire_regular_25` | `채용결과_정시` | |
+| `hire_rolling_25` | `채용결과_상시` | |
+| `hire_total_25` | `채용결과_합계` | |
+| `note` | `참고` | |
+| `remark` | `비고` | |
+
+---
+
+## 4. API
+
+| 메서드 | 경로 | 설명 |
+|--------|------|------|
+| GET | `/api/to-haejung` | 전체 행 조회. `ORDER BY college, id`. 응답: `ToHaejungRow[]` |
+| POST | `/api/to-haejung/upload` | multipart/form-data (`file` 필드) → Excel 파싱 → DB 전체 교체. 응답: `{ ok: true, count: number }` 또는 `{ error: string }` |
+| PATCH | `/api/to-haejung/[id]` | 단일 행 수정. Body: `{ [fieldName: string]: string }` (부분 업데이트). PATCH 핸들러는 `updated_at = datetime('now')` 포함하여 UPDATE. 응답: `{ ok: true }` 또는 `{ error: string }` |
+
+> **런타임 주의:** `xlsx` 패키지는 Node.js 런타임에서만 동작. upload route에 `export const runtime = 'nodejs'` 명시 필요.
+
+> **PATCH SQL 인젝션 방지:** PATCH 핸들러는 요청 body의 필드명을 SQL에 직접 삽입하기 전에 반드시 `to_haejung` 테이블의 허용 컬럼 목록(화이트리스트)과 대조 검증해야 함. 허용 목록에 없는 필드명은 400 오류로 거부.
+
+---
+
+## 5. 컴포넌트 구조
+
+```
+app/
+  page.tsx                        ← TO 배정 대시보드 (기존 redirect 제거, TOHaejungTable 렌더링)
+  layout.tsx                      ← nav에 "TO 배정 현황"(/) 링크 추가, 기존 /dean 링크 유지
+  admin/
+    page.tsx                      ← 기존 관리자 + "TO 배정 관리" 탭 추가
+  api/
+    to-haejung/
+      route.ts                    ← GET (전체 조회)
+      upload/
+        route.ts                  ← POST (Excel 업로드, runtime = 'nodejs')
+      [id]/
+        route.ts                  ← PATCH (단일 행 수정)
+
+components/
+  TOHaejungTable.tsx              ← 공용 표 컴포넌트
+                                     props: { rows: ToHaejungRow[], editable?: boolean, onSave?: (id, fields) => Promise<void> }
+  TOHaejungUpload.tsx             ← Excel 업로드 UI (파일 선택 + 확인 다이얼로그 + 인라인 상태 메시지)
+
+lib/
+  types.ts                        ← ToHaejungRow 타입 추가
+
+database/
+  schema.sql                      ← to_haejung 테이블 추가
+```
+
+---
+
+## 6. 타입 정의
+
+```typescript
+export interface ToHaejungRow {
+  id: number;
+  college: string | null;
+  department: string | null;
+  confirm_rate_26: string | null;
+  faculty_count_26: string | null;
+  new_hires: string | null;
+  retirees: string | null;
+  upcoming_retirements: string | null;
+  req_general: string | null;
+  req_dedicated: string | null;
+  req_external: string | null;
+  req_total: string | null;
+  invitation_field: string | null;
+  request_reason: string | null;
+  to_general: string | null;
+  to_dedicated: string | null;
+  to_external: string | null;
+  to_total: string | null;
+  adv_general: string | null;
+  adv_dedicated: string | null;
+  adv_external: string | null;
+  adv_total: string | null;
+  pres_general: string | null;
+  pres_dedicated: string | null;
+  pres_external: string | null;
+  pres_total: string | null;
+  assign_reason: string | null;
+  hq_opinion: string | null;
+  bigs: string | null;
+  to_req_25: string | null;
+  to_assign_25: string | null;
+  hire_regular_25: string | null;
+  hire_rolling_25: string | null;
+  hire_total_25: string | null;
+  note: string | null;
+  remark: string | null;
+  updated_at: string | null;
+}
+```

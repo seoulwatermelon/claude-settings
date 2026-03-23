@@ -1,0 +1,71 @@
+논문 상세
+번호 
+저자명 
+논문제목 
+연도 
+후보자 역할 
+저널명 
+저널 종류 
+IF 
+JCR 상위% 
+Topic Cluster 
+Citations 
+FWCI 
+실적 포함 여부 
+비고 
+1 
+Ju, C. 
+Why Do Military Officers Condone Sexual Violence? A General Theory of Commander Tolerance 
+2022 
+주저자(단독) 
+International Studies Review 
+SCOPUS, SSCI 
+3.3 
+16.1 
+Gender Dynamics and Political Conflict in Ireland 
+4 
+0.5 
+O 
+Article,국제A 
+2 
+Ju, C. 
+Determinants of Conflict-Related Sexual Violence: A Meta-Reanalysis Distinguishing Two Classes of Zero Observations 
+2023 
+주저자(단독) 
+International Studies Quarterly 
+SCOPUS, SSCI 
+2.6 
+24.5 
+Gender Dynamics and Political Conflict in Ireland 
+6 
+1.13 
+O 
+Article,국제A 
+3 
+Ju, C.| Byun, J. 
+Under No Circumstances? What the Chinese Really Think about the Wartime Use of Nuclear Weapons 
+2024 
+주저자(제1저자) 
+International Studies Quarterly 
+SCOPUS, SSCI 
+2.6 
+24.5 
+China's Strategic Influence in Global Relations 
+4 
+1.3 
+O 
+Article,국제A 
+4 
+Ju, C. 
+Coercive Recruitment and Combatant Socialization: Reanalyzing the Role of Child Soldiering on Conflict-Related Sexual Violence 
+2024 
+주저자(단독) 
+Foreign Policy Analysis 
+SCOPUS, SSCI 
+2.2 
+34.9 
+Mental Health Challenges Among Refugees and Asylum Seekers 
+2 
+0.7 
+O 
+Article,국제A 

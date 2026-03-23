@@ -1,0 +1,55 @@
+import Link from "next/link";
+import { ArrowLeft, Download } from "lucide-react";
+import { requireUser } from "@/lib/auth";
+import { getCandidateManagementRows, getRecruitmentRequestOptionsForDepartment } from "@/lib/queries";
+import { CandidateManagementTable } from "@/components/candidate-management-table";
+import { RollingRequestForm } from "@/components/rolling-request-form";
+
+export default async function CandidatesPage() {
+  const currentUser = await requireUser();
+  const rows = getCandidateManagementRows(currentUser);
+  const requestOptions =
+    currentUser.role === "DEAN" && currentUser.departmentCode
+      ? getRecruitmentRequestOptionsForDepartment(currentUser.departmentCode, currentUser)
+      : [];
+
+  return (
+    <main className="min-h-screen bg-[var(--background)] px-6 py-10 text-white">
+      <div className="mx-auto max-w-[1880px] space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full border border-[#355845] bg-[#10231c] px-4 py-2 text-sm text-[#dbe8df]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            대시보드로 돌아가기
+          </Link>
+          <Link
+            href="/api/candidates/export"
+            className="inline-flex items-center gap-2 rounded-full border border-[#355845] bg-[#11261d] px-4 py-2 text-sm text-[#dbe8df]"
+          >
+            <Download className="h-4 w-4" />
+            후보자 입력 데이터 전체 다운로드
+          </Link>
+        </div>
+
+        {currentUser.role === "DEAN" && currentUser.departmentCode ? (
+          <RollingRequestForm deptCode={currentUser.departmentCode} requestOptions={requestOptions} />
+        ) : null}
+
+        <section className="rounded-[2rem] border border-[#2b4a3b] bg-[#10231c]/92 p-8">
+          <p className="font-mono text-xs uppercase tracking-[0.24em] text-[#8eb59b]">Candidate Console</p>
+          <h1 className="mt-3 text-3xl font-semibold">후보자 입력 페이지</h1>
+          <p className="mt-3 max-w-5xl text-sm leading-7 text-[#bdd0c2]">
+            후보자별 소속, 직위, 학위, 연구분야, 메모와 CV 자료를 한 화면에서 관리합니다.
+            학과장은 초빙분야에 후보자를 쉽게 추가하고, 관리자는 전체 후보자 입력 현황을 내려받아 검토할 수 있습니다.
+          </p>
+        </section>
+
+        <section className="overflow-visible rounded-[2rem] border border-[#2b4a3b] bg-[#10231c]/92 p-6">
+          <CandidateManagementTable initialRows={rows} />
+        </section>
+      </div>
+    </main>
+  );
+}

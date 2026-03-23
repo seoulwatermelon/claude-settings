@@ -1,0 +1,129 @@
+import { NextRequest, NextResponse } from 'next/server';
+import db from '@/lib/db';
+import type { SubmissionDetail, SubmissionRow } from '@/lib/types';
+
+interface Params {
+  params: { id: string };
+}
+
+export async function GET(_request: NextRequest, { params }: Params) {
+  const id = parseInt(params.id, 10);
+
+  if (isNaN(id)) {
+    return NextResponse.json({ error: '유효하지 않은 ID입니다.' }, { status: 400 });
+  }
+
+  try {
+    const submission = db
+      .prepare(`SELECT * FROM submissions WHERE id = ?`)
+      .get(id) as SubmissionRow | undefined;
+
+    if (!submission) {
+      return NextResponse.json({ error: '해당 제출 데이터를 찾을 수 없습니다.' }, { status: 404 });
+    }
+
+    type CandidateRow = {
+      id: number;
+      submission_id: number;
+      name: string;
+      birth_year?: number;
+      current_affiliation?: string;
+      current_position?: string;
+      major_field?: string;
+      total_papers?: number;
+      jcr_ratio?: number;
+      fwci?: number;
+      remarks?: string;
+      created_at?: string;
+    };
+
+    type DegreeRow = {
+      id: number;
+      candidate_id: number;
+      school?: string;
+      major?: string;
+      degree_year?: number;
+      degree_type?: string;
+    };
+
+    type CareerRow = {
+      id: number;
+      candidate_id: number;
+      institution?: string;
+      position?: string;
+      period?: string;
+    };
+
+    type ProgressRow = {
+      id: number;
+      submission_id: number;
+      progress_date?: string;
+      content?: string;
+      person_in_charge?: string;
+    };
+
+    const candidateRows = db
+      .prepare(`SELECT * FROM candidates WHERE submission_id = ? ORDER BY id`)
+      .all(id) as CandidateRow[];
+
+    const candidates = candidateRows.map((candidate) => {
+      const degrees = db
+        .prepare(`SELECT * FROM candidate_degrees WHERE candidate_id = ? ORDER BY id`)
+        .all(candidate.id) as DegreeRow[];
+
+      const careers = db
+        .prepare(`SELECT * FROM candidate_careers WHERE candidate_id = ? ORDER BY id`)
+        .all(candidate.id) as CareerRow[];
+
+      return {
+        id: candidate.id,
+        name: candidate.name,
+        birth_year: candidate.birth_year,
+        current_affiliation: candidate.current_affiliation,
+        current_position: candidate.current_position,
+        major_field: candidate.major_field,
+        total_papers: candidate.total_papers,
+        jcr_ratio: candidate.jcr_ratio,
+        fwci: candidate.fwci,
+        remarks: candidate.remarks,
+        degrees: degrees.map((d) => ({
+          school: d.school,
+          major: d.major,
+          degree_year: d.degree_year,
+          degree_type: d.degree_type,
+        })),
+        careers: careers.map((c) => ({
+          institution: c.institution,
+          position: c.position,
+          period: c.period,
+        })),
+      };
+    });
+
+    const hiringProgress = (
+      db
+        .prepare(
+          `SELECT * FROM hiring_progress WHERE submission_id = ? ORDER BY id`
+        )
+        .all(id) as ProgressRow[]
+    ).map((p) => ({
+      progress_date: p.progress_date,
+      content: p.content,
+      person_in_charge: p.person_in_charge,
+    }));
+
+    const detail: SubmissionDetail = {
+      ...submission,
+      candidates,
+      hiringProgress,
+    };
+
+    return NextResponse.json(detail);
+  } catch (error) {
+    console.error(`GET /api/submissions/${id} error:`, error);
+    return NextResponse.json(
+      { error: '서버 오류가 발생했습니다.' },
+      { status: 500 }
+    );
+  }
+}

@@ -1,0 +1,2097 @@
+# 성균관대 교원채용 시스템 리팩토링 구현 계획
+
+> **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** 한 화면 집중 구조를 딥그린 사이드바 멀티페이지로 전환하고, 밝은 토스증권 스타일 디자인과 DB 기반 권한 매트릭스를 적용한다.
+
+**Architecture:** Next.js 16 App Router의 Route Groups로 페이지를 분류하고, 공통 layout.tsx에서 사이드바를 렌더링한다. 권한은 SQLite permissions 테이블에서 매 요청마다 조회하며, 기존 52KB dashboard-shell.tsx는 3개 페이지 + 공통 컴포넌트로 분해한다.
+
+**Tech Stack:** Next.js 16, React 19, TypeScript 5, Tailwind CSS 4, SQLite (better-sqlite3), Pretendard 폰트
+
+**Spec:** `docs/superpowers/specs/2026-03-18-recruiting-system-refactor-design.md`
+
+### 스펙 대비 구현 참고사항
+
+- **DB 컬럼명:** 스펙의 마이그레이션 SQL은 `password_hash`를 사용하지만, 실제 스키마는 `password`이다. 이 계획은 실제 스키마(`password`)를 따른다.
+- **checkPermission 동기/비동기:** 스펙은 `async/Promise<boolean>`으로 정의했지만, `better-sqlite3`가 동기 라이브러리이므로 이 계획에서는 동기 함수(`boolean` 반환)로 구현한다.
+- **DEAN 사이드바 "단계별 제출":** 스펙은 `/actions/[requestId]`로 매핑하지만, 동적 라우트라 사이드바 정적 링크가 불가능하다. `/progress` 페이지에서 개별 건을 클릭하여 접근하는 방식으로 구현한다.
+- **ADMIN의 procedures/actions 권한:** 스펙에 명시되지 않았으나, ADMIN이 채용 절차를 관리하려면 필요하므로 이 계획에서 추가한다.
+- **`etc` 리소스:** 스펙에 명시된 "기타" 리소스는 권한 매트릭스 UI의 "기타" 그룹과 시드 데이터에 포함한다.
+
+---
+
+## Chunk 1: 디자인 토큰 교체 + 사이드바 레이아웃 (1~2단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Modify | `app/globals.css` | CSS 변수를 밝은 테마로 교체, Pretendard 폰트 추가 |
+| Modify | `app/layout.tsx` | 사이드바 + 메인 영역 공통 레이아웃 |
+| Create | `components/sidebar.tsx` | 딥그린 사이드바 클라이언트 컴포넌트 |
+| Create | `app/(auth)/login/page.tsx` | 로그인 페이지 이동 (사이드바 없음) |
+| Modify | `app/login/page.tsx` | 기존 로그인 → (auth) 그룹으로 이동 후 삭제 |
+
+---
+
+### Task 1: 디자인 토큰 교체 (globals.css)
+
+**Files:**
+- Modify: `app/globals.css`
+
+- [ ] **Step 1: CSS 변수를 밝은 테마로 교체**
+
+`app/globals.css`의 `:root` 블록을 다음으로 교체한다:
+
+```css
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css');
+
+:root {
+  /* Brand */
+  --deep-green: #0a1f14;
+  --primary-green: #1a6b4a;
+  --gold: #c2a96a;
+  --light-green: #e8f5ee;
+
+  /* Surface */
+  --page-bg: #f5f6f8;
+  --card-bg: #ffffff;
+  --row-hover: #fafbfc;
+  --header-bg: #fafbfc;
+  --divider: #f0f0f0;
+
+  /* Text */
+  --text-title: #111111;
+  --text-body: #333333;
+  --text-secondary: #888888;
+  --text-disabled: #bbbbbb;
+
+  /* Status */
+  --status-complete: #1a6b4a;
+  --status-progress: #c2a96a;
+  --status-error: #e74c3c;
+  --status-waiting: #bbbbbb;
+  --status-review: #3b5fc0;
+
+  /* Sidebar */
+  --sidebar-bg: #0a1f14;
+  --sidebar-text: #9bb5a6;
+  --sidebar-text-active: #ffffff;
+  --sidebar-hover: rgba(255, 255, 255, 0.1);
+  --sidebar-section: #4a6e5a;
+}
+```
+
+- [ ] **Step 2: body 및 기본 스타일 교체**
+
+같은 파일에서 `body` 스타일과 배경 관련 스타일을 교체한다:
+
+```css
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-body);
+  margin: 0;
+}
+```
+
+기존 다크 그린 배경 그라데이션, `::before` pseudo-element 등을 제거한다.
+
+- [ ] **Step 3: 유틸리티 클래스 추가**
+
+```css
+/* Buttons */
+.btn-primary {
+  background: var(--deep-green);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--text-body);
+  border: 1px solid #ddd;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-danger {
+  background: var(--status-error);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Badge */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.badge-complete { background: var(--light-green); color: var(--status-complete); }
+.badge-progress { background: #fef6e6; color: #b8941f; }
+.badge-error { background: #fdeaea; color: #c0392b; }
+.badge-waiting { background: #f0f0f0; color: var(--text-secondary); }
+.badge-review { background: #e8edfb; color: var(--status-review); }
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Input */
+.input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 12px;
+  background: var(--card-bg);
+  color: var(--text-body);
+  outline: none;
+}
+
+/* Text Link */
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 18px;
+}
+```
+
+- [ ] **Step 4: 개발 서버 실행 후 화면 확인**
+
+Run: `npm run dev`
+
+기존 페이지들이 밝은 배경으로 바뀌었는지 확인한다. 기존 컴포넌트 내 인라인 스타일은 아직 다크 테마 기준이므로 깨질 수 있지만, 이 단계에서는 CSS 변수 교체만 완료하면 된다.
+
+- [ ] **Step 5: 커밋**
+
+```bash
+git add app/globals.css
+git commit -m "style: replace dark theme with light theme design tokens
+
+Swap CSS variables to light background (#f5f6f8) with SKKU brand
+colors (deep green, gold) as accents. Add Pretendard font, utility
+classes for buttons/badges/cards."
+```
+
+---
+
+### Task 2: 사이드바 컴포넌트 생성
+
+**Files:**
+- Create: `components/sidebar.tsx`
+
+- [ ] **Step 1: 사이드바 컴포넌트 작성**
+
+역할 기반 하드코딩 메뉴 (3단계에서 permissions 기반으로 전환 예정):
+
+```tsx
+"use client";
+
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import type { AuthUser } from "@/lib/types";
+
+type MenuItem = {
+  label: string;
+  href: string;
+  icon: string;
+};
+
+type MenuSection = {
+  title?: string;
+  items: MenuItem[];
+};
+
+const ADMIN_MENU: MenuSection[] = [
+  {
+    items: [
+      { label: "현황 요약", href: "/summary", icon: "📊" },
+      { label: "TO 배분표", href: "/allocation", icon: "📋" },
+      { label: "채용 진행현황", href: "/progress", icon: "🔄" },
+      { label: "후보자 관리", href: "/candidates", icon: "👤" },
+    ],
+  },
+  {
+    title: "관리",
+    items: [
+      { label: "데이터 관리", href: "/data-sheet", icon: "⚙️" },
+      { label: "워크플로우", href: "/workflow", icon: "📐" },
+    ],
+  },
+  {
+    title: "시스템",
+    items: [
+      { label: "권한 관리", href: "/permissions", icon: "🔐" },
+      { label: "사용자 관리", href: "/users", icon: "👥" },
+    ],
+  },
+];
+
+const DEAN_MENU: MenuSection[] = [
+  {
+    items: [
+      { label: "학과 현황", href: "/summary", icon: "📊" },
+      { label: "채용 진행현황", href: "/progress", icon: "🔄" },
+      { label: "후보자 관리", href: "/candidates", icon: "👤" },
+      { label: "채용 요청", href: "/candidates", icon: "📝" },
+      { label: "단계별 제출", href: "/progress", icon: "✅" },
+    ],
+  },
+];
+
+function getMenuForRole(role: string): MenuSection[] {
+  if (role === "DEAN") return DEAN_MENU;
+  return ADMIN_MENU; // ADMIN, VIP 모두 전체 메뉴
+}
+
+export default function Sidebar({ user }: { user: AuthUser }) {
+  const pathname = usePathname();
+  const menu = getMenuForRole(user.role);
+
+  return (
+    <aside
+      style={{
+        width: 220,
+        background: "var(--sidebar-bg)",
+        padding: "20px 0",
+        flexShrink: 0,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        bottom: 0,
+        display: "flex",
+        flexDirection: "column",
+        zIndex: 50,
+      }}
+    >
+      {/* Logo */}
+      <div style={{ padding: "0 20px 20px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <Image
+            src="/logo_SKKU_transparent.png"
+            alt="SKKU"
+            width={28}
+            height={28}
+            style={{ objectFit: "contain" }}
+          />
+          <div>
+            <div style={{ fontWeight: 600, fontSize: 13, color: "var(--sidebar-text-active)" }}>
+              교원채용
+            </div>
+            <div style={{ fontSize: 10, color: "var(--sidebar-section)" }}>
+              성균관대학교
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Menu */}
+      <nav style={{ flex: 1, padding: "8px 10px 0", overflowY: "auto" }}>
+        {menu.map((section, si) => (
+          <div key={si}>
+            {section.title && (
+              <div
+                style={{
+                  margin: "14px 14px 6px",
+                  fontSize: 10,
+                  color: "var(--sidebar-section)",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  letterSpacing: 0.5,
+                }}
+              >
+                {section.title}
+              </div>
+            )}
+            {section.items.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href + item.label}
+                  href={item.href}
+                  style={{
+                    display: "block",
+                    padding: "9px 14px",
+                    borderRadius: 8,
+                    fontSize: 13,
+                    fontWeight: isActive ? 500 : 400,
+                    color: isActive ? "var(--sidebar-text-active)" : "var(--sidebar-text)",
+                    background: isActive ? "var(--sidebar-hover)" : "transparent",
+                    textDecoration: "none",
+                    marginBottom: 2,
+                  }}
+                >
+                  {item.icon} {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        ))}
+      </nav>
+
+      {/* User info */}
+      <div
+        style={{
+          padding: "14px 20px",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div
+            style={{
+              width: 26,
+              height: 26,
+              background: "var(--primary-green)",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontSize: 10,
+            }}
+          >
+            {user.username.charAt(0)}
+          </div>
+          <div>
+            <div style={{ fontSize: 12, color: "#ddd" }}>{user.username}</div>
+            <div style={{ fontSize: 10, color: "var(--sidebar-section)" }}>{user.role}</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  );
+}
+```
+
+- [ ] **Step 2: 커밋**
+
+```bash
+git add components/sidebar.tsx
+git commit -m "feat: add sidebar component with role-based menu
+
+Deep green sidebar with SKKU logo, role-specific navigation menu
+(ADMIN/VIP: full menu, DEAN: department-scoped menu), and user info."
+```
+
+---
+
+### Task 3: 공통 레이아웃 전환 (layout.tsx)
+
+**Files:**
+- Modify: `app/layout.tsx`
+- Create: `app/(auth)/login/page.tsx`
+- Create: `app/(auth)/layout.tsx`
+- Delete: `app/login/page.tsx` (이동 후)
+
+- [ ] **Step 1: 기존 로그인 페이지를 (auth) 그룹으로 이동**
+
+Root layout에서 `user`가 null이면 사이드바 없이 children만 렌더링하므로, 별도 auth layout은 불필요하다.
+
+```bash
+mkdir -p app/\(auth\)/login
+cp app/login/page.tsx app/\(auth\)/login/page.tsx
+```
+
+기존 `app/login/page.tsx`를 삭제한다. 로그인 컴포넌트 `components/login-form.tsx`는 그대로 사용.
+
+- [ ] **Step 2: layout.tsx에 사이드바 통합**
+
+`app/layout.tsx`를 수정한다. 로그인 페이지는 `(auth)` route group을 사용하므로 이 레이아웃의 영향을 받지 않는다. 단, Next.js App Router에서 root layout은 모든 페이지에 적용되므로, 사이드바 표시 여부를 서버에서 판단한다:
+
+```tsx
+// app/layout.tsx
+import type { Metadata } from "next";
+import "./globals.css";
+import { getCurrentUser } from "@/lib/auth";
+import Sidebar from "@/components/sidebar";
+
+export const metadata: Metadata = {
+  title: "SKKU 교원채용 All-In-One",
+  description: "성균관대학교 교원채용 정시/상시 통합 관리자 및 보고 페이지",
+};
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const user = await getCurrentUser();
+
+  return (
+    <html lang="ko">
+      <body>
+        {user ? (
+          <div style={{ display: "flex", minHeight: "100vh" }}>
+            <Sidebar user={user} />
+            <main
+              style={{
+                flex: 1,
+                marginLeft: 220,
+                padding: "24px 28px",
+                minHeight: "100vh",
+                background: "var(--page-bg)",
+              }}
+            >
+              {children}
+            </main>
+          </div>
+        ) : (
+          children
+        )}
+      </body>
+    </html>
+  );
+}
+```
+
+- [ ] **Step 3: 기존 페이지의 중복 레이아웃 요소 정리**
+
+`app/page.tsx` (메인 대시보드)에서 페이지 전체를 감싸던 외곽 래퍼 스타일이 있다면 제거한다. 이제 `<main>` 영역이 layout.tsx에서 제공되므로 각 페이지는 콘텐츠만 렌더링하면 된다.
+
+- [ ] **Step 4: 개발 서버에서 확인**
+
+Run: `npm run dev`
+
+- 로그인 페이지 (`/login`): 사이드바 없이 렌더링되는지 확인
+- 메인 페이지 (`/`): 좌측에 딥그린 사이드바, 우측에 기존 대시보드가 보이는지 확인
+- 사이드바 메뉴 클릭 시 해당 페이지로 이동하는지 확인 (아직 없는 페이지는 404)
+
+- [ ] **Step 5: 커밋**
+
+```bash
+git add app/layout.tsx app/\(auth\)/login/page.tsx
+git rm app/login/page.tsx
+git commit -m "feat: add sidebar layout with auth route group
+
+Root layout renders sidebar for authenticated users. Login page
+moved to (auth) route group for sidebar-free rendering."
+```
+
+---
+
+## Chunk 2: 권한 시스템 (3단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Modify | `db/schema.sql` | permissions 테이블 추가, users CHECK 제약 제거 |
+| Create | `scripts/migrate-permissions.ts` | DB 마이그레이션 + 시드 스크립트 |
+| Modify | `lib/types.ts` | UserRole 타입 변경, Permission 타입 추가 |
+| Modify | `lib/auth.ts` | checkPermission() 함수 추가 |
+| Create | `lib/permissions.ts` | 권한 관련 DB 쿼리 함수 |
+| Create | `app/api/permissions/route.ts` | 권한 CRUD API |
+| Create | `app/api/roles/route.ts` | 역할 생성 API |
+| Create | `app/api/roles/[role]/route.ts` | 역할 삭제 API |
+| Create | `app/(system)/permissions/page.tsx` | 권한 매트릭스 관리 페이지 |
+| Create | `components/permission-matrix.tsx` | 권한 매트릭스 클라이언트 컴포넌트 |
+
+---
+
+### Task 4: DB 마이그레이션 스크립트
+
+**Files:**
+- Modify: `db/schema.sql`
+- Create: `scripts/migrate-permissions.ts`
+
+- [ ] **Step 1: schema.sql에 permissions 테이블 추가**
+
+`db/schema.sql` 파일 끝에 추가:
+
+```sql
+CREATE TABLE IF NOT EXISTS permissions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  role TEXT NOT NULL,
+  resource TEXT NOT NULL,
+  action TEXT NOT NULL,
+  allowed INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(role, resource, action)
+);
+```
+
+- [ ] **Step 2: 마이그레이션 스크립트 작성**
+
+```typescript
+// scripts/migrate-permissions.ts
+import Database from "better-sqlite3";
+import path from "path";
+
+const DB_PATH = path.join(process.cwd(), "data", "recruiting.db");
+const db = new Database(DB_PATH);
+db.pragma("journal_mode = WAL");
+db.pragma("foreign_keys = ON");
+
+// 1. permissions 테이블 생성
+db.exec(`
+  CREATE TABLE IF NOT EXISTS permissions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role TEXT NOT NULL,
+    resource TEXT NOT NULL,
+    action TEXT NOT NULL,
+    allowed INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(role, resource, action)
+  );
+`);
+
+// 2. SUPER_ADMIN → VIP 마이그레이션
+db.exec(`UPDATE users SET role = 'VIP' WHERE role = 'SUPER_ADMIN';`);
+
+// 3. users 테이블 CHECK 제약 제거
+const hasCheck = db
+  .prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='users'")
+  .get() as { sql: string } | undefined;
+
+if (hasCheck?.sql?.includes("CHECK")) {
+  db.exec(`
+    ALTER TABLE users RENAME TO users_old;
+    CREATE TABLE users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      username TEXT NOT NULL UNIQUE,
+      password TEXT NOT NULL,
+      role TEXT NOT NULL,
+      department_code TEXT,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (department_code) REFERENCES departments (dept_code)
+    );
+    INSERT INTO users SELECT * FROM users_old;
+    DROP TABLE users_old;
+  `);
+}
+
+// 4. 시드 권한 데이터
+const RESOURCES = [
+  "dashboard.summary", "dashboard.allocation", "dashboard.progress",
+  "candidates", "procedures", "actions",
+  "admin.data-sheet", "admin.workflow",
+  "system.permissions", "system.users",
+];
+const ACTIONS = ["view", "edit", "delete", "export", "import"];
+
+const insertPerm = db.prepare(
+  "INSERT OR IGNORE INTO permissions (role, resource, action, allowed) VALUES (?, ?, ?, ?)"
+);
+
+const seedAll = db.transaction(() => {
+  // VIP: wildcard 전체 허용
+  for (const action of ACTIONS) {
+    insertPerm.run("VIP", "*", action, 1);
+  }
+
+  // ADMIN 권한
+  const adminPerms: Record<string, Record<string, number>> = {
+    "dashboard.summary": { view: 1, edit: 1, delete: 0, export: 1, import: 1 },
+    "dashboard.allocation": { view: 1, edit: 1, delete: 0, export: 1, import: 1 },
+    "dashboard.progress": { view: 1, edit: 1, delete: 0, export: 1, import: 1 },
+    candidates: { view: 1, edit: 1, delete: 1, export: 1, import: 0 },
+    procedures: { view: 1, edit: 1, delete: 0, export: 1, import: 0 },
+    actions: { view: 1, edit: 1, delete: 0, export: 0, import: 0 },
+    "admin.data-sheet": { view: 1, edit: 1, delete: 1, export: 1, import: 1 },
+    "admin.workflow": { view: 1, edit: 1, delete: 1, export: 1, import: 1 },
+    "system.users": { view: 1, edit: 1, delete: 1, export: 0, import: 0 },
+    "system.permissions": { view: 0, edit: 0, delete: 0, export: 0, import: 0 },
+  };
+  for (const [resource, actions] of Object.entries(adminPerms)) {
+    for (const [action, allowed] of Object.entries(actions)) {
+      insertPerm.run("ADMIN", resource, action, allowed);
+    }
+  }
+
+  // DEAN 권한
+  const deanPerms: Record<string, Record<string, number>> = {
+    "dashboard.summary": { view: 1, edit: 0, delete: 0, export: 1, import: 0 },
+    "dashboard.progress": { view: 1, edit: 0, delete: 0, export: 0, import: 0 },
+    candidates: { view: 1, edit: 1, delete: 0, export: 1, import: 0 },
+    procedures: { view: 1, edit: 0, delete: 0, export: 0, import: 0 },
+    actions: { view: 1, edit: 1, delete: 0, export: 0, import: 0 },
+  };
+  for (const [resource, actions] of Object.entries(deanPerms)) {
+    for (const [action, allowed] of Object.entries(actions)) {
+      insertPerm.run("DEAN", resource, action, allowed);
+    }
+  }
+});
+
+seedAll();
+console.log("Migration complete: permissions table created, roles migrated, seed data inserted.");
+db.close();
+```
+
+- [ ] **Step 3: 마이그레이션 실행**
+
+Run: `npx tsx scripts/migrate-permissions.ts`
+
+Expected: "Migration complete: permissions table created, roles migrated, seed data inserted."
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add db/schema.sql scripts/migrate-permissions.ts
+git commit -m "feat: add permissions table and migrate SUPER_ADMIN to VIP
+
+Create permissions table with role/resource/action matrix. Migrate
+existing SUPER_ADMIN users to VIP. Remove CHECK constraint from users
+table to support custom roles. Seed default permissions for VIP/ADMIN/DEAN."
+```
+
+---
+
+### Task 5: 타입 및 auth 함수 업데이트
+
+**Files:**
+- Modify: `lib/types.ts`
+- Create: `lib/permissions.ts`
+- Modify: `lib/auth.ts`
+
+- [ ] **Step 1: types.ts 업데이트**
+
+`lib/types.ts`에서 UserRole 타입 변경:
+
+```typescript
+// 기존:
+// export type UserRole = "SUPER_ADMIN" | "ADMIN" | "DEAN";
+
+// 변경:
+export type UserRole = string;
+export const DEFAULT_ROLES = ["ADMIN", "DEAN", "VIP"] as const;
+
+// 새 타입 추가:
+export type Permission = {
+  id: number;
+  role: string;
+  resource: string;
+  action: string;
+  allowed: boolean;
+};
+```
+
+기존 코드에서 `"SUPER_ADMIN"` 문자열 리터럴을 사용하는 모든 곳을 `"VIP"`로 변경한다. 영향 받는 파일:
+- `lib/auth.ts` — `requireRole` 호출부
+- `app/page.tsx` — `currentUser.role === "SUPER_ADMIN"` 체크
+- `app/admin/page.tsx` — `requireRole(["SUPER_ADMIN", "ADMIN"])`
+- `components/dashboard-shell.tsx` — 역할 체크
+- `components/user-admin-panel.tsx` — 역할 체크
+
+- [ ] **Step 2: permissions.ts 생성**
+
+```typescript
+// lib/permissions.ts
+import { getDb } from "./db";
+
+export function checkPermission(
+  role: string,
+  resource: string,
+  action: string
+): boolean {
+  const db = getDb();
+
+  // 먼저 와일드카드 '*' 체크
+  const wildcard = db
+    .prepare(
+      "SELECT allowed FROM permissions WHERE role = ? AND resource = '*' AND action = ? LIMIT 1"
+    )
+    .get(role, action) as { allowed: number } | undefined;
+
+  if (wildcard) return wildcard.allowed === 1;
+
+  // 정확한 resource 체크
+  const exact = db
+    .prepare(
+      "SELECT allowed FROM permissions WHERE role = ? AND resource = ? AND action = ? LIMIT 1"
+    )
+    .get(role, resource, action) as { allowed: number } | undefined;
+
+  if (exact) return exact.allowed === 1;
+
+  // 권한 레코드가 없으면 거부
+  return false;
+}
+
+export function getPermissionsForRole(role: string): {
+  resource: string;
+  action: string;
+  allowed: boolean;
+}[] {
+  const db = getDb();
+  const rows = db
+    .prepare("SELECT resource, action, allowed FROM permissions WHERE role = ?")
+    .all(role) as { resource: string; action: string; allowed: number }[];
+  return rows.map((r) => ({
+    resource: r.resource,
+    action: r.action,
+    allowed: r.allowed === 1,
+  }));
+}
+
+export function updatePermissions(
+  role: string,
+  changes: { resource: string; action: string; allowed: boolean }[]
+): void {
+  const db = getDb();
+  const upsert = db.prepare(`
+    INSERT INTO permissions (role, resource, action, allowed)
+    VALUES (?, ?, ?, ?)
+    ON CONFLICT(role, resource, action)
+    DO UPDATE SET allowed = excluded.allowed, updated_at = CURRENT_TIMESTAMP
+  `);
+  const tx = db.transaction(() => {
+    for (const c of changes) {
+      upsert.run(role, c.resource, c.action, c.allowed ? 1 : 0);
+    }
+  });
+  tx();
+}
+
+export function getAllRoles(): string[] {
+  const db = getDb();
+  const rows = db
+    .prepare("SELECT DISTINCT role FROM permissions ORDER BY role")
+    .all() as { role: string }[];
+  return rows.map((r) => r.role);
+}
+
+export function createRole(role: string): void {
+  const db = getDb();
+  const RESOURCES = [
+    "dashboard.summary", "dashboard.allocation", "dashboard.progress",
+    "candidates", "procedures", "actions",
+    "admin.data-sheet", "admin.workflow",
+    "system.permissions", "system.users",
+    "etc",
+  ];
+  const ACTIONS = ["view", "edit", "delete", "export", "import"];
+  const insert = db.prepare(
+    "INSERT OR IGNORE INTO permissions (role, resource, action, allowed) VALUES (?, ?, ?, 0)"
+  );
+  const tx = db.transaction(() => {
+    for (const resource of RESOURCES) {
+      for (const action of ACTIONS) {
+        insert.run(role, resource, action);
+      }
+    }
+  });
+  tx();
+}
+
+export function deleteRole(role: string): { success: boolean; error?: string } {
+  const db = getDb();
+  const userCount = db
+    .prepare("SELECT COUNT(*) as count FROM users WHERE role = ?")
+    .get(role) as { count: number };
+  if (userCount.count > 0) {
+    return { success: false, error: `${userCount.count}명의 사용자가 이 역할을 사용 중입니다.` };
+  }
+  db.prepare("DELETE FROM permissions WHERE role = ?").run(role);
+  return { success: true };
+}
+
+export function getViewableResources(role: string): string[] {
+  const db = getDb();
+
+  // 와일드카드 체크
+  const wildcard = db
+    .prepare("SELECT allowed FROM permissions WHERE role = ? AND resource = '*' AND action = 'view'")
+    .get(role) as { allowed: number } | undefined;
+
+  if (wildcard?.allowed === 1) {
+    const RESOURCES = [
+      "dashboard.summary", "dashboard.allocation", "dashboard.progress",
+      "candidates", "procedures", "actions",
+      "admin.data-sheet", "admin.workflow",
+      "system.permissions", "system.users",
+    ];
+    return RESOURCES;
+  }
+
+  const rows = db
+    .prepare("SELECT resource FROM permissions WHERE role = ? AND action = 'view' AND allowed = 1")
+    .all(role) as { resource: string }[];
+  return rows.map((r) => r.resource);
+}
+```
+
+- [ ] **Step 3: auth.ts에서 SUPER_ADMIN → VIP 변경**
+
+`lib/auth.ts`에서 `"SUPER_ADMIN"` 문자열을 모두 `"VIP"`로 교체한다.
+
+- [ ] **Step 4: 기존 코드에서 SUPER_ADMIN 참조 일괄 교체**
+
+모든 파일에서 `"SUPER_ADMIN"` → `"VIP"` 교체:
+
+```bash
+grep -rl "SUPER_ADMIN" app/ components/ lib/ --include="*.ts" --include="*.tsx"
+```
+
+위 명령으로 찾은 각 파일에서 문자열을 교체한다.
+
+- [ ] **Step 5: 개발 서버에서 확인**
+
+Run: `npm run dev`
+
+기존 기능이 VIP 역할로 정상 동작하는지 확인:
+- VIP로 로그인 → 전체 기능 접근 가능
+- ADMIN으로 로그인 → admin 페이지 접근 가능
+- DEAN으로 로그인 → 자기 학과만 보이는지
+
+- [ ] **Step 6: 커밋**
+
+```bash
+git add lib/types.ts lib/permissions.ts lib/auth.ts app/ components/
+git commit -m "feat: add permission system and rename SUPER_ADMIN to VIP
+
+Add checkPermission(), getPermissionsForRole(), updatePermissions()
+to lib/permissions.ts. Change UserRole to string type for custom role
+support. Replace all SUPER_ADMIN references with VIP."
+```
+
+---
+
+### Task 6: 권한 API 엔드포인트
+
+**Files:**
+- Create: `app/api/permissions/route.ts`
+- Create: `app/api/roles/route.ts`
+- Create: `app/api/roles/[role]/route.ts`
+
+- [ ] **Step 1: 권한 API 작성**
+
+```typescript
+// app/api/permissions/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import {
+  getPermissionsForRole,
+  updatePermissions,
+  getAllRoles,
+} from "@/lib/permissions";
+
+export async function GET() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.permissions", "view")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+
+  const roles = getAllRoles();
+  const result: Record<string, { resource: string; action: string; allowed: boolean }[]> = {};
+  for (const role of roles) {
+    result[role] = getPermissionsForRole(role);
+  }
+  return NextResponse.json({ roles, permissions: result });
+}
+
+export async function PATCH(req: NextRequest) {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.permissions", "edit")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+
+  const body = await req.json();
+  const { role, changes } = body as {
+    role: string;
+    changes: { resource: string; action: string; allowed: boolean }[];
+  };
+
+  updatePermissions(role, changes);
+  return NextResponse.json({ success: true });
+}
+```
+
+- [ ] **Step 2: 역할 API 작성**
+
+```typescript
+// app/api/roles/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth";
+import { checkPermission, createRole } from "@/lib/permissions";
+
+export async function POST(req: NextRequest) {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.permissions", "edit")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+
+  const { role } = (await req.json()) as { role: string };
+  if (!role || role.trim().length === 0) {
+    return NextResponse.json({ error: "역할 이름을 입력해주세요." }, { status: 400 });
+  }
+
+  createRole(role.trim().toUpperCase());
+  return NextResponse.json({ success: true });
+}
+```
+
+```typescript
+// app/api/roles/[role]/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth";
+import { checkPermission, deleteRole } from "@/lib/permissions";
+import { DEFAULT_ROLES } from "@/lib/types";
+
+export async function DELETE(
+  _req: NextRequest,
+  { params }: { params: Promise<{ role: string }> }
+) {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.permissions", "edit")) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+
+  const { role } = await params;
+  if ((DEFAULT_ROLES as readonly string[]).includes(role)) {
+    return NextResponse.json(
+      { error: "기본 역할은 삭제할 수 없습니다." },
+      { status: 400 }
+    );
+  }
+
+  const result = deleteRole(role);
+  if (!result.success) {
+    return NextResponse.json({ error: result.error }, { status: 400 });
+  }
+  return NextResponse.json({ success: true });
+}
+```
+
+- [ ] **Step 3: 커밋**
+
+```bash
+git add app/api/permissions/ app/api/roles/
+git commit -m "feat: add permissions and roles API endpoints
+
+GET/PATCH /api/permissions for viewing and updating permission matrix.
+POST /api/roles for creating new roles.
+DELETE /api/roles/[role] for deleting custom roles (rejects if users exist)."
+```
+
+---
+
+### Task 7: 권한 매트릭스 관리 페이지
+
+**Files:**
+- Create: `app/(system)/permissions/page.tsx`
+- Create: `components/permission-matrix.tsx`
+
+- [ ] **Step 1: 권한 매트릭스 클라이언트 컴포넌트 작성**
+
+```tsx
+// components/permission-matrix.tsx
+"use client";
+
+import { useState } from "react";
+
+type PermissionEntry = {
+  resource: string;
+  action: string;
+  allowed: boolean;
+};
+
+type Props = {
+  roles: string[];
+  permissions: Record<string, PermissionEntry[]>;
+};
+
+const RESOURCE_GROUPS: { title: string; resources: { key: string; label: string }[] }[] = [
+  {
+    title: "대시보드",
+    resources: [
+      { key: "dashboard.summary", label: "현황 요약" },
+      { key: "dashboard.allocation", label: "TO 배분표" },
+      { key: "dashboard.progress", label: "채용 진행현황" },
+    ],
+  },
+  {
+    title: "후보자",
+    resources: [{ key: "candidates", label: "후보자 관리" }],
+  },
+  {
+    title: "채용 절차",
+    resources: [
+      { key: "procedures", label: "채용 절차 상세" },
+      { key: "actions", label: "단계별 제출" },
+    ],
+  },
+  {
+    title: "관리",
+    resources: [
+      { key: "admin.data-sheet", label: "데이터 관리 (DB 시트)" },
+      { key: "admin.workflow", label: "워크플로우 매트릭스" },
+    ],
+  },
+  {
+    title: "시스템",
+    resources: [
+      { key: "system.permissions", label: "권한 관리" },
+      { key: "system.users", label: "사용자 관리" },
+    ],
+  },
+  {
+    title: "기타",
+    resources: [{ key: "etc", label: "기타" }],
+  },
+];
+
+const ACTIONS = [
+  { key: "view", label: "보기" },
+  { key: "edit", label: "편집" },
+  { key: "delete", label: "삭제" },
+  { key: "export", label: "내보내기" },
+  { key: "import", label: "가져오기" },
+];
+
+export default function PermissionMatrix({ roles, permissions }: Props) {
+  const [activeRole, setActiveRole] = useState(roles[0] || "ADMIN");
+  const [localPerms, setLocalPerms] = useState(permissions);
+  const [saving, setSaving] = useState(false);
+  const [newRole, setNewRole] = useState("");
+
+  function isAllowed(role: string, resource: string, action: string): boolean {
+    const perms = localPerms[role] || [];
+    // 와일드카드 체크
+    const wildcard = perms.find((p) => p.resource === "*" && p.action === action);
+    if (wildcard) return wildcard.allowed;
+    const entry = perms.find((p) => p.resource === resource && p.action === action);
+    return entry?.allowed ?? false;
+  }
+
+  function toggle(resource: string, action: string) {
+    const current = isAllowed(activeRole, resource, action);
+    setLocalPerms((prev) => {
+      const rolePerms = [...(prev[activeRole] || [])];
+      const idx = rolePerms.findIndex(
+        (p) => p.resource === resource && p.action === action
+      );
+      if (idx >= 0) {
+        rolePerms[idx] = { ...rolePerms[idx], allowed: !current };
+      } else {
+        rolePerms.push({ resource, action, allowed: !current });
+      }
+      return { ...prev, [activeRole]: rolePerms };
+    });
+  }
+
+  async function save() {
+    setSaving(true);
+    const original = permissions[activeRole] || [];
+    const current = localPerms[activeRole] || [];
+    const changes: { resource: string; action: string; allowed: boolean }[] = [];
+
+    for (const c of current) {
+      const orig = original.find(
+        (o) => o.resource === c.resource && o.action === c.action
+      );
+      if (!orig || orig.allowed !== c.allowed) {
+        changes.push(c);
+      }
+    }
+
+    if (changes.length > 0) {
+      await fetch("/api/permissions", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ role: activeRole, changes }),
+      });
+    }
+    setSaving(false);
+  }
+
+  async function addRole() {
+    if (!newRole.trim()) return;
+    await fetch("/api/roles", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ role: newRole.trim() }),
+    });
+    window.location.reload();
+  }
+
+  // 역할 탭 순서: ADMIN → DEAN → VIP → 나머지
+  const sortedRoles = [...roles].sort((a, b) => {
+    const order: Record<string, number> = { ADMIN: 0, DEAN: 1, VIP: 2 };
+    return (order[a] ?? 3) - (order[b] ?? 3);
+  });
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+        <div>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+            권한 관리
+          </h2>
+          <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+            역할별 페이지 및 기능 접근 권한을 설정합니다
+          </p>
+        </div>
+        <div style={{ display: "flex", gap: 8 }}>
+          <div style={{ display: "flex", gap: 4 }}>
+            <input
+              value={newRole}
+              onChange={(e) => setNewRole(e.target.value)}
+              placeholder="새 역할명"
+              style={{
+                padding: "7px 12px",
+                border: "1px solid #ddd",
+                borderRadius: 6,
+                fontSize: 12,
+                width: 120,
+              }}
+            />
+            <button className="btn-secondary" onClick={addRole}>
+              + 추가
+            </button>
+          </div>
+          <button className="btn-primary" onClick={save} disabled={saving}>
+            {saving ? "저장 중..." : "변경사항 저장"}
+          </button>
+        </div>
+      </div>
+
+      {/* Role tabs */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 20 }}>
+        {sortedRoles.map((role) => (
+          <button
+            key={role}
+            onClick={() => setActiveRole(role)}
+            style={{
+              padding: "8px 16px",
+              background: role === activeRole ? "var(--deep-green)" : "var(--card-bg)",
+              color: role === activeRole ? "#fff" : "var(--text-body)",
+              border: "none",
+              borderRadius: 6,
+              fontSize: 12,
+              fontWeight: role === activeRole ? 500 : 400,
+              cursor: "pointer",
+            }}
+          >
+            {role}
+          </button>
+        ))}
+      </div>
+
+      {/* Matrix table */}
+      <div className="card" style={{ padding: 0, overflow: "hidden" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+          <thead>
+            <tr style={{ background: "var(--header-bg)" }}>
+              <th style={{ textAlign: "left", padding: "10px 14px", color: "var(--text-secondary)", fontWeight: 500, fontSize: 11, width: "30%" }}>
+                리소스
+              </th>
+              {ACTIONS.map((a) => (
+                <th key={a.key} style={{ textAlign: "center", padding: "10px 14px", color: "var(--text-secondary)", fontWeight: 500, fontSize: 11, width: "14%" }}>
+                  {a.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {RESOURCE_GROUPS.map((group) => (
+              <>
+                <tr key={group.title} style={{ background: "var(--header-bg)" }}>
+                  <td
+                    colSpan={6}
+                    style={{
+                      padding: "8px 14px",
+                      fontSize: 10,
+                      color: "var(--text-secondary)",
+                      fontWeight: 600,
+                      textTransform: "uppercase",
+                      letterSpacing: 0.5,
+                    }}
+                  >
+                    {group.title}
+                  </td>
+                </tr>
+                {group.resources.map((res) => (
+                  <tr key={res.key} style={{ borderTop: "1px solid var(--divider)" }}>
+                    <td style={{ padding: "10px 14px", color: "var(--text-body)" }}>
+                      {res.label}
+                    </td>
+                    {ACTIONS.map((action) => {
+                      const allowed = isAllowed(activeRole, res.key, action.key);
+                      return (
+                        <td key={action.key} style={{ textAlign: "center", padding: "10px 14px" }}>
+                          <div
+                            onClick={() => toggle(res.key, action.key)}
+                            style={{
+                              width: 18,
+                              height: 18,
+                              background: allowed ? "var(--primary-green)" : "#e0e0e0",
+                              borderRadius: 4,
+                              margin: "0 auto",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              cursor: "pointer",
+                            }}
+                          >
+                            {allowed && (
+                              <span style={{ color: "#fff", fontSize: 11 }}>✓</span>
+                            )}
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Legend */}
+      <div style={{ display: "flex", gap: 16, marginTop: 12, fontSize: 11, color: "var(--text-secondary)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          <div style={{ width: 14, height: 14, background: "var(--primary-green)", borderRadius: 3, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ color: "#fff", fontSize: 9 }}>✓</span>
+          </div>
+          허용
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          <div style={{ width: 14, height: 14, background: "#e0e0e0", borderRadius: 3 }} />
+          차단
+        </div>
+        <span style={{ color: "var(--text-disabled)" }}>|</span>
+        <span>클릭하여 토글</span>
+      </div>
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: 권한 관리 페이지 작성**
+
+```tsx
+// app/(system)/permissions/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission, getAllRoles, getPermissionsForRole } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import PermissionMatrix from "@/components/permission-matrix";
+
+export default async function PermissionsPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.permissions", "view")) {
+    redirect("/summary");
+  }
+
+  const roles = getAllRoles();
+  const permissions: Record<string, { resource: string; action: string; allowed: boolean }[]> = {};
+  for (const role of roles) {
+    permissions[role] = getPermissionsForRole(role);
+  }
+
+  return <PermissionMatrix roles={roles} permissions={permissions} />;
+}
+```
+
+- [ ] **Step 3: 개발 서버에서 확인**
+
+Run: `npm run dev`
+
+`/permissions` 페이지 접근:
+- VIP 역할로 로그인 시 → 매트릭스 테이블 렌더링
+- 탭 순서: ADMIN → DEAN → VIP
+- 체크박스 토글 + 저장 동작 확인
+- DEAN으로 로그인 시 → `/summary`로 리다이렉트
+
+- [ ] **Step 4: 사이드바를 permissions 기반으로 전환**
+
+`components/sidebar.tsx`를 수정하여 하드코딩 메뉴 대신 `viewableResources`를 prop으로 받아 메뉴를 동적으로 생성한다:
+
+`app/layout.tsx`에서 `getViewableResources(user.role)` 호출하여 사이드바에 전달.
+
+사이드바 컴포넌트에서 `RESOURCE_TO_MENU` 매핑:
+
+```typescript
+const RESOURCE_TO_MENU: Record<string, { label: string; href: string; icon: string; section?: string }> = {
+  "dashboard.summary": { label: "현황 요약", href: "/summary", icon: "📊" },
+  "dashboard.allocation": { label: "TO 배분표", href: "/allocation", icon: "📋" },
+  "dashboard.progress": { label: "채용 진행현황", href: "/progress", icon: "🔄" },
+  candidates: { label: "후보자 관리", href: "/candidates", icon: "👤" },
+  "admin.data-sheet": { label: "데이터 관리", href: "/data-sheet", icon: "⚙️", section: "관리" },
+  "admin.workflow": { label: "워크플로우", href: "/workflow", icon: "📐", section: "관리" },
+  "system.permissions": { label: "권한 관리", href: "/permissions", icon: "🔐", section: "시스템" },
+  "system.users": { label: "사용자 관리", href: "/users", icon: "👥", section: "시스템" },
+};
+```
+
+- [ ] **Step 5: 커밋**
+
+```bash
+git add app/\(system\)/permissions/ components/permission-matrix.tsx components/sidebar.tsx app/layout.tsx
+git commit -m "feat: add permissions management page and dynamic sidebar
+
+Permission matrix UI with role tabs, resource groups, checkbox toggles.
+Sidebar now renders menu items based on DB permissions instead of
+hardcoded role menus."
+```
+
+---
+
+## Chunk 3: 대시보드 분해 (4단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Create | `components/data-table.tsx` | 재사용 테이블 컴포넌트 |
+| Create | `components/filter-bar.tsx` | 필터 UI (단과대, 학과, 채용유형) |
+| Create | `components/detail-panel.tsx` | 행 선택 시 상세 패널 |
+| Create | `app/(dashboard)/summary/page.tsx` | 현황 요약 (KPI + 최근 활동) |
+| Create | `components/summary-page.tsx` | 현황 요약 클라이언트 컴포넌트 |
+| Create | `app/(dashboard)/allocation/page.tsx` | TO 배분표 |
+| Create | `components/allocation-table.tsx` | TO 배분 테이블 클라이언트 컴포넌트 |
+| Create | `app/(dashboard)/progress/page.tsx` | 채용 진행현황 |
+| Create | `components/progress-board.tsx` | 채용 진행 상태 클라이언트 컴포넌트 |
+| Modify | `app/page.tsx` | `/summary`로 리다이렉트 |
+
+---
+
+### Task 8: 공통 컴포넌트 추출
+
+**Files:**
+- Create: `components/data-table.tsx`
+- Create: `components/filter-bar.tsx`
+- Create: `components/detail-panel.tsx`
+
+- [ ] **Step 1: data-table.tsx 작성**
+
+기존 `dashboard-shell.tsx`의 테이블 렌더링 로직을 추출한다. 새 디자인 시스템에 맞게 스타일링:
+
+```tsx
+// components/data-table.tsx
+"use client";
+
+type Column = {
+  key: string;
+  label: string;
+  groupLabel?: string;
+};
+
+type Props = {
+  columns: Column[];
+  rows: Record<string, unknown>[];
+  onRowClick?: (row: Record<string, unknown>) => void;
+  selectedRowId?: number | null;
+};
+
+export default function DataTable({ columns, rows, onRowClick, selectedRowId }: Props) {
+  return (
+    <div className="card" style={{ padding: 0, overflow: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+        <thead>
+          <tr style={{ background: "var(--header-bg)" }}>
+            {columns.map((col) => (
+              <th
+                key={col.key}
+                style={{
+                  textAlign: "left",
+                  padding: "10px 14px",
+                  color: "var(--text-secondary)",
+                  fontWeight: 500,
+                  fontSize: 11,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {col.label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr
+              key={(row.id as number) ?? i}
+              onClick={() => onRowClick?.(row)}
+              style={{
+                borderTop: "1px solid var(--divider)",
+                background:
+                  selectedRowId === row.id ? "var(--light-green)" : "transparent",
+                cursor: onRowClick ? "pointer" : "default",
+              }}
+            >
+              {columns.map((col) => (
+                <td
+                  key={col.key}
+                  style={{
+                    padding: "10px 14px",
+                    color: "var(--text-body)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {String(row[col.key] ?? "")}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: filter-bar.tsx 작성**
+
+기존 `dashboard-shell.tsx`의 필터 UI를 추출:
+
+```tsx
+// components/filter-bar.tsx
+"use client";
+
+type FilterOption = { value: string; label: string };
+
+type Props = {
+  filters: {
+    key: string;
+    label: string;
+    value: string;
+    options: FilterOption[];
+    onChange: (value: string) => void;
+  }[];
+};
+
+export default function FilterBar({ filters }: Props) {
+  return (
+    <div style={{ display: "flex", gap: 12, marginBottom: 16, alignItems: "flex-end" }}>
+      {filters.map((f) => (
+        <div key={f.key}>
+          <div style={{ fontSize: 11, color: "var(--text-secondary)", marginBottom: 4 }}>
+            {f.label}
+          </div>
+          <select
+            value={f.value}
+            onChange={(e) => f.onChange(e.target.value)}
+            style={{
+              padding: "8px 12px",
+              border: "1px solid #ddd",
+              borderRadius: 8,
+              fontSize: 12,
+              background: "var(--card-bg)",
+              color: "var(--text-body)",
+            }}
+          >
+            <option value="">전체</option>
+            {f.options.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+- [ ] **Step 3: detail-panel.tsx 작성**
+
+행 선택 시 우측에 보이는 상세 패널. 기존 `dashboard-shell.tsx`의 detail 패널 로직을 추출한다. `dashboard-shell.tsx`에서 `selectedRowId` 상태 관리 및 detail API 호출 로직, 상세 정보 렌더링 부분을 가져온다. Props: `detail: DashboardDetail | null`, `onClose: () => void`.
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add components/data-table.tsx components/filter-bar.tsx components/detail-panel.tsx
+git commit -m "feat: extract shared table, filter, and detail panel components
+
+Reusable DataTable with new design system styling. FilterBar for
+college/department/type filters. DetailPanel for row selection details."
+```
+
+---
+
+### Task 9: 현황 요약 페이지 (/summary)
+
+**Files:**
+- Create: `app/(dashboard)/summary/page.tsx`
+- Create: `components/summary-page.tsx`
+
+- [ ] **Step 1: summary-page.tsx 클라이언트 컴포넌트 작성**
+
+기존 `dashboard-shell.tsx`에서 KPI 카드와 최근 활동 영역을 추출:
+
+```tsx
+// components/summary-page.tsx
+"use client";
+
+type KpiData = {
+  total: number;
+  inProgress: number;
+  completed: number;
+  waiting: number;
+};
+
+type ActivityItem = {
+  id: number;
+  deptName: string;
+  description: string;
+  status: "complete" | "progress" | "waiting";
+  timeAgo: string;
+};
+
+type Props = {
+  kpi: KpiData;
+  recentActivity: ActivityItem[];
+};
+
+export default function SummaryPage({ kpi, recentActivity }: Props) {
+  const statusColor: Record<string, string> = {
+    complete: "var(--status-complete)",
+    progress: "var(--status-progress)",
+    waiting: "var(--text-disabled)",
+  };
+
+  return (
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+        <div>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+            현황 요약
+          </h2>
+          <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+            2026년 1학기 교원채용
+          </p>
+        </div>
+        <button className="btn-primary">Excel 내보내기</button>
+      </div>
+
+      {/* KPI Cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 20 }}>
+        <div className="card">
+          <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>전체 채용건</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: "var(--text-title)", marginTop: 2 }}>
+            {kpi.total}
+          </div>
+        </div>
+        <div className="card">
+          <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>진행 중</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: "var(--gold)", marginTop: 2 }}>
+            {kpi.inProgress}
+          </div>
+          <div style={{ fontSize: 10, color: "var(--text-secondary)", marginTop: 2 }}>
+            {kpi.total > 0 ? ((kpi.inProgress / kpi.total) * 100).toFixed(1) : 0}%
+          </div>
+        </div>
+        <div className="card">
+          <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>완료</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: "var(--status-complete)", marginTop: 2 }}>
+            {kpi.completed}
+          </div>
+          <div style={{ fontSize: 10, color: "var(--text-secondary)", marginTop: 2 }}>
+            {kpi.total > 0 ? ((kpi.completed / kpi.total) * 100).toFixed(1) : 0}%
+          </div>
+        </div>
+        <div className="card">
+          <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>대기</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: "var(--text-secondary)", marginTop: 2 }}>
+            {kpi.waiting}
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Activity */}
+      <div className="card">
+        <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text-body)", marginBottom: 14 }}>
+          최근 활동
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {recentActivity.map((item, i) => (
+            <div
+              key={item.id}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                padding: "10px 0",
+                borderTop: i > 0 ? "1px solid var(--divider)" : "none",
+              }}
+            >
+              <div
+                style={{
+                  width: 6,
+                  height: 6,
+                  background: statusColor[item.status],
+                  borderRadius: "50%",
+                  flexShrink: 0,
+                }}
+              />
+              <div style={{ fontSize: 12, color: "var(--text-body)", flex: 1 }}>
+                {item.deptName} — {item.description}
+              </div>
+              <div style={{ fontSize: 10, color: "var(--text-disabled)", flexShrink: 0 }}>
+                {item.timeAgo}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: summary 서버 페이지 작성**
+
+```tsx
+// app/(dashboard)/summary/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getDashboardRows } from "@/lib/queries";
+import SummaryPage from "@/components/summary-page";
+
+export default async function Summary() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "dashboard.summary", "view")) {
+    redirect("/");
+  }
+
+  const rows = getDashboardRows(user);
+
+  // KPI 계산: rows에서 recruitment_requests의 status 기준으로 집계
+  // 실제 구현 시 queries.ts에서 KPI 전용 쿼리 추가 필요
+  const total = rows.length;
+  const completed = rows.filter((r) => {
+    const raw = JSON.parse(r.rawJson || "{}");
+    return raw.status === "임용 완료" || raw.status === "임용완료";
+  }).length;
+  const waiting = rows.filter((r) => {
+    const raw = JSON.parse(r.rawJson || "{}");
+    return !raw.status || raw.status === "" || raw.status === "대기";
+  }).length;
+  const inProgress = total - completed - waiting;
+
+  const kpi = { total, inProgress, completed, waiting };
+
+  // 최근 활동: 최근 수정된 rows 기반으로 생성
+  const recentActivity = rows.slice(0, 5).map((r, i) => {
+    const raw = JSON.parse(r.rawJson || "{}");
+    return {
+      id: r.id,
+      deptName: r.deptName || "",
+      description: `${raw.field_name || "채용"} ${raw.status || "진행중"}`,
+      status: (raw.status?.includes("완료") ? "complete" : raw.status ? "progress" : "waiting") as
+        "complete" | "progress" | "waiting",
+      timeAgo: `${i + 1}일 전`,
+    };
+  });
+
+  return <SummaryPage kpi={kpi} recentActivity={recentActivity} />;
+}
+```
+
+- [ ] **Step 3: app/page.tsx를 /summary로 리다이렉트**
+
+```tsx
+// app/page.tsx
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/summary");
+}
+```
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add app/\(dashboard\)/summary/ components/summary-page.tsx app/page.tsx
+git commit -m "feat: add summary page with KPI cards and recent activity
+
+Split dashboard into /summary with KPI cards (total/progress/complete/waiting)
+and recent activity feed. Root page now redirects to /summary."
+```
+
+---
+
+### Task 10: TO 배분표 페이지 (/allocation)
+
+**Files:**
+- Create: `app/(dashboard)/allocation/page.tsx`
+- Create: `components/allocation-table.tsx`
+
+- [ ] **Step 1: allocation-table.tsx 클라이언트 컴포넌트 작성**
+
+기존 `dashboard-shell.tsx`의 TO 배분 테이블 + 필터 + 상세 패널 로직을 추출한다. `DataTable`, `FilterBar`, `DetailPanel` 컴포넌트를 조합하여 구성. 핵심 로직: `dashboard-shell.tsx`의 columns/rows 렌더링, selectedGroup 상태, 필터 (college, department, hiringType), 행 선택 시 detail API 호출. Props: `columns`, `rows`, `initialDetail`, `currentUser`.
+
+- [ ] **Step 2: allocation 서버 페이지 작성**
+
+```tsx
+// app/(dashboard)/allocation/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getDashboardColumns, getDashboardRows, getDashboardDetail } from "@/lib/queries";
+import AllocationTable from "@/components/allocation-table";
+
+export default async function Allocation() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "dashboard.allocation", "view")) {
+    redirect("/summary");
+  }
+
+  const columns = getDashboardColumns();
+  const rows = getDashboardRows(user);
+  const initialDetail = rows[0] ? getDashboardDetail(rows[0].id, user) : null;
+
+  return (
+    <AllocationTable
+      columns={columns}
+      rows={rows}
+      initialDetail={initialDetail}
+      currentUser={user}
+    />
+  );
+}
+```
+
+- [ ] **Step 3: 커밋**
+
+```bash
+git add app/\(dashboard\)/allocation/ components/allocation-table.tsx
+git commit -m "feat: add TO allocation table page
+
+Dedicated /allocation page with filterable table, detail panel on
+row selection. Extracted from dashboard-shell.tsx."
+```
+
+---
+
+### Task 11: 채용 진행현황 페이지 (/progress)
+
+**Files:**
+- Create: `app/(dashboard)/progress/page.tsx`
+- Create: `components/progress-board.tsx`
+
+- [ ] **Step 1: progress-board.tsx 클라이언트 컴포넌트 작성**
+
+채용 진행 상태를 보여주는 테이블 뷰. `DataTable`을 재사용하되, 상태 뱃지(`.badge-*` 클래스)와 진행률 바를 커스텀 렌더링. 기존 `dashboard-shell.tsx`의 `getRequestProgressMeta()` 유틸 함수를 가져와 진행률 계산. Props: `rows`, `currentUser`. 필터도 `FilterBar` 재사용.
+
+- [ ] **Step 2: progress 서버 페이지 작성**
+
+allocation과 유사 구조. `dashboard.progress` 권한 체크.
+
+- [ ] **Step 3: 커밋**
+
+```bash
+git add app/\(dashboard\)/progress/ components/progress-board.tsx
+git commit -m "feat: add recruitment progress page
+
+Dedicated /progress page showing recruitment status with badges
+and progress bars. Extracted from dashboard-shell.tsx."
+```
+
+---
+
+## Chunk 4: 기존 페이지 리스타일 + Admin 분리 + 사용자 관리 (5~7단계)
+
+### File Structure
+
+| Action | Path | Responsibility |
+|--------|------|----------------|
+| Modify | `components/candidate-management-table.tsx` | 새 디자인 적용 |
+| Modify | `components/procedure-detail-shell.tsx` | 새 디자인 적용 |
+| Modify | `components/procedure-stepper.tsx` | 새 디자인 적용 |
+| Modify | `components/workflow-form.tsx` | 새 디자인 적용 |
+| Modify | `components/rolling-request-form.tsx` | 새 디자인 적용 |
+| Create | `app/(admin)/data-sheet/page.tsx` | DB 편집 시트 독립 페이지 |
+| Create | `app/(admin)/workflow/page.tsx` | 워크플로우 독립 페이지 |
+| Modify | `components/admin-request-sheet.tsx` | 새 디자인 적용 |
+| Modify | `components/admin-workflow-table.tsx` | 새 디자인 적용 |
+| Delete | `app/admin/page.tsx` | 2개 독립 페이지로 분리 후 삭제 |
+| Create | `app/(system)/users/page.tsx` | 사용자 관리 독립 페이지 |
+| Modify | `components/user-admin-panel.tsx` | 새 디자인 적용 + 독립 페이지용 |
+
+---
+
+### Task 12: 기존 페이지 리스타일 (5단계)
+
+**Files:**
+- Modify: `components/candidate-management-table.tsx`
+- Modify: `app/candidates/page.tsx`
+- Modify: `components/procedure-detail-shell.tsx`
+- Modify: `components/procedure-stepper.tsx`
+- Modify: `components/workflow-form.tsx`
+- Modify: `components/rolling-request-form.tsx`
+- Modify: `components/login-form.tsx`
+
+- [ ] **Step 1: candidates 페이지 리스타일**
+
+`components/candidate-management-table.tsx`의 인라인 스타일을 새 디자인 시스템에 맞게 교체:
+- 다크 배경 → 밝은 배경 (`var(--page-bg)`, `var(--card-bg)`)
+- 테이블 스타일을 `data-table.tsx` 패턴에 맞춤
+- 상태 뱃지에 `.badge-*` 클래스 적용
+- 버튼에 `.btn-primary`, `.btn-secondary` 클래스 적용
+
+- [ ] **Step 2: procedures 페이지 리스타일**
+
+`procedure-detail-shell.tsx`, `procedure-stepper.tsx`의 스타일 교체:
+- 스테퍼: 딥그린 배경 제거, 밝은 카드 위에 그린 포인트
+- 상세 패널: 흰색 카드 스타일
+
+- [ ] **Step 3: actions 페이지 리스타일**
+
+`workflow-form.tsx`의 폼 스타일 교체:
+- 입력 필드: `border: 1px solid #ddd`, `border-radius: 8px`
+- 버튼: `.btn-primary` 적용
+
+- [ ] **Step 4: login 페이지 리스타일**
+
+`login-form.tsx`의 스타일 교체:
+- 다크 배경 제거
+- 밝은 배경 + 센터 정렬 카드 폼
+- SKKU 로고 사용
+
+- [ ] **Step 5: 개발 서버에서 모든 페이지 확인**
+
+Run: `npm run dev`
+
+각 페이지를 순회하며 새 디자인 적용 확인.
+
+- [ ] **Step 6: 커밋**
+
+```bash
+git add components/ app/
+git commit -m "style: apply new design system to existing pages
+
+Update candidates, procedures, actions, login pages with light theme,
+new typography, card-based layouts, and consistent button/badge styles."
+```
+
+---
+
+### Task 13: Admin 페이지 분리 (6단계)
+
+**Files:**
+- Create: `app/(admin)/data-sheet/page.tsx`
+- Create: `app/(admin)/workflow/page.tsx`
+- Delete: `app/admin/page.tsx`
+- Modify: `components/admin-request-sheet.tsx`
+- Modify: `components/admin-workflow-table.tsx`
+
+- [ ] **Step 1: data-sheet 페이지 작성**
+
+```tsx
+// app/(admin)/data-sheet/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getAdminRequestSheet } from "@/lib/queries";
+import AdminRequestSheet from "@/components/admin-request-sheet";
+
+export default async function DataSheetPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "admin.data-sheet", "view")) {
+    redirect("/summary");
+  }
+
+  const { columns, rows } = getAdminRequestSheet();
+  const canEdit = checkPermission(user.role, "admin.data-sheet", "edit");
+
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+          데이터 관리
+        </h2>
+        <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+          recruitment_requests 테이블 직접 편집
+        </p>
+      </div>
+      <AdminRequestSheet columns={columns} rows={rows} readOnly={!canEdit} />
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: workflow 페이지 작성**
+
+```tsx
+// app/(admin)/workflow/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { getAdminWorkflowMatrix } from "@/lib/queries";
+import AdminWorkflowTable from "@/components/admin-workflow-table";
+
+export default async function WorkflowPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "admin.workflow", "view")) {
+    redirect("/summary");
+  }
+
+  const data = getAdminWorkflowMatrix();
+  const canEdit = checkPermission(user.role, "admin.workflow", "edit");
+
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+          워크플로우 매트릭스
+        </h2>
+        <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+          단계별 필드 입력 현황
+        </p>
+      </div>
+      <AdminWorkflowTable data={data} readOnly={!canEdit} />
+    </div>
+  );
+}
+```
+
+- [ ] **Step 3: admin-request-sheet.tsx, admin-workflow-table.tsx 리스타일**
+
+두 컴포넌트의 인라인 스타일을 새 디자인 시스템으로 교체 (task 12와 동일 패턴).
+
+- [ ] **Step 4: 기존 app/admin/page.tsx 삭제**
+
+```bash
+git rm app/admin/page.tsx
+```
+
+- [ ] **Step 5: 커밋**
+
+```bash
+git add app/\(admin\)/ components/admin-request-sheet.tsx components/admin-workflow-table.tsx
+git rm app/admin/page.tsx
+git commit -m "feat: split admin page into data-sheet and workflow pages
+
+Move DB edit sheet to /data-sheet, workflow matrix to /workflow as
+independent pages with permission checks and new design."
+```
+
+---
+
+### Task 14: 사용자 관리 독립 페이지 (7단계)
+
+**Files:**
+- Create: `app/(system)/users/page.tsx`
+- Modify: `components/user-admin-panel.tsx`
+
+- [ ] **Step 1: users 페이지 작성**
+
+```tsx
+// app/(system)/users/page.tsx
+import { requireUser } from "@/lib/auth";
+import { checkPermission } from "@/lib/permissions";
+import { redirect } from "next/navigation";
+import { listUsers, getDepartmentOptions } from "@/lib/queries";
+import UserAdminPanel from "@/components/user-admin-panel";
+
+export default async function UsersPage() {
+  const user = await requireUser();
+  if (!checkPermission(user.role, "system.users", "view")) {
+    redirect("/summary");
+  }
+
+  const users = listUsers();
+  const departments = getDepartmentOptions();
+  const canEdit = checkPermission(user.role, "system.users", "edit");
+
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--text-title)", margin: 0 }}>
+          사용자 관리
+        </h2>
+        <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+          시스템 사용자 계정을 관리합니다
+        </p>
+      </div>
+      <UserAdminPanel users={users} departments={departments} readOnly={!canEdit} />
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: user-admin-panel.tsx 리스타일 + 독립 페이지 적응**
+
+기존 대시보드 내 패널에서 독립 페이지용으로 변경:
+- 모달/패널 스타일 → 전체 페이지 폼
+- 새 디자인 시스템 적용
+- `readOnly` prop 추가하여 편집 권한 제어
+
+- [ ] **Step 3: dashboard-shell.tsx에서 UserAdminPanel 제거**
+
+기존 대시보드에 포함되어 있던 UserAdminPanel import 및 렌더링 코드를 제거한다.
+
+- [ ] **Step 4: 커밋**
+
+```bash
+git add app/\(system\)/users/ components/user-admin-panel.tsx
+git commit -m "feat: add standalone user management page
+
+Move user admin panel from dashboard to /users as independent page
+with permission-based access control and new design."
+```
+
+---
+
+### Task 15: 최종 정리 및 확인
+
+- [ ] **Step 1: 사용하지 않는 코드 정리**
+
+- `components/dashboard-shell.tsx` — 3개 페이지 + 공통 컴포넌트로 완전 분해 후, 더 이상 참조되지 않으면 삭제
+- `app/admin/page.tsx` — 이미 삭제 확인
+- `app/login/page.tsx` — `(auth)` 그룹으로 이동 확인
+- 사용하지 않는 import 정리
+
+- [ ] **Step 2: 전체 페이지 검증**
+
+Run: `npm run dev`
+
+각 페이지를 역할별로 확인:
+
+| URL | VIP | ADMIN | DEAN |
+|-----|-----|-------|------|
+| `/login` | 사이드바 없음 ✓ | ✓ | ✓ |
+| `/summary` | KPI 전체 ✓ | ✓ | 자기 학과만 ✓ |
+| `/allocation` | 전체 ✓ | ✓ | 접근 불가 → 리다이렉트 |
+| `/progress` | 전체 ✓ | ✓ | 자기 학과만 ✓ |
+| `/candidates` | 전체 ✓ | ✓ | 자기 학과만 ✓ |
+| `/data-sheet` | ✓ | ✓ | 접근 불가 |
+| `/workflow` | ✓ | ✓ | 접근 불가 |
+| `/permissions` | ✓ | 접근 불가 | 접근 불가 |
+| `/users` | ✓ | ✓ | 접근 불가 |
+
+- [ ] **Step 3: 빌드 확인**
+
+Run: `npm run build`
+
+빌드 에러 없이 완료되는지 확인.
+
+- [ ] **Step 4: 최종 커밋**
+
+```bash
+git add -A
+git commit -m "chore: clean up unused code after refactoring
+
+Remove dashboard-shell.tsx (replaced by 3 pages + shared components),
+old admin page, and unused imports."
+```

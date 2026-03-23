@@ -1,0 +1,427 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""인사캠 교수연구실 배정 공문 section0.xml 생성 스크립트"""
+
+from lxml import etree
+
+HP = 'http://www.hancom.co.kr/hwpml/2011/paragraph'
+HS = 'http://www.hancom.co.kr/hwpml/2011/section'
+
+def p(id_, paraPr, charPr, text, **kwargs):
+    """단순 문단 생성"""
+    el = etree.Element(f'{{{HP}}}p')
+    el.set('id', str(id_))
+    el.set('paraPrIDRef', str(paraPr))
+    el.set('styleIDRef', '0')
+    el.set('pageBreak', '0')
+    el.set('columnBreak', '0')
+    el.set('merged', '0')
+    run = etree.SubElement(el, f'{{{HP}}}run')
+    run.set('charPrIDRef', str(charPr))
+    t = etree.SubElement(run, f'{{{HP}}}t')
+    t.text = text if text else None
+    return el
+
+def p_empty(id_, paraPr=0):
+    """빈 문단"""
+    el = etree.Element(f'{{{HP}}}p')
+    el.set('id', str(id_))
+    el.set('paraPrIDRef', str(paraPr))
+    el.set('styleIDRef', '0')
+    el.set('pageBreak', '0')
+    el.set('columnBreak', '0')
+    el.set('merged', '0')
+    run = etree.SubElement(el, f'{{{HP}}}run')
+    run.set('charPrIDRef', '0')
+    etree.SubElement(run, f'{{{HP}}}t')
+    return el
+
+def make_cell(colAddr, rowAddr, colSpan, rowSpan, width, height, borderFillID,
+              vertAlign, paraPr, charPr, text, cellMarginLeft=300, cellMarginRight=300,
+              cellMarginTop=141, cellMarginBottom=141):
+    """표 셀 생성"""
+    tc = etree.Element(f'{{{HP}}}tc')
+    tc.set('name', '')
+    tc.set('header', '0')
+    tc.set('hasMargin', '1')
+    tc.set('protect', '0')
+    tc.set('editable', '0')
+    tc.set('dirty', '1')
+    tc.set('borderFillIDRef', str(borderFillID))
+
+    sublist = etree.SubElement(tc, f'{{{HP}}}subList')
+    sublist.set('id', '')
+    sublist.set('textDirection', 'HORIZONTAL')
+    sublist.set('lineWrap', 'BREAK')
+    sublist.set('vertAlign', vertAlign)
+    sublist.set('linkListIDRef', '0')
+    sublist.set('linkListNextIDRef', '0')
+    sublist.set('textWidth', '0')
+    sublist.set('textHeight', '0')
+    sublist.set('hasTextRef', '0')
+    sublist.set('hasNumRef', '0')
+
+    cell_p = etree.SubElement(sublist, f'{{{HP}}}p')
+    cell_p.set('id', '0')
+    cell_p.set('paraPrIDRef', str(paraPr))
+    cell_p.set('styleIDRef', '0')
+    cell_p.set('pageBreak', '0')
+    cell_p.set('columnBreak', '0')
+    cell_p.set('merged', '0')
+    run = etree.SubElement(cell_p, f'{{{HP}}}run')
+    run.set('charPrIDRef', str(charPr))
+    t_el = etree.SubElement(run, f'{{{HP}}}t')
+    t_el.text = text if text else None
+
+    addr = etree.SubElement(tc, f'{{{HP}}}cellAddr')
+    addr.set('colAddr', str(colAddr))
+    addr.set('rowAddr', str(rowAddr))
+
+    span = etree.SubElement(tc, f'{{{HP}}}cellSpan')
+    span.set('colSpan', str(colSpan))
+    span.set('rowSpan', str(rowSpan))
+
+    sz = etree.SubElement(tc, f'{{{HP}}}cellSz')
+    sz.set('width', str(width))
+    sz.set('height', str(height))
+
+    margin = etree.SubElement(tc, f'{{{HP}}}cellMargin')
+    margin.set('left', str(cellMarginLeft))
+    margin.set('right', str(cellMarginRight))
+    margin.set('top', str(cellMarginTop))
+    margin.set('bottom', str(cellMarginBottom))
+    return tc
+
+def make_table(id_, rowCnt, colCnt, width, height, borderFillID=5):
+    """표 기본 구조 생성"""
+    tbl = etree.Element(f'{{{HP}}}tbl')
+    tbl.set('id', str(id_))
+    tbl.set('zOrder', '0')
+    tbl.set('numberingType', 'TABLE')
+    tbl.set('textWrap', 'TOP_AND_BOTTOM')
+    tbl.set('textFlow', 'BOTH_SIDES')
+    tbl.set('lock', '0')
+    tbl.set('dropcapstyle', 'None')
+    tbl.set('pageBreak', 'CELL')
+    tbl.set('repeatHeader', '1')
+    tbl.set('rowCnt', str(rowCnt))
+    tbl.set('colCnt', str(colCnt))
+    tbl.set('cellSpacing', '0')
+    tbl.set('borderFillIDRef', str(borderFillID))
+    tbl.set('noAdjust', '0')
+
+    sz = etree.SubElement(tbl, f'{{{HP}}}sz')
+    sz.set('width', str(width))
+    sz.set('widthRelTo', 'ABSOLUTE')
+    sz.set('height', str(height))
+    sz.set('heightRelTo', 'ABSOLUTE')
+    sz.set('protect', '0')
+
+    pos = etree.SubElement(tbl, f'{{{HP}}}pos')
+    pos.set('treatAsChar', '1')
+    pos.set('affectLSpacing', '0')
+    pos.set('flowWithText', '1')
+    pos.set('allowOverlap', '0')
+    pos.set('holdAnchorAndSO', '0')
+    pos.set('vertRelTo', 'PARA')
+    pos.set('horzRelTo', 'COLUMN')
+    pos.set('vertAlign', 'TOP')
+    pos.set('horzAlign', 'LEFT')
+    pos.set('vertOffset', '0')
+    pos.set('horzOffset', '0')
+
+    out = etree.SubElement(tbl, f'{{{HP}}}outMargin')
+    out.set('left', '0')
+    out.set('right', '0')
+    out.set('top', '0')
+    out.set('bottom', '283')
+
+    inn = etree.SubElement(tbl, f'{{{HP}}}inMargin')
+    inn.set('left', '0')
+    inn.set('right', '0')
+    inn.set('top', '0')
+    inn.set('bottom', '0')
+    return tbl
+
+def wrap_tbl_in_para(id_, tbl):
+    """표를 문단으로 감싸기"""
+    para = etree.Element(f'{{{HP}}}p')
+    para.set('id', str(id_))
+    para.set('paraPrIDRef', '0')
+    para.set('styleIDRef', '0')
+    para.set('pageBreak', '0')
+    para.set('columnBreak', '0')
+    para.set('merged', '0')
+    run = etree.SubElement(para, f'{{{HP}}}run')
+    run.set('charPrIDRef', '0')
+    run.append(tbl)
+    return para
+
+# ─────────────────────────────────────────────────────
+# secPr 첫 번째 문단 (배정안 secPr 그대로 복사)
+# ─────────────────────────────────────────────────────
+SECPR_XML = '''<hp:p xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph" id="1000000001" paraPrIDRef="20" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">
+  <hp:run charPrIDRef="7">
+    <hp:secPr id="" textDirection="HORIZONTAL" spaceColumns="1134" tabStop="8000" tabStopVal="4000" tabStopUnit="HWPUNIT" outlineShapeIDRef="1" memoShapeIDRef="1" textVerticalWidthHead="0" masterPageCnt="0">
+      <hp:grid lineGrid="0" charGrid="0" wonggojiFormat="0"/>
+      <hp:startNum pageStartsOn="BOTH" page="0" pic="0" tbl="0" equation="0"/>
+      <hp:visibility hideFirstHeader="0" hideFirstFooter="0" hideFirstMasterPage="0" border="SHOW_ALL" fill="SHOW_ALL" hideFirstPageNum="0" hideFirstEmptyLine="0" showLineNumber="0"/>
+      <hp:lineNumberShape restartType="0" countBy="0" distance="0" startNumber="0"/>
+      <hp:pagePr landscape="WIDELY" width="59528" height="84186" gutterType="LEFT_ONLY">
+        <hp:margin header="0" footer="0" gutter="0" left="5669" right="5669" top="5668" bottom="4252"/>
+      </hp:pagePr>
+      <hp:footNotePr>
+        <hp:autoNumFormat type="DIGIT" userChar="" prefixChar="" suffixChar=")" supscript="0"/>
+        <hp:noteLine length="-1" type="SOLID" width="0.12 mm" color="#000000"/>
+        <hp:noteSpacing betweenNotes="283" belowLine="567" aboveLine="850"/>
+        <hp:numbering type="CONTINUOUS" newNum="1"/>
+        <hp:placement place="EACH_COLUMN" beneathText="0"/>
+      </hp:footNotePr>
+      <hp:endNotePr>
+        <hp:autoNumFormat type="DIGIT" userChar="" prefixChar="" suffixChar=")" supscript="0"/>
+        <hp:noteLine length="14692344" type="SOLID" width="0.12 mm" color="#000000"/>
+        <hp:noteSpacing betweenNotes="0" belowLine="567" aboveLine="850"/>
+        <hp:numbering type="CONTINUOUS" newNum="1"/>
+        <hp:placement place="END_OF_DOCUMENT" beneathText="0"/>
+      </hp:endNotePr>
+      <hp:pageBorderFill type="BOTH" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER">
+        <hp:offset left="1417" right="1417" top="1417" bottom="1417"/>
+      </hp:pageBorderFill>
+      <hp:pageBorderFill type="EVEN" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER">
+        <hp:offset left="1417" right="1417" top="1417" bottom="1417"/>
+      </hp:pageBorderFill>
+      <hp:pageBorderFill type="ODD" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER">
+        <hp:offset left="1417" right="1417" top="1417" bottom="1417"/>
+      </hp:pageBorderFill>
+    </hp:secPr>
+    <hp:ctrl>
+      <hp:colPr id="" type="NEWSPAPER" layout="LEFT" colCount="1" sameSz="1" sameGap="0"/>
+    </hp:ctrl>
+  </hp:run>
+  <hp:run charPrIDRef="7"><hp:t/></hp:run>
+</hp:p>'''
+
+# ─────────────────────────────────────────────────────
+# 문서 ID 카운터
+# ─────────────────────────────────────────────────────
+_id = 1000000002
+
+def nid():
+    global _id
+    v = _id
+    _id += 1
+    return v
+
+# ─────────────────────────────────────────────────────
+# 결재란 표 생성 (4열: 담당/팀장/인사처장/총장(직인))
+# 결재란 폭 = 42520 (본문폭 기준)
+# 열 배분: 4열 균등 → 10630 * 4 = 42520
+# ─────────────────────────────────────────────────────
+def make_approval_table():
+    """결재란 표 (2행 4열)"""
+    col_w = 10630  # 4열 균등
+    row1_h = 1700  # 직책 행
+    row2_h = 3200  # 서명 행
+    total_h = row1_h + row2_h
+    total_w = col_w * 4
+
+    tbl = make_table(nid(), 2, 4, total_w, total_h, borderFillID=5)
+
+    headers = ['담당', '팀장', '인사처장', '서명']
+    for ci, hdr in enumerate(headers):
+        bf = 7 if ci < 3 else 7  # 헤더 셀은 #F2F2F2 배경
+        tc = make_cell(ci, 0, 1, 1, col_w, row1_h, bf, 'CENTER', 21, 2, hdr)
+        tr = tbl.find(f'{{{HP}}}tr') if tbl.find(f'{{{HP}}}tr') is not None else None
+        if tr is None:
+            tr = etree.SubElement(tbl, f'{{{HP}}}tr')
+        tr.append(tc)
+
+    tr2 = etree.SubElement(tbl, f'{{{HP}}}tr')
+    sign_texts = ['승주완', '', '', '']
+    for ci, txt in enumerate(sign_texts):
+        tc = make_cell(ci, 1, 1, 1, col_w, row2_h, 5, 'CENTER', 21, 0, txt)
+        tr2.append(tc)
+
+    return tbl
+
+# ─────────────────────────────────────────────────────
+# 추진일정 표 (4행 3열)
+# 열: 구분(10000) | 일정(15000) | 비고(17520) = 42520
+# ─────────────────────────────────────────────────────
+def make_schedule_table():
+    col_w = [10000, 15000, 17520]
+    row_h = 1900
+    rows_data = [
+        # (구분, 일정, 비고, is_header)
+        ('구분', '일정', '비고', True),
+        ('철거 및 이전 공지', "'26.3月 중", '전략기획팀, 교원인사팀, 관리팀, 소속행정실', False),
+        ('임시공간 배정 및\n연구실 이전', "'26.6月 중\n(학기종료 직후)", '-', False),
+        ('교수회관 철거', "'26.7月 ~ 8月", '-', False),
+    ]
+
+    total_w = sum(col_w)
+    total_h = row_h * len(rows_data)
+    tbl = make_table(nid(), len(rows_data), 3, total_w, total_h, borderFillID=5)
+
+    for ri, (c0, c1, c2, is_hdr) in enumerate(rows_data):
+        tr = etree.SubElement(tbl, f'{{{HP}}}tr')
+        bf = 7 if is_hdr else 5
+        charP = 2 if is_hdr else 0
+        for ci, (txt, cw) in enumerate(zip([c0, c1, c2], col_w)):
+            tc = make_cell(ci, ri, 1, 1, cw, row_h, bf, 'CENTER', 21, charP, txt)
+            tr.append(tc)
+
+    return tbl
+
+# ─────────────────────────────────────────────────────
+# 임시공간 현황 표 (8행 4열)
+# 열: 구분(7000) | 층(6000) | 실수(6000) | 전용면적(10000) | 비고(13520) = 42520
+# ─────────────────────────────────────────────────────
+def make_space_table():
+    col_w = [7000, 5500, 5500, 10520, 14000]  # 5열
+    row_h = 1900
+    total_w = sum(col_w)  # 42520
+
+    rows_data = [
+        ('구분', '위치', '실수', '전용면적', '비고', True),
+        ('I-하우스\n(임시)',   '2~5층 (각 13~17개)\n6층 (5개, 2룸형)', '65개',  '27.0~27.4㎡\n(6층: 54㎡)', '화장실/샤워실, 베란다\n※ 現 교수회관 전용면적 17.0㎡', False),
+        ('다산경제관\n(~퇴직 시)', '5층', '7개', '27.0㎡', '경제대학 소속 교원 배정\n신축 후 연구실 계속 활용', False),
+        ('중앙학술정보관\n(임시)', '5층', '22개', '31.6~38.9㎡', '전실 창문 有\n(14개실 개폐불가)', False),
+        ('합계', '-', '94개', '-', '-', False),
+    ]
+
+    total_h = row_h * len(rows_data)
+    tbl = make_table(nid(), len(rows_data), 5, total_w, total_h, borderFillID=5)
+
+    for ri, row_d in enumerate(rows_data):
+        tr = etree.SubElement(tbl, f'{{{HP}}}tr')
+        is_hdr = row_d[5]
+        bf = 7 if is_hdr else 5
+        charP = 2 if is_hdr else 0
+        for ci, (txt, cw) in enumerate(zip(row_d[:5], col_w)):
+            tc = make_cell(ci, ri, 1, 1, cw, row_h, bf, 'CENTER', 21, charP, txt)
+            tr.append(tc)
+
+    return tbl
+
+# ─────────────────────────────────────────────────────
+# section0.xml 조립
+# ─────────────────────────────────────────────────────
+
+# 루트 요소: 배정안 secPr 첫 문단으로 시작
+secpr_para = etree.fromstring(SECPR_XML)
+
+# 전체 리스트
+elements = [secpr_para]
+
+def add(paraPr, charPr, text):
+    elements.append(p(nid(), paraPr, charPr, text))
+
+def blank(paraPr=0):
+    elements.append(p_empty(nid(), paraPr))
+
+def tbl_para(tbl):
+    elements.append(wrap_tbl_in_para(nid(), tbl))
+
+# ── 결재란 표 ──
+tbl_para(make_approval_table())
+blank(0)
+
+# ── 공문 기본 정보 ──
+add(20, 7, '교원인사팀')
+add(20, 0, '기안일: 2026. 3.        담당: 승주완(내선: 1065)  /  팀장:              /  처장:')
+blank(0)
+
+# ── 제목 ──
+add(21, 10, '인사캠 신축사업 연계 교수연구실 배정 추진')
+blank(0)
+
+# ── Ⅰ. 추진 배경 ──
+add(0, 7, 'Ⅰ. 추진 배경')
+add(23, 0, '1. 인사캠 교수회관 및 후면부지 통합신축 추진 관련 교수회관(94실) 철거 예정(\'26.7月)')
+add(23, 0, '2. 원활한 철거 및 학기 중 혼란 방지를 위해 2026년 3~4월 중 선제적 공간 배정 추진')
+add(23, 0, '3. 임시공간 이전 교원 대상 인센티브 부여 및 공개추첨제 도입으로 공정·투명한 배정 도모')
+blank(0)
+
+# ── Ⅱ. 배정 내용 ──
+add(0, 7, 'Ⅱ. 배정 내용')
+add(23, 0, '1. 기본방향: 교수회관 교수연구실(94개) 교내 임시공간으로 이전')
+add(44, 0, '   ∘ 신축건물 배정 계획은 추후 교무위원회에서 논의 및 확정')
+blank(0)
+
+add(23, 0, '2. 추진일정')
+tbl_para(make_schedule_table())
+blank(0)
+
+add(23, 0, '3. 임시공간 현황 (총 94개 연구실)')
+tbl_para(make_space_table())
+blank(0)
+
+# ── Ⅲ. 배정방법 ──
+add(0, 7, 'Ⅲ. 배정방법')
+add(23, 0, '1. 다산경제관(7개): 경제대학 소속 교원 배정 (학문단위 배정원칙 준수)')
+add(43, 0, '    - 신축 후 연구실 계속 활용 예정 (퇴직 시까지)')
+blank(0)
+add(23, 0, '2. 중앙학술정보관 일부: \'31년 내 퇴직 예정 교원 우선 배정')
+blank(0)
+add(23, 0, '3. I-하우스, 중앙학술정보관(잔여분): 임시공간 공개추첨')
+add(43, 0, '    - 교수회관 재실 대표교원 섭외 및 공정한 랜덤 추첨 진행')
+add(43, 0, '    - 일시·장소: 2026. 3. 26.(목) 14:00, 교원인사팀 (600주년기념관 2층 10213호)')
+add(43, 0, '    - 참관을 원하시는 교수님께서는 참석 부탁드립니다')
+add(43, 0, '    - 추첨 진행 후 당일 배정 연구실 안내 예정')
+blank(0)
+
+# ── Ⅳ. 임시공간 이전 보상 ──
+add(0, 7, 'Ⅳ. 임시공간 이전 보상')
+add(23, 0, '1. 신축건물 우선 입주권')
+add(43, 0, '    - 임시공간(I-하우스, 중앙학술정보관) 실거주 교원에게 신축건물 완공 시 우선 입주권 부여')
+add(43, 0, '    - 신축건물 입주권자 대상 공간 배정 방법은 추후 교무위원회에서 논의·결정 예정')
+blank(0)
+add(23, 0, '2. 우선이동권')
+add(43, 0, '    - 임시공간 배정 교원이 공사기간 중 기존 건물로 이동 희망 시 우선이동권 부여')
+add(43, 0, '    - 이동 가능 공간 발생 시 학문단위 배정원칙에 따라 우선 배정')
+add(43, 0, '    - 단, 우선이동권 행사로 이동한 경우 신축건물 우선 입주권은 상실됨')
+blank(0)
+add(23, 0, '3. 무상 이사 지원')
+add(43, 0, '    - 교수회관에서 임시공간으로의 이사비용 전액 무료 지원')
+add(43, 0, '    - 기조처(관리팀)에서 전문 이사업체 계약 후 포장이사 서비스 제공')
+blank(0)
+
+# ── Ⅴ. 향후 계획 ──
+add(0, 7, 'Ⅴ. 향후 계획')
+add(43, 0, '    - 3. 26.(목) 공개추첨 실시 → 추첨 결과 소속 행정실 통해 개별 통보')
+add(43, 0, '    - 배정 완료 후 이사업체 연계, 연구실 이전(\'26.6月 말, 학기종료 직후) 추진')
+add(43, 0, '    - \'26.7月 교수회관 철거 착수 예정')
+blank(0)
+
+# ── Ⅵ. 문의 연락처 ──
+add(0, 7, 'Ⅵ. 문의 연락처')
+add(43, 0, '    - 연구실 배정: 교원인사팀 승주완 책임(내선: 1065)')
+add(43, 0, '    - 신축사업·철거: 전략기획팀 이승훈 책임(내선: 1135)')
+add(43, 0, '    - 연구실 이사·시설정비: 관리팀 양호승 책임(내선: 1118)')
+add(43, 0, '    - 개별안내(이사일정 등): 소속행정실 교원인사 담당자')
+blank(0)
+
+# ── 끝 ──
+add(21, 0, '끝.')
+blank(0)
+
+# ─────────────────────────────────────────────────────
+# section XML 조립 및 저장
+# ─────────────────────────────────────────────────────
+nsmap = {
+    'hp': HP,
+    'hs': HS,
+}
+root = etree.Element(f'{{{HS}}}sec', nsmap=nsmap)
+for el in elements:
+    root.append(el)
+
+tree = etree.ElementTree(root)
+tree.write(
+    'C:/Users/SKKU/AppData/Local/Temp/gonmun_new_section.xml',
+    xml_declaration=True,
+    encoding='UTF-8',
+    standalone=True
+)
+print('Done: gonmun_new_section.xml written')

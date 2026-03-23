@@ -1,0 +1,273 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import type { AuthUser } from "@/lib/types";
+import type { LucideIcon } from "lucide-react";
+import {
+  LayoutDashboard,
+  Table2,
+  ArrowRightLeft,
+  Users,
+  Database,
+  ListChecks,
+  Shield,
+  UserCog,
+} from "lucide-react";
+
+type MenuSection = {
+  label?: string;
+  items: { icon: LucideIcon; label: string; href: string; resource: string }[];
+};
+
+const ADMIN_MENU: MenuSection[] = [
+  {
+    items: [
+      { icon: LayoutDashboard, label: "현황 요약", href: "/summary", resource: "dashboard.summary" },
+      { icon: Table2, label: "TO 배분표", href: "/allocation", resource: "dashboard.allocation" },
+      { icon: ArrowRightLeft, label: "채용 진행현황", href: "/progress", resource: "dashboard.progress" },
+      { icon: Users, label: "후보자 관리", href: "/candidates", resource: "candidates" },
+    ],
+  },
+  {
+    label: "관리",
+    items: [
+      { icon: Database, label: "데이터 관리", href: "/data-sheet", resource: "admin.data-sheet" },
+      { icon: ListChecks, label: "워크플로우", href: "/workflow", resource: "admin.workflow" },
+    ],
+  },
+  {
+    label: "시스템",
+    items: [
+      { icon: Shield, label: "권한 관리", href: "/permissions", resource: "system.permissions" },
+      { icon: UserCog, label: "사용자 관리", href: "/users", resource: "system.users" },
+    ],
+  },
+];
+
+const DEAN_MENU: MenuSection[] = [
+  {
+    items: [
+      { icon: LayoutDashboard, label: "학과 현황", href: "/summary", resource: "dashboard.summary" },
+      { icon: ArrowRightLeft, label: "채용 진행현황", href: "/progress", resource: "dashboard.progress" },
+      { icon: Users, label: "후보자 관리", href: "/candidates", resource: "candidates" },
+    ],
+  },
+];
+
+function getMenuForRole(role: string): MenuSection[] {
+  if (role === "DEAN") return DEAN_MENU;
+  return ADMIN_MENU; // ADMIN and VIP get the same menu
+}
+
+function filterMenuByResources(
+  menu: MenuSection[],
+  viewableResources: string[]
+): MenuSection[] {
+  return menu
+    .map((section) => ({
+      ...section,
+      items: section.items.filter((item) =>
+        viewableResources.includes(item.resource)
+      ),
+    }))
+    .filter((section) => section.items.length > 0);
+}
+
+function isActive(pathname: string, href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+}
+
+export default function Sidebar({
+  user,
+  viewableResources,
+}: {
+  user: AuthUser;
+  viewableResources: string[];
+}) {
+  const pathname = usePathname();
+  const baseMenu = getMenuForRole(user.role);
+  const menu = filterMenuByResources(baseMenu, viewableResources);
+
+  return (
+    <aside
+      style={{
+        width: 220,
+        background: "var(--sidebar-bg)",
+        padding: "20px 0",
+        flexShrink: 0,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        bottom: 0,
+        display: "flex",
+        flexDirection: "column",
+        zIndex: 50,
+        overflowY: "auto",
+      }}
+    >
+      {/* Logo + Title */}
+      <div style={{ padding: "0 16px 28px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: "50%",
+            background: "rgba(255,255,255,0.85)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: 10,
+          }}
+        >
+          <Image
+            src="/logo_SKKU_colored.png"
+            alt="SKKU"
+            width={28}
+            height={28}
+            style={{ objectFit: "contain" }}
+            unoptimized
+          />
+        </div>
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: 13,
+            color: "var(--sidebar-text-active)",
+            textAlign: "center",
+            lineHeight: 1.2,
+          }}
+        >
+          성균관대학교
+        </div>
+        <div
+          style={{
+            fontSize: 11,
+            fontWeight: 500,
+            color: "var(--sidebar-text)",
+            marginTop: 3,
+            textAlign: "center",
+          }}
+        >
+          교원채용 All-In-One
+        </div>
+      </div>
+
+      {/* Menu */}
+      <nav style={{ flex: 1, padding: "0 8px" }}>
+        {menu.map((section, sIdx) => (
+          <div key={sIdx}>
+            {section.label && (
+              <div
+                style={{
+                  fontSize: 10,
+                  fontWeight: 600,
+                  color: "var(--sidebar-section)",
+                  textTransform: "uppercase",
+                  padding: "20px 12px 6px",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                {section.label}
+              </div>
+            )}
+            {section.items.map((item) => {
+              const active = isActive(pathname, item.href);
+              const IconComponent = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "10px 14px",
+                    marginBottom: 3,
+                    borderRadius: 6,
+                    fontSize: 13,
+                    fontWeight: active ? 600 : 400,
+                    color: active
+                      ? "var(--sidebar-text-active)"
+                      : "var(--sidebar-text)",
+                    background: active ? "var(--sidebar-hover)" : "transparent",
+                    textDecoration: "none",
+                    transition: "background 0.15s, color 0.15s",
+                  }}
+                >
+                  <IconComponent
+                    size={17}
+                    style={{ flexShrink: 0 }}
+                    color={
+                      active
+                        ? "var(--sidebar-text-active)"
+                        : "var(--sidebar-text)"
+                    }
+                  />
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        ))}
+      </nav>
+
+      {/* Dean department info */}
+      {user.role === "DEAN" && user.departmentCode && (
+        <div
+          style={{
+            padding: "12px 16px",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+          }}
+        >
+          <div
+            style={{
+              fontSize: 10,
+              color: "var(--sidebar-section)",
+              marginBottom: 4,
+            }}
+          >
+            소속 학과
+          </div>
+          <div
+            style={{
+              fontSize: 12,
+              color: "var(--sidebar-text)",
+            }}
+          >
+            {user.departmentCode}
+          </div>
+        </div>
+      )}
+
+      {/* User info at bottom */}
+      <div
+        style={{
+          padding: "20px 16px 4px",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+        }}
+      >
+        <div
+          style={{
+            fontSize: 12,
+            fontWeight: 600,
+            color: "var(--sidebar-text-active)",
+          }}
+        >
+          {user.username}
+        </div>
+        <div
+          style={{
+            fontSize: 10,
+            color: "var(--sidebar-text)",
+            marginTop: 2,
+          }}
+        >
+          {user.role}
+        </div>
+      </div>
+    </aside>
+  );
+}

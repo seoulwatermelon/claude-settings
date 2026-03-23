@@ -1,0 +1,8 @@
+{
+  "id": "10",
+  "subject": "Task 5: PATCH /api/to-haejung/[id] 라우트",
+  "description": "인라인 편집 API + 테스트",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

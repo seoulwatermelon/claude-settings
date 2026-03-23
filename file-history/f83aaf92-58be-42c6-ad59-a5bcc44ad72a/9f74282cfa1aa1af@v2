@@ -1,0 +1,376 @@
+# 성균관대 교원채용 시스템 — 모바일 반응형 + 워크플로우 + 스프레드시트 UX 설계서
+
+## 개요
+
+현재 데스크톱 전용 교원채용 시스템을 모바일 친화형으로 전환하고, 메뉴를 통합 단순화하며, 상시채용 워크플로우(후보자 상세검증 단계)를 구현하고, 모든 테이블에 스프레드시트 UX를 적용한다.
+
+### 핵심 변경 5가지
+
+1. **모바일 반응형**: 사이드바 → 모바일 햄버거 메뉴 전환
+2. **메뉴 통합**: 8개 → 5개 메뉴, 채용현황 원스톱 페이지
+3. **테이블 스크롤 수정**: sticky header/column 깨짐 해결
+4. **상시채용 워크플로우**: 초빙분야별 진행현황 + 후보자 상세검증 단계 구현
+5. **스프레드시트 UX**: 모든 테이블에 셀 편집, 드래그, 복붙, 엑셀 입출력
+
+---
+
+## 1. 모바일 반응형 레이아웃
+
+### 브레이크포인트
+
+- **데스크톱 (≥768px)**: 좌측 180px 고정 사이드바 + 우측 메인 영역
+- **모바일 (<768px)**: 상단 48px 딥그린 바 (로고 + 햄버거) + 전체 메인 영역
+
+**참고:** 사이드바 폭을 기존 220px에서 180px으로 축소하여 콘텐츠 영역을 넓힌다.
+
+### 데스크톱 레이아웃
+
+- 사이드바: 180px 고정
+- 메인 영역: `margin-left: 180px`
+- 기존 동작 유지
+
+### 모바일 레이아웃
+
+- **상단 바**: 48px 높이, 딥그린(`#0a1f14`) 배경
+  - 좌측: 로고(24px) + "교원채용" 텍스트
+  - 우측: 햄버거 메뉴 아이콘(☰)
+- **메뉴 열림**: 전체 화면 딥그린 오버레이
+  - 기존 사이드바와 동일한 메뉴 항목
+  - 하단: 사용자 정보 + 로그아웃
+  - 메뉴 항목 클릭 → 페이지 이동 + 메뉴 자동 닫힘
+- **콘텐츠 영역**: 좌우 패딩 16px (데스크톱 28px)
+- **KPI 카드**: 4열 → 2열 그리드
+- **테이블**: 가로 스크롤 유지, 첫 번째 열 sticky
+
+### 구현 방식
+
+`components/sidebar.tsx`를 수정하여:
+- 768px 이상: 기존 `<aside>` 렌더링 (width 180px)
+- 768px 미만: 상단 바 + 조건부 오버레이 메뉴
+- `window.matchMedia` 또는 CSS media query + React state 조합
+
+`app/layout.tsx`의 메인 영역 `marginLeft`도 반응형으로 조정.
+
+---
+
+## 2. 메뉴 통합 & 페이지 구조
+
+### 새 메뉴 구조 (5개)
+
+```
+채용현황          → /dashboard
+후보자 관리       → /candidates
+데이터 관리       → /data
+[시스템] 권한 관리  → /permissions
+[시스템] 사용자 관리 → /users
+```
+
+### 역할별 메뉴
+
+**ADMIN / VIP:**
+- 채용현황, 후보자 관리, 데이터 관리, 권한 관리, 사용자 관리
+
+**DEAN:**
+- 채용현황 (자기 학과만), 후보자 관리 (자기 학과만)
+
+### 페이지별 구성
+
+#### 채용현황 (`/dashboard`)
+
+3개 탭:
+- **요약 탭**: KPI 카드(전체/진행중/완료/대기) + 최근 활동 리스트
+- **TO 배분표 탭**: 기존 DashboardShell의 TO 배분 테이블 (스프레드시트 UX 적용)
+- **진행현황 탭**: 초빙분야별 정시/상시 진행 상태 + 단계 표시, 클릭 시 상세 페이지 이동
+
+#### 후보자 관리 (`/candidates`)
+
+- 기존 candidate-management-table 유지
+- 스프레드시트 UX 적용
+
+#### 데이터 관리 (`/data`)
+
+기존 `/data-sheet` + `/workflow` 통합. 탭 구성:
+- **채용요청 탭**: 기존 admin-request-sheet (recruitment_requests 편집)
+- **워크플로우 탭**: 기존 admin-workflow-table (단계별 데이터)
+- **TO 배분 탭**: to_allocations_2025 데이터 편집
+
+모두 스프레드시트 UX 적용.
+
+### 삭제되는 라우트
+
+- `/summary` → `/dashboard`로 통합
+- `/allocation` → `/dashboard` TO 배분표 탭으로 통합
+- `/progress` → `/dashboard` 진행현황 탭으로 통합
+- `/data-sheet` → `/data`로 통합
+- `/workflow` → `/data`로 통합
+
+### 유지되는 라우트
+
+- `/candidates` — 후보자 관리
+- `/permissions` — 권한 관리
+- `/users` — 사용자 관리
+- `/procedures/[requestId]` — 채용 절차 상세 (진행현황에서 진입)
+- `/actions/[requestId]` — 단계별 제출 폼
+- `/login` — 로그인
+
+---
+
+## 3. 테이블 스크롤 수정
+
+### 문제
+
+현재 sticky header가 상하좌우 복합 스크롤 시 깨지는 경우가 있다.
+
+### 수정 방향
+
+모든 테이블 컴포넌트에 동일 패턴 적용:
+
+```
+스크롤 컨테이너 (단일 div, overflow: auto, max-height 지정)
+└── table (border-separate, border-spacing: 0)
+    └── thead
+        └── tr
+            └── th (sticky top: 0, z-index: 10, 배경색 명시)
+                └── 첫 열 th (sticky left: 0, z-index: 15)
+    └── tbody
+        └── tr
+            └── td
+                └── 첫 열 td (sticky left: 0, z-index: 5, 배경색 명시)
+```
+
+핵심:
+- **단일 스크롤 컨테이너**: 중첩 스크롤 div 제거
+- **배경색 명시**: sticky 요소에 `background: var(--card-bg)` 필수 (투명하면 아래 내용이 비침)
+- **z-index 계층**: 교차점(15) > 헤더(10) > 첫 열(5) > 일반 셀(0)
+- **border-separate**: border-collapse 대신 사용하여 sticky와 호환
+
+### 적용 대상
+
+- `components/dashboard-shell.tsx` (TO 배분표)
+- `components/candidate-management-table.tsx`
+- `components/admin-request-sheet.tsx`
+- `components/admin-workflow-table.tsx`
+- 신규 스프레드시트 공통 컴포넌트
+
+---
+
+## 4. 스프레드시트 UX (공통 컴포넌트)
+
+### SpreadsheetTable 컴포넌트
+
+`components/spreadsheet-table.tsx`로 생성. 모든 테이블 데이터를 다루는 곳에서 공통 사용.
+
+### 기능
+
+- **셀 클릭 → 인라인 편집**: 클릭하면 input으로 전환, Enter/Tab으로 확정
+- **방향키 이동**: 화살표 키로 셀 간 이동
+- **셀 범위 드래그 선택**: 마우스 드래그로 여러 셀 선택
+- **복사/붙여넣기**: Ctrl+C/V로 선택 범위 복사/붙여넣기, 엑셀에서 복사한 데이터도 지원
+- **행 추가/삭제**: 컨텍스트 메뉴 또는 버튼
+- **변경사항 일괄 저장**: 수정된 셀 하이라이트 + "저장" 버튼으로 일괄 PATCH
+- **엑셀 내보내기**: 현재 테이블 데이터를 .xlsx로 다운로드
+- **엑셀 가져오기**: .xlsx 파일 업로드 → 테이블에 반영
+
+### Props 인터페이스
+
+```typescript
+type SpreadsheetTableProps = {
+  columns: { key: string; label: string; width?: number; editable?: boolean; type?: "text" | "number" | "select"; options?: string[] }[];
+  rows: Record<string, unknown>[];
+  onSave: (changes: { rowId: number; key: string; value: unknown }[]) => Promise<void>;  // rowId = DB primary key (id 컬럼)
+  onAddRow?: () => void;
+  onDeleteRow?: (rowId: number) => void;
+  stickyFirstColumn?: boolean;
+  exportFileName?: string;
+};
+```
+
+### 적용 페이지
+
+| 페이지 | 데이터 | 편집 가능 |
+|--------|--------|----------|
+| 채용현황 > TO 배분표 탭 | to_allocations_2025 | ADMIN/VIP |
+| 후보자 관리 | candidate_profiles | ADMIN/VIP/DEAN(자기학과) |
+| 데이터 관리 > 채용요청 탭 | recruitment_requests | ADMIN/VIP |
+| 데이터 관리 > 워크플로우 탭 | submission_data | ADMIN/VIP |
+| 데이터 관리 > TO 배분 탭 | to_allocations_2025 | ADMIN/VIP |
+
+---
+
+## 5. 상시채용 워크플로우
+
+### 채용현황 > 진행현황 탭
+
+- 초빙분야별로 행 표시
+- 각 행: 학과명, 분야명, 채용유형(정시/상시), 현재 단계, 진행률 바
+- 행 클릭 → 해당 초빙분야 상세 페이지 (`/procedures/[requestId]`)
+
+### 후보자 상세검증 단계 (상시 1단계) 화면
+
+`/procedures/[requestId]` 페이지에서, 현재 단계가 `candidate_review`일 때:
+
+```
+┌─────────────────────────────────────────────┐
+│ [컴퓨터공학과] 인공지능 분야 — 상시채용        │
+│ 현재 단계: 후보자 상세검증                     │
+├─────────────────────────────────────────────┤
+│ 프로세스 타임라인 (9단계, 1단계 활성)           │
+├─────────────────────────────────────────────┤
+│                                             │
+│ ┌─ 후보자: 박기웅 ─────────────────────────┐ │
+│ │ 기본정보: 소속, 직위, 학위, 연구분야...    │ │
+│ │                                         │ │
+│ │ [연구력 분석 데이터] (ADMIN이 입력)        │ │
+│ │ ┌ 정형 폼 ─────────────────────────┐    │ │
+│ │ │ 논문 수: ___  인용 수: ___        │    │ │
+│ │ │ 주요 실적: ___                    │    │ │
+│ │ │ (필드는 추후 정의)                 │    │ │
+│ │ └──────────────────────────────────┘    │ │
+│ │                                         │ │
+│ │ [초빙위원회 심사] (workflow.review 권한)   │ │
+│ │ 판정: ○ 합격  ○ 불합격                   │ │
+│ │ 코멘트: _______________                  │ │
+│ │                              [심사 제출]  │ │
+│ └─────────────────────────────────────────┘ │
+│                                             │
+│ [다음 단계로 진행] (ADMIN, workflow.advance)  │
+│ (모든 후보자 심사 완료 시 활성화)              │
+└─────────────────────────────────────────────┘
+```
+
+### 화면 흐름
+
+1. **후보자 정보 표시**: `candidate_profiles`에서 해당 `request_id`의 후보자 목록, 기본 정보 카드로 표시
+2. **연구력 분석 입력 (ADMIN)**: 정형 폼, `review_decisions.review_data_json`에 저장. 필드 구조는 추후 정의.
+3. **초빙위원회 심사**: `workflow.review` 권한 보유자가 합격/불합격 + 코멘트 입력, `review_decisions` 테이블에 저장
+4. **다음 단계 승인 (ADMIN)**: 모든 후보자 심사 완료 확인 후 "다음 단계로" 버튼. `recruitment_requests.status` 변경.
+
+### 나머지 단계
+
+상시 2~9단계(Pool 분석결과 안내 ~ 임용예정 통보)는 동일한 패턴으로 추후 확장. 각 단계별 입력 필드는 사용자가 하나씩 정의할 예정.
+
+---
+
+## 6. DB 스키마 변경
+
+### 신규 테이블
+
+```sql
+CREATE TABLE IF NOT EXISTS review_decisions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  request_id INTEGER NOT NULL,
+  candidate_id INTEGER NOT NULL,
+  step_key TEXT NOT NULL,
+  reviewer_id INTEGER NOT NULL,
+  decision TEXT,  -- 'pass' / 'fail' / NULL (미심사)
+  comment TEXT,
+  review_data_json TEXT DEFAULT '{}',
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (request_id) REFERENCES recruitment_requests (id) ON DELETE CASCADE,
+  FOREIGN KEY (candidate_id) REFERENCES candidate_profiles (id) ON DELETE CASCADE,
+  FOREIGN KEY (reviewer_id) REFERENCES users (id) ON DELETE CASCADE,
+  UNIQUE(request_id, candidate_id, step_key, reviewer_id)
+);
+```
+
+### 권한 리소스 추가
+
+기존 permissions 테이블에 리소스 추가:
+- `workflow.review` — 초빙위원회 심사 (합격/불합격 판정, 코멘트)
+- `workflow.advance` — 다음 단계 승인
+
+기존 리소스 변경 (마이그레이션 SQL):
+- `dashboard.summary`, `dashboard.allocation`, `dashboard.progress` → `dashboard` (통합)
+- `admin.data-sheet`, `admin.workflow` → `admin.data` (통합)
+
+```sql
+-- 리소스 통합 마이그레이션
+UPDATE permissions SET resource = 'dashboard' WHERE resource IN ('dashboard.summary', 'dashboard.allocation', 'dashboard.progress');
+UPDATE permissions SET resource = 'admin.data' WHERE resource IN ('admin.data-sheet', 'admin.workflow');
+
+-- 중복 제거 (통합 후 같은 role+resource+action 조합이 생길 수 있음)
+DELETE FROM permissions WHERE id NOT IN (
+  SELECT MIN(id) FROM permissions GROUP BY role, resource, action
+);
+
+-- 신규 리소스 추가
+INSERT OR IGNORE INTO permissions (role, resource, action, allowed) VALUES
+  ('ADMIN', 'workflow.review', 'view', 0),
+  ('ADMIN', 'workflow.review', 'edit', 0),
+  ('ADMIN', 'workflow.advance', 'view', 1),
+  ('ADMIN', 'workflow.advance', 'edit', 1),
+  ('DEAN', 'workflow.review', 'view', 0),
+  ('DEAN', 'workflow.review', 'edit', 0),
+  ('DEAN', 'workflow.advance', 'view', 0),
+  ('DEAN', 'workflow.advance', 'edit', 0);
+-- VIP는 와일드카드 '*'로 자동 허용
+```
+
+### 시드 데이터 업데이트
+
+| 역할 | workflow.review | workflow.advance |
+|------|----------------|-----------------|
+| VIP | 자동 허용 (와일드카드 `*`) | 자동 허용 |
+| ADMIN | 0 (기본) | 1 |
+| DEAN | 0 | 0 |
+
+`workflow.review`는 기본적으로 모든 역할에 off. 초빙위원회 역할을 가진 사용자에게 권한 매트릭스에서 수동 부여.
+
+**참고:** 기존 스키마의 users 테이블은 `password` 컬럼을 사용한다 (이전 설계서의 `password_hash`는 오류).
+
+---
+
+## 7. API 엔드포인트
+
+### 워크플로우 심사 API
+
+- `GET /api/review-decisions?requestId=X` — 해당 채용건의 심사 결과 목록
+- `POST /api/review-decisions` — 심사 결과 생성 (reviewer_id는 세션에서)
+- `PATCH /api/review-decisions/[id]` — 심사 결과 수정 (판정/코멘트 변경)
+- `POST /api/workflow/advance` — 다음 단계로 진행 (request_id 필요, `workflow.advance` 권한)
+
+### 기존 API 유지
+
+이전 설계서의 API 엔드포인트(permissions, roles, auth, candidates 등)는 모두 유지.
+
+---
+
+## 8. TO 배분표 중복 표시 구분
+
+- **채용현황 > TO 배분표 탭**: 조회 전용 요약 뷰 (필터 + 읽기 전용 테이블)
+- **데이터 관리 > TO 배분 탭**: 편집 가능한 스프레드시트 뷰 (ADMIN/VIP만)
+
+동일한 `to_allocations_2025` 데이터를 사용하되, SpreadsheetTable의 `editable` 옵션으로 구분.
+
+---
+
+## 9. 구현 순서
+
+| 단계 | 작업 | 의존성 |
+|------|------|--------|
+| **1단계** | SpreadsheetTable 공통 컴포넌트 + 테이블 스크롤 수정 | 없음 |
+| **2단계** | 사이드바 180px 축소 + 모바일 반응형 | 없음 |
+| **3단계** | 메뉴 통합 — 채용현황(/dashboard) 탭 페이지 + 데이터 관리(/data) 통합 | 1단계 |
+| **4단계** | DB 스키마 변경 (review_decisions + 권한 리소스 마이그레이션) | 없음 |
+| **5단계** | 상시채용 워크플로우 UI (후보자 상세검증 단계) | 1, 4단계 |
+
+1, 2, 4단계는 독립적이라 병렬 진행 가능.
+
+---
+
+## 10. 에러 처리
+
+- **권한 부족**: 해당 기능 영역이 비활성화 또는 숨김
+- **심사 미완료 상태에서 다음 단계 진행 시도**: "모든 후보자 심사를 완료해주세요" 안내
+- **스프레드시트 저장 실패**: 실패한 셀 빨간 하이라이트 + 재시도
+
+---
+
+## 11. 범위 밖
+
+- 상시채용 2~9단계 세부 입력 필드 정의 (추후 단계별로 정의)
+- 연구력 분석 폼의 구체적 필드 (추후 HWP 파일 분석 후 정의)
+- 정시채용 단계별 입력 필드 (추후)
+- 알림/실시간 기능
+- 접근성 (ARIA, 키보드 네비게이션)
