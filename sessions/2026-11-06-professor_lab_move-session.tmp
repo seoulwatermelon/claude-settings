@@ -1,0 +1,73 @@
+# Session: 2026-11-06
+**Date:** 2026-11-06
+**Started:** 09:57
+**Last Updated:** 17:28
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 아니 학기별로 인사캠 자과캠 나눠서 몇명씩 뽑았는지 그리고 몇명 임용포기 했는지 일단 E:\SANGSI\00_참고 > 전임교원 임용예정자 명단(2019.2학기~)_261026 보면서 표로 정리해봐. A 열 삽입해서 기본에서 캠퍼스 구분 넣었고, Z열 보면 임용예정일 있어
+- 아니 학기별로 인사캠 자과캠 나눠서 몇명씩 뽑았는지 그리고 몇명 임용포기 했는지 일단 E:\SANGSI\00_참고 > 전임교원 임용예정자 명단(2019.2학기~)_261026 보면서 표로 정리해봐. A 열 삽입해서 기본에서 캠퍼스 구분 넣었고, Z열 보면 임용예정일 있어
+- 근데 왜 갑자기 내년에 공간이 부족한 걸까? 이해가 안되네
+- 근데 왜 갑자기 내년에 공간이 부족한 걸까? 이해가 안되네
+- 그럼 정년과 중도퇴직이 어땠는지 표로 비교가 되어야해. 내가 최근 5년 정년퇴직 인원 알려줘볼게 22-1 20, 22-2 10, 23-1 13, 23-2 13, 24-1 18, 24-2 14, 25-1 10, 25-2 14, 26-1 14 야. 중도퇴직 인원은 알지? C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06
+- 그럼 정년과 중도퇴직이 어땠는지 표로 비교가 되어야해. 내가 최근 5년 정년퇴직 인원 알려줘볼게 22-1 20, 22-2 10, 23-1 13, 23-2 13, 24-1 18, 24-2 14, 25-1 10, 25-2 14, 26-1 14 야. 중도퇴직 인원은 알지? C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06
+- 중도퇴직은 인사캠만 추려야지
+- 중도퇴직은 인사캠만 추려야지
+- 26.8도 정년퇴직 12명 이거든?? 26-2도 해보자
+- 26.8도 정년퇴직 12명 이거든?? 26-2도 해보자
+
+### Files Modified
+- /tmp/transform_v7.py
+- C:\tmp\make_coop_mail.py
+- C:\tmp\make_send_gongmun.py
+- C:\tmp\make_objection_report.py
+- C:\tmp\make_objection_report2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\06_이의제기\00_자료목록(시간순).txt
+- C:\tmp\add_coop_section.py
+- C:\tmp\add_phone_col.py
+- C:\tmp\sim_alloc.py
+- C:\tmp\sim_alloc2.py
+- C:\tmp\fill_minwon.py
+- C:\tmp\build_vp_report.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_choocheon.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_ilja_final.py
+- C:\tmp\build_ilja_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_shortage_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_space.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract3.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\splice_table.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_sim.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_ijik.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_midterm.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\check_campus.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/skku_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\b55b14dcec8c0287\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\spike_bar.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\gen_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_fill.py
+
+### Tools Used
+Glob, Bash, Read, AskUserQuestion, Skill, ToolSearch, TaskCreate, Write, TaskUpdate, Edit, Agent, SendMessage, mcp__claude-artifacts__guide, mcp__claude-artifacts__publish_files, TaskStop, Grep, WebSearch, PowerShell
+
+### Stats
+- Total user messages: 260
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 11:21]** - Context was summarized

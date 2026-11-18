@@ -1,0 +1,70 @@
+# Session: 2026-10-26
+**Date:** 2026-10-26
+**Started:** 10:46
+**Last Updated:** 10:46
+**Project:** 01_교원확보율
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\01_교원확보율
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI 폴더에서 2026에 정시 전형 진행을 하면서 폴더들이 엄청 많아지고 안에 파일 정리들이 안되어 있는데... 너 해당 업무들 다 기억 가능하니? 일단 파일 정리좀 시작해보자. 기준은... 2027-2028~ 쭉 업무를 진행할 건데 그때에도 최강의 효율로 업무 진행할 수 있게끔 파일 정
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent:  **Curr
+- Tool loaded.
+- <system-reminder> Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly 
+- <system-reminder> Attribution for git commits and pull requests you create from here on (this replaces any earlier attribution guidance): - End git commit messages with: Co-Authored-By: Claude Opus 5 
+- [Request interrupted by user]  아니 내가 잘못 말했네. 260827 이사회 자료(교원신규임용,직종전환,임용심사)_20260818_v3 을 보고 정시, 상시 둘 다 주요 Faculty (최근 3년 실적) 사례에서 인사캠 주요 사례를 2개씩 신규임용 제청 대상자 48명 세부 List 에서 뽑아봐. 내가 복붙 할 수 있게 정리해줘 그리고
+- <system-reminder> Instruction files were re-read when this session started; these differ from their earlier copies — each replaces its earlier copy, and the instructions preamble above still applies: 
+- Another Claude session sent a message: <teammate-message teammate_id="eval-folder" color="blue"> {"type":"idle_notification","from":"eval-folder","timestamp":"2026-10-26T01:26:02.712Z","idleReason":"a
+- Another Claude session sent a message: <teammate-message teammate_id="eval-folder" color="blue"> {"type":"idle_notification","from":"eval-folder","timestamp":"2026-10-26T01:26:02.712Z","idleReason":"a
+- Another Claude session sent a message: <teammate-message teammate_id="eval-folder" color="blue"> {"type":"idle_notification","from":"eval-folder","timestamp":"2026-10-26T01:32:52.767Z","idleReason":"a
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서\_scripts\_build_mail_agreement.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\EXTRACT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\test_rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_data.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_segments.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_style.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_rows.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_candidates.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_recalc.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\excel-continuous-rows.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\dump_draft.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\REVIEW_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\salvage_lastyear.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\mistake-output-overwrote-source.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\verify_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\export_audit.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\AUDIT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\audit_summary.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\apply_corrections.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\README.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\openpyxl-column-width-trap.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\verification-two-axes.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_manifest.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\confirmed.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\order.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_메일_김도윤_BC재직증명서_요청.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\hwpx_rows.py
+
+### Tools Used
+Bash, Skill, Write, Edit, SendUserFile, Agent, AskUserQuestion, PowerShell, Read, ToolSearch, WebFetch, WebSearch, SendMessage, Grep
+
+### Stats
+- Total user messages: 153
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

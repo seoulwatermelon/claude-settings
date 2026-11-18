@@ -1,0 +1,33 @@
+# Session: 2026-06-02
+**Date:** 2026-06-02
+**Started:** 14:18
+**Last Updated:** 14:18
+**Project:** 01_배정안_문서
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move\01_배정안_문서
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\01_배정안_문서 > 인사캠 신축사업 연계 교수연구실 배정 결과보고_20260602 를 너가 너무 잘 작성해줬어. 근데 공문도 작성을 해서 기안을 올려야 할 거 같아. 공문을 작성해주고, 양식은 (내부결재)인사캠 신축사업 연계 교수연구실 배정 결과보고 이 파일에
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\01_배정안_문서\_new_section0.xml
+
+### Tools Used
+PowerShell, Skill, Read, Write
+
+### Stats
+- Total user messages: 2
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

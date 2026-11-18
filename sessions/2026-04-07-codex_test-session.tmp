@@ -1,0 +1,38 @@
+# Session: 2026-04-07
+**Date:** 2026-04-07
+**Started:** 10:23
+**Last Updated:** 15:59
+**Project:** codex_test
+**Branch:** main
+**Worktree:** C:\Users\SKKU\Downloads\codex_test
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 좀 기다리자. 그리고 내가 느낀게 ETH TPF전략이 전체적인 성능을 떨어뜨리는 느낌인데? MDD 도 그렇고?
+- # Current Work  ## ETH Causal Replay Executed 333: TPF 포함 / 제외 비교  기준 파일: - \`/Users/Watermelon/codex/reports/backtests/eth_production_causal_replay_current_executed.csv\`  source count: - \`TPF\`: \`192\` 
+- 지금 그럼 우리 일반적인 백테스트는 실제 live 결과와 달랐잖아. 그럼 aggregate 실적도 live 기준으로 다시 돌리는게 맞겠네?
+- 너가 이번에 ETH가 신호가 있었다는 걸(LS) 캐치했잖아. 나도 이렇게 하루 지날때마다 지난 시간 동안 자동매매 신호가 있었는데 못잡았는지 체크 하려면 어떻게 지시해야해?
+- 그리고 지금 XRP 번들을 shadow에서 실live 운영으로 승격 시켰는데 이것도 아까 너처럼 작업을 해야하나?
+- 근데 너가 아직 착각하고 있는게 있는데, 내 모델은 저 자산별 전략들을 병행으로 돌리는게 아니라 하나의 gate로 실운영해서 겹치면 먼저 신호 나오는 걸로 매매하는거야. 동시에 매매신호가 잡히면 우선순위대로 돌고
+- XRP production live 승격 요청에 맞춰 manifest 상태를 재확인했고, XRP causal replay와 live signal 상태 점검까지 끝냈다.  Manifest: - \`reports/strategy_truth_manifest.json\`은 이미 요청 상태로 정렬돼 있었다. - \`production_live.xrp_operator_ru
+- # XRP cutoff fix + combined causal shared gate  - XRP hard-coded cutoff root cause:   - \`src/eth_1h_bias_5m_execution_backtest.py\`   - \`END_TS = 2026-03-06T13:00:00Z\`   - old XRP loader lineage inheri
+- Daily signal parity audit 스크립트를 만들어라.    목적: 매일 1회 실행해서, 지난 24시간 동안 causal replay에서 잡히는 신호가 live engine에서도 잡혔는지 비교    입력:   - 최신 ETHUSDT_5m_current.csv, BTCUSDT_5m_current.csv (+ SOL/BNB/ADA/BTC)   - 
+- 그냥 코드로 할 수 있다면 이걸 4시간에 한 번 씩 보내주는 건 어때? 텔레그램으로?
+
+### Tools Used
+Read, Grep, Bash, Glob
+
+### Stats
+- Total user messages: 44
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

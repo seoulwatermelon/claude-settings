@@ -1,0 +1,70 @@
+# Session: 2026-05-14
+**Date:** 2026-05-14
+**Started:** 09:15
+**Last Updated:** 16:21
+**Project:** 2027_정시채용_심사위원추천
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 좀 공감하는 말투로 해서...
+- 왜 이미지 복사 해서 붙여넣기가 안되지??
+- 아니 그림판에 있는 이미지 복사해서 너한테 붙여넣기 하려고 하는데 복사까지는 됐는데 붙여넣기가 안돼
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_서류심사_합격\reference > 합격자 안내 메일_합격자 대상, 합격자 안내 메일_불합격자 대상 파일을 보고 합격자, 불합격자에게 보낼 메일을 작성해줘. 불합격자에게 보낼 메일은 더 좀 뭔가 공손하게? 기분 안나쁘게 부탁해. txt 파일로 각각 저장해주면 돼 같
+- 아니 엑셀에서 조건부서식 ISEVEN 해서 구분 될떄마다 그 행 색깔 칠해주는 거 있잖아. A열만 칠해지면 어떡해??
+- 건제순 100 100 100 100 100 302 302 302 302 302 311 311 311 311 311 504 504 504 504 504 507 507 507 507 507 509 509 509 509 509 600 600 600 600 600  A열이 이렇게 되어 있어도 작동을 하나?
+- 꼭 AA열을 만들어야해? 그냥 A열 그룹번호 만으로 안돼?
+- 아니 왜 합격자발표 메일 합격자 대상으로 나가는거는 그거 그대로 써주면 되는데 다르게 쓴거야?
+- 아니 너가 일단 작성을 ver02로 해줘
+- 지금 내가 수정해서 작성한 두 합격자 불합격자 안내 메일 내용에 오타나 이런 거 없지? 이상한거?
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch
+
+### Stats
+- Total user messages: 320
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

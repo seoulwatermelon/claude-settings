@@ -1,0 +1,31 @@
+# Session: 2026-09-21
+**Date:** 2026-09-21
+**Started:** 09:29
+**Last Updated:** 09:29
+**Project:** professor_NTT
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_NTT
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 2026.9. 외국인전담교원 명단_최종 파일을 읽으면 강의평가(비전임포함)_정리 에서 E열 계산할 때 강의평가(비전임포함) > M열이 0인 경우 빼고 계산을 해야할 거 같거든. 해당 수식 어떻게 적용해야 하는지 ver02 로 너가 수정해서 만들어줄래?
+- Continue from where you left off.
+- 계속 진행해줘
+
+### Tools Used
+Bash
+
+### Stats
+- Total user messages: 3
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,53 @@
+# Session: 2026-06-10
+**Date:** 2026-06-10
+**Started:** 09:09
+**Last Updated:** 16:27
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 C:\Users\SKKU\Downloads\claudecode\professor_lab_move\01_배정안_문서 > 인사캠 신축사업 연계 교수연구실 배정 결과 파일의 8 페이지 교원별 이전 내역 표에 소속과 배정전 열 사이에 열추가를 하나 해서 교내전화 를 넣어야 해. 교내전화 데이터는 C:\Users\SKKU\Downloads\claudecode\
+- Continue from where you left off.
+- 조두연 교수가 이사업체에 조두연 교수님 010-9370-2571 교수회관 301호 -> 다산경제관 522a  교수님께서는 이사계획이 없으시다고 합니다. 이와관련하여 학교측으로부터 확인을 받으라는 문자 안내를 받았습니다. 확인 부탁드립니다. 이렇게 얘기를 했다네... 어떤 조치가 나을까? 일단 내가 조두연 교수에게 추후 어떤 변동사항이 생기더라도 우선 배정된
+- B, 그리고 이사업체에 어떻게 회신하겠다도 들어갔음 좋겠어
+- 이사는 7월 초까지 가능하므로 육아휴직이 6월 30일에 끝이나서 7월 초에는 가능한 상황이야. 조두연 교수한테 이사업체에서 연락하는 게 나을까? 그렇다면 어떤 메시지로?
+- 굿 이사업에 줄 메시지를 안으로 해서 팀장님께 보고 톡을 다시 작성해줘.
+- 당장 26년 9월 1일에 공간 배정받을 인원이랑 배정할 수 있는 공간을 정리를 했고, 시뮬레이션을 한 번 돌려봐야해(공간이 얼마나 부족한지 알기 위해서) 인사캠 연구실 배정 시뮬레이션_260901 파일을 보면 필요 자료가 나오는데 1번째 시트가 가능공간, 2번째 시트가 학문단위별 배정원칙, 3번째 시트가 배정예정인원이야. 너가 1-3번째 시트를 보면서 1번
+- 배정인원에 왜 다 몰아썼어 열 분리해서 소속대학 학과 성명 이런 식으로 열분리 해야지. 그리고 유연 버전도 같이 보이게 해봐.
+- 이상민 변호사와 조두연 교수 건으로 상담받은 통화내용 이러한데  신고를 하는 건 개인의 자유, 국가 인권위원회 - 고용노동부 산하 노동청 - 노동위원회 에 신청 할 거 같음(차별시정) → 인용될 가능성은 작다. → 답변 하라고 오긴 한다 교육부에 익명으로 진정을 넣기도 한다(학생들 인권센터 패싱) 소청, 민사소송 가처분 다 가능하지만 비용이 든다.(소청은 
+- 결국 내가 조두연 교수한테 1차로 설득하기로 함. 꿀팁 있어?
+
+### Files Modified
+- /tmp/transform_v7.py
+- C:\tmp\make_coop_mail.py
+- C:\tmp\make_send_gongmun.py
+- C:\tmp\make_objection_report.py
+- C:\tmp\make_objection_report2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\06_이의제기\00_자료목록(시간순).txt
+- C:\tmp\add_coop_section.py
+- C:\tmp\add_phone_col.py
+- C:\tmp\sim_alloc.py
+- C:\tmp\sim_alloc2.py
+
+### Tools Used
+Glob, Bash, Read, AskUserQuestion, Skill, ToolSearch, TaskCreate, Write, TaskUpdate
+
+### Stats
+- Total user messages: 29
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 09:55]** - Context was summarized

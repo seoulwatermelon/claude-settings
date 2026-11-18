@@ -1,0 +1,59 @@
+# Session: 2026-04-23
+**Date:** 2026-04-23
+**Started:** 09:14
+**Last Updated:** 16:50
+**Project:** 2027_정시채용_심사위원추천
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- =IF(F3=0,"해당없음",IF(AND(I3<>"",SUMPRODUCT((가족사항_ref!$F$2:$F$11767=B3)*(B3<>"")*(RIGHT(TEXT(가족사항_ref!$G$2:$G$11767,"00000000"),6)=I3)*(COUNTIF(심사위원_통합성명!$B$2:$B$669,가족사항_ref!$B$2:$B$11767)>0))>0),"★ 확정(
+- 아니 근데, 지금 K열 보면 검토필요한 사람도 해당없음으로 뜨고 있어.
+- 수식이 아까 어땠는데 =IF(E2=0,"해당없음",IF(F2>0,IF(AND(I2<>"",SUMPRODUCT((가족사항_ref!$F$2:$F$11767=B2)*(B2<>"")*(RIGHT(TEXT(가족사항_ref!$G$2:$G$11767,"00000000"),6)=I2)*(COUNTIF(심사위원_통합성명!$B$2:$B$669,가족사항_ref!$B$2:$B$
+- 참고(교원-가족 생년월일 다름, 동명이인 추정) 은 당연히 생년월일 다르니까 동명이인인거 아니야? 근데 이 결론이 나오는 로직이 수식에서 어떻게 해야 나오는지 자세히좀...
+- 근데 지금 문제가 동명이인이 많을 때엔 여러명 비교하고 불일치나 동명이인 추정 결론을 내야 하는데, 예를 들어 박유진, 진보라, 박소현, 장병철은 불일치 하는 인원도 있지만 일치하는 인원도 있는데 그냥 불일치 이러거나 동명이인 추정 이렇게 뜨네?? 그리고 장병철 이야기인데, py_생년월일_매칭상세 에서 [★심사위원]장병희/제(弟)/미디어커뮤니케이션학과/가족
+- 너가 만들어준 생년월일_확정도 열이 또 수식이 복잡해서 그런지 엑셀 켤때 경고창이 뜨면서 복구가 안됐어. 그냥 수식이 사라지게 떠. 개선이 필요한 거 같아
+- 너 지원자_주민번호앞6자리 를 접수번호로 매칭했잖아? 근데 관리번호로 매핑해야해. 접수번호는 중복이 있을 수 있어. 그래서 장병철이 생년월일이 다르게 보인거야
+- 생년월일_확정도에서 IF(AND(F2>0,I2=""),"⚠ 검토필요(지원자 주민번호 없음)",IF(F2>0,"❌ 불일치(심사위원-가족, 동명이인)","참고(교원-가족, 동명이인 추정)"))))))) 이 수식이 이해가 아노대
+- 근데 아까 복수명수의 동명이인을 다 검증하지 못해서 문제였잖아? 이번에는 그걸 어떻게 개선한거야?
+- 지금 지능형정밀헬스케어융합전공 에서 2027 전임교원 신규초빙 세부내역_지능형정밀헬스케어융합전공 을 제출했는데, KRI 분야명이 공학    전기전자컴퓨터공학    인공지능    인공지능응용 로 주셨는데, 이러면 안나오거든. KRI 분야 공학 > 전기공학 > 컴퓨터/인공지능 을 말씀 하시는 건지 물어보는 메일을 작성해줄래? 박재석 교수야
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 125
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

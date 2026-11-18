@@ -1,0 +1,41 @@
+# Session: 2026-06-08
+**Date:** 2026-06-08
+**Started:** 16:01
+**Last Updated:** 16:29
+**Project:** 02_교육계획서입력(작업예정)
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\privacy\02_교육계획서입력(작업예정)
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <local-command-stdout>Login successful</local-command-stdout>
+- 작업좀 계속해줘
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- 개인 KPI가 너무 다 길어... 기존에 보면 저렇게 개조식으로 여러개 쓰던가 해야지
+- Continue from where you left off.
+- 사무직고과등록을 마치고 이제 교육계획서입력 작업 해야하니까 파일정리좀 일단 부탁해
+- 이제 2026 교육계획 입력을 해야해. C:\Users\SKKU\Downloads\claudecode\privacy\02_교육계획서입력(작업예정) 폴더에 배경 입력요청 공문으로 온 자료들을 넣어놨어. 읽어보고 너가 사무직고과등록 을 작성해줬으니까 내가 어떤 일을 하는지 누구보다 더 잘 알거야. 이걸 기반으로 아래 항목들을 입력해야 하는데 필요역량/역량개발을
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 필요역량은 10자가 최대야....
+- - 단과대학 국제화 담당자 워크숍 및 Cross Culture Training 참여, - 중국 SDU 글로벌 연수 등과 연계해 중화권 대학 행정·교류 이해도 제고- 직원 외국어 회화반(중국어)·온라인 학습으로 기초 회화 및 실무 표현 습득 이런건 실질적으로 할 수 있는게 아닌데 다른 걸로 좀 바꿔줘
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\privacy\_build_2026_kpi.py
+
+### Tools Used
+Skill, Glob, Bash, Read, AskUserQuestion, ToolSearch, TaskCreate, TaskUpdate, Write
+
+### Stats
+- Total user messages: 17
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

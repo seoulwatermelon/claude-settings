@@ -1,0 +1,46 @@
+# Session: 2026-09-04
+**Date:** 2026-09-04
+**Started:** 10:41
+**Last Updated:** 11:13
+**Project:** quarter
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\quarter
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 이 폴더를 보면 일단 취지는 임용쿼터 계산이야. 작년에 했던 파일이 2개 있는데 참고용으로 넣었거든. 교원조회_20260318_전임 백데이터를 통해서 임용쿼터계산_20260319_1154 를 계산한거야. 근데 2학기에 또 작업을 하려 했더니 문제가 있어. 새로운 임용쿼터는 교원조회_260903_전임으로 현 시점의 교원 데이터를 받아서, 교원조회_202
+- 김도윤 Enrich은 GSB 맞아. 그리고 산출물 21_학과매핑 시트에서 비고(판정근거) 우리가 좀 합의를 해야할 거 같은데, 보조규칙 적용: 교무소속코드='GSB분야' 또는 교내번호 02-740 시작 -> GSB, 그 외 경영학+글로벌경영 → 교무소속코드로 GSB와 경영학+글로벌경영 구분하는 거 맞아. 그 외 교무소속코드도 경영전문학원인데 GSB인 분들은
+- 학완라우, 박소현 최신으로 바뀐게 맞아. 그렇게 바꾸면 돼. 김주환, 조제윤은 약학과 맞고. 1601로 통일해. 전용현도 의학과(기초) 맞아. 근데 채용분야 코드가 임상이랑 기초랑 달라야 하는거 아니야? 이렇게 과가 다른데 코드가 다른건 조정해줘야 할 거 가탕. 의료기기산업학과도 삼성융합의과학원이랑 같으니까 2201로 조정하고. 21_학과매핑 시트 > 비고
+- =IF($W5<>"",$W5,IF($T5<>"",$T5,IF($AI5<>"",$AI5,"★미정제★"))) 이거는 수식이 무슨 뜻이야?
+- 20_설정 시트 > 최소 전임교원 수 가 3으로 적혀 있는데 4 아니야?
+- 40_쿼터산정 시트 보면 같은 학과인데 코드가 달라서 다르게 해놨는데, 다수결로 처리 왜 안했어?? 예를 들어 약학과
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_result.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\build.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\recalc.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\verify.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\test_rule_regression.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\임용쿼터 산출 매뉴얼.txt
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\dept_map.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\manual_data.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_calc.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_source.py
+
+### Tools Used
+Bash, PowerShell, Write, Edit, AskUserQuestion
+
+### Stats
+- Total user messages: 6
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

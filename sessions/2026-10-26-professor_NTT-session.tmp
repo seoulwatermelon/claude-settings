@@ -1,0 +1,38 @@
+# Session: 2026-10-26
+**Date:** 2026-10-26
+**Started:** 17:12
+**Last Updated:** 17:15
+**Project:** professor_NTT
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_NTT
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 파일 정리좀 하자. 외국인NTT 채용도 진행하려 하는데 지금 재임용, 계약연장 파일들이 너저분하게 있잖아
+- <system-reminder> Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly 
+- <system-reminder> Instruction files were re-read when this session started; these differ from their earlier copies — each replaces its earlier copy, and the instructions preamble above still applies: 
+- The user sent a new message while you were working: <pasted_content id="ad20"> 외국인교육전담교원_육아휴직_계약기간순연_체결(안) </pasted_content id="ad20">   은 전혀 양식을 지키고 있지 않은데?  This is how Claude Code surfaces messages
+- The user sent a new message while you were working: <pasted_content id="ad20"> For the avoidance of doubt, ‘the date of appointment’ and ‘the initial appointment’ in this Article 3.5 both refer to 01/
+- The user sent a new message while you were working: Department of Cemistry, College of Science 가 맞구나  This is how Claude Code surfaces messages the user sends mid-turn — within the running turn, often
+- <bash-input> Start-Process powershell -Verb RunAs -ArgumentList '-Command','& "C:\Program Files (x86)\Hnc\Office 2022\HOffice120\Bin\Hwp.exe" /regserver'</bash-input>  <bash-stdout></bash-stdout><bash
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- 1번 예시대로 해. 2번 이건 샘플이라... 삭제해도 돼. 3번 중간본은 삭제해도 돼. 파이썬 캐시도
+- 1번 예시대로 해. 2번 이건 샘플이라... 삭제해도 돼. 3번 중간본은 삭제해도 돼. 파이썬 캐시도
+
+### Tools Used
+Bash, Read, Skill, PowerShell
+
+### Stats
+- Total user messages: 37
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

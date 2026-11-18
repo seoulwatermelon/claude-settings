@@ -1,0 +1,33 @@
+- [SANGSI 작업 루트 구조](sangsi-workspace-layout.md) — 상시 업무는 E:\SANGSI, 무용학과는 그 하위, 메모리 키는 junction 으로 공유
+- [무용학과 2026 채용 확정사항](dance-dept-2026-recruitment-decisions.md) — 특별전형 프레임·2개 분야 각 1명·위원장 호선·pool 7명 유지
+- [HWPX 줄 폭 실측 한계](hwpx-line-width-real-limit.md) — skku_report 줄 폭 경고는 25% 관대, 본문은 자르지 말고 한 문장 통째로(내어쓰기가 정렬)
+- [HWPX 보고서 레이아웃 체크리스트](hwpx-report-layout-checklist.md) — ※·- 기호, 표 쪽넘김 262mm, 본문+붙임 분량 배분
+- [규정문서 평가자 루프](univ-doc-evaluator-loop.md) — 조문 원문을 붙임에 전재, 두 축 분리 채점, 지적 항목만 수정
+- [HWPX 다중 구역(가로 표) 만들기](hwpx-multi-section.md) — header secCnt·container.rdf·manifest 연속·가로는 치수 안 바꿈
+- [검증기를 마지막에 믿을 것](trust-your-validator-last.md) — 안 된다고 하면 내 도구부터 의심, 정상 파일과 전 항목 대조
+- [퀵패스 검증본 고정 문구](quickpass-report-header.md) — 머리말·제목(GPR 제외)·※학과 초빙위원회·주요논문 주저자+JCR50%이내 최대3편
+- [상부 보고서는 한 장·표 중심](report-at-a-glance-tables.md) — 수년 경과표 → 작년 실패 사유 → 작년 대비 비교표(역할 열) → 대응 ▶ 흐름표
+- [원테이블은 onetable 스킬로](onetable-report-rules.md) — 원테이블·붙임 PDF 요청 시 프로젝트 스킬 onetable 먼저 호출(규칙은 스킬에)
+- [퀵패스 파이프라인 위치](quickpass-pipeline-location.md) — 스크립트는 E:\SANGSI\02_연구력검증(IOU,퀵패스,GPR)\_scripts, SciVal API 사용 가능 — 절차는 프로젝트 스킬 quickpass
+- [사용자 수정 최종본은 빌더 재생성 금지](user-hand-edited-final-hwpx.md) — 무용학과 채용 계획(안) v1은 사용자가 한글에서 직접 고친 최종본, 줄 단위로만 수정
+- [복붙용 문안은 일반 텍스트](copy-paste-plain-text.md) — 메일·톡 초안에 인용 블록(>)·굵게(**) 금지
+- [상시채용 진행현황 트래커](sangsi-tracker-xlsx.md) — E:\SANGSI\상시채용_진행현황.xlsx, RAW 1시트+요약, 메모 '날짜 [주체] 내용 → 조치', 재생성 금지·셀 단위 갱신
+- [학과 Top-tier 등급 표기](toptier-grade-label-by-dept.md) — 통계·경제학과는 "A0급", 경영학과만 "S급"
+- [퀵패스에 문제 있어 보이는 문구 금지](quickpass-no-problem-notes.md) — "Scopus 미색인(…미산출)" 같은 비고 쓰지 말 것, 근거는 스크립트에만
+- [퀵패스 Word Cloud 고해상도](quickpass-wordcloud-hires.md) — IOU 700x400 그림 대신 make_wordcloud.py 로 SciVal Topic 직접 그림
+- [학과장 추가자료 요청 메일 형식](dept-request-mail-template.md) — 경제학과 원문(04_학과소통\_템플릿)을 따름, 발전계획 있으면 인용해 질문, 팀장님 보고 탭 항상 함께(절차는 deptmail 스킬), 타 학과 메일에 경제학과 언급 금지
+- [과거 합격자 연구력 DB](hist-hire-db.md) — 02_연구력검증 폴더 xlsx 140명, _scripts\hist_db 빌더, 25~26년 추가 시 json 넣고 재빌드
+- [메일·보고에 쪽수 금지](table-header-no-page-numbers.md) — 머리글·본문·각주 모두 「○쪽」「같은 쪽」 금지, 문서명+인용 문구만
+- [gpr_single 작성 규칙](gpr-single-format.md) — 이번 후보자 행만, 끝에 추천대학·추천학과 2열
+- [학교 메일 MCP(worksmail)](worksmail-mcp.md) — NAVER WORKS IMAP, 읽기·첨부·초안만(발송 없음), 비밀번호는 keyring
+- [참고 메일 서식 그대로](mail-follow-reference-html-format.md) — 참고 메일 따라 쓸 땐 HTML 서식(크기·색·형광) 유지, save_draft html_body
+- [퀵패스 컨퍼런스형](quickpass-conference-mode.md) — 우수 학술대회 있으면 항상 같이 표시(0편이면 컨퍼런스형·있으면 병행형), 학과 Top-tier+SW목록 T1~T4
+- [경영학과 전략 Search Committee 이견](biz-strategy-search-dispute.md) — 문철우 교수 이의 제기(11.4), 00_특임\2_경영학과_전략_상시, 규정상 학과 자율·전략 T/O 미확인
+- [이의 제기·민원 보고서 구성·문체](dispute-report-style.md) — 경영 전략 사용자 최종본 견본: 배경 "쟁점) 요지"·검토는 권한 범위만·답변 두루뭉술/대응 1)2)·편들지 않기
+- [표 서식: 제목 굵게·셀 들여쓰기 없음](hwpx-table-cell-format.md) — 첫 행·첫 열 볼드(_hwpx_bold.py), cellflow hang=0
+- [낫표「」 금지](no-corner-brackets.md) — 메일·보고에 「」 쓰지 말고 작은따옴표 ' ' (AI스러움)
+- [메일 html 사용자 편집본](mail-html-user-edits.md) — 편집 중엔 빌드 금지, 저장본(meta user-saved)은 덮어쓰지 않음, 고칠 문구만 전→후로
+- [팀장님 보고에 학석박 출신 대학](team-report-include-degrees.md) — 후보자·비교 대상마다 학력(학/석/박) 열을 넣는다
+- [메일 전달 시 원문 스레드 전체](mail-forward-full-thread.md) — FW·보고 초안엔 이전 메일 전부, 못 읽으면 멈춤, 저장 후 Drafts 재확인
+- [채용심의위 자료는 chaesim 스킬로](chaesim-skill.md) — 요약자료 지원요청·Check Point, 회의자료 편집본(NTT는 비교표 생략), 2차 서류는 배치 6_추가자료_학과회신
+- [세션 인수인계 11.19](session-handoff-261119.md) — 행정학과 면담(11.19)·철학과 통화·심리학과 열린 일, 다른 PC 새 세션은 이것부터

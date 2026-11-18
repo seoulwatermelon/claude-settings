@@ -1,0 +1,73 @@
+# Session: 2026-05-11
+**Date:** 2026-05-11
+**Started:** 10:08
+**Last Updated:** 17:32
+**Project:** 2027_정시채용_서류심사_합격
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_서류심사_합격
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\5.png]
+- _ref_분야_기준 시트에 G열도 수식으로 해줄수 없어? 그리고 최저점컷오프 되는 인원은 없는거야? 별도 열이 없어서.
+- 그냥 AK열을 추가논의_최고점 미달로 해서 합격자 중 분야별 최고 득점자 점수가 기준 점수 미만인 경우, 학과의견 청취 후 전형진행여부 결정(*교육전담교원: 70점, 일반교원: 80점) 이 있으면 표시해주면 되잖아.
+- 응응 이렇게 하면 되는데, 왜 산업 및 조직심리, 아동청소년학과, 물리학과, 통계하고가 다 최고점수가 80점 넘는데 왜 추가논의라고 되어있어?
+- 너 원래 있던 비고 열은 왜 지웠어??
+- 불합격_최저점미달의 경우에 합격 라인일 경우에만 불합 표시를 할건데 그렇게 하려면 어떻게 수식을 바꿔야 하지?? 수식만 알려줘
+- 합격자 중 최고점이 추가논의 필요 고려인 사람을 체크하기 위한 수식도 알려줘
+- 조건부서식보다 내가 칠하는 셀서식 배경 칠하기를 우선하게 할 수 있나?
+- 지금 식품생명공학과, 정치외교학과 학과장님한테는 메일로 연락을 해서 분야별 최고 득점자 점수가 기준 점수* 미만인 경우, 학과의견 청취 후 전형진행여부 결정           *교육전담교원: 70점, 일반교원: 80점 사항을 안내하고 실제 각 학과 현황을 알려준 뒤 늦어도 수요일 오전까지 결정여부를 회신 바란다고 메일을 정중하게 작성해야해. 메일을 작성해줘
+- 안녕하세요 승주완 책임님,  보내주신 사안 관련 학과의견 취합해 수요일 오전까지 답변드릴 수 있도록 애써보겠습니다. 다만, 분야 최고 득점자 점수: 80점 미만이라는 대략적 정보 대신 구체적 수치로 알려주시면 보다 빠른 의견 취합 및 결정이 가능할 듯하니 고려 부탁드립니다.  감사합니다, 허진희 드림  식품생명공학과 학과장이 이렇게 답메일이 왔는데, 정시전
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep
+
+### Stats
+- Total user messages: 271
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 09:13]** - Context was summarized

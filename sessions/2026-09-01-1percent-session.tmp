@@ -1,0 +1,56 @@
+# Session: 2026-09-01
+**Date:** 2026-09-01
+**Started:** 11:05
+**Last Updated:** 11:52
+**Project:** 1percent
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\goto1st\1percent
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- (2000) 이런 연도 넣은건 빼줘. 주변이랑 양식 맞춰야지. 그리고 김범준 석좌교수는 어디서 찾은거야?
+- 주요경력이 없는 분들은 뭐야?? 인정 못받는건가?
+- 박창민 LG화학(멤브레인 필터 개발) 는 어디서 찾아
+- 응
+- 정후영 UNIST 연구지원본부(UCRF) 전자현미경 그룹장 이런건 어떻게 아는거야
+- 너가 작성해준거 1% 2% POOL_교원인사팀_36명 이렇게 완성했어. 이제부터 끝열에 판정결과(○, △, x), 판정의견 열을 추가하고 이 사람은 성균관대에 영입할 만한 사람인지와 근거를 작성해야해. 학석박 현재기관 과 연구실적, 그리고 1% 2% POOL 교원인사팀 36명 논문목록 파일의 논문 주저자 정보 MDPI 논문 실적이 아닌지, 잠재력 있는 인재
+- Continue from where you left off.
+- 어제 진행하다가 멈췄구나? 계속해
+- 판정 기준 6축을 좀 정규화할 수 있도록 쪼개서 끝 열들에 붙여줄래? 내가 더 잘 판단할 수 있게
+- 너가 지금 수치적으로 가져온거 다 수치에 이상 없는지 evaluator 100점 판정 으로 ㄱㄱ
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\els_client.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\probe.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\sheet_io.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\fetch_scopus.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_work\web_findings.md
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\digest.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_work\findings.md
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\findings_data.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\write_sheet.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\apply_fixes.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\analyze_pubs.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\verdict_data.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\write_verdict.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\score_data.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\write_scores.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\audit_pubs.py
+
+### Tools Used
+Bash, PowerShell, Write, AskUserQuestion, ToolSearch, WebSearch, WebFetch, SendUserFile, Edit
+
+### Stats
+- Total user messages: 23
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

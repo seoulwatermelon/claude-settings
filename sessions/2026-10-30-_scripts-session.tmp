@@ -1,0 +1,46 @@
+# Session: 2026-10-30
+**Date:** 2026-10-30
+**Started:** 13:49
+**Last Updated:** 16:00
+**Project:** _scripts
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 학술지 3편 중 ESCI 1편(EJKS '25), 2편은 국제 DB 미수록 국제DB가 뭔말이야?? Scopus에 1편 실린건 뭔데 그럼?? 학술지 3편 중 Scopus, ESCI에도 없는 건 국내 본이야??? 단행본 중에 Scopus에 없는 건 뭐야?? 그냥 의미 없는건가?? 그리고 ESCI도 Scopus에 실리는 거 맞지?
+- 학술지 3편 중 ESCI 1편(EJKS '25), 2편은 국제 DB 미수록 국제DB가 뭔말이야?? Scopus에 1편 실린건 뭔데 그럼?? 학술지 3편 중 Scopus, ESCI에도 없는 건 국내 본이야??? 단행본 중에 Scopus에 없는 건 뭐야?? 그냥 의미 없는건가?? 그리고 ESCI도 Scopus에 실리는 거 맞지?
+- 지금 20261030 Martin Gehlmann 후보자 체크리스트_v1, 20261030 0. 2026 채용 진행 경과 대상자 보고_유학동양학과_v1 수정 다 해놨으니까 건드리지 말고 너가 말한대로 붙임 PDF 도 이어서 만들어줘. 근데 쪽번호는 추가하지 마.
+- 지금 20261030 Martin Gehlmann 후보자 체크리스트_v1, 20261030 0. 2026 채용 진행 경과 대상자 보고_유학동양학과_v1 수정 다 해놨으니까 건드리지 말고 너가 말한대로 붙임 PDF 도 이어서 만들어줘. 근데 쪽번호는 추가하지 마.
+- 아 라벨 중복은 내가 심사요청서에서 뺐어. 체크리스트 PDF 다시 떠줘 덮어쓰기 하고. CV A4로 크기 는 어떻게 맞추계/
+- 아 라벨 중복은 내가 심사요청서에서 뺐어. 체크리스트 PDF 다시 떠줘 덮어쓰기 하고. CV A4로 크기 는 어떻게 맞추계/
+- 양식 (유학동양학과) 1-2. 상시채용 초빙 진행 경과, (유학동양학과) 1-3. 학과 발전 계획 (교원 중심) 약간 수정했으니 지금으로 이거 두 파일만 수정해서 붙여줘 다시
+- 양식 (유학동양학과) 1-2. 상시채용 초빙 진행 경과, (유학동양학과) 1-3. 학과 발전 계획 (교원 중심) 약간 수정했으니 지금으로 이거 두 파일만 수정해서 붙여줘 다시
+- <pasted_content id="ad20"> - 1학기 (학부) 유가고전영어강독, 유학및동아시아철학의핵심개념과윤리, (대학원) 한국철학문헌연구 - 2학기 (학부) 유교문화배우고익히기, 중국철학영어강의, 동양문화·예술학입문 - 학기당 9학점(3과목), 연 18학점 이상 </pasted_content id="ad20">   강의 배치계획 이 교과목이 다 신
+- <pasted_content id="ad20"> - 1학기 (학부) 유가고전영어강독, 유학및동아시아철학의핵심개념과윤리, (대학원) 한국철학문헌연구 - 2학기 (학부) 유교문화배우고익히기, 중국철학영어강의, 동양문화·예술학입문 - 학기당 9학점(3과목), 연 18학점 이상 </pasted_content id="ad20">   강의 배치계획 이 교과목이 다 신
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts\build_checklist.py
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts\spec_checklist_gehlmann.py
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts\spec_yudong.py
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts\measure_ot.py
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts\build_attach_nonum.py
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT\30_채용_2027.03\01_유학동양학과_261026\_scripts\attach_yudong.json
+
+### Tools Used
+Bash, Read, Skill, PowerShell, AskUserQuestion, Write, Edit
+
+### Stats
+- Total user messages: 73
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

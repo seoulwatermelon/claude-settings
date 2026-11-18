@@ -1,0 +1,70 @@
+# Session: 2026-07-20
+**Date:** 2026-07-20
+**Started:** 11:25
+**Last Updated:** 16:04
+**Project:** _빌드작업
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\_빌드작업
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 학과 회의록에서 가져왔잖아. 학과심사 의견은 FI~JR열에서 가져와야지. 2027 정시채용 2단계 지원자 평가의견 취합_통합_260618_추천반영 에서
+- 일단 전체 재작성 하지 말고(2~8번은 작성 했거든(C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\5. 최종자료 파일명 기준)) 10~24번 재작성 진행해줘
+- 팀장님께 2~9번 완성된거 보내드릴 건데 메일로 간단하게 작성해줘. 미리 보실 수 있게 끔 완성된 7편 먼저 보여드린다고
+- 우리가 교원인사협의회 자료 학부대학 1개를 아직 안 만들었잖아. C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\3.IOU작업\퀵패스 에 4개 파일로 각 후보자꺼 올려놨으니까 그거 참고해서 진행해줘. 국제논문 실적이 없으면 국내논문 실적 위주로 자료 작성해주면 돼 최종자료는 기존 타분야는 건드리지 말고 학
+- 응 계속 해줘. 2번은 일단 장점이 없으면 적지마
+- 기존분야 버그 3건이 뭐야? 지금 벌써 상당부분 진행했는데?
+- 21번은 고치고, 1번은무슨 말이지?
+- 뒤쪽으로 해야지
+- 건축학과 2개 분야는 보니까 아래 사항을 수정/반영해야해. 빌더에도 적용해야 하는데 뭐냐면 1. 정시채용 평가 결과 표에서 논문 실적 *23.4~26.4 아래 우수컨퍼런스(주)를 창작으로 바꾸고 우리 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\03_학술지정보업로드 > 학술지정보업로드_20
+- 화학공학부 정석현 지원자 지능형 화학공정과 큰 중첩은 없으나 해당 분야로 진출할 포텐셜이 있으며, 이미 세계적 수준의 연구 성과를 다수 보유한 젊은 연구자로 평가됨. 이 말은 어디서 나와??
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch, Glob, PowerShell, Agent, SendMessage, Artifact, ScheduleWakeup
+
+### Stats
+- Total user messages: 797
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

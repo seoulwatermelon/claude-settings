@@ -1,0 +1,34 @@
+# Session: 2026-07-15
+**Date:** 2026-07-15
+**Started:** 18:19
+**Last Updated:** 18:19
+**Project:** 4. 퀵패스_검증본
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\퀵패스\5. 사범대학_교육학과_4명_260715\4. 퀵패스_검증본
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 상시채용 후보자들 퀵패스 검증을 진행 리포트를 작성해야해. C:\Users\SKKU\Downloads\퀵패스\5. 사범대학_교육학과_4명_260715 > 1. 샘플 파일을 보고 그거 양식을 그대로 참고해서 3. IOU_결과본 의 각각 결과물의 내용을 참고해서 각 인원에 대한 파일을 만들면 돼. 지원자 기본 정보는 0_CV 을 참고해.
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/claude/C--Users-SKKU-Downloads----/fbf8ed2a-030b-42d2-93ed-426a054367b3/scratchpad/dump_tables.py
+- C:/Users/SKKU/AppData/Local/Temp/claude/C--Users-SKKU-Downloads----/fbf8ed2a-030b-42d2-93ed-426a054367b3/scratchpad/gen_reports.py
+
+### Tools Used
+Bash, Skill, ToolSearch, Write, Read, Edit
+
+### Stats
+- Total user messages: 2
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

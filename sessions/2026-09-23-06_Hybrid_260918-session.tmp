@@ -1,0 +1,57 @@
+# Session: 2026-09-23
+**Date:** 2026-09-23
+**Started:** 09:22
+**Last Updated:** 13:59
+**Project:** 06_Hybrid_260918
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 아니 관리 대상 핵심 연구진 이 항목 말고 다른 현황 넣어줄래? 관리대상 이라는 것도 민감해서 그래
+- 내가 고칠건데     <pasted_content id="99a4"> - Turnitin·카피킬러는 全구성원 이용, 건수 제한 없음    - iThenticate는 전임교원 한정·年 2,000件 총량 제한 </pasted_content id="99a4">   이거는 뭔 말이야. 표절검사야? 그럼 표 안에 들어가야 맞지 않아? 처음 보는 사람이 알아야지
+- <pasted_content id="99a4"> □ Fellowship 재수여로 정교수 구간의 유인 공백을 해소    - 現) 5년(2년 지원기간 + 지원 종료 후 3년 기간) 이후 리텐션 수단 부재    - 직전 수여 3年 經過·신규 성과 요건으로 재도전을 허용 </pasted_content id="99a4">   여기서 마지막 말이 뭐야??
+- 표절검사 표 만든거 있잖아. 지금   <pasted_content id="99a4"> [초안] 핵심 연구진 관리·육성 실행 방안_v3 </pasted_content id="99a4">   기반으로 해서 v4로 추가해서 넣어줘
+- <pasted_content id="99a4"> 국내 大학도 통계 3종은 기본, 질적분석은 공백 </pasted_content id="99a4">   이거는 출처가 뭐야?? 대학별로 찾았던데? html로 출처 보여줘
+- 문제 라는 항목을 보완점으로 바꾸는건 어때? 더 좋은 표현 있어? 내가 바꿀거야
+- 서울대 명예의전당 사례 출처 사이트는?
+- <pasted_content id="99a4">  Review 연계 정년 前後 </pasted_content id="99a4">   이 두건은   <pasted_content id="99a4"> 3-4. (育成) 사각지대 보완 — 교원 생애주기·계열 균형 </pasted_content id="99a4">   파트에 어떻게 리딩문장 따라서 작성해야할지 복붙할
+- 정례 Review는 2nd Year Review 같은데, 이거를 이전에는 피드백을 따로 공표하지 않았다면, 이제는 대표 Review들에 대해 피드백을 주는 것으로 바꾼다. 그리고 2nd Year 말고 Mid Year Review도 10년차 교원에게 시행한다. 고 적어
+- 지금 보고를 다녀왔는데 아래사항에 대한 지적을 또 받았고, 보고서 체계를 기존 학교 보고서로 바꿔야 할거 같아. 한글양식인 skku 양식으로 작성을 하고   <pasted_content id="99a4"> 인사캠 신축사업 연계 교수연구실 배정(안)_20260428_v7 </pasted_content id="99a4">   을 참고해서 이 톤으로 작성해. 아
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch
+
+### Stats
+- Total user messages: 123
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

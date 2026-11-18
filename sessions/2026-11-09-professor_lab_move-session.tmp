@@ -1,0 +1,70 @@
+# Session: 2026-11-09
+**Date:** 2026-11-09
+**Started:** 13:55
+**Last Updated:** 13:55
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 아니 학기별로 인사캠 자과캠 나눠서 몇명씩 뽑았는지 그리고 몇명 임용포기 했는지 일단 E:\SANGSI\00_참고 > 전임교원 임용예정자 명단(2019.2학기~)_261026 보면서 표로 정리해봐. A 열 삽입해서 기본에서 캠퍼스 구분 넣었고, Z열 보면 임용예정일 있어
+- 근데 왜 갑자기 내년에 공간이 부족한 걸까? 이해가 안되네
+- 근데 왜 갑자기 내년에 공간이 부족한 걸까? 이해가 안되네
+- 그럼 정년과 중도퇴직이 어땠는지 표로 비교가 되어야해. 내가 최근 5년 정년퇴직 인원 알려줘볼게 22-1 20, 22-2 10, 23-1 13, 23-2 13, 24-1 18, 24-2 14, 25-1 10, 25-2 14, 26-1 14 야. 중도퇴직 인원은 알지? C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06
+- 그럼 정년과 중도퇴직이 어땠는지 표로 비교가 되어야해. 내가 최근 5년 정년퇴직 인원 알려줘볼게 22-1 20, 22-2 10, 23-1 13, 23-2 13, 24-1 18, 24-2 14, 25-1 10, 25-2 14, 26-1 14 야. 중도퇴직 인원은 알지? C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06
+- 중도퇴직은 인사캠만 추려야지
+- 중도퇴직은 인사캠만 추려야지
+- 26.8도 정년퇴직 12명 이거든?? 26-2도 해보자
+- 26.8도 정년퇴직 12명 이거든?? 26-2도 해보자
+- 인사캠 교수연구실 공간 현황 및 확보방안 관련 팀장님 보고 드렸더니 아래 피드백 주셨어. 1) 배경을 다시 작성. 위에 보면 알겠지만 매년 신규임용 채용으로 인한 순증이 기존 정년+중도퇴직자 수를 넘어감. 제2경영관 신축으로 인한 연구실 증가는 2031년 예정. 2030년까지 연구실 부족분에 대한 대응방안 필요. 이 내용으로 작성. 2) 공실(정년·중도퇴직
+
+### Files Modified
+- /tmp/transform_v7.py
+- C:\tmp\make_coop_mail.py
+- C:\tmp\make_send_gongmun.py
+- C:\tmp\make_objection_report.py
+- C:\tmp\make_objection_report2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\06_이의제기\00_자료목록(시간순).txt
+- C:\tmp\add_coop_section.py
+- C:\tmp\add_phone_col.py
+- C:\tmp\sim_alloc.py
+- C:\tmp\sim_alloc2.py
+- C:\tmp\fill_minwon.py
+- C:\tmp\build_vp_report.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_choocheon.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_ilja_final.py
+- C:\tmp\build_ilja_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_shortage_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_space.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract3.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\splice_table.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_sim.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_ijik.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_midterm.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\check_campus.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/skku_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\b55b14dcec8c0287\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\spike_bar.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\gen_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_fill.py
+
+### Tools Used
+Glob, Bash, Read, AskUserQuestion, Skill, ToolSearch, TaskCreate, Write, TaskUpdate, Edit, Agent, SendMessage, mcp__claude-artifacts__guide, mcp__claude-artifacts__publish_files, TaskStop, Grep, WebSearch, PowerShell
+
+### Stats
+- Total user messages: 261
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,45 @@
+# Session: 2026-04-13
+**Date:** 2026-04-13
+**Started:** 14:57
+**Last Updated:** 15:02
+**Project:** recruit_jungsi_gonggomun
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 안녕하세요, 성균관대학교 교원 채용 담당자님. 성균관대학교 전임교원 임용에 관심을 가지고 지원을 준비 중인 안은별입니다.  연구실적 인정 기준과 관련하여 확인하고자 하는 사항이 있어 문의드립니다. 현재 제가 보유한 논문 중 아래와 같은 상태의 온라인 게재 논문이 실적으로 인정 가능한지 여쭙고 싶습니다. 논문 PDF와 링크 첨부하였습니다.  - 현재 상태: 
+- Q1. 우수학술대회 게재확정 논문의 게재면 입력 방법   아직 공식 게재되지 않은 경우, 게재예정으로 입력하실 수 있습니다. 입력 시 발표일자에 게재예정월을 입력하시고 "게재예정"을 선택한 후, 페이지는 임의 번호(00~00)를 입력해 주시기 바랍니다. 단, 1단계 서류심사 합격 시 게재확정 증빙서류를 제출하셔야 하며, 미제출 또는 미인정 시 결격 처리될 
+- 제목 : 실적 항목 저널 추가 문의 내용 안녕하세요. 이번 임용 지원을 위해 연구실적을 입력하던 중 문의사항이 있어 연락드립니다. SCIE 저널 목록에서 Nature Synthesis 저널이 조회되지 않아 해당 저널의 실적을 입력이 어려워 연락드립니다 해당 저널의 실적 등록이 가능한지, 또는 별도로 진행해야 할 절차가 있는지 안내해 주실 수 있으실까요? 확
+- 지금 준 게재지는 ESCI야. 기타국제전문학술지로 선택하셔서 직접 입력하시면 된다고 해줄래?
+- 지금 국내학술지(학진등재후보) 에 본인의 학술지가 안나온다는데 어떻게 답해야 하지?
+- 지금 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황 경로에 초빙지원자 조회_일반_2604101526 파일을 올려놨는데 이게 현재 기준 지원자 현황이거든. 2027_교수초빙_회신체크리스트 파일을 보고 현재 경쟁률 현황 시트를 하나 2027_교수초빙_회신체크
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun의 2027_교수초빙_회신체크리스트 에 정시채용만 학과장, 학장, 행정실 담당자 이메일 주소를 다 적어놨어. 이제 다음주 월요일에 학과장들에게 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jung
+- 연구실적물 인정범위 작년 12월 31일 논문 출간일자가 찍혀 있는데 가능할까?
+- 기존 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황 의 초빙지원자 조회_일반_2604101526 파일이 초빙지원자 조회_일반_2604131442 파일로 바뀌었거든. 먼저 2027_교수초빙_회신체크리스트 의 경쟁률 현황, 지원자_raw 시트를 최신화 해줄래
+- 근데 왜 지원자 데이터는 99명인데 경쟁률 현황 합계가 98명 이지?
+
+### Files Modified
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\project_jungsi_overview.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\MEMORY.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\create_competition_sheet.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황\create_mailmerge.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황\create_word_template.py
+
+### Tools Used
+Bash, Agent, Read, Write, Grep, Edit
+
+### Stats
+- Total user messages: 36
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,6 @@
+- [무용학과 2026 채용 확정사항](dance-dept-2026-recruitment-decisions.md) — 특별전형 프레임·2개 분야 각 1명·위원장 호선·pool 7명 유지
+- [HWPX 줄 폭 실측 한계](hwpx-line-width-real-limit.md) — skku_report 줄 폭 경고는 25% 관대, wraputil.flow()로 자동 줄바꿈
+- [HWPX 보고서 레이아웃 체크리스트](hwpx-report-layout-checklist.md) — ※·- 기호, 표 쪽넘김 262mm, 본문+붙임 분량 배분
+- [규정문서 평가자 루프](univ-doc-evaluator-loop.md) — 조문 원문을 붙임에 전재, 두 축 분리 채점, 지적 항목만 수정
+- [HWPX 다중 구역(가로 표) 만들기](hwpx-multi-section.md) — header secCnt·container.rdf·manifest 연속·가로는 치수 안 바꿈
+- [검증기를 마지막에 믿을 것](trust-your-validator-last.md) — 안 된다고 하면 내 도구부터 의심, 정상 파일과 전 항목 대조

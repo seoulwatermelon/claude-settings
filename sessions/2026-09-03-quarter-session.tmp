@@ -1,0 +1,37 @@
+# Session: 2026-09-03
+**Date:** 2026-09-03
+**Started:** 18:37
+**Last Updated:** 18:37
+**Project:** quarter
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\quarter
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 이 폴더를 보면 일단 취지는 임용쿼터 계산이야. 작년에 했던 파일이 2개 있는데 참고용으로 넣었거든. 교원조회_20260318_전임 백데이터를 통해서 임용쿼터계산_20260319_1154 를 계산한거야. 근데 2학기에 또 작업을 하려 했더니 문제가 있어. 새로운 임용쿼터는 교원조회_260903_전임으로 현 시점의 교원 데이터를 받아서, 교원조회_202
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_result.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\build.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\recalc.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\verify.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\test_rule_regression.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\임용쿼터 산출 매뉴얼.txt
+
+### Tools Used
+Bash, PowerShell, Write, Edit, AskUserQuestion
+
+### Stats
+- Total user messages: 1
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

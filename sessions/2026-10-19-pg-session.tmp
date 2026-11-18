@@ -1,0 +1,71 @@
+# Session: 2026-10-19
+**Date:** 2026-10-19
+**Started:** 15:28
+**Last Updated:** 15:28
+**Project:** pg
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_work\pg
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 증원분이 아니라 전체 선정인원에 대한 증액분에 대해서 계산해야지. 그럼 기존 인원은 증액 안할거야?
+- 제외 쪽으로 하고. Rising도 연대 수준에는 맞추도록 증액안 짜보고. B안이 나을거 같아
+- 제외 쪽으로 하고. Rising도 연대 수준에는 맞추도록 증액안 짜보고. B안이 나을거 같아
+- 지금 문제가 27~30년은 요청예산이 없잖아... 차라리 2단계로 나눠서 현행 1단계 2단계로 하는게 낫겠다
+- 지금 문제가 27~30년은 요청예산이 없잖아... 차라리 2단계로 나눠서 현행 1단계 2단계로 하는게 낫겠다
+- 잘했고, Fellowship은 연속 2회 가 아니라 최대 2회 가 맞는 표현인거 같아. 연속 아니더라도 1회 더 받게 해주는거야. 그거 내용도 반영해서 작성 업데이트해
+- 잘했고, Fellowship은 연속 2회 가 아니라 최대 2회 가 맞는 표현인거 같아. 연속 아니더라도 1회 더 받게 해주는거야. 그거 내용도 반영해서 작성 업데이트해
+- [Image: original 2632x2990, displayed at 1761x2000. Multiply coordinates by 1.49 to map to original image.]
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>b75ppgwd6</task-id> <tool-use-id>toolu_01P3aLEotcZjQ8WFVVwbq9nB</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Birth
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_matrix.py
+
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_criteria.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_rows.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\명예의전당 등재기준 조회처.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\hwpxsurg.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch6.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch789.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_fix_gap.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval1.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval2.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch, ReadNotifications
+
+### Stats
+- Total user messages: 405
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

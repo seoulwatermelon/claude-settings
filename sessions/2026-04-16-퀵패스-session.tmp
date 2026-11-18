@@ -1,0 +1,47 @@
+# Session: 2026-04-16
+**Date:** 2026-04-16
+**Started:** 11:05
+**Last Updated:** 13:29
+**Project:** 퀵패스
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\퀵패스
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Image #1] 지금 이 사이트에서 다운로드 가 안 눌리는데, 저 팝업창의 정보 소스들을 긁어 모을수 있나?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\74c29b9e-c67c-4d61-b6b5-61325995c9ae\1.png]
+- [Image #2] console 탭 이 이렇게 생겼는데 어디에 코드를 실행해?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\74c29b9e-c67c-4d61-b6b5-61325995c9ae\2.png]
+- 아 내용이 이렇게 나왔어. 사회과학대학 / 행정학과    상시 1. 후보자 상세 분석  김경아 (대한민국 / 1999년생 (27세) / / ) ■ 학력 ■ 현직 및 경력 ▸현직: ▸주요 경력 - ▣ 학과 추천 의견 ■ 공통 ■ 요구 사항 ▣ 참고 자료 ■ 사회과학대학 / 행정학과 최근 3년 내 초빙사례  ■ 사회과학대학 / 행정학과 최근 3년 이내 퇴임(예
+- 연구 생산성: 연도별 논문실적 추이(국제A, 2021~2026) 에서 24년, 26년이 틀렸는데? 원인 분석하고 재검증 절차 진행해줘
+- 지금 보면 연구 영향성: 카테고리별 상위 저널 게재 실적(국제A, 2021~2026) 에서도 上位 50% ~ 이 부분이 틀려서 내가 고쳤거든? 이 원인이 뭔지 분석하고, 앞으로 이런 일 발생하지 않게 한글 skill을 업데이트 하면 되는지 작업좀 진행해줘. 원인 철저히 분석. 만든 파일은 내가 변경해서 변경할 필요 업승ㅁ
+- C:\Users\SKKU\Downloads\퀵패스\0. 학문단위별 Top Tier 저널 리스트_260316 에 ★학문단위별 Top-tier 리스트_2026413 1번째 시트를 보고 김경아 교수 논문 중에 탑티어 논문이 있는지 체크좀 해줘
+- 아 미안한데, 행정학과 소속이니까 행정학과 기준으로 알려줘야해
+- 너가 준 S급에 Energy economics 가 어딨어
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\박민호_template\Contents\section0.xml
+- C:\Users\SKKU\AppData\Local\Temp\fix_template.py
+- C:\Users\SKKU\AppData\Local\Temp\build_kimkyungah.py
+- C:\Users\SKKU\AppData\Local\Temp\김경아_work\Contents\section0.xml
+- C:\Users\SKKU\.claude\skills\hwpxskill\SKILL.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads----\memory\feedback_hwpx_table_replacement.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads----\memory\MEMORY.md
+
+### Tools Used
+Glob, Bash, Read, Skill, Grep, Edit, Write
+
+### Stats
+- Total user messages: 28
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,47 @@
+# Session: 2026-11-17
+**Date:** 2026-11-17
+**Started:** 14:05
+**Last Updated:** 16:02
+**Project:** private_evaluation
+**Branch:** unknown
+**Worktree:** E:\Daily\private_evaluation
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>a070b5ce360a757dc</task-id> <tool-use-id>toolu_01UTBX7tC8R5PM4aR6J9Pwb1</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\c61a22ae43d9da84\6bdba47b-5dfc-4
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>a070b5ce360a757dc</task-id> <tool-use-id>toolu_01KyhgSq3rtNkXJkqReY6BGn</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\c61a22ae43d9da84\6bdba47b-5dfc-4
+- 아 미안한데 전에 썼던거 바탕으로 입력양 조절좀 해야 할 거 같아. 예를 들어 교원 정시채용 실적도 ④ 교수Pool 자기소개서에 '교육철학 및 교육계획' 항목 신설, 글로벌피어리뷰(GPR) 정시 시범 적용 운영 및 사전 데이터 구축(2020~2024 신임교원 270명 까지 들어가고 더 안들어가. 너무 수치를 세부적으로 제시하면 부담스럽긴 해.. 너가 틀릴 
+- 아 미안한데 전에 썼던거 바탕으로 입력양 조절좀 해야 할 거 같아. 예를 들어 교원 정시채용 실적도 ④ 교수Pool 자기소개서에 '교육철학 및 교육계획' 항목 신설, 글로벌피어리뷰(GPR) 정시 시범 적용 운영 및 사전 데이터 구축(2020~2024 신임교원 270명 까지 들어가고 더 안들어가. 너무 수치를 세부적으로 제시하면 부담스럽긴 해.. 너가 틀릴 
+- 차기업무목표 개인 KPI 는   <pasted_content id="a834"> 공백포함 글자수200 byte 수400 byte 공백제외 글자수200 byte 수400 byte </pasted_content id="a834">   들어가고, 자기직무소개> 자기 주요업무, 자기주요 업무별 처리시기 및 소요시간은 공백포함 글자수300자 600 byte, 애로사
+- 차기업무목표 개인 KPI 는   <pasted_content id="a834"> 공백포함 글자수200 byte 수400 byte 공백제외 글자수200 byte 수400 byte </pasted_content id="a834">   들어가고, 자기직무소개> 자기 주요업무, 자기주요 업무별 처리시기 및 소요시간은 공백포함 글자수300자 600 byte, 애로사
+- 지금 경력경로설정에 학생인재개발팀 1지망, SKK GSB행정실 2지망, 국제교류팀 3지망 썼는데 설정사유에 뭐라고 쓸까? 300자
+- 지금 경력경로설정에 학생인재개발팀 1지망, SKK GSB행정실 2지망, 국제교류팀 3지망 썼는데 설정사유에 뭐라고 쓸까? 300자
+
+### Files Modified
+- E:\Daily\private_evaluation\_근거\04_recruiting_page.md
+- E:\Daily\private_evaluation\_근거\01_정시_GPR_NTT_기타.md
+- E:\Daily\private_evaluation\_근거\02_상시채용_무용_경영.md
+- E:\Daily\private_evaluation\_근거\03_연구실_리텐션_기타.md
+- E:\Daily\private_evaluation\_build\content.py
+- E:\Daily\private_evaluation\_build\build.py
+- C:\Users\SKKU\.claude\projects\E--Daily-private-evaluation\memory\insagogwa-2026.md
+
+### Tools Used
+PowerShell, Bash, Read, Agent, ToolSearch, Write, SendMessage, Edit
+
+### Stats
+- Total user messages: 26
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

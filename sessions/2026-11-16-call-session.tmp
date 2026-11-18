@@ -1,0 +1,40 @@
+# Session: 2026-11-16
+**Date:** 2026-11-16
+**Started:** 14:12
+**Last Updated:** 14:12
+**Project:** call
+**Branch:** unknown
+**Worktree:** E:\Daily\call
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 현재 한국에너지공단 교육 사업을 맡아서 1년간 진행해왔는데 콜센터 콜 현황이 이렇게 나왔어. 결과보고서에 작성할만한 의미들을 도출해줘. 그리고 표 도식 그래프를 작성해줘. 보고서에 넣을 수 있게. 엑셀로 일단 작성해봐. 결과보고서에서 A+ 평가를 무조건 받아야해
+- <system-reminder> Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly 
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\synced\11b0f2df-02ba-40d5-9ef5-b362eaf483d2_fb191272-4007-40dd-ac4d-d9c1007ae0be\xlsx  # XLSX creation, editing, and analysis  | Task | Appr
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\synced\11b0f2df-02ba-40d5-9ef5-b362eaf483d2_fb191272-4007-40dd-ac4d-d9c1007ae0be\xlsx  # XLSX creation, editing, and analysis  | Task | Appr
+- 계속해
+- The user sent a new message while you were working: <pasted_content id="24ef"> 일단 6월~10월 AI 보이스복 운영 실적을 정리해주고 문의 유형별로도 세부 건수 정리해서 의미있는 결과를 도출해달라고 하고 특히 AI 자체 응대 성과를 강조해서 분석해달라고 해줘 전체 인입 콜 중 상담원 연결 없이 
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\synced\11b0f2df-02ba-40d5-9ef5-b362eaf483d2_fb191272-4007-40dd-ac4d-d9c1007ae0be\pptx  # PPTX creation, editing, and analysis  If this sessi
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\synced\11b0f2df-02ba-40d5-9ef5-b362eaf483d2_fb191272-4007-40dd-ac4d-d9c1007ae0be\pptx  # PPTX creation, editing, and analysis  If this sessi
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/claude/6c2fee980502956f/08f01c9f-f70a-43ab-9ecd-977535bdca16/scratchpad/build.py
+- C:/Users/SKKU/AppData/Local/Temp/claude/6c2fee980502956f/08f01c9f-f70a-43ab-9ecd-977535bdca16/scratchpad/ppt/slide.js
+
+### Tools Used
+Bash, Skill, PowerShell, Write, Edit, Read
+
+### Stats
+- Total user messages: 8
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

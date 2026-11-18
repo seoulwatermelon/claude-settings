@@ -1,0 +1,73 @@
+# Session: 2026-10-29
+**Date:** 2026-10-29
+**Started:** 14:01
+**Last Updated:** 15:01
+**Project:** JUNGSI
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator" color="blue"> {"type":"idle_notification","from":"evaluator","timestamp":"2026-10-29T05:34:31.148Z","idleReason":"avail
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator" color="blue"> {"type":"idle_notification","from":"evaluator","timestamp":"2026-10-29T05:34:31.148Z","idleReason":"avail
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator" color="blue"> {"type":"idle_notification","from":"evaluator","timestamp":"2026-10-29T05:39:05.394Z","idleReason":"avail
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator" color="blue"> {"type":"idle_notification","from":"evaluator","timestamp":"2026-10-29T05:39:05.394Z","idleReason":"avail
+- 1. 이사회 심의 26.10으로 하자 2. 그래도 명단에 포함하는 게 맞아. 3. 하버드대 전문연구원 누구 말하는거지? 4. 응응 일단 직급은 공란
+- 1. 이사회 심의 26.10으로 하자 2. 그래도 명단에 포함하는 게 맞아. 3. 하버드대 전문연구원 누구 말하는거지? 4. 응응 일단 직급은 공란
+- 현동진은 임용 포기했기 때문에 삭제하면 되고. 아까에서 추가된 사람은 결국 이브라힘압델와합 밖에 없네?? 그리고 임용기간은 끝 기간은 적지마.
+- 현동진은 임용 포기했기 때문에 삭제하면 되고. 아까에서 추가된 사람은 결국 이브라힘압델와합 밖에 없네?? 그리고 임용기간은 끝 기간은 적지마.
+- 아 미안 현동진 넣어놓으래
+- 아 미안 현동진 넣어놓으래
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서\_scripts\_build_mail_agreement.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\EXTRACT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\test_rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_data.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_segments.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_style.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_rows.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_candidates.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_recalc.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\excel-continuous-rows.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\dump_draft.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\REVIEW_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\salvage_lastyear.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\mistake-output-overwrote-source.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\verify_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\export_audit.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\AUDIT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\audit_summary.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\apply_corrections.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\README.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\openpyxl-column-width-trap.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\verification-two-axes.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_manifest.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\confirmed.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\order.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_메일_김도윤_BC재직증명서_요청.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\hwpx_rows.py
+
+### Tools Used
+Bash, Skill, Write, Edit, SendUserFile, Agent, AskUserQuestion, PowerShell, Read, ToolSearch, WebFetch, WebSearch, SendMessage, Grep, ReadNotifications, ListAgents
+
+### Stats
+- Total user messages: 200
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 15:55]** - Context was summarized

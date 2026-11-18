@@ -1,8 +1,0 @@
-{
-  "id": "13",
-  "subject": "Task 8: 관리자 페이지 탭 추가",
-  "description": "app/admin/page.tsx를 클라이언트 컴포넌트로 교체, TO 배정 탭 추가",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}

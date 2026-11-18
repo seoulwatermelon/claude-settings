@@ -1,0 +1,74 @@
+# Session: 2026-10-14
+**Date:** 2026-10-14
+**Started:** 09:54
+**Last Updated:** 16:25
+**Project:** 06_Hybrid_260918
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Image: original 2632x1192, displayed at 2000x906. Multiply coordinates by 1.32 to map to original image.]
+- [Image: original 2632x1354, displayed at 2000x1029. Multiply coordinates by 1.32 to map to original image.]
+- [Image: original 2632x1034, displayed at 2000x786. Multiply coordinates by 1.32 to map to original image.]
+- 현재 v9 수정된거 그대로 두고 이거 기본으로 해서 과제3, 과제4 좀 더 짜임새있게 만들어줘 지금 너무 없어보여....
+- [Image: original 2316x818, displayed at 2000x706. Multiply coordinates by 1.16 to map to original image.]
+- [Image: original 2316x818, displayed at 2000x706. Multiply coordinates by 1.16 to map to original image.]
+- 과제 3은 2번 개선방향 오케이. (과제3) Fellowship 대폭 강화 제목은 Rising Fellow도 담아야지. 과제4는 배경을 지금 넣으면 어떡해... 앞에 배경 다 나왔는데, 과제3이랑 맥락 맞춰. ㄱㄱ
+- v10 수정해놨으니까 건들지 말고   【 생애 전주기 ·자율형 교수성장 지원 체계 개편(안) 】  도식에서 수여금 낮음 이것만 다른 말로 바꾸자. 수여금 경쟁력 약화??? 어떤 표현이 나을까?
+- 수여금 경쟁력 열위 로 가자
+- 기존추진 연도도 23, 24, 25 에서 24, 25, 26으로 바꾸자
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_matrix.py
+
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_criteria.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_rows.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\명예의전당 등재기준 조회처.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\hwpxsurg.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch6.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch789.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_fix_gap.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval1.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval2.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch, ReadNotifications
+
+### Stats
+- Total user messages: 349
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 12:27]** - Context was summarized

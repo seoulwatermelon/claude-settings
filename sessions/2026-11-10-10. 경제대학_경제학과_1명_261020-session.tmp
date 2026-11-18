@@ -1,0 +1,70 @@
+# Session: 2026-11-10
+**Date:** 2026-11-10
+**Started:** 14:58
+**Last Updated:** 15:08
+**Project:** 10. 경제대학_경제학과_1명_261020
+**Branch:** unknown
+**Worktree:** E:\SANGSI\02_연구력검증(IOU,퀵패스,GPR)\10. 경제대학_경제학과_1명_261020
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 무용학과 학과장 면담 시나리오(안)_261105 내가 수정 지금 했거든? PDF 본만 이 한글파일로 반영해줘
+- 무용학과 학과장 면담 시나리오(안)_261105 내가 수정 지금 했거든? PDF 본만 이 한글파일로 반영해줘
+- 붙임포함 PDF 도 해야지
+- 김준성 학과장에게 보내는 메일 작성해놨잖아? 사전 검토를 이렇게 마쳤고 후속 절차 진행을 위해 11월 24일(화) 까지는 학과 세미나 진행 후 양식 1-1~1-3을 제출해주시면 된다고 수정해줘. 그리고 질문으로 3가지 해줘 탑티어 A+ 실적 R&R 어느 단계인지, BK 현황에 대한 언급도 양식에 해주시면 좋을 거 같다. GPR이 해당 안되는 부분에 대한 방
+- 김준성 학과장에게 보내는 메일 작성해놨잖아? 사전 검토를 이렇게 마쳤고 후속 절차 진행을 위해 11월 24일(화) 까지는 학과 세미나 진행 후 양식 1-1~1-3을 제출해주시면 된다고 수정해줘. 그리고 질문으로 3가지 해줘 탑티어 A+ 실적 R&R 어느 단계인지, BK 현황에 대한 언급도 양식에 해주시면 좋을 거 같다. GPR이 해당 안되는 부분에 대한 방
+- 이대로 김준성 학과장에게 보내는 메일 작성해줘
+- 이대로 김준성 학과장에게 보내는 메일 작성해줘
+- 아 신재연 A1+ R&R 중인게 공저자야?
+- 주저자 공저자 인지는 모르는 거네?
+- 주저자 공저자 인지는 모르는 거네?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep, TaskStop, mcp__worksmail__list_folders, mcp__worksmail__search_mail, mcp__worksmail__save_draft, mcp__worksmail__read_mail
+
+### Stats
+- Total user messages: 1251
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

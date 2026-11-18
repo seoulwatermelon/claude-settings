@@ -1,0 +1,70 @@
+# Session: 2026-10-01
+**Date:** 2026-10-01
+**Started:** 16:59
+**Last Updated:** 17:22
+**Project:** 8. 사회과학대학_심리학과_5명_260922
+**Branch:** unknown
+**Worktree:** E:\SANGSI\00_퀵패스\8. 사회과학대학_심리학과_5명_260922
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 너무 실적이 없을 때에는 주요논문에 JCR 기준 놓고 주저자 인것만 넣는 게 낫겠다. 이제 심리학과, 철학과 퀵패스 동일 로직으로 각 폴더에 만들고 보고해.
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent:    - On
+- scopus.com에서 36810597600 이런 ID로 찾을수도 있나?
+- 응 우상은 ID 2개야
+- <pasted_content id="8f18"> 승주완 책임님,  혹시 저희 심리학과에서 요청한 GPR 결과를 언제쯤 받게될지 가늠을 하면 좋을 것 같아 조심스럽게 여쭙는 이메일을 드립니다. 이번 주 화요일에 처장님 뵙고 좀 더 상세하게 말씀을 드렸으며, 처장님께서도 유심히 들여다보시겠다는 말씀을 해주신 상황입니다. 대략적으로 시기를 예상할 수 있다면 이후
+- 스코푸스 ID 로 스코푸스에서 검색하는 법이 ac-bu 였나
+- E:\SANGSI\00_퀵패스\8. 사회과학대학_심리학과_5명_260922 > IOU_결과본 에 퀵패스 기초자료인 IOU 자료를 올려 놨어. 이거를 반영하면 데이터가 어떻게 바뀌는지 알려줘. 그리고 IOU 자료를 못받아서 퀵패스 완성하지 못했던 것도 정리해서 html로 보여줘
+- 생년은 너가 추정한게 더 정확해. 그걸로 가면 되고. 우상은은 1편 더 반영해주면 되겠다 그치? 탑티어도 너가 더 정확하고 지금. 일단 이렇게 해서 퀵패스 최종으로 만들어봐. Scival API 오류 아직도 나?
+- 지금 Scival API 에러라 가져올 수 없는 값이 뭐야?
+- 이정석 FWCI 는 왜 없어?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch
+
+### Stats
+- Total user messages: 136
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

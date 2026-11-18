@@ -1,0 +1,70 @@
+# Session: 2026-05-15
+**Date:** 2026-05-15
+**Started:** 10:51
+**Last Updated:** 13:48
+**Project:** 2단계_심사위원_선정
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\2단계_심사위원_선정
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 학과심사에서 온라인 평가가 가능(2025학년도부터 시행)하오니 학과심사 운영에 참고하여 주시기 바랍니다. 이 말을 금년도 부터 온라인 평가로 하도록 더 강하게 유도하려면 어투를 어떻게 바꿔야 할까?
+- 건제순    대학    학과    지원분야    내외구분    추천구분 100    학부대학    학부대학    의사소통영역 통합교육(글쓰기/스피치)    내부    학과 100    학부대학    학부대학    의사소통영역 통합교육(글쓰기/스피치)    내부    학과 100    학부대학    학부대학    의사소통영역 통합교육(글쓰기/스피치)    외
+- 아까 알려준 온라인심사 원칙 톤으로 10. 2025학년도 정시채용부터 학과심사 결과 입력/제출을 온라인으로 진행할 수 있습니다. 학과심사위원 안내 및 심사장소 선정 시 참고하여 주시기 바랍니다.   - 기존방식(종이문서에 작성/문서수발 제출)과 온라인 평가 중 심사위원별로 한가지 방법을 선택하여 평가결과를 제출하여 주시기 바랍니다.   - 모든 심사위원이 
+- Continue from where you left off.
+- 학과심사는 온라인 평가 방식으로 운영함을 원칙으로 하오니, 금년도 학과심사 운영에 반영하여 주시기 바랍니다.(2025학년도부터 시행 중)※ 부득이한 사유가 있는 경우 사전 교원인사팀 안내 후 기존방식 병행 가능 이거에서 당구장 표현을 어떻게 해야 자연스럽지? 안내가 어색하지 않아?
+- 팀장님께 2단계 심사위원 후보 명단을 들고 갔더니, 2024~2026 심사했던 심사위원들도 고려해보라고 하는거야. 일단 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\2단계_심사위원_선정 > 붙임1. 2027학년도 전임교원 정시채용 연구실적 및 전공적합성 심사위원 명단_v2 파일에 2024~2026
+- 지금 지원자 1명이 논문 게재년월이 잘못됐었다고 고치고 싶다고 연락이 왔는데, 어떻게 조치해야 할까? 1단계 통과자거든
+- 해당 논문 정보는 일반대학원    지능형정밀헬스케어융합전공    인공지능 기반 바이오메디컬 응용    20272AT019    박명선    국제학술전문지(SCIE)    Probabilistic Modeling and Bayesian Filtering for Improved State Estimation for Soft Robots    3인(일반공저자) 
+- SCIE 논문, 공저자 실적이라 1단계 합불에 큰 영향이 없을 것으로 판단하여, 일단 메모해두고 학과장에게 2단계때 참고할 수 있도록 알려주겠다. 이런 식으로 얘기해줘. 그리고 박명선 지원자가 저 분야에서 현재 1등(90점) 인 것도 알려드리고
+- 좀 더 간단하게 작성해줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch
+
+### Stats
+- Total user messages: 332
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

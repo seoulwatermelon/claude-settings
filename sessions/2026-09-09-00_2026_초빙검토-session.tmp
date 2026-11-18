@@ -1,0 +1,49 @@
+# Session: 2026-09-09
+**Date:** 2026-09-09
+**Started:** 10:50
+**Last Updated:** 13:43
+**Project:** 00_2026_초빙검토
+**Branch:** unknown
+**Worktree:** E:\4_무용학과_상시\00_2026_초빙검토
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-risk" color="green"> {"type":"idle_notification","from":"evaluator-risk","timestamp":"2026-09-07T09:10:28.870Z","idleRea
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-logic" color="blue"> {"type":"idle_notification","from":"evaluator-logic","timestamp":"2026-09-07T09:11:58.772Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-logic" color="blue"> {"type":"idle_notification","from":"evaluator-logic","timestamp":"2026-09-07T09:12:49.661Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-logic" color="blue"> {"type":"idle_notification","from":"evaluator-logic","timestamp":"2026-09-07T09:14:11.866Z","idleRe
+- 줄 깨지고 문서 양식에 안맞고 난리도 아니야... 수정해줘
+- 지금 너가 무용학과 보고서 작성해준거 너무 좋은데 이 양식, 표, 공백 수정 같은 것들 노하우를 기억해둬. 클로드코드로 보고서 작성할 때 다시 동일한 실수 하지 않도록
+- 법률자문: 1인이라는 이유만으로 학과 의견을 사후에 불인정하는 것은        절차적 하자가 될 수 있음 → 학과교수회의는 정상 개최하고        학과장의 의견 진술 기회를 보장하되, 규정상 요건 충족이 곤란한        부분에 한하여 학과초빙위원회가 보완 이건 근거가 뭐야?
+- 내가 너가 작성한 거를 바탕으로 무용학과 상시채용 심사절차(안)_ver02 을 완성해서 보고 드렸어. 1-4 페이지만 출력했어. 근데 피드백이 왔는데, 이제 이걸로 무용학과 학과장에게 이 안을 설명하면서 안내를 해야하니까, 1페이지에 검토배경 이런 건 빼고 요약본으로 만들어보래. 1-2페이지 분량으로. 그리고 2페이지 표가 핵심인데, 구분은 단계로 바꾸고,
+- 아 내가 얘기 안한게 있는데 무용 1개 분야가 아니라, 무용 - 발레 분야 2개 분야 각 1명 선발 할거야. 학과초빙위원회는 두 분야 공통으로 운영하고, 그 이후 심사위원회는 독립 운영 해야해. 그리고 주요 룰을 뭔가 다른 적합한 용어가 없나. 너무 구어체 같은데
+- 지금 ver03을 보면 1. 2. 으로 정리했는데 1페이지 남은 공간에는 어떤 내용을 채워야 할까?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit
+
+### Stats
+- Total user messages: 28
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

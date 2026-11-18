@@ -1,4 +1,6 @@
 {
+  "cleanupPeriodDays": 3650,
+  "model": "opus",
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true,
     "everything-claude-code@everything-claude-code": true
@@ -17,5 +19,13 @@
       }
     }
   },
-  "skipDangerousModePermissionPrompt": true
+  "modelSettings": {
+    "claude-fable-5-2": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "switchModelsOnFlag": false
 }

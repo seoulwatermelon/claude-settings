@@ -1,0 +1,45 @@
+# Session: 2026-03-31
+**Date:** 2026-03-31
+**Started:** 09:14
+**Last Updated:** 17:14
+**Project:** recruit_jungsi_detailfieldsubmit
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 학부대학 교원채용 담당에게 질문을 전달해야하는데, 임용 후 담당 교과목에 글쓰기/스피치 통합 신규 교과라고 쓰여 있는데 그러면 글쓰기와 스피치 둘 다 강의를 해야하는지 지원자 요구능력 관련 질문인데 본인의 경력에 언어 관련 유사 강의가 있는데 정확히 글쓰기/스피치 강의 경력이 있어야 하는지 지원자 요구능력에 3년 이상의 대학 글쓰기 또는 스피치 관련 강의 
+- 성균관대학교 26-2 교수 임용에 지원 희망하는 홍산입니다.  다름이 아니오라, 제가 올해 8월 박사를 받을 예정인데, 본 채용공고가 마감일 기준 박사학위 소지자만을 대상으로 하는지, 학위 취득 예정자도 지원가능한지 문의드립니다.  답변 작성해줘
+- 성균관대 교원모집 공고를 보고 문의 사항이 있어 이메일 드립니다.  정시 채용 공고를 보면 초빙분야 중복지원 불가 내용이 있는 것을 확인했습니다. 해당 규정이 정시, 상시 채용에 모두에 걸쳐 해당하는 것인지요. 예를들면 학과 A 정시 채용에 지원할 경우 학과 B 상시 채용에 지원 불가능한 것인지 혹은 정시 채용 내 여러 학과 복수 지원만 불가능한 규정인지 
+- 안녕하세요. 성균관대 교원모집 공고를 보고 중복 지원 여부에 대해 문의 사항이 있어 글을 남깁니다. 정시채용 공고를 보면 초빙분야 중복지원 불가 내용이 있는 것을 확인했습니다. 해당 규정이 정시 채용, 상시 채용에 걸쳐 모두 해당하는 것인지요. 예를들면 학과 A 정시 채용에 지원할 경우 학과 B 상시 채용에 지원 불가능한 것인지 혹은 정시 채용 내 여러 학
+- 2027학년도 전임교원 신규채용(정시) 세부내역_지능형정밀헬스케어융합전공 이것도 추가됐는데 엑셀에 추가좀 해줘
+- 이거 뒤늦게 공고를 올려서 작년처럼 공지사항 2027학년도 정시채용 초빙분야 요기 아래부분에 당구장 표시 하고 모집분야 추가 안내를 해야할 거 같은데, 어떻게 작성하지?
+- 작년 캡쳐본에도 이런 적이 있었어?
+- [2026.3.31.] 초빙분야 추가 - 지능형정밀헬스케어융합전공 / 인공지능 기반 바이오메디컬응용 (AI based Biomedical Applications) 이렇게 썼어 영어로는 뭐라고 쓸까
+- 너가 지난 번에 2027학년도 전임교원 정시채용(공개전형) 변경사항 안내 작성해준거 있지 않나?
+- 교육전담과 일반교원의 차이를 물어보시는데?
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel_eng.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_combined_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_swap.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_2200.py
+
+### Tools Used
+ToolSearch, WebFetch, Glob, Read, Grep, Agent, Bash, Write, Edit, Skill, AskUserQuestion
+
+### Stats
+- Total user messages: 79
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

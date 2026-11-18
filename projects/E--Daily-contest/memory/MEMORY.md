@@ -1,0 +1,3 @@
+- [SKKU AI 행정혁신 Challenge 응모](contest-skku-ai-challenge.md) — 11.18 이메일 제출, 심사기준, 확정 수치(18명·824/112 테스트), 빌드 스크립트
+- [중간에 Fable 기획·첨삭](fable-for-planning-review.md) — 문서 초안 후 Fable 에이전트에 사실 목록·문체 규칙 주고 개정안 받기
+- [메일 초안 양식·첨부](mail-draft-style.md) — 보낸메일함 본인 양식·서명 사용, 첨부는 E:\SANGSI 아래 사본으로

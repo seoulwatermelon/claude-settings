@@ -1,0 +1,47 @@
+# Session: 2026-04-07
+**Date:** 2026-04-07
+**Started:** 15:25
+**Last Updated:** 17:05
+**Project:** calendar_recruiting
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 👤 응답자 정보 성함 / 직위 * 에 성함/직위는 그냥 성함으로 해줘. 예시는 없어도 돼. 토글에서 부총장(인문), 부총장(자연), 부총장(의무) 로 작성해줘.
+- 자 이제 만들었는데, 이거 취합은 어디서 어떻게 봐??
+- 아 너가 준 Calendar_Sync_v2.gs 이거 뭐 작업을 또 해야해?? 나 이걸 안해서 그런가 안떠
+- 된다... 배포 url 은 https://script.google.com/macros/s/AKfycbyMXpCGOdz5omVthhh8Qy2DsUVzClplx4YyX4FXxQ8r5s5jg5dpfQqWZNkB3QC_vyo2/exec 이건데, 그럼 안내 메일을 작성해줘 이제
+- 근데 메일 본문에도 달력을 보여주긴 해야할 거 같아. 기존에도 그랬고
+- 아 근데 이 표 그냥 복붙 하니까 [Image #12] 이런 식으로 나와. 그리고 오전 오후가 몇시~ 몇시 까지인지 보여야 할 거 같아.(html 동일 적용)
+- [Image: source: C:\Users\SKKU\.claude\image-cache\1500e20d-dc90-4f07-bd31-4c970adb8bb9\12.png]
+- [Image #13] 근데 이런 식으로 시간이 찌부되서 안나온다
+- [Image: source: C:\Users\SKKU\.claude\image-cache\1500e20d-dc90-4f07-bd31-4c970adb8bb9\13.png]
+- 왜 엣지에 url https://script.google.com/macros/s/AKfycbzE2C2Dsc-5QWi6Fk_FGls9djj9NROlJYojYNm_jjxy3B2yXdIt5JU06gc_AjmJPKdH/exec 복붙하면 잘 뜨는데, 크롬은 안뜨지?
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Create_Survey_Form.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/survey_email_template.md
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Response_Aggregator.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_WebApp.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_gs_clean.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/안내메일_VIP일정조사.md
+
+### Tools Used
+Bash, Glob, Read, Agent, ToolSearch, TaskCreate, TaskUpdate, Write, Edit
+
+### Stats
+- Total user messages: 41
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

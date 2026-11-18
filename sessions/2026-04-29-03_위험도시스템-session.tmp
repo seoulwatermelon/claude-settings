@@ -1,0 +1,63 @@
+# Session: 2026-04-29
+**Date:** 2026-04-29
+**Started:** 15:38
+**Last Updated:** 16:42
+**Project:** 03_위험도시스템
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 코드 부터 하자. 이거 됐으면 Google 뉴스 크롤링 은??
+- 빅카인즈가 뭐라고 했지? 빅카인즈 말고 구글 뉴스 말고 또 뭐 있지 않았나?
+- [Image #9] 네이버에서 API 발급 받을 때 이렇게 입력하라는데 어떻게 해야해?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\cfa7274d-0f6d-42f1-a365-3ccf18420a34\9.png]
+- [Image #11] 비로그인 오픈 API 서비스환경은 해야한다는데?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\cfa7274d-0f6d-42f1-a365-3ccf18420a34\11.png]
+- - Client ID: VxfNuembdov1ukL3eMK1 - Client Secret: zUAIjvhFwD
+- C:\Users\SKKU\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.4.0) or chardet (7.4.3)/charset_normalizer (3.4.2) doesn't match
+- 2026-04-29 16:35:45,922 [INFO] monthly_run: 명단 1명 로드됨 from S급_명단_샘플.xlsx 2026-04-29 16:35:45,924 [INFO] monthly_run: [신주영 / 34267857100] 분석 시작 2026-04-29 16:35:48,195 [INFO] monthly_run:   논문 52편 수신 (
+- 2026-04-29 16:41:18,590 [INFO] monthly_run: 명단 1명 로드됨 from S급_명단_샘플.xlsx 2026-04-29 16:41:18,591 [INFO] monthly_run: [신주영 / 34267857100] 분석 시작 2026-04-29 16:41:20,663 [INFO] monthly_run:   논문 52편 수신 (
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/중견연구진_리텐션_강화방안_v1.md
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/[V] 중견 연구진 리텐션 강화 방안.md
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/build_hwpx.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/templates/skku/README.md
+- C:/Users/SKKU/.claude/skills/hwpxskill/SKILL.md
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/build_retention_hwpx.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_eval_loop.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v3.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v4.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\elsevier_api_probe.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\elsevier_api_probe_v2.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\elsevier_api_probe_v2.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\config.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\scopus_client.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\excel_io.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\analyzers.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\db.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\monthly_run.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\news_analyzer.py
+
+### Tools Used
+Bash, Agent, Read, Write, Skill, Grep, Edit
+
+### Stats
+- Total user messages: 50
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 09:19]** - Context was summarized

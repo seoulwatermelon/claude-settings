@@ -1,0 +1,53 @@
+# Session: 2026-09-07
+**Date:** 2026-09-07
+**Started:** 11:00
+**Last Updated:** 14:49
+**Project:** quarter
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\quarter
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- =IF($W5<>"",$W5,IF($T5<>"",$T5,IF($AI5<>"",$AI5,"★미정제★"))) 이거는 수식이 무슨 뜻이야?
+- 20_설정 시트 > 최소 전임교원 수 가 3으로 적혀 있는데 4 아니야?
+- 40_쿼터산정 시트 보면 같은 학과인데 코드가 달라서 다르게 해놨는데, 다수결로 처리 왜 안했어?? 예를 들어 약학과
+- 40_쿼터산정 시트에 지금은 판정이 최다 출신대학으로만 되어 있는데, 최다 출신대학이 복수개면 어떡해? 예를 들어 심리학과는 벌써 서울대 연세대가 3명씩인데 너는 서울대만 최다 출신대학으로 해논 상황이거든.
+- 왜 41_TO배정 시트에 영어영문, 독어독문, 러시아어문 등이 없어? 너 TO배정 시트 모든 학과 커버하게 만든거 맞아?
+- A열 대학에는 왜 공란인 학과들이 있지? 그리고 출처, 비고에 너가 적은 것들은 굳이 중요한 말이 아닌거 같은데
+- 지금 41_TO배정 시트는 최신화 시켜놨으니 그건 건드리지 말고, 40_쿼터산정 시트에서 K열 임용예정 반영수 는 왜 있는거야? 그리고 J열 알파 T/O 은 M열에 왜 합산이 안돼?? 지금 배정, 알파 T/O를 정하고 임용쿼터 산정하는 거라 K, L열은 필요없는거 아니야?
+- 붙임. 2027학년도 임용쿼터 제한 대상 학과 선정(안) 을 최신화 해줘 이제
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 보고서 1페이지 잘 써줬는데, 2페이지도 주요내용 해서 좀 작성해줄래? 표로해도 되고
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_result.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\build.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\recalc.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\verify.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\test_rule_regression.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\임용쿼터 산출 매뉴얼.txt
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\dept_map.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\manual_data.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_calc.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sheets_source.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\test_multi_univ.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\sync_to.py
+- C:\Users\SKKU\Downloads\claudecode\quarter\_scripts\build_hwpx_doc.py
+
+### Tools Used
+Bash, PowerShell, Write, Edit, AskUserQuestion, Skill, ToolSearch, SendUserFile
+
+### Stats
+- Total user messages: 13
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,45 @@
+# Session: 2026-04-14
+**Date:** 2026-04-14
+**Started:** 10:57
+**Last Updated:** 13:26
+**Project:** recruit_jungsi_gonggomun
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 안녕하십니까 금년도 전임교원 정시채용에 관련하여 여쭙고자 합니다. 아래 링크의 정시채용 안내에 따르면 본 모집기간의 채용직종은 전임교원(정년트랙) 으로 기입 되어 있습니다. https://faculty.skku.edu/faculty/invite_prof/guide.do 현재 pdf로 제공되는 2027학년도 전임교원 정시채용요강 페이지8 (표지포함 pdf 기
+- 1.에 대해   안녕하십니까 금년도 전임교원 정시채용에 관련하여 여쭙고자 합니다. 아래 링크의 정시채용 안내에 따르면 본 모집기간의 채용직종은 전임교원(정년트랙) 으로 기입 되어 있습니다. https://faculty.skku.edu/faculty/invite_prof/guide.do 현재 pdf로 제공되는 2027학년도 전임교원 정시채용요강 페이지8 (표
+- 안녕하세요. 수고 많으십니다. 저는 이번에 신임교원에 지원하려고 하는 유혁준이라고 합니다.  지원 관련해서 제가 확실하게 알고 싶은 사항들이 있어 메일 드립니다.  [서류심사 인터넷 제출]  2026년 4월 13일자로 Editor로부터 논문 accept 및 게재 예정 메일을 받았습니다. 아직 온라인에 게재되지는 않았으나, 실제 논문 쪽번호를 받고 실리는데까
+- 이전 메일처럼 지원 관련해서 제가 확실하게 알고 싶은 사항들이 있어 추가 메일 드립니다.  [서류심사 인터넷 제출]  국제 특허 실적을 기록하려고 하는데요.  1. 국제 특허 출원도 실적으로 인정 받을 수 있나요? 혹시 특허 등록만 가능한가요? 2. 국제 특허 출원도 인정이 된다면 인터넷 접수를 할 경우, 게재지 명칭과 게재면에는 어떤 것을 기록해야할까요?
+- 성균관대학교 교원인사팀 전임교원 채용 담당자님께,  안녕하세요, 독일 Friedrich-Alexander-Universität Erlangen-Nürnberg에서 연구원으로 재직 중인 정하윤입니다. 금년 성균관대학교 전임교원 채용 지원을 준비 중 문의드릴 사항이 있어 연락드립니다. 다름이 아니라, 정시채용 요강에 따르면 각 분야에 이중 지원이 불가하다고 안
+- 정시채용 내에서만 적용이고, 특별전형이 상시를 말씀하시는 거라면 지원 가능
+- 안녕하세요! 빠른 답변 감사드립니다. 추천서는 기간 내에 몇개까지 내야 접수 완료로 등록 되나요? 감사드립니다. 이거 답변 메일좀 써줘
+- I would like to submit a letter of recommendation for Woo Je Change (applicant 20272AU006) for the position in the Nanophotonics field in the Department of Nano Engineering. I was able to receive a pa
+- 친절한 답변 정말 감사드립니다.  제가 지원 전 최종적으로 서류를 검토하고 있는 중인데요.  "연구실적입력" 관해서 문의드릴 부분이 있어 다시 여쭤보려합니다.  만약 공동 1저자가 2명 (본인 포함), 공저자 3명, 교신저자 3명이고 제가 공동 1저자로 참여했다면,  - 공동연구자 수는 "2인 (책임 또는 1저자)" 로 설정하고 공동연구자 리스트에는 공동 
+- 공동연구자수는 5인이상(책임 또는 제1저자) 로 클릭, 공동연구자 리스트에는 본인 제외한 공동연구자 리스트 기재
+
+### Files Modified
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\project_jungsi_overview.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\MEMORY.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\create_competition_sheet.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황\create_mailmerge.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황\create_word_template.py
+
+### Tools Used
+Bash, Agent, Read, Write, Grep, Edit
+
+### Stats
+- Total user messages: 53
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

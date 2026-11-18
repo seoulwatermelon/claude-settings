@@ -1,0 +1,33 @@
+# Session: 2026-08-24
+**Date:** 2026-08-24
+**Started:** 10:38
+**Last Updated:** 10:38
+**Project:** 메일발송_임용조건동의서
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서\메일발송_임용조건동의서
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서 > 사람별_임용조건동의서_PDF 만들어줬잖아 너가. 이제 개별로 메일을 뿌릴거야. 파일 첨부해서. 8.26.(수) 까지 회신 바란다고 하면서 메일 작성 해줘
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates  # 심사위원 communication 템플릿  성균관대 교원인사팀이 심사위원에게 보내는 메일/문자의 표준 톤·구조.  ---  ## 보편 톤 가이드 (★) 
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서\_scripts\_build_mail_agreement.py
+
+### Tools Used
+Bash, Skill, Write, Edit, SendUserFile
+
+### Stats
+- Total user messages: 2
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

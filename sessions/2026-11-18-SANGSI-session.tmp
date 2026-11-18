@@ -1,0 +1,70 @@
+# Session: 2026-11-18
+**Date:** 2026-11-18
+**Started:** 09:58
+**Last Updated:** 09:58
+**Project:** SANGSI
+**Branch:** unknown
+**Worktree:** E:\SANGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 어떤 사람은 400K 이상 되면 auto compact 시킨다는데 그게 지금 우리 방식보다 좋은거야?
+- 어떤 사람은 400K 이상 되면 auto compact 시킨다는데 그게 지금 우리 방식보다 좋은거야?
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  <system-reminder> <tools-used-before-summary>Ag
+- 철학과 설민 학과장에게 만나서 얘기좀 해보자고 해야하는 상황인데... 아니 전화로 충분할 거 같긴 해. 지금 내가 바라는 건 근거거든. E:\0. 0상시채용\1. 상시채용\2027 전임교원 상시채용_정우현,승주완_2026학년도 진행\20260413면접_서재은,김주훈,라젠드라카르키,임윤주(보류)\01. (상시) 진행경과 운영진 보고_원테이블\3. 서재은_경제
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  <system-reminder> <tools-used-before-summary>Ag
+- <system-reminder> Called the Read tool with the following input: {"file_path":"C:\\Users\\SKKU\\.claude\\projects\\E--SANGSI\\memory\\mail-forward-full-thread.md"} </system-reminder>
+- <system-reminder> Result of calling the Read tool: 1	--- 2	name: mail-forward-full-thread 3	description: "메일 전달·답장 초안에는 원문 스레드 전체를 붙이고, 저장 후 초안을 다시 열어 확인한다" 4	metadata: 5	  node_type: memory 6	  type:
+- 서단비 GPR 끝내서 E:\SANGSI\02_연구력검증(IOU,퀵패스,GPR)\17. 사회과학대학_행정학과_1명_261116 > GPR 폴더에 넣었어. 아무래도 행정학과는 만나서 협의하는 만큼 우리 기존에 분석한 것들 종합해서 보고서 작성좀 해줘. 내가 보기 편하게
+- Tool loaded.
+- 여백이 싫은데 지금 여백이 많아... 뭔가 디자인해서 맞춰줄수 있어?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep, TaskStop, mcp__worksmail__list_folders, mcp__worksmail__search_mail, mcp__worksmail__save_draft, mcp__worksmail__read_mail
+
+### Stats
+- Total user messages: 1379
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

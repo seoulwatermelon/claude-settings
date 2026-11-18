@@ -1,0 +1,58 @@
+# Session: 2026-09-29
+**Date:** 2026-09-29
+**Started:** 10:29
+**Last Updated:** 10:29
+**Project:** 참고자료
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\01_원본자료\참고자료
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 계속 작업. 평가 100점까지
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-v5" color="blue"> {"type":"idle_notification","from":"evaluator-v5","timestamp":"2026-09-29T00:46:59.949Z","idleReason":
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-v5" color="blue"> {"type":"idle_notification","from":"evaluator-v5","timestamp":"2026-09-29T00:53:42.463Z","idleReason":
+- Another Claude session sent a message: <teammate-message teammate_id="evaluator-v5" color="blue"> {"type":"idle_notification","from":"evaluator-v5","timestamp":"2026-09-29T00:56:37.736Z","idleReason":
+- 대외 공표 창구가 없어 학계 평판 지표로 이어지지 않음 -> 대외 공표 창구가 있으면 학계 평판 지표가 나아지나?
+- 해봐보
+- 성과가 한 곳에 쌓이지 않아 학교 자산으로 남지 않음 이런 말투 있잖아. 성과 미축적으로 교내 교원 성과 데이터 구축 어려움 이런 식으로 써야해
+- 근데 승진 소요는 정상 심사 基準(조→부 4年, 부→정 6年) 이거 있잖아. 조기 승진은 어떻게 되는지도 써야하지 않나?
+- 응 내가 작성한건 의도가 있는거니까 냅둬. 파일 닫았어
+- 조기승진 자료는 어디서 찾을 수 있어?
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch
+
+### Stats
+- Total user messages: 133
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

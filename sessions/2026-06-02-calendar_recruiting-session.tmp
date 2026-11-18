@@ -1,0 +1,70 @@
+# Session: 2026-06-02
+**Date:** 2026-06-02
+**Started:** 14:08
+**Last Updated:** 17:26
+**Project:** calendar_recruiting
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows  # Python + openpyxl + 한글 + Windows 보일러플레이트  매번 같은 인코딩 트랩에 빠짐. 박제해두고 매번 사용한다.  ---  ## 트
+- 지금 약학대학, 문과대학을 다른 날짜로 걸쳐놨는데 그러면 안돼. 그럼 학장님이 2일 다 참석해야 하잖아. 최대한 학장들 번거롭지 않게 짜야해. 수정해줘. 그리고 학장 써논 것도 좋은데 다른 참석하시는 분들도 누군지 열 추가해서 작성해줘
+- 어제 너가 나 전달주신 학생지원팀 교학정기회의(6/4) 참석 요청 건 검토하였습니다. 아래와 같이 회신드립니다.    다         음    1. 참석 가능 여부: 정시 채용심사 진행 중으로 일정상 어려울 것 같습니다. 반드시 참석이 필요하지 않다면 서면 답변도 괜찮을까요? 이거 컨설팅 해준 기억 있어?
+- 지금 이렇게 메일이 왔거든 RE: [학생지원팀] 제2차 교학정기회의(학교-학생 간 정기 소통 회의) 참석 가능여부 확인을 요청드립니다. 새 창으로 메일 보기 보내기 번역 인쇄 받은날짜 :2026. 6. 2. (화) 13:38 받는사람/참조 접기/펴기보낸사람 즐겨찾는 연락처로 추가하기김찬호<dokdo0907@skku.edu> 메시지 약속초대 받는사람 승주완<
+- 교학정기회의에서 주시는 의견을 참고하겠다고도 적어주고 한글 파일로 작성해줘. 저장은 C:\Users\SKKU\Downloads\claudecode\JUNGSI 에 해줘
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting > 2027 채용 분야배정_의사결정_260601 에 일정 짜준 거 말이야. 의무부총장은 의학과 면접에 들어와야해. 의학과 면접 제외하고는 안들어와도 돼. 비고에 너가 인원 나열 할 때 ", "로 구분하도록 바꿔놨어. 그리고 너가 짜준 시간표 좋은데
+- 근데 의과대학 학장이 8/6 오후로 하면 오프라인이 되서 의무부총장이랑 둘 다 오프라인이 되잖아. 오프라인으로 최대한 참석할 수 있는 방향으로 해줄래?
+- 일정표_달력뷰 시트를 팀장님이 약간 시간표 형식으로 만들어달래.
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting 폴더 파일정리좀 해줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch, Glob
+
+### Stats
+- Total user messages: 479
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

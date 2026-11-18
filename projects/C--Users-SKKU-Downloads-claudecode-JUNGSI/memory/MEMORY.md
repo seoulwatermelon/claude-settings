@@ -1,0 +1,34 @@
+- [JUNGSI 정시채용 통합 현황](project_jungsi_overview.md) — 업무 파이프라인 단계 관계
+- [이메일 작성 시 표 금지](email-no-tables.md) — 메일 본문에 표 쓰지 말 것(복붙 안 됨), 산문·목록으로
+- [설문평가 코드북](survey-codebook.md) — 설문 문항1~3 답변(1~5) → 라벨 변환표(잠재력/연구력/채용여부)
+- [합성 정확성](synthesis-accuracy.md) — 코멘트 합성 시 조각 이어붙이기 금지, 용어 정확히(IEQ=실내환경 질)
+- [교인협 퇴임·초빙 표시 작업](gyoinhyeop-retire-chobing-marking.md) — 3단계 진출학과 정의, 퇴임 ≤2029.8/초빙 2023.9~2026.8, 학과명 구분자(·vs.) 정규화
+- [강조 표기 ' ' 선호](display-quotes-preference.md) — 「」 대신 ' '(작은따옴표) 사용
+- [교인협 평가결과표 2배수](gyoinhyeop-eval-table-2baesu.md) — 평가결과표=모집 2배수 전원(미추천 포함), 면접진행=추천 여부(○/×), 학과추천 1/2/미추천
+- [교인협 연구역량표 비고](gyoinhyeop-bigo-conf-toptier.md) — 비고=컨퍼런스(T1,겹치면SW)+탑티어(Top/2nd), 주저자만, 탑티어재매핑 sheet AO/AW/AX/I/M
+- [교인협 심사위원 학과별 내외구분](gyoinhyeop-reviewer-dept-classification.md) — 같은 이름이 학과마다 내부/외부 다름, WM (학과,이름) 키로 조회
+- [교인협 컨퍼런스 인정분야 FULL 표](gyoinhyeop-conf-field-full-tables.md) — F열=국제학술회의 인정분야는 연구역량·주요지표·생산성 표에 우수국제학술회의 열/행 추가(팀장님 템플릿 고정)
+- [교인협 no_gpr 국내A 반영](gyoinhyeop-nogpr-domestic-a.md) — 건축·국어국문 주요지표·생산성 대분류=국제A/국내A, _xlsx_qp→_add_domestic_a, 빌더 통합
+- [실수: 표적 수정에 전체 재빌드](mistake-overbroad-rebuild.md) — config에 없는 수동/특수 작업분을 재빌드로 날림, 영향 분야만 재빌드+사전 백업
+- [HWPX 표 파일간 복사 글자체 깨짐](hwpx-cross-file-font.md) — 다른 파일 표 복사 시 charPr 불일치, 같은 파일에서 복제+값만 교체
+- [HWPX 텍스트 추출 함정](hwpx-text-extraction-pitfall.md) — 대조 시 lineBreak 꼬리+charPr 강조 안 읽으면 거짓 차이/거짓 일치
+- [교인협 학부대학 4슬롯 빌드](gyoinhyeop-hakbudaehak-4slot.md) — 4명·국내위주 표 구성, 슬롯확장 모듈, 인덱스 하드코딩 버그 3건 수정
+- [교인협 학과심사 의견 출처](gyoinhyeop-simsa-source.md) — 장단점은 평가의견취합 xlsx FI~JR열(연구발표+인성 심사의견), 추천의견/회의록 아님
+- [교인협 서식 charPr 규칙](gyoinhyeop-formatting-charpr.md) — 평가표 볼드금지, 표10 최상위만 볼드밑줄, 그래프 빨간점(108), 전차 본문서식+끝빈줄, GPR 행높이 균등
+- [컨퍼런스분야 IF급→T등급](gyoinhyeop-conf-if-to-t.md) — IF4급=T1(역순), 생산성 IF4편수→T1편수, 논문상세 BK인정IF→T(IF열제목 유지), _relabel_if_to_t 빌더통합
+- [면접 달력뷰 정답시트](calendar-view-source-of-truth.md) — 면접_달력뷰는 면접_달력뷰(평정반영)에서 재구성, delete_cols 병합깨짐 주의, evaluator 대조
+- [일정표 HWPX 달력기준 재작성](iljeongpyo-hwpx-from-calendar.md) — 6.일정표 10개를 ver19 달력 기준 표1 전면재구성, 정시(초빙세부내역)/상시[Scival], 마지막블록 굵은박스
+- [저자역할 KRI 우선·핀셋수정](gyoinhyeop-role-conflict-fix.md) — 역할은 탑티어재매핑 xlsx 절대우선, 역할상충 29건 정정+주저자행만 재계산 완료
+- [평정표 제출·등급 판독](pyeongjeongpyo-grade-reading.md) — 7.평정표_서명본 스캔에서 심사위원7명·등급(A~E/유보=서명한 칸) combo몽타주 육안판독, 당연직 유보패턴
+- [엑셀 연속 행 원칙](excel-continuous-rows.md) — 사람별 빈 행·밴드 금지, 작년처럼 끊김 없는 한 표
+- [실수: 산출물이 원본을 덮어씀](mistake-output-overwrote-source.md) — 새 파일은 새 이름(연도·ver), 저장 전 가드, 원본 사전 백업
+- [openpyxl 열 폭 함정](openpyxl-column-width-trap.md) — 미설정 width는 None 아닌 13.0, max() 패턴이 좁은 열을 뭉갬
+- [검증 두 축](verification-two-axes.md) — 계산 축은 데이터 오염을 못 잡음, 원본 대조 축 별도 필요
+- [결재문서 붙임2는 확정 엑셀에서](gyoinhyeop-hwpx-doc-from-xlsx.md) — ver01 xlsx가 유일 근거, 재계산본 쓰면 확정값과 어긋남 + hwpx 표 양식 규칙
+- [교원확보율 자동화](gyowon-hwakboyul-automation.md) — 파일2+config만 고쳐 돌리는 파이프라인, 미결 판단 3건
+- [순환 검증의 함정](verification-circular-trap.md) — 검증기가 대상 판단을 기대값으로 쓰면 원래 버그를 못 잡음
+- [JUNGSI 폴더 구조](jungsi-folder-structure.md) — 연도폴더 안 일처리순 01~10, 단계마다 원본/산출물/스크립트 다섯 칸
+- [경로 일괄수정 함정 7개](path-rewrite-traps.md) — 슬래시 절대경로·ast 바이트 오프셋·중복 변환·경로 아닌 문자열·원시문자열 r 접두어·__file__ 기준 BASE·앵커 분리, 검증은 값/이름/앵커실행/기능 네 축
+- [제자리 저장 가드](inplace-save-guard.md) — 읽은 파일을 그 자리에 저장하면 저장 전 _archive 사본 필수, 확정 산출물은 뒤 단계 입력이라 복구 경로 없음
+- [발령장 수여식 명단](balryeongjang-myeongdan.md) — 이사회 제청 List에서 해당 학기 임용자만, 10열 양식·근거파일 5개
+- [임용기간 산정 규칙](imyong-gigan-rule.md) — 만료일=(임용일+4년-1일)이 속한 학기 말일, GSB는 2년 예외

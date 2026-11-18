@@ -1,0 +1,48 @@
+# Session: 2026-04-03
+**Date:** 2026-04-03
+**Started:** 14:28
+**Last Updated:** 14:28
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- C그룹 추첨시 또 같은 오류가 발생했는데, 이번엔     If rc<cnt Then MsgBox "Not enough! "&rc&"/"&cnt,vbExclamation: Exit Sub 이 줄에서 오류가 떠
+- 같은 오류가         MsgBox "Not enough! "&rc&"/"&cnt,vbExclamation 줄에서 나왔어. 근데 자꾸 이런 식으로 여러번 나오면 어떡해? 원인 분석을 해서 이런 오류 안나오게 해줘
+- 이번엔 A그룹 부터     MsgBox("A Group done! 5 assigned", vbInformation) 같은 오류가 나오는데?Public Sub LotteryGroupA()
+- 너가 잘 만들어 줬는데 그 이후에 인사캠 신축사업 연계 교수연구실 배정(안)_20260325_v6 으로 업데이트 됐어(폴더에 넣어놨어) 여기 4-5 페이지에 있는 이전 공간 목록 으로 랜덤추첨 버튼을 업데이트 해주고, 업데이트 할 때 32522B(다산경제관-3) 은 퇴실이 늦어져서 이번 추첨공간에서는 제외해야 할 것 같은데 그것도 반영해줘
+- B그룹은 추첨 누르면 아무것도 배정되지 않고, C그룹은 추첨 누르면 VBA Public Sub LotteryGroupC() 에서 컴파일 구문오류 뜨고 에러가 생겨
+- 기존 퇴임교원에게 중앙학술정보관 5층 통창(창문 개폐불가)으로 예우차원에서 배정해 드리려고 했는데, 일부는 창문 걔페불가를 싫어하시고, 중앙학술정보관 엘리베이터 이용 불가한 부분을 싫어하시고, 그러셔서 지금 퇴임교원 8명에게 이메일을 뿌려서 희망공간을 받으려 해. 선택지는 3가지인데, 중앙학술정보관 5층 현재 성균어학원 구역(창문이 있고, 창문 개폐가능),
+- 방법 1. [가장 추천] MS 워드 + 엑셀 + 아웃룩 (메일 머지) 이게 가장 고전적이면서도 강력한 방법입니다. 아까 아웃룩 설정을 시도하셨으니, 계정 연결만 성공했다면 이 방법이 업무 생산성을 가장 높여줍니다.  엑셀 데이터 준비: 첫 줄에 성함, 이메일, 안내내용 등 항목을 만들고 교수님들 정보를 정리합니다.  워드에서 본문 작성: * [편지] 탭 >
+- 지금 docx 문서를 보고 있는데, 말을 좀 더 따뜻하게 할 수 없어? 퇴임교원 예우해드리는 차원에서 하는거라... 너무 딱딱해 지금은
+- 사범대학 교육학과 양정호 교수가 호암관    51110(북향)    김경천 교수 퇴직 공간을 4월~5월 임시사용 하고 싶다고 하는데, 임시사용신청서 공문을 받고 처리해주려고해. 오수진 선임에게 샘플 공문이랑 양식을 줄테니 행정실에서 공문 제출해달라고 메일 작성하려고 하는데 메일좀 작성해줘
+- 양호승 책임님이 이사업체 일정이 4월 말까지 정해질 수 있다고 했거든. 그래서 내 의견은 배정을 4월 마지막 주차에 하고 이사업체가 정해지면 이사업체 담당자 연락처를 교수 안내 뿌릴 때 같이 뿌릴까 하거든. 이사업체에서 배치도, 대리인 지정, 이사일정 조율을 해준다면 행정실에 부담을 덜 줄 수 있을 것 같아서. 근데 이사업체 정하는 일정이 5월로 미뤄지면 
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/make_gonmun.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v2.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v3.py
+- C:/Users/SKKU/AppData/Local/Temp/fix_vba.py
+- C:/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- /c/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- C:/Users/SKKU/Downloads/claudecode/professor_lab_move/lottery_final.py
+
+### Tools Used
+Glob, Skill, Bash, Read, Write, Edit, Grep
+
+### Stats
+- Total user messages: 21
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

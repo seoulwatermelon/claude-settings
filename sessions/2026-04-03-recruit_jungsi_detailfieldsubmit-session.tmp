@@ -1,0 +1,45 @@
+# Session: 2026-04-03
+**Date:** 2026-04-03
+**Started:** 11:14
+**Last Updated:** 14:50
+**Project:** recruit_jungsi_detailfieldsubmit
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Request interrupted by user]
+- keep going
+- for aother architecture field 도ㅓ맞나?
+- Architecture (M.Arch)] and possess a licensed architect certification (domestic or international). Applicants for aother architecture field(Architecture and Emerging Technologies) must hold a doctoral
+- 임용쿼터가 영문 요강에는 안나와있나?
+- 아 너는 2027 Full time Faculty Recruitment Guidelines 이거 보면 돼
+- 무슨 말이야?? 너가 수정을 했다고?? 파일 수저을?
+- 지금 수정사항들 정리좀 해줘
+- 의학과는 ① 초빙분야 개요 해부학은 인체의 구조와 공간적 관계를 기반으로 정상 및 병적 상태를 이해하고, 이러한 지식이 임상의학에서의 의사결정과 술기 수행, 각종 진단적 검사 결과의 해석에 어떻게 적용되는가를 교육하고 연구하는 분야로서 의학교육의 핵심적 역할을 담당하고 있습니다. 특히 육안해부학은 의과대학 학부생을 대상으로 카데바 기반 실습과 통합적 교육을
+- 건축학과는 그럼 B.Arch면 학사도 되는건가?
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel_eng.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_combined_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_swap.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_2200.py
+
+### Tools Used
+ToolSearch, WebFetch, Glob, Read, Grep, Agent, Bash, Write, Edit, Skill, AskUserQuestion
+
+### Stats
+- Total user messages: 106
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,71 @@
+# Session: 2026-10-19
+**Date:** 2026-10-19
+**Started:** 14:13
+**Last Updated:** 14:14
+**Project:** 참고자료
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\01_원본자료\참고자료
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <task-notification> <task-id>bkt3ajz61</task-id> <tool-use-id>toolu_01LfVW2toxdJCZqjRRgT7pVi</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Birth
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent:  **Proj
+- 모두 허용 할게
+- <system-reminder> Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly 
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>bcp27teq6</task-id> <tool-use-id>toolu_01YTrJNfn6YXBbRxr5UUCQgN</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Birth
+- 【 SKKU-Fellowship 산출 (단위 : 명, 억원) 】 보고 있는데... 선정인원이 왜 11명이야?? 매년 12명이 정상 아닌가?? 그리고 왜 +6, 이렇게 나가지??
+- 【 SKKU-Fellowship 산출 (단위 : 명, 억원) 】 보고 있는데... 선정인원이 왜 11명이야?? 매년 12명이 정상 아닌가?? 그리고 왜 +6, 이렇게 나가지??
+- 일단 한국어로 답변하고. 재선정 인원을 n명으로 했을때 예산이 어떻게 변하는지 보여줘
+- 일단 한국어로 답변하고. 재선정 인원을 n명으로 했을때 예산이 어떻게 변하는지 보여줘
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_matrix.py
+
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_criteria.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_rows.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\명예의전당 등재기준 조회처.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\hwpxsurg.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch6.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch789.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_fix_gap.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval1.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval2.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch, ReadNotifications
+
+### Stats
+- Total user messages: 390
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

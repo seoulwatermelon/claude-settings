@@ -1,0 +1,70 @@
+# Session: 2026-10-22
+**Date:** 2026-10-22
+**Started:** 16:28
+**Last Updated:** 17:20
+**Project:** _scripts
+**Branch:** unknown
+**Worktree:** E:\SANGSI\00_퀵패스\_scripts
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>b0jkmk6vw</task-id> <tool-use-id>toolu_01KDDfE8wTu5Rb6YfymUWMpK</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\e07019fb-a871-40e4-bec2-2fb227
+- 그리고 퀵패스 자료 보고 있는데, 1페이지 표에 연구분야 쓸 때 좌측정렬을 차라리 해줘. 양측정렬 하니까 단어 사이가 벌어져. 그리고 논문 상세 표는 최신연도가 앞에, 주저자가 앞에, 탑티어가 제일 앞에, 그 다음 JCR 기준 정렬 되게 해줘. 퀵패스_데이터통합도 행 순서를 논문상세랑 같게 잡아주면 내가 보기 편할 거 같아.  그리고 경제학과 메일은   <
+- 그리고 퀵패스 자료 보고 있는데, 1페이지 표에 연구분야 쓸 때 좌측정렬을 차라리 해줘. 양측정렬 하니까 단어 사이가 벌어져. 그리고 논문 상세 표는 최신연도가 앞에, 주저자가 앞에, 탑티어가 제일 앞에, 그 다음 JCR 기준 정렬 되게 해줘. 퀵패스_데이터통합도 행 순서를 논문상세랑 같게 잡아주면 내가 보기 편할 거 같아.  그리고 경제학과 메일은   <
+- <pasted_content id="8f18"> Edito rial(문 헌유 형 제외), </pasted_content id="8f18">   문헌유형제외 이런 말도 쓰지 말자 어차피 실적포함여부에 표시 되어 있잖아.
+- <pasted_content id="8f18"> Edito rial(문 헌유 형 제외), </pasted_content id="8f18">   문헌유형제외 이런 말도 쓰지 말자 어차피 실적포함여부에 표시 되어 있잖아.
+- CV 미기재 이런 말도 하지마. 나한테 알려주기만 해. 이렇게 클로드코드에서 PDF 는 닫았음
+- CV 미기재 이런 말도 하지마. 나한테 알려주기만 해. 이렇게 클로드코드에서 PDF 는 닫았음
+- 메일 작성해 달라고 할 때에는 GPR_Report_조범근_20261021, GPR_Report_최혜선_20261021 같이 워드 리포트는 PDF로 바꿔놔줘
+- 메일 작성해 달라고 할 때에는 GPR_Report_조범근_20261021, GPR_Report_최혜선_20261021 같이 워드 리포트는 PDF로 바꿔놔줘
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep
+
+### Stats
+- Total user messages: 459
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

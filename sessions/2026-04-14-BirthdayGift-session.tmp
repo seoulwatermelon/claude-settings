@@ -1,0 +1,48 @@
+# Session: 2026-04-14
+**Date:** 2026-04-14
+**Started:** 09:12
+**Last Updated:** 14:12
+**Project:** BirthdayGift
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- ultraplan: cannot launch remote session — No cloud environment available. Set one up at https://claude.ai/code/onboarding?magic=env-setup Background tasks require a git repository. Initialize git or r
+- 해당 내용을 md 파일로 저장해줄래?
+- [양식] 회의자료 작성 양식 파일을 읽어서 서식을 분석해줘. 그리고 이 양식 그대로 md 파일 내용으로 보고서 작성해줘.
+- [양식] 회의자료 작성 양식가 우리 학교 양식인데 그걸  분석해서 hwpxskill의 신규 템플릿 skku로 등록해줘
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 이제 skku 포맷으로 너가 작성한 [V] 중견 연구진 리텐션 강화 방안 을 한글 문서로 작성해줘
+- 지금 너의 [V] 중견 연구진 리텐션 강화 방안 파일과 한글 작성 내용이 달라. Generator, Evaluator를 같이 돌리자. Generator는 한글양식을 MD파일 내용으로 완벽하게 구현하고, Evaluator는 MD파일 내용과 정합성, 디자인 을 각각 5:5 로 평가해. 총합 정합성은 만점, 디자인은 90점 이상이면 작업을 완료하고 그 전까지는 
+- 한글 파일을 열면 [Image #1] 이런 식으로 대구분 중구분 번호가 난잡하게 섞여 있는데 이 오류는 왜그런거야? 고쳐줘
+- [Image: source: C:\Users\SKKU\.claude\image-cache\cfa7274d-0f6d-42f1-a365-3ccf18420a34\1.png]
+- 지금 V2 내가 디자인 좀 더 보정해서 수정 해놨는데, 보다보니까 아쉬운 점이 있었는데 일단 이탈 위험도 가중 요소 를 모니터링 어떻게 해서 몇점 이상이면 Level 1 -3 이런 구분이 없고, 가중 요소가 좀 더 대구분-중구분-소구분 이런 식으로 항목이 더 있고 체계화 되면 좋을 거 같아. 그리고 Retention_20260409_v1 엑셀파일을 읽어보고
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/중견연구진_리텐션_강화방안_v1.md
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/[V] 중견 연구진 리텐션 강화 방안.md
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/build_hwpx.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/templates/skku/README.md
+- C:/Users/SKKU/.claude/skills/hwpxskill/SKILL.md
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/build_retention_hwpx.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_eval_loop.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v3.py
+
+### Tools Used
+Bash, Agent, Read, Write, Skill, Grep, Edit
+
+### Stats
+- Total user messages: 10
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,46 @@
+# Session: 2026-10-22
+**Date:** 2026-10-22
+**Started:** 13:37
+**Last Updated:** 13:49
+**Project:** ilpyung
+**Branch:** unknown
+**Worktree:** E:\Daily\ilpyung
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 글로벌 매크로 트레이더는 드러켄밀러·소로스 계열입니다. 유동성, 금리, 달러, 정책이 큰 방향을 정하고 종목은 속도만 정한다고 봅니다. 큰 방향은 어떻게 정해지고 나는 저걸 통해서 어떻게 볼 수 있지?? 그리고 지금 유동성과 금리가 위험자산 편인지 반대인지는 어떻게 알아?
+- https://smartstore.naver.com/hucha_hucha/products/11998135247?nl-au=562a75d6271144c48fa256e9533d7815&NaPm=ct%3Dmvj1o1q3%7Cci%3Dcheckout%7Ctr%3Dmktlnk_myc%7Ctrx%3Dnull%7Chk%3D2df3d13455f9ce11a3baaf3be9
+- Tool loaded.
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\synced\11b0f2df-02ba-40d5-9ef5-b362eaf483d2_fb191272-4007-40dd-ac4d-d9c1007ae0be\chrome-browser  # Claude in Chrome  Claude in Chrome is a b
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\synced\11b0f2df-02ba-40d5-9ef5-b362eaf483d2_fb191272-4007-40dd-ac4d-d9c1007ae0be\chrome-browser  # Claude in Chrome  Claude in Chrome is a b
+- Tool loaded.
+- Aside CLI 를 설치해서 진행할 순 없어?
+- Aside CLI 를 설치해서 진행할 순 없어?
+- 했어
+- 했어
+
+### Files Modified
+- E:\Daily\ilpyung\clean_subs.py
+- E:\Daily\ilpyung\render_book.py
+- E:\Daily\ilpyung\book_template.html
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--Daily-ilpyung\e0699290-5e69-4dc6-af99-7ac9a8000692\scratchpad\cdp_fetch.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--Daily-ilpyung\e0699290-5e69-4dc6-af99-7ac9a8000692\scratchpad\pw_fetch.py
+- E:\Daily\gift\birthday.html
+
+### Tools Used
+PowerShell, Bash, Skill, Write, ToolSearch, Monitor, TaskStop, Workflow, Edit, Read, Grep, WebFetch, WebSearch
+
+### Stats
+- Total user messages: 30
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

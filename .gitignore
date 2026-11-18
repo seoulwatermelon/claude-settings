@@ -1,0 +1,27 @@
+# 비밀·기기별 상태
+.credentials.json
+history.jsonl
+.last-cleanup
+.last-update-result.json
+backups/
+debug/
+file-history/
+shell-snapshots/
+todos/
+statsig/
+session-env/
+cache/
+plugins/cache/
+ide/
+# 대화 기록 원본은 올리지 않고 프로젝트별 memory만 올린다
+projects/*
+!projects/*/
+projects/*/*
+!projects/*/memory/
+# 가상환경·자동 관찰 로그(도구 입출력 원문 포함)·작업 임시
+.venv/
+__pycache__/
+homunculus/**/observations*
+tasks/
+teams/
+homunculus/

@@ -1,0 +1,77 @@
+# Session: 2026-11-16
+**Date:** 2026-11-16
+**Started:** 10:54
+**Last Updated:** 17:41
+**Project:** contest
+**Branch:** unknown
+**Worktree:** E:\Daily\contest
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Image: original 3640x1285, displayed at 2576x909. Multiply coordinates by 1.41 to map to original image.]  [Image: original 3640x1285, displayed at 2576x909. Multiply coordinates by 1.41 to map to or
+- [Image: original 3640x1285, displayed at 2576x909. Multiply coordinates by 1.41 to map to original image.]
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>ab11729146d72fa6f</task-id> <tool-use-id>toolu_013c3gSKrkzZkBYSDdYddLF4</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\18ee9c0e-c838-4
+- [Image: original 2730x1285, displayed at 2576x1213. Multiply coordinates by 1.06 to map to original image.]
+- [Image: original 2730x1285, displayed at 2576x1213. Multiply coordinates by 1.06 to map to original image.]
+- [Image: original 2730x1285, displayed at 2576x1213. Multiply coordinates by 1.06 to map to original image.]
+- [Image: original 2730x1285, displayed at 2576x1213. Multiply coordinates by 1.06 to map to original image.]
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>ab11729146d72fa6f</task-id> <tool-use-id>toolu_012G66RghBF8o8UKSZ7k7TV3</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\18ee9c0e-c838-4
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig\fig.html
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig\shot.cjs
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\content.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\build.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\render.py
+- C:\Users\SKKU\.claude\projects\E--Daily-contest\memory\contest-skku-ai-challenge.md
+- C:\Users\SKKU\.claude\projects\E--Daily-contest\memory\fable-for-planning-review.md
+- C:\Users\SKKU\.claude\projects\E--Daily-contest\memory\MEMORY.md
+- E:\Daily\contest\SKKU x AI 행정혁신 Challenge 참가 신청서_교원인사팀_승주완.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\fig.html
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\shot.cjs
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\build2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\add_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\shot_new.cjs
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v5_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r3_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r4_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r5_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r6_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r7_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r9_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r10_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v8_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r11_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v9_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v10_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r12_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r13_md.py
+
+### Tools Used
+PowerShell, Read, Skill, Bash, ToolSearch, Agent, mcp__worksmail__search_mail, mcp__worksmail__read_mail, Grep, Write, Edit, SendMessage
+
+### Stats
+- Total user messages: 213
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 12:14]** - Context was summarized
+
+---
+**[Compaction occurred at 12:42]** - Context was summarized
+
+---
+**[Compaction occurred at 18:35]** - Context was summarized

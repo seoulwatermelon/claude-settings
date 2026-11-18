@@ -1,0 +1,52 @@
+# Session: 2026-07-16
+**Date:** 2026-07-16
+**Started:** 15:31
+**Last Updated:** 16:14
+**Project:** Invest_UnityKay
+**Branch:** master
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Base directory for this skill: C:\Users\SKKU\.claude\plugins\cache\superpowers-marketplace\superpowers\5.0.1\skills\systematic-debugging  # Systematic Debugging  ## Overview  Random fixes waste time a
+- data\lazy_rich_10b 로 게시글, 이미지를 수집했는데 여기서 트레이더 매매 아이디어를 모조리 정리하려고 해. 너가 게시글, 이미지를 싹다 읽고(일상 사진, 수익 증빙 이런 이미지는 그냥 지워버리고 참고 안해도 돼) 전수조사해서 비용은 상관없으니 정리해. md 파일로
+- [Image: original 1284x2282, displayed at 1125x2000. Multiply coordinates by 1.14 to map to original image.]
+- Another Claude session sent a message: <teammate-message teammate_id="batch00" color="blue" summary="batch_00 완료 보고"> batch_00 완료: 게시글 14개(#0~#13) 처리, 이미지 6장 전부 열람 — KEEP 3장(차트 DI_mjW6S2MX_1, DJDzd6iy
+- Another Claude session sent a message: <teammate-message teammate_id="batch01" color="green"> {"type":"idle_notification","from":"batch01","timestamp":"2026-07-16T07:06:46.297Z","idleReason":"availabl
+- Another Claude session sent a message: <teammate-message teammate_id="batch07" color="red"> {"type":"idle_notification","from":"batch07","timestamp":"2026-07-16T07:07:25.981Z","idleReason":"available"
+- Another Claude session sent a message: <teammate-message teammate_id="batch08" color="blue"> {"type":"idle_notification","from":"batch08","timestamp":"2026-07-16T07:07:38.489Z","idleReason":"available
+- Another Claude session sent a message: <teammate-message teammate_id="batch10" color="yellow"> {"type":"idle_notification","from":"batch10","timestamp":"2026-07-16T07:07:57.995Z","idleReason":"availab
+- Another Claude session sent a message: <teammate-message teammate_id="batch11" color="purple"> {"type":"idle_notification","from":"batch11","timestamp":"2026-07-16T07:08:27.404Z","idleReason":"availab
+- Another Claude session sent a message: <teammate-message teammate_id="batch09" color="green"> {"type":"idle_notification","from":"batch09","timestamp":"2026-07-16T07:08:31.287Z","idleReason":"availabl
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\scraper\threads_scraper.py
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\storage\exporter.py
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\scraper\image_downloader.py
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\main.py
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\tests\test_integration.py
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\tests\test_storage.py
+- C:\Users\SKKU\Downloads\claudecode\Invest_UnityKay\tests\test_scraper.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Invest-UnityKay\c54c3c0f-d3f4-4efe-b85a-597501cf9e4b\scratchpad\diag_threads.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Invest-UnityKay\c54c3c0f-d3f4-4efe-b85a-597501cf9e4b\scratchpad\diag_threads2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Invest-UnityKay\c54c3c0f-d3f4-4efe-b85a-597501cf9e4b\scratchpad\diag_threads3.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Invest-UnityKay\c54c3c0f-d3f4-4efe-b85a-597501cf9e4b\scratchpad\diag_threads4.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-Invest-UnityKay\c54c3c0f-d3f4-4efe-b85a-597501cf9e4b\scratchpad\synthesis.md
+
+### Tools Used
+Read, Grep, Bash, AskUserQuestion, Edit, Write, Skill, TaskCreate, Agent, TaskUpdate
+
+### Stats
+- Total user messages: 13
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,45 @@
+# Session: 2026-04-06
+**Date:** 2026-04-06
+**Started:** 10:27
+**Last Updated:** 11:44
+**Project:** recruit_jungsi_detailfieldsubmit
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- for aother architecture field 도ㅓ맞나?
+- Architecture (M.Arch)] and possess a licensed architect certification (domestic or international). Applicants for aother architecture field(Architecture and Emerging Technologies) must hold a doctoral
+- 임용쿼터가 영문 요강에는 안나와있나?
+- 아 너는 2027 Full time Faculty Recruitment Guidelines 이거 보면 돼
+- 무슨 말이야?? 너가 수정을 했다고?? 파일 수저을?
+- 지금 수정사항들 정리좀 해줘
+- 의학과는 ① 초빙분야 개요 해부학은 인체의 구조와 공간적 관계를 기반으로 정상 및 병적 상태를 이해하고, 이러한 지식이 임상의학에서의 의사결정과 술기 수행, 각종 진단적 검사 결과의 해석에 어떻게 적용되는가를 교육하고 연구하는 분야로서 의학교육의 핵심적 역할을 담당하고 있습니다. 특히 육안해부학은 의과대학 학부생을 대상으로 카데바 기반 실습과 통합적 교육을
+- 건축학과는 그럼 B.Arch면 학사도 되는건가?
+- Dear [Department of Statistics / SAIHST] Faculty Search Committee,  I hope you are doing well. My name is Se-Kang Kim (김세강), and I am currently a (tenured) Professor in the Psychology Division of the 
+- 작성자 : 김우철 이메일 : 14tamero@gmail.com 제목 : 박사 학위 인정 시점 기준 내용 저는 올해 해외 박사과정을 마치고, 공고에 나온 미디어 커뮤니케이션 학과 초빙굥원에 지원을 하려고 합니다. 박사 학위 인정 시점과 관련해서 궁금한 점이 있어 문의드립니다. 저는 북미에서 올 1월 학위논문 심사를 마친 뒤, 논문제출이 끝나고 학위과정 완료증
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel_eng.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_combined_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_swap.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_2200.py
+
+### Tools Used
+ToolSearch, WebFetch, Glob, Read, Grep, Agent, Bash, Write, Edit, Skill, AskUserQuestion
+
+### Stats
+- Total user messages: 108
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,70 @@
+# Session: 2026-05-18
+**Date:** 2026-05-18
+**Started:** 15:14
+**Last Updated:** 16:25
+**Project:** 2027_정시채용_심사위원추천
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 안녕하세요 성균관대학교 교원인사팀 담당자님.  이번 2027학년도 전임교원 정시채용 서류심사에 합격한 지원자 김태년입니다. 먼저 귀한 기회를 주셔서 진심으로 감사드립니다.  2단계 심사자료 제출과 관련하여, 1차 지원서 제출 이후 업데이트된 연구 실적의 인정 범위에 대해 한 가지 확인하고자 메일 드립니다. 제가 1차 서류 접수 당시에는 '조건부 승인(Con
+- 안녕하세요!   전임교원 정시채용 2단계 과정에 대해 몇가지 질문 드리고 싶습니다.   1. 미국대학에서의 성적증명서는 공식시스템(e.g., Parchment)을 통해 다운로드 받은 PDF 파일이면 충분할까요? 겉으로는 보이지 않는 워터마크가 존재한다는 걸 파악해서 한번 다시 여쭤보고 싶습니다 (그것이 아니라면 성균관대로 직접 발송하는 옵션이 있는 것으로 
+- 안녕하세요. 2027학년도 전임교원 정시 채용에서 문헌정보학과 서류심사에 합격한 정은미라고 합니다. 심사 자료 제출 관련해서 몇 가지 문의드리고자 합니다.   박사학위 취득 예정자의 경우 임용예정일 이전 학위취득이 가능함을 확인할 수 있는 증명서 (학위취득예정증명서, 지도교수 확인서 등) 를 제출해야 하는 것으로 알고 있습니다. 지도교수 확인서에 요구되는 
+- 게재예정 논문의 경우에도 연구실적 심사 논문으로 등록 가능한가요? A. 국제전문학술지(A&HCI, SSCI, SCIE 등)에 한하여 가능합니다. 다만, 게재예정증명 서류를 최종 논문 파일의 첫 페이지에 포함하여 PDF로 변환 후 등록해주시기 바랍니다. 이걸 읽고 안녕하세요.  서류 합격자 김석우 지원자 입니다.  다름이 아니라, 1차 서류 기간 중에,  진
+- Continue from where you left off.
+- 지금 너가 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천>2027 심사위원 제척검증_ver06 까지 잘 만들어줬는데 나는 이제 3. 학과심사 시트도 2. 전공적합성 및 연구실적심사 시트처럼 추천인, 지도교수, 지원자 1차 합격자만 대상으로 심사위원 제척을 진행해야 하거든. 그럼 내가 3. 학과심사 
+- Intern·Teaching Assistant·Research Assistant·Faculty Assistant 등 기간제 학생 신분 직무는 지원서에 해당 경력을 기재하셨거나 평가시 참고가 필요한 경우, 해당 기관(학교·연구소 등)에서 발급한 경력증명서 또는 Employment Verification Letter를 함께 제출해 주시면 됩니다: 채용시 서명한
+- 성균관대학교 교원인사팀 담당자님께,  안녕하세요, 경제대학 통계학과에 2차 심사를 앞두고 심사자료 제출을 위해 이메일을 보내드립니다.  관련 서류들은 이메일에 첨부되었습니다.   한가지 제가 여쭈고싶은 사항이 있습니다. 1차 2차 심사사이에 심사중인 논문이 게재 예정인 경우에도 2차 심사자료에 포함될수 있는지 여부를 확인해 주셨으면 합니다 (해당 게재예정 
+- 안녕하세요 전임교원 채용 지원자 김지윤입니다. 채용분야를 "[교육전담]의사소통영역 통합교육"으로 쓰면 파일명이 너무 길어져서 "의사소통_교육전담_김지윤_내용"으로 일괄 저장하였습니다.  혹시 파일에 문제가 있거나 압축 파일이 열리지 않으면 알려주시면 깊이 감사하겠습니다.  재직증명서, 경력증명서, 졸업 및 성적증명서, 연구 및 저서 실적 증명서 모두 "의사
+- 간단하게좀 작성해줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch
+
+### Stats
+- Total user messages: 350
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

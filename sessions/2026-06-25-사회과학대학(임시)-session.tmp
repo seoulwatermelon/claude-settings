@@ -1,0 +1,70 @@
+# Session: 2026-06-25
+**Date:** 2026-06-25
+**Started:** 09:37
+**Last Updated:** 09:37
+**Project:** 사회과학대학(임시)
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\3. 학과추천서_2단계 후\사회과학대학(임시)
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates  # 심사위원 communication 템플릿  성균관대 교원인사팀이 심사위원에게 보내는 메일/문자의 표준 톤·구조.  ---  ## 보편 톤 가이드 (★) 
+- 미디어커뮤니케이션학과에서도 추천서랑 체크리스트 제출했어. C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\3. 학과추천서_2단계 후\사회과학대학(임시) > [미디어커뮤니케이션학과] 교원 신규임용 후보자 추천서 파일이랑 체크리스트 파일 2개가 있으니까 그거 참고해서 C:\Users\SKKU\Down
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\03_학술지정보업로드 > 학술지정보업로드_2027_종합_표기값매핑_v2_탑티어재매핑 에 탑티어 매핑을 너가 해줬었잖아? 근데 지금 보니까 요강에 최근 3년 이내 (2023. 4. 1. ~ 2026. 4. 20.) 기준 게재완료(출간)된 실적물에 
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification  # Excel 결과물 작성 4대 원칙 (사용자 자체 검증 가능성)  사용자(교원인사팀 행정직)는 결과물의 **모든 셀을 직접 클릭하며 추적·검증**할 수 있
+- 지금 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\정보통신팀 1차 추출_260612 > 2027 정시채용 2단계 지원자 평가의견 취합_통합_260618_추천반영 OE~OG열은 그럼 이렇게 탑티어 최종이 바뀌면 어떻게 바꿔야돼? _연구실적_tier_ref 시트 값을 바꿔야 하나? 검증 가능하게 
+- 이전에 탑티어 값 했던거는 너가 말한 2nd tier 이런 것도 반영 한거였어?
+- 지금 학술지정보업로드_2027_종합_표기값매핑_v2_탑티어재매핑 파일에 sheet보고용 을 만들었거든. 여기에 너가 말한대로 합격자 38명만 표시하고 그 38명은 너가 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협 > 2027_학과추천_회신현황표_260618 에 작업 한것처럼 순서를 똑같이 해서
+- Continue from where you left off.
+- 지금 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\3. 학과추천서_2단계 후 에 보면학부대학, 국어국문학과, 약학대학, 의과대학, 양자정보공학과, 기계공학부 체크리스트가 도착했어. C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\정보
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent: The con
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch, Glob, PowerShell, Agent, SendMessage
+
+### Stats
+- Total user messages: 609
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

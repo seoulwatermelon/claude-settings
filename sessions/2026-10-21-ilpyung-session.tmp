@@ -1,0 +1,43 @@
+# Session: 2026-10-21
+**Date:** 2026-10-21
+**Started:** 10:50
+**Last Updated:** 11:16
+**Project:** ilpyung
+**Branch:** unknown
+**Worktree:** E:\Daily\ilpyung
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- [Image: original 1280x2400, displayed at 1067x2000. Multiply coordinates by 1.20 to map to original image.]
+- [Image: original 1280x2400, displayed at 1067x2000. Multiply coordinates by 1.20 to map to original image.]
+- 지금 E:\Daily 에서 클로드 쳐야 resume 이 되잖아. 근데 E:\Daily\ilpyung 프로젝트라서 여기서 클로드 들어가서 resume 하면 그때 되게 하고 싶은데 이 절차를 뭐라고 해야하고 어떻게 해야 달성하지?
+- 응응 세션을 복사하지 말고 그냥 잘라내기 > 이전 해줘
+- 응응 세션을 복사하지 말고 그냥 잘라내기 > 이전 해줘
+- 추세추종 시스템 트레이더는 터틀·세이코타 계열의 철학을 따릅니다. 터틀, 세이코타가 뭐지?
+- 모멘텀 성장주 스윙 트레이더는 SEPA·CANSLIM 계열입니다. 이건 또 무슨 말이야
+- 글로벌 매크로 트레이더는 드러켄밀러·소로스 계열입니다. 유동성, 금리, 달러, 정책이 큰 방향을 정하고 종목은 속도만 정한다고 봅니다. 큰 방향은 어떻게 정해지고 나는 저걸 통해서 어떻게 볼 수 있지?? 그리고 지금 유동성과 금리가 위험자산 편인지 반대인지는 어떻게 알아?
+- 글로벌 매크로 트레이더는 드러켄밀러·소로스 계열입니다. 유동성, 금리, 달러, 정책이 큰 방향을 정하고 종목은 속도만 정한다고 봅니다. 큰 방향은 어떻게 정해지고 나는 저걸 통해서 어떻게 볼 수 있지?? 그리고 지금 유동성과 금리가 위험자산 편인지 반대인지는 어떻게 알아?
+
+### Files Modified
+- E:\Daily\ilpyung\clean_subs.py
+- E:\Daily\ilpyung\render_book.py
+- E:\Daily\ilpyung\book_template.html
+
+### Tools Used
+PowerShell, Bash, Skill, Write, ToolSearch, Monitor, TaskStop, Workflow, Edit, Read, Grep
+
+### Stats
+- Total user messages: 21
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,43 @@
+# Session: 2026-04-16
+**Date:** 2026-04-16
+**Started:** 13:58
+**Last Updated:** 15:17
+**Project:** calendar_recruiting
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- 응 너 말대로 학장 일정조사를 하면 될 거 같은데, 메일 내용은 지난번 꺼를 재활용해서 내가 쓸게. 너는 Survey 지난번에 만들어준 html을 보직자 명단_260320 3번째 시트 2027채용학장명단 를 보고 다시 만들어줄래?
+- 지금 암호 풀었어
+- 실수 방지를 위해 지난번 처럼 성명도 쓰게 했으면 좋겠고, 소속만 클릭할 수 있게 드롭다운 하면 돼. 지난번처럼 구글 AppScript 에 html 로 넣어놓고 배포하면 되는거 아니야??? 근데 뭘 복붙 해야하더라?
+- 소속(단과대) 에는 이름 넣지말고 소속만 선택할 수 있게 해줘. 이름이랑 직급은 넣지마 ()는 빼줘
+- 단과대 눌렀을 때 아래에 부가정보 나오는 걸 안나오게 해줘
+- Exception: Index_Dean(이)라는 이름의 HTML 파일을 찾을 수 없습니다.('Code' 파일, 48행) 오류가 뜨는데 어떻게 해야해?
+- 안녕하세요. 조은영(교육전담_스피치/글쓰기)지원자입니다.  “국내전문학술지” “기타연구실적”내용과 “[학부대학] 교육관련(전문학술지, 전문교육저술, 전문학술지 논문)”의 실적이 겹치면 어떻게 해야할까요? 현재는 학부대학 교육관련이 공란(첨부파일 2페이지 캡쳐본 수록)으로 프린트됩니다.  연구실적 입력할 때 따로 “[학부대학] 교육관련(전문학술지, 전문교육저
+- 3
+- 교육전담교원(학부대학) 심사 기준 이 어디있어?
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 25
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

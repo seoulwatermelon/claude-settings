@@ -1,0 +1,1 @@
+- [HWPX 표 셀 값 교체는 lxml 위치 기반 필수](feedback_hwpx_table_replacement.md) — str.replace 순차 방식은 동일 값 충돌으로 잘못된 셀 교체 발생

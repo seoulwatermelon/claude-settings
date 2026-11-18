@@ -1,0 +1,45 @@
+# Session: 2026-04-13
+**Date:** 2026-04-13
+**Started:** 15:06
+**Last Updated:** 17:14
+**Project:** 2027 정시채용 경쟁률 현황
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun의 2027_교수초빙_회신체크리스트 에 정시채용만 학과장, 학장, 행정실 담당자 이메일 주소를 다 적어놨어. 이제 다음주 월요일에 학과장들에게 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jung
+- 연구실적물 인정범위 작년 12월 31일 논문 출간일자가 찍혀 있는데 가능할까?
+- 기존 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황 의 초빙지원자 조회_일반_2604101526 파일이 초빙지원자 조회_일반_2604131442 파일로 바뀌었거든. 먼저 2027_교수초빙_회신체크리스트 의 경쟁률 현황, 지원자_raw 시트를 최신화 해줄래
+- 근데 왜 지원자 데이터는 99명인데 경쟁률 현황 합계가 98명 이지?
+- 이제 이 데이터를 기반으로 2027_정시채용_지원현황_안내_메일머지템플릿 워드 파일 최신화를 부탁해. 이제 학과장 수신 - 학장 참조로 메일이 나가야 하거든.
+- 메일머지_데이터에 지원자를 다 합치면 98명인데 99명이 되어야 하는거 아니야?
+- 교원인사팀 담당자께,  제가 성균관대학교 전임교원 채용(심리학과 산업 및 조직심리)에 지원한 김병직 박사(20272AE003)의 추천서를 탑재하는 과정에서 파일(첨부파일 참조)을 불러온 뒤 저장 버튼을 누르지 않고 제출하기 버튼을 바로 눌렀습니다.  죄송하지만 첨부한 추천서 파일을 탑재하여 주시면 감사하겠습니다.  가능하시면 짧은 확인 답메일 주시면 감사하
+- 이진형이라고 합니다. 저는 이번에 성균관대 통계학과 전임교원을 지원하려고 하고 있습니다. 접수번호 20270069입니다.  2가지 질문을 드립니다. 제가 박사논문만 추가하고 석사논문을 나중에 추가하여 다시 추가응모늘 눌렀는데 초빙지원서 조회-> 교원임용지원서를 확인했는데 석사 논문이 추가가 되어있지 않습니다. 확인부탁드려도 될까요?  추천서제출 확인 란을 
+- 성균관대학교 통계학과 교원 임용에 지원한 고현욱입니다.  다름이 아니라, 금번 제출한 교원 임용 지원서가 정상적으로 접수되었는지 확인 부탁드리고자 연락드립니다. (접수번호: 20270079)  아울러 다음 사항들에 대해서도 함께 확인해 주시면 감사하겠습니다. 제출 서류가 모두 이상 없이 접수되었는지 누락된 서류가 없는지 추천서가 정상적으로 제출 및 접수되었
+- 담당자님께,  안녕하세요. 성균관대학교 2026학년도 전임교원 공개채용 공고와 관련하여 문의드리고자 메일드립니다.  저는 박사과정에 대해 2026년 8월 졸업 예정으로, 현재 박사학위 심사 절차에 있으며, 지도교수 승인 하 졸업예정 증명서의 발급은 가능한 상태입니다.  이에 대하여, 본교 지원 자격에 문제가 없는지 확인 부탁드립니다.  바쁘시겠지만 가능 여
+
+### Files Modified
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\project_jungsi_overview.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\MEMORY.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\create_competition_sheet.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황\create_mailmerge.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황\create_word_template.py
+
+### Tools Used
+Bash, Agent, Read, Write, Grep, Edit
+
+### Stats
+- Total user messages: 42
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,72 @@
+# Session: 2026-08-26
+**Date:** 2026-08-26
+**Started:** 09:53
+**Last Updated:** 09:53
+**Project:** _scripts
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 왜 최원찬 University of Wisconsin-Milwaukee    Associate Professor 기간이 2026-07-31로 끝나? 8-31이 아니야?
+- 김태현 UTAH 대학 관련 증빙은 몇페이지를 봐야해?
+- The Work Number(Equifax) Employment Data Report 가 재직증명서 효력이 있나?
+- 박상민 교수 과학기술정보통신부 과학기술혁신본부 연구개발 투자심의국 연구예산총괄과장(25.03.18.~26.07.26.): 1년 4개월 10일 (합산) 1년 4개월 10일 → (환산)  1년 > 승진임용시기   2032.09.01. / 2031.09.01. 이렇게 하기로 했거든. 3급 임용시기가 저래가지고. 뭐뭐를 고치면돼? 내가 지금 수정해 놓은게 있어서 
+- 둘째 방식 ㄱㄱ
+- 이와 더불어 그냥 등록만 해놓는데, 오준택도 3년 11개월 30일 이잖아. 숭실대 부교수에서. 이건 4년으로 해줘야지. 4년으로 할게
+- 윌리엄포들래스키 는 박사 졸업이 왜 2021년 이야? 2019년이 아니라? 근거는?
+- 류훈희는 고치지 말고 11개월 30일이니까 충남대 조교수 경력 2년으로 인정하는 게 맞는듯. 등록만 해놔
+- 김도윤 교수에게 Bostoc College 조교수 증빙 요청하는 메일 작성해줘.(재직증명서, 재직기간 같은게 나와있는 언제부터 언제가지)
+- 이윤빈도 3년 5개월 30일이라서 3.5년차로 인정. 이것도 등록만 해두기
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서\_scripts\_build_mail_agreement.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\EXTRACT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\test_rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_data.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_segments.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_style.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_rows.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_candidates.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_recalc.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\excel-continuous-rows.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\dump_draft.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\REVIEW_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\salvage_lastyear.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\mistake-output-overwrote-source.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\verify_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\export_audit.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\AUDIT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\audit_summary.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\apply_corrections.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\README.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\openpyxl-column-width-trap.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\verification-two-axes.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_manifest.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\confirmed.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\order.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_메일_김도윤_BC재직증명서_요청.txt
+
+### Tools Used
+Bash, Skill, Write, Edit, SendUserFile, Agent, AskUserQuestion, PowerShell
+
+### Stats
+- Total user messages: 49
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 10:25]** - Context was summarized

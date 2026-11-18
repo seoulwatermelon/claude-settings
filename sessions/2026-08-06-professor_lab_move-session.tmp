@@ -1,0 +1,55 @@
+# Session: 2026-08-06
+**Date:** 2026-08-06
+**Started:** 14:56
+**Last Updated:** 14:56
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 결국 부총장님이 현재 교수회관 이전 관련해서 컴플레인 있는 교원들을 한 명씩 만나보신대. 보고서를 작성해야 하는데, 일단 인사캠 연구실 배정 시뮬레이션_260901_가배정v2 을 보면 2번째 시트에 주요민원을 적어놨어. 그리고 1번째 시트가 가능공간 이고. 보고서는 컴플레인 교원 명단 - 현재 배정공간 - 민원 내용 요약 - 가능공간 - 대응방안 이런 내용
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\3. 학과추천서_2단계 후 에 신소재공학부, 문헌정보학과 체크리스트, 의학과 파일 추가해놨는데, 2027_학과추천_회신현황표_260618 랑 2027학년도 전임교원 정시채용 교원인사협의회 일자별 대상자 명단_260616 도 업데이트 해줄래?
+- hwpx에 직접 삽입 해주고, NSC(자과캠): 해당 없음 해당 없는 건 그냥 안쓰면 돼. 그리고 학과 기재 순서는  2027 정시채용 2단계 지원자 평가의견 취합_통합_260618_추천반영 1번째 시트 A열 그룹 순서에 따라서 배치해주면 됨. 그리고 학부대학은 아직 추천서 안왔으나 늦게 올 예정이라 1순위: 이윤빈, 2순위: 이길산 으로 2027학년도 전
+- 이윤빈 지원자는 스피치 쪽이 부족하다고 한 거 아니야? 채용분야(학술적 글쓰기)와의 적합도 및 본교 교과에 대한 이해도 측면에서 보완 여지가 있다는 일부 심사위원 의견. 라고 한 이유가 뭐야? 그리고 이제 내가 너가 쓴 거에 대해 이의제기 하는 부분에 대해서 너가 2027_교원인사협의회_일자별명단_추가후보_260618 에 끝 열에 열추가 해서 각 사람 별로
+- 그리고 이윤빈 지원자  서류심사·연구실적·학과심사·인성평가 1위, 전공적합 2위. 라고 했는데 연구실적 심사는 받은적이 없거든. 왜 그렇게 얘기한거야? 그리고 학과심사 = 연구발표 + 인성평가 인데 학과심사-인성평가를 왜 따로 썼지? 너는 연구발표-인성평가 라고 얘기하고 싶었던 거야?
+- 이길산 지원자 잠재력과 발전 가능성이 우수하고 현 소속 대학에서 의사소통 통합교육형 수업을 설계·운영한 경험과 생성형 AI 활용 글쓰기 교육 연구가 강점이라는 평가. 이 코멘트가 각각 어디서 따온거지 확인
+- 노대원은 코멘트가 많은데 주요사항을 좀 더 적을 수 있지 않을까? 이의제기에 기록
+- 안용수, 박유진은 탑티어 관련 적을때 ▸탑티어: 총 4(3)편(주저자) 이런 식으로만 적기 뒤에 부연 논문목록 필요 없음
+- 아래와 같이 메일이 왔는데 팀장님은 관리팀에 메일을 전달해서 답변하도록 하래. 필요하면 전략기획팀과 논의 후 답변 부탁한다고 메일 작성좀 해줄래? 배상훈 교무처장님께,    안녕하세요. 사회학과 한상원입니다. 잘 지내시는지요?    현재 파리에서 열린 Nagymaros Conference 참석을 마치고 샤를 드골 공항에서 귀국편 탑승을 기다리며 메일을 드립
+- 예전에 구정우 교수에게 Re: 연구실 공간 새 창으로 메일 보기 보내기 번역 인쇄 받은날짜 :2026. 6. 26. (금) 17:12 받는사람/참조 접기/펴기보낸사람 즐겨찾는 연락처로 추가하기Jeong-Woo Koo<jkoo@skku.edu> 메시지 약속초대 받는사람 승주완<seong728@skku.edu> 승선생님,  한가지 더 부탁 드릴께요. 창이 지금
+
+### Files Modified
+- /tmp/transform_v7.py
+- C:\tmp\make_coop_mail.py
+- C:\tmp\make_send_gongmun.py
+- C:\tmp\make_objection_report.py
+- C:\tmp\make_objection_report2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\06_이의제기\00_자료목록(시간순).txt
+- C:\tmp\add_coop_section.py
+- C:\tmp\add_phone_col.py
+- C:\tmp\sim_alloc.py
+- C:\tmp\sim_alloc2.py
+- C:\tmp\fill_minwon.py
+- C:\tmp\build_vp_report.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_choocheon.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_ilja_final.py
+- C:\tmp\build_ilja_hwpx.py
+
+### Tools Used
+Glob, Bash, Read, AskUserQuestion, Skill, ToolSearch, TaskCreate, Write, TaskUpdate, Edit
+
+### Stats
+- Total user messages: 50
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

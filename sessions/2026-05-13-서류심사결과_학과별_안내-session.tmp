@@ -1,0 +1,70 @@
+# Session: 2026-05-13
+**Date:** 2026-05-13
+**Started:** 11:04
+**Last Updated:** 13:19
+**Project:** 서류심사결과_학과별_안내
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_서류심사_합격\서류심사결과_학과별_안내
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천 의 2027 심사위원 제척검증_ver06 파일에서 2단계_교무처추천_후보 시트 명단을 업데이트 해야 하는데, C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_detailfieldsubmit\엑셀
+- Continue from where you left off.
+- 2027 심사위원 제척검증_ver06 나 ver07이나 왤케 파일이 무거워? 뭐 하나 변경 할때마다 5분은 기다려야해. 너가 원인좀 파악해서 해결책좀 알려줘. 나는 일단 내년에도 후임자가 파일만 보고 할 수 있게끔 수식은 넣어놓고 싶단 말이야....
+- 이제 서류심사가 종료되어서 학과별로 합격자 명단을 공유해야하는데, 작년에 보니까 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_서류심사_합격\서류심사결과_학과별_안내 의 붙임1. 서류심사 결과(경영대학)_2026학년도 샘플 파일 처럼 해서 개별 대학에 줬더라고. 파일명은 [Image #1] 이런 식으로 했고. 
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\1.png]
+- 너가 각 파일에 원소스 시트를 넣어놨던데, 그냥 붙임2. 2027학년도 전임교원 정시채용 서류심사 합격자 명단 파일에서 XLOOKUP 해서 검증하면 되는거 아니야? 그리고 전체 내용을 ㅣ 로 합쳐서 일치여부를 확인해야 정확한거 아니야? 수식으로?
+- =XLOOKUP(A2&"|"&B2&"|"&C2&"|"&D2&"|"&E2&"|"&F2&"|"&G2&"|"&H2,'C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_서류심사_합격\서류심사결과_학과별_안내\[붙임2. 2027학년도 전임교원 정시채용 서류심사 합격자 명단.xlsx]sheet'!$A$2:$A$94&"|"&'
+- 닫았어 재실행해줘
+- 만든 파일에서 B열은 가운데정렬, C,H열은 한 줄로 나오게끔 해주면 안돼?
+- 닫았어
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate
+
+### Stats
+- Total user messages: 302
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

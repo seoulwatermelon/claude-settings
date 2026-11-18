@@ -1,0 +1,50 @@
+# Session: 2026-04-21
+**Date:** 2026-04-21
+**Started:** 09:02
+**Last Updated:** 10:36
+**Project:** JUNGSI
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 너가 만들어준 2027_정시채용_분야별_지원자격 파일을 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원서접수결과 로 옮겼어. 잘 만들어줘서 고마워. 근데 분야별 지원자격 시트에서 ② 지원자 요구 능력 (한글) 열을 보면 당연한 이야기가 많이 써있잖아. 열 하나를 더 만들어서, 공고에 써있지 않고 내가 체
+- Dear Colleagues,  Thank you for the detailed explanation. Unfortunately, I have followed the procedure to issue a password on your website several times (I did this already last week on Thursday and F
+- 아니 그냥 너 패스워드 8465 라고 알려줘 담백하게
+- 2027_정시채용_분야별_지원자격 지금 이 파일에 너가 체크 포인트 적어준 걸 보고 있는데, 일단 우대사항, 경쟁력, 가능성 같이 결격 사유가 아닌 건 적지 말고 필수 자격인 것만 적어줘 F열로 내가 옮겨놨어
+- 요강에 임용쿼터 학과도 작성 해줘야지!
+- 우리 이제 정시채용 지원이 마무리 되어서 또 업데이트 보고를 해야해. 일단 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황 경로에 초빙지원자 조회_종합_최종_IF버전 파일을 올렸거든. 2번째 시트를 봐주면 돼. 총 지원자 313명이야. 예전처럼 C:\Use
+- 안녕하세요.  이번 교원임용에 지원한 김성화라고 합니다 (접수번호: 20270122). 다름이 아니라 시간 내에 교수 Pool 사이트에 이력서(CV)를 업로드하고자 하였으나, 첨부드린 사진과 같이 시스템상에서 ‘파일 찾기’ 항목이 비활성화되어 새로운 파일을 업로드할 수 없었으며, 이로 인해 이전 이력서가 업로드 되어 있는 상태입니다. 이에 이력서를 이메일로
+- Hello   This is Yasir Hassan from Chungnam National University.       I tried to submit an application for the faculty position at the Department of Materials Science and Engineering. I upload and wri
+- 안녕하세요, 통계학과 학과장 이은령 입니다.  아래와 같이 외부심사위원은 아래와 같이 14명으로 추렸습니다.  그리고, 외부심사위원 인원이 아까 통화때 10명~20명으로 해야된다고 하셨는데 제가 어디에서도 그 정보를 찾을수 없고, 저희 학과 교수님들도 다 모르시는 얘기라고 합니다. 앞으로는 사전에 확실한 가이드라인을 부탁드립니다.  감사합니다. 이은령 드림
+- 안녕하세요, 승주완 책임님, 감사합니다, 행정실 통해서 공문이 오면 서명해서 바로 보내 드리겠습니다. 그리고, 저희 통계학과 이번 최종 지원자가 몇명인지 알수 있을까요?  감사합니다! 이은령 드림 해당 메일에 답변좀 작성해줄래? 통계학과 7명이야. 최종 점검 후 오후 중 지원결과 메일 드리겠다고도 해주고
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 64
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

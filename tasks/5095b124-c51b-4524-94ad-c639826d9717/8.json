@@ -1,8 +1,0 @@
-{
-  "id": "8",
-  "subject": "Task 3: GET /api/to-haejung 라우트",
-  "description": "app/api/to-haejung/route.ts 생성 + 테스트",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

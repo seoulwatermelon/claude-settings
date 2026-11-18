@@ -1,0 +1,53 @@
+# Session: 2026-04-29
+**Date:** 2026-04-29
+**Started:** 16:29
+**Last Updated:** 16:30
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 너가 표도 이쁘게 해주고 그랬는데, 실제로 보니까[Image #1] 이런 식으로 좀 안맞는다 실제 메일은... 그냥 표나 박스를 텍스트로 이쁘게 바꿔야 할 거 같은데? 더 좋은 아이디어 있으면 제안해도 좋고.... 2번동그라미 항목은 ❷ 우선이동권 관련사항  임시공간(I-하우스·중앙학술정보관)에 배정받으신 후, 공사기간 중에 기존 학문단위 배정 건물(경영관
+- [Image: source: C:\Users\SKKU\.claude\image-cache\eba319c1-7140-4140-a1e3-b2e1c8c8dc9d\1.png]
+- 지금 교수 연구실 배정 끝난 걸 우리 인사캠교수연구실 데이터에 반영해야해. ★ 260428_인사캠교수연구실현황 파일을 넣어놨는데 여기서 2번째 시트를 바꾸는 일이야. 우리 94개 공간 기본 정보는 인사캠 신축사업 연계 교수연구실 배정(안)_20260325_v6 여기에 다 나와 있잖아? 이거를 기반으로 하고, 이번 추첨된 교수들 명단을 개인번호 기반으로 매칭
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 왜 한희준 교수가 안들어가 있지?
+- 아니 클로드코드에서 대화가 앤트로픽 기록에 남아?? Anthropic에 저장된 세션을 삭제하시겠습니까? Anthropic의 Claude Code 세션 서버 측 복사본이 영구적으로 삭제됩니다. 컴퓨터의 세션은 영향을 받지 않습니다. 이 작업은 취소할 수 없습니다. 이거 버튼 누르면 나한테 부정적인 영향이 뭐야?
+- 그럼 지금 클로드코드와 컴퓨터가 연결되어 있는데 그 연결이 끊어지는 건 아니지?
+- Continue from where you left off.
+- 이제 양호승, 이승훈 책임에게 배정이 끝났음을 알리고, https://docs.google.com/spreadsheets/d/1vN73kKSMbqswAublpE52mTs9EP9mKBp8/edit?usp=sharing&ouid=106587348360654471565&rtpof=true&sd=true 링크에 배정결과를 반영해놨다고 공유하는 메일을 작성해야해. 
+- 왜 이렇게 줄이 중간중간 끊기게 써줘? 그리고 표가 지금 잘 안들어가니까 txt 형식으로 써줘
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/make_gonmun.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v2.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v3.py
+- C:/Users/SKKU/AppData/Local/Temp/fix_vba.py
+- C:/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- /c/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- C:/Users/SKKU/Downloads/claudecode/professor_lab_move/lottery_final.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\_build_lottery_ppt.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\_build_result_notification.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\_build_result_notification_v2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\_build_status_update.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\_evaluator.py
+
+### Tools Used
+Glob, Skill, Bash, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate
+
+### Stats
+- Total user messages: 61
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

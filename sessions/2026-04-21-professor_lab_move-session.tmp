@@ -1,0 +1,48 @@
+# Session: 2026-04-21
+**Date:** 2026-04-21
+**Started:** 16:24
+**Last Updated:** 17:00
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 docx 문서를 보고 있는데, 말을 좀 더 따뜻하게 할 수 없어? 퇴임교원 예우해드리는 차원에서 하는거라... 너무 딱딱해 지금은
+- 사범대학 교육학과 양정호 교수가 호암관    51110(북향)    김경천 교수 퇴직 공간을 4월~5월 임시사용 하고 싶다고 하는데, 임시사용신청서 공문을 받고 처리해주려고해. 오수진 선임에게 샘플 공문이랑 양식을 줄테니 행정실에서 공문 제출해달라고 메일 작성하려고 하는데 메일좀 작성해줘
+- 양호승 책임님이 이사업체 일정이 4월 말까지 정해질 수 있다고 했거든. 그래서 내 의견은 배정을 4월 마지막 주차에 하고 이사업체가 정해지면 이사업체 담당자 연락처를 교수 안내 뿌릴 때 같이 뿌릴까 하거든. 이사업체에서 배치도, 대리인 지정, 이사일정 조율을 해준다면 행정실에 부담을 덜 줄 수 있을 것 같아서. 근데 이사업체 정하는 일정이 5월로 미뤄지면 
+- 교수 연구실 이동에 관해 문의드립니다. 새 창으로 메일 보기 보내기 번역 인쇄 받은날짜 :2026. 3. 27. (금) 15:40 받는사람/참조 접기/펴기보낸사람 즐겨찾는 연락처로 추가하기Joon Song<joonsong@g.skku.edu> 메시지 약속초대 받는사람 <sbae@skku.edu> 참조 <seong728@skku.edu> 안녕하세요 배상훈 처
+- 아 처장님이 보내는 게 아니라 승주완 책임인 내가 보내는 건데 처장님의 전언을 전하는거야
+- 그리고 이제 C:\Users\SKKU\Downloads\claudecode\professor_lab_move의 [안내문] 인사캠 신축사업 연계 교수연구실 배정 안내_v3 안내문과 같이 배정을 진행해야 하는데, 대표 교원으로 권철 교수협의회 부의장, 조민효 국제처장님을 모시자고 하셨어. 그래서 두 분께 메일을 드려야 하는데, 일정은 저기 나와있고 장소는 추후
+- 표는 메일에 안들어가져 ㅠ
+- 아니 배경을 좀 자세히 설명해주고 용건을 말해야 하니까... 배경을 좀 더 자세히 설명 드려봐봐
+- 처장님이, 안내문에다가 문의 연락처를 좀 있어보이게 써보라는데... 약간 이동지원TF 이런식으로 구성한 것처럼 해가지고 처장님-팀장님도 들어가게끔 구성해보래. 너가 한 번 내가 복붙할 수 있게 작성해볼래?
+- 아 그리고 안내문 내용에 해당 건에 대해서 교수협의회 보고 및 협의가 있었고, 교무위원회 안내가 있었음을 넣으라고 하시는데 어디에 어떤 식으로 넣으면 좋을 거 같아?? 지금 [안내문] 인사캠 신축사업 연계 교수연구실 배정 안내_v4 이런 식으로 썼어.
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/make_gonmun.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v2.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v3.py
+- C:/Users/SKKU/AppData/Local/Temp/fix_vba.py
+- C:/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- /c/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- C:/Users/SKKU/Downloads/claudecode/professor_lab_move/lottery_final.py
+
+### Tools Used
+Glob, Skill, Bash, Read, Write, Edit, Grep
+
+### Stats
+- Total user messages: 28
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

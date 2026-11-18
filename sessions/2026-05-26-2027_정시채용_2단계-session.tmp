@@ -1,0 +1,70 @@
+# Session: 2026-05-26
+**Date:** 2026-05-26
+**Started:** 09:27
+**Last Updated:** 11:27
+**Project:** 2027_정시채용_2단계
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_2단계
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Continue from where you left off.
+- 지금 2단계 심사를 진행하고 있는데, C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_2단계>온라인심사위원대상자조회_종합_260526 파일을 보면 O~Q열이 완료, 완료, ○ 가 아니면 아직 안한거거든. 완료하지 않은 심사위원들에게 메일을 보내려고 하는데, 열추가를 해서 어떤 걸 안한 유형인지 나눠주고, 메일을 
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates  # 심사위원 communication 템플릿  성균관대 교원인사팀이 심사위원에게 보내는 메일/문자의 표준 톤·구조.  ---  ## 보편 톤 가이드 (★) 
+- 그냥 생각해보니까 개별로 평가입력, 심사총평, 서약서 상황을 알려주는 워드 메일머지 기능 쓰면 되잖아? 기존꺼를 지금 아이디어로 바꾸자. 기존 변경한 파일 지우고. 그리고 원본 데이터 안건드리고 열추가 이런거는 기존 파일에다가 작업해. 버전 많아지면 관리하기 힘들어
+- 워드에 안내로 다 했다고 생각 했는데 미완료인 경우 하나 둘 씩 입력을 빠뜨린 게 있는 경우다 라는 안내 문구도 넣자
+- 아 참... 완료된 사람에게는 알림이 가면 안되는데? 이건 뭐 하나 미완료한 사람들 대상으로 가는 메일이야
+- 제목은 어떻게 할까
+- 지금 내부 심사위원은 심사총평 작성 안해도 되는데 미완료로 나갔어. 지금 보니까 18명 나오는데, 해당 분들한테는 수정 안내 메일을 보내야 할 거 같아. 작성해줘.
+- A 한테만 보낼거야. 16명이 맞아.
+- 지금 심사위원 중 제척 대상자가 나와서 정보통신팀에 시스템 상 심사위원 교체 요청을 해야하는 상황이야. 기존) 위원번호 202600042, 성명 맹필수 를 변경) 202400080 , 성명 이황 으로 교체 요청하는 메일을 작성해줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch, Glob
+
+### Stats
+- Total user messages: 400
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

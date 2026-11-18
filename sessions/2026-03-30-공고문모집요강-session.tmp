@@ -1,0 +1,42 @@
+# Session: 2026-03-30
+**Date:** 2026-03-30
+**Started:** 08:06
+**Last Updated:** 08:06
+**Project:** 공고문모집요강
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_gonggomun\공고문모집요강
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 국제학수술회의 학문단위 모두 동일하지?
+- 혹시나 마지막으로 한글본, 영어본 / 공고문, 요강 서로서로 대조해보고 내용이 다른 거 / 연도가 이상한거 있으면 말해줄래?
+- --- name: univ-harness description: 기획자-생성자-평가자 3인조 루프를 활용해 코딩 및 행정 문서를 무한 검증하는 하네스 스킬 ---  # Univ-Harness System Protocol  당신은 이제 단일 AI가 아니라, 3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'입니다. 사용자(대장)가 임무를 주면 다음 루프를 
+- --- name: univ-harness description: 기획자-생성자-평가자 3인조 루프를 활용해 코딩 및 행정 문서를 무한 검증하는 하네스 스킬 ---  # Univ-Harness System Protocol  당신은 이제 단일 AI가 아니라, 3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'입니다. 사용자(대장)가 임무를 주면 다음 루프를 
+- 해당 스킬을 만들어줘
+- https://faculty.skku.edu/faculty_eng/invite_prof/areas.do 사이트에서 표 정보를 다 가져오는 거 너가 어떻게 해야 한다고 했지?
+- 내가 직접 F12 눌러서 코드 치면 사이트 정보를 다 가져올 수 있다고 지난주 금요일에 너가 알려줬잖아
+- 아니 근데 [Image #1] 스샷처럼 지금 표를 클릭하면 하나씩 세부사항이 나오는데 이게 밑에 꺼도 다중오픈이 되는게 아니라 하나 클릭하면 하나는 닫혀져.
+- [Image: source: C:\Users\SKKU\.claude\image-cache\21aa5b1e-beee-4be4-bb16-01fcca352ff8\1.png]
+- 아닌데.. 너가 지난주 금요일에 줬던건 F12 condole 에서 코드를 치는건데 뭔가 3-4줄이면 됐었어.. 사이트 전체 정보를 가져오는 뭐라고 했었는데
+
+### Files Modified
+- C:/Users/SKKU/.claude/skills/univ-harness/SKILL.md
+- C:/Users/SKKU/.claude/commands/univ-harness.md
+
+### Tools Used
+Bash, Skill, Read, Glob, Write, ToolSearch, WebFetch
+
+### Stats
+- Total user messages: 18
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,45 @@
+# Session: 2026-03-30
+**Date:** 2026-03-30
+**Started:** 08:10
+**Last Updated:** 16:37
+**Project:** recruit_jungsi_detailfieldsubmit
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 사이트 정보 보는법 알려줘. 근데 그거 쓰면 한글 페이지도 보여??
+- <command-message>univ-harness</command-message> <command-name>/univ-harness</command-name>
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- 이제 홈페이지 수정을 다 완료했는데, 너가 공고문-요강-세부 회신내역을 다 봤잖아. skku_recruit_korean_2027_260330, skku_recruit_english_2027_260330 보고 하나라도 빠짐없이 수정이 다 잘됐는지 서로 안맞는 부분 없는지 확인해줘. 의심쩍은 건 다 보고해.
+- <task-notification> <task-id>a6594d1dec719f9ee</task-id> <tool-use-id>toolu_01QMNVkxvxmDsw5Uv1Q9Ytoc</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a177a034d0c200da5</task-id> <tool-use-id>toolu_01U8MywrFPZQtsA1jvcYr1or</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <command-message>univ-harness</command-message> <command-name>/univ-harness</command-name>
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- 이제 각 학과 초빙분야별로 KRI 분야명 써준 걸 정리해야하는데 하나도 빠짐없이 정리가 되어야해. 정확도가 생명이니까 이점 유의해서 엑셀로 정리해줘. 성균관대_2027_정시채용_한영통합 엑셀 파일에 같이 정리해주면 될 거 같아. 시트 하나 새로 생성해서.
+- 아니 25학년도에는 이렇게 게시판에 공지를 했더라고. 올해에도 너가 공고문, 요강 보면 알다시피 자기소개서에 2027학년도 전임교원 정시채용부터 「교수 Pool」 입력내용(본인의교육철학 및 교육계획 항목 추가)에 변경사항이 있으니 2026년 이전에 「교수 Pool」을 입력하셨던 지원자께서는 기존에 입력하신 내용을 반드시 변경사항에 맞추어 다시 입력해주시기 
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel_eng.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_combined_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_swap.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_2200.py
+
+### Tools Used
+ToolSearch, WebFetch, Glob, Read, Grep, Agent, Bash, Write, Edit, Skill, AskUserQuestion
+
+### Stats
+- Total user messages: 62
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

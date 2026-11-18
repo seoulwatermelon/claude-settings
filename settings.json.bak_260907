@@ -1,0 +1,24 @@
+{
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true,
+    "everything-claude-code@everything-claude-code": true
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    },
+    "everything-claude-code": {
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
+      }
+    }
+  },
+  "cleanupPeriodDays": 1096,
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "autoUpdatesChannel": "latest"
+}

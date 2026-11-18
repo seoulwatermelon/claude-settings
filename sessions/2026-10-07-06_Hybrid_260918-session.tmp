@@ -1,0 +1,71 @@
+# Session: 2026-10-07
+**Date:** 2026-10-07
+**Started:** 08:59
+**Last Updated:** 17:27
+**Project:** 06_Hybrid_260918
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 근데 현 지원에서 2nd Year Review — 임용 2년차 만 왜 네모박스 스타일이랑 안에 배경색이 다르지?? 성장궤적에서 그리고 누적 지원 수준 ↑ 이건 왜 쓴거야. 지워
+- 책임학점 감면 네모 박스도 왜 따닥따닥 붙어있는거야
+- 아니 정년전후에 책임학점 박스는 왜 만들어...
+- 지금 내가 전반적으로 수정해놨으니까 지금 수정된거에서 작업해. 기존 빌더로 작업하지 말고. 수정사항은 일단 Fellowship 1億원 · Rising-Fellowship 6,000萬원으로 상향 이라고 했는데, Fellowship 2億원 · Rising-Fellowship 1억원으로 상향 으로 바꿔. 이에 따른 소요예산도 재책정. 그리고    【 등재 공적 
+- 소요예산에     ∘ 총 538.38억원 — Ⅳ-1 141.00 · Ⅳ-2 1.38 · Ⅳ-3 396.00  이렇게 목차 번호로 적어놓은거 이런거 하지마. 해당 목차 번호는 해당 목차에서 끝내고 그 이후에는 친절하게 설명해야해.
+- 지금 내가 또 수정해놨으니까 이 버전에서 작업을 하고. 기대효과 부분을 좀 더 멋들어지게 작성해봐. 지금 달랑 2개에 별로 상세하지도 않고 이게 뭐야
+- 이러면 이제 팀장님이 전에 내용 반복한거 아니냐고 할 가능성 100% 왜 지난 내용을 복습으로 갖다 써놨니
+- 뭔가 이해가 되게 써줘. 지금 말이 되게 어려워 이해가 하나도 안돼. 유치원생도 알아들을 정도로 쉽게
+- 그래도 보고서 어투는 맞춰야지... 지금 앞의 어투랑 맞질 않잖아
+- 신규 영입보다 낮은 리텐션 비용 이 말을 리텐션 강화로 핵심 연구진 구축 예산 절감 이런 식으로 작성해야지. 이런 말투로 다시 바꿔봐....
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_matrix.py
+
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_criteria.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_rows.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\명예의전당 등재기준 조회처.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\hwpxsurg.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch6.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch789.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_fix_gap.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval1.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval2.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch, ReadNotifications
+
+### Stats
+- Total user messages: 262
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

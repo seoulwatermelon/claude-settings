@@ -1,0 +1,57 @@
+# Session: 2026-09-07
+**Date:** 2026-09-07
+**Started:** 11:37
+**Last Updated:** 15:50
+**Project:** BK
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BK
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 일전에 폴더에 있는 파일 중 2-4. 외국인교원 지원프로그램 현황 및 실적(20260605 기준)_교원인사팀(승주완) 을 달라 그래서 파일과 같이 제출한 적이 있어. 근데 이번에는 교원인사팀에서 시행했던 교원지원외국인교원 지원 프로그램 현황 을 달라는거야. 교원지원 했던 총 파일들은 C:\Users\SKKU\Downloads\claudecode\BK\2. 
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- [Image: original 3473x394, displayed at 2000x227. Multiply coordinates by 1.74 to map to original image.]
+- 일단 양식을 양식참고 파일 보고 이 양식으로 해. 그리고 이 양식을 skku 보고서 양식으로 박아둬. 다음부터 실 수 안하게
+- 일단 양식을 양식참고 파일 보고 이 양식으로 해. 그리고 이 양식을 skku 보고서 양식으로 박아둬. 다음부터 실 수 안하게. 너가 쓴 보고서 양식을 보니 개요 부분은 필요가 없는 부분 같고. 재직 인원, 재직자 직급별 분포 필요없어. 그리고 구분을 일반교원 지원하는 부분이랑 외국인교원 지원하는 부분 나눠야지. 최대한 자세히 작성하고. 시점도 작성하고.
+- 내용은 좋은데 양식이 완전 달라.... [양식] 회의자료 작성 양식 이걸 참고해서 작성해
+- 각 항목별 심의, 검토안, 시행 이런거 쓰지 말고 그냥 본론으로 바로 들어가.
+- 교수업적평가 성과장려금, 상시채용 특별연구비 는 어디에서 본거야?
+- 교원지원(외국인 포함) 프로그램 현황_260907로 파일명 바꿨어 참고해
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\audit.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\to_pdf.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\linefit.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\content.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\cellfit.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\build_annex2.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\pagefit.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BK\memory\skku-report-hwpx-format.md
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\make_skku_template.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\skku_report.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\templates\skku\README.md
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\build_v2.py
+- C:\Users\SKKU\Downloads\claudecode\BK\_work\build_v3.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, ToolSearch, SendUserFile
+
+### Stats
+- Total user messages: 12
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 11:49]** - Context was summarized

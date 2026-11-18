@@ -1,0 +1,3 @@
+- [임용쿼터 산정 규칙과 파이프라인](quota-pipeline.md) — 60% 판정 3단계, 산정 대상 필터, run_all.py 한 줄 실행
+- [엑셀 산출물은 수식으로](excel-formula-traceability.md) — 값 하드코딩 금지, 이중계산 검증, openpyxl 함정
+- [채용분야 분기 규칙과 확인 절차](quota-branch-rules.md) — GSB/의학과 분기 기준, 소속변경자 관리자 확인 필수

@@ -1,0 +1,38 @@
+# Session: 2026-04-01
+**Date:** 2026-04-01
+**Started:** 15:56
+**Last Updated:** 17:27
+**Project:** 2027_정시채용_우수학술지_업데이트
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\2027_정시채용_우수학술지_업데이트
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 책임님 안녕하세요. 저는 교원인사팀 승주완입니다.  다름아니라 오늘부터 2027 교원 정시채용 공고 시작이라서요.   다음주 시작 접수기간을 위해 시스템점검을 하고 있습니다.  책임님께서 박희태 책임과 학문단위별우수학술지관리 메뉴 작업을 함께 하고 계신걸로 알고 있는데요.  그 과정에서 혹시 교원인사>신규임용>기초정보 관리>학부/전공코드관리 에서 학술지리스
+- 지금 잘 작성해줘서 고마운데, 지금 너가 만든 파일을 보면 차라리 2번째 시트를 먼저 보여주고, 1번째 시트값은 최대한 사용한 함수식으로 보여주는거지. 그리고 함수식에서 참고하는 파일은 원본이 들어있는 파일을 참조하고(새로 또 시트는 만들지 말고). 그러면 3~5번째 시트는 필요없지 않아? 다시 작업좀 그렇게 해줘
+- 지금 2번째 시트가 다 #REF!로 나와[Image #3]
+- [Image: source: C:\Users\SKKU\.claude\image-cache\528e9304-0e0e-418e-b769-f8e14a999e7a\3.png]
+- 아니 2번째 시트에 H~J열이 왜 필요해? 원본에서 끌어오면 되잖아. 그리고 표기값에 과 이름을 앞에 붙이지 말아줘
+- 아 미안하다... 표기값에 너가 경영 유동 경제 통계 이런식으로 넣은 이유가 있었구나. 그렇게 해주고, 표기값은 그렇게 학과별칭 + tier명칭으로 해줘. 빈칸일 때 트랙같은 거 섞지 말고! 그리고 각 행별로 학과별칭 열 따로 기입 해주고!
+- 이재민 책임님께 답변 메일좀 써줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/2027_정시채용_우수학술지_업데이트/convert.py
+
+### Tools Used
+Bash, Write, Read
+
+### Stats
+- Total user messages: 7
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

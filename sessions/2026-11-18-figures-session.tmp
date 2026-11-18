@@ -1,0 +1,70 @@
+# Session: 2026-11-18
+**Date:** 2026-11-18
+**Started:** 09:19
+**Last Updated:** 10:32
+**Project:** figures
+**Branch:** unknown
+**Worktree:** E:\Daily\contest\figures
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 진행해
+- 진행해
+- The user sent a new message while you were working: 보고서 동명이인·수치 오류 도 넣고  This is how Claude Code surfaces messages the user sends mid-turn — within the running turn, often alongside the next tool resu
+- [Image: original 2400x1548, displayed at 2388x1540. Multiply coordinates by 1.01 to map to original image.]
+- [Image: original 2400x1910, displayed at 2156x1716. Multiply coordinates by 1.11 to map to original image.]
+- [Image: original 2400x1548, displayed at 2388x1540. Multiply coordinates by 1.01 to map to original image.]  [Image: original 2400x1910, displayed at 2156x1716. Multiply coordinates by 1.11 to map to 
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>ad46d6843342a750d</task-id> <tool-use-id>toolu_018XKG3Z8iHuBR4hDwbSh8Tj</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\51771465-b264-4
+- 담당자는 동일 내용을 문서마다 재입력, 학과는 동일 양식 반복 제출 에서 학과는 동일 양식 반복 제출이 아니라 비슷한 항목에 대한 답변을 반복 제출 이런 느낌인데? 동일 양식이라 하면 기존에 너무 잘못되고 있다고 생각되잖아?
+- 담당자는 동일 내용을 문서마다 재입력, 학과는 동일 양식 반복 제출 에서 학과는 동일 양식 반복 제출이 아니라 비슷한 항목에 대한 답변을 반복 제출 이런 느낌인데? 동일 양식이라 하면 기존에 너무 잘못되고 있다고 생각되잖아?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig\fig.html
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig\shot.cjs
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\content.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\build.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\render.py
+- C:\Users\SKKU\.claude\projects\E--Daily-contest\memory\contest-skku-ai-challenge.md
+- C:\Users\SKKU\.claude\projects\E--Daily-contest\memory\fable-for-planning-review.md
+- C:\Users\SKKU\.claude\projects\E--Daily-contest\memory\MEMORY.md
+- E:\Daily\contest\SKKU x AI 행정혁신 Challenge 참가 신청서_교원인사팀_승주완.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\fig.html
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\shot.cjs
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\build2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\add_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\shot_new.cjs
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v5_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r3_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r4_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r5_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r6_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r7_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r9_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r10_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v8_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r11_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v9_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig2\v10_figs.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r12_md.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\form\r13_md.py
+- E:\Daily\contest\세부설명서_초안.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\251f0b427583a2dd\7d620b3e-3c89-4885-8caf-4acc5644e29d\scratchpad\fig3\gen.py
+
+### Tools Used
+PowerShell, Read, Skill, Bash, ToolSearch, Agent, mcp__worksmail__search_mail, mcp__worksmail__read_mail, Grep, Write, Edit, SendMessage
+
+### Stats
+- Total user messages: 330
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

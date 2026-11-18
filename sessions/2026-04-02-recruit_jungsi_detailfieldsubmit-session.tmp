@@ -1,0 +1,45 @@
+# Session: 2026-04-02
+**Date:** 2026-04-02
+**Started:** 11:02
+**Last Updated:** 15:39
+**Project:** recruit_jungsi_detailfieldsubmit
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 작년 캡쳐본에도 이런 적이 있었어?
+- [2026.3.31.] 초빙분야 추가 - 지능형정밀헬스케어융합전공 / 인공지능 기반 바이오메디컬응용 (AI based Biomedical Applications) 이렇게 썼어 영어로는 뭐라고 쓸까
+- 너가 지난 번에 2027학년도 전임교원 정시채용(공개전형) 변경사항 안내 작성해준거 있지 않나?
+- 교육전담과 일반교원의 차이를 물어보시는데?
+- 나이제한이 있냐고 물어보는데 있어?
+- 안녕하세요. 성균관대학교 미디어커뮤니케이션학과 전임교원 채용에 지원하고자 하는 사이먼 프레이저 대학교(Simon Fraser University) 박사학위 예정자 송동욱입니다. 귀교의 채용 요강 중 임용예정일(2026년 9월 1일)과 관련하여, 캐나다 현지 학제에 따른 박사학위 증빙 서류의 인정 범위를 확인하고자 문의드립니다. 현재 저의 학위 취득 및 행정
+- 이거 관련 전임자에게 물어보려고 하는데 간단하게 톡으로 물어보게끔 작성좀 해줘
+- 지금 해당 안건에 대해서 상의를 해봤는데, 우리 대학은 모집요강 대로 간다. 모집분야에서 26학년도 2학기 임용예정일자라면 2026년 9월 1일자 기준, 학위가 있어야 한다. 해당 안내로 담백하게 나가자는데 그렇게 답장좀 써줘.
+- 2024 상반기, 2025 상반기에 지원한 이력이 있는데(정시) 이번에 지원서 제출이 불가능한지
+- 안녕하세요. 상시채용 (화학과)와 정시채용 (화학공학과)를 둘 다 지원해도 되는지 여쭤보고 싶습니다. 감사합니다. 답변 메일좀 작성해줘
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_excel_eng.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\2026\make_combined_excel.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_swap.py
+- C:\Users\SKKU\Downloads\claudecode\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027)\fix_2200.py
+
+### Tools Used
+ToolSearch, WebFetch, Glob, Read, Grep, Agent, Bash, Write, Edit, Skill, AskUserQuestion
+
+### Stats
+- Total user messages: 85
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

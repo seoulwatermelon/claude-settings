@@ -1,0 +1,52 @@
+# Session: 2026-04-21
+**Date:** 2026-04-21
+**Started:** 10:39
+**Last Updated:** 17:10
+**Project:** 2027 정시채용 경쟁률 현황
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 워드를 보니까 굳이 결격자 명수 알려주면서까지 친절할 필요 없을 거 같아. 기존 양식에서 경쟁률 현황 알려주는 표 그대로 하자. 근데 열 제목을 지원자(최종_결격포함) 으로 하면 되겠어
+- "결격 처리 후 최종 통과자수(305명 기준)" 으로 해야해
+- Dear Faculty Affairs,  I am submitting a letter of recommendation for an applicant, but have not been able to submit it through your online system. Please accept this letter through email. Her applica
+- 이미 기한 지났어...
+- 성균관대학교 교원인사팀 담당자님께,  안녕하세요, 이번 심리학과 (산업 및 조직 심리학) 조교수 초빙에 지원한 최진수입니다. 임용 서류 제출 마감 이후, 제 경력 사항 중 잘못 기재된 부분을 발견하여 이를 수정할 수 있는지 문의드리고자 연락 드립니다.  현재 제출된 서류상에 '의미있는 일(대학원)' 수업의 경력 기간이 [2021/03/01 - 2022/08
+- [Image #8] 이런 식으로 학과별로 지원자들 순서는 메겼는데, 이제는 각 학과별 밑에 끝 라인마다 굵은 테두리 처리하래. 한 번에 하는 방법이 있나?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\8.png]
+- 페이지번호는 어떻게 설정하지? 인쇄할떄?
+- &[페이지] / &[전체 페이지 수] 로 하니까 왜 페이지]/11 이런 식으로 나오지?
+- 책임님, 안녕하세요.  임상연구설계평가학과의 서류심사위원으로 7명을 추천하였습니다. (학과의 전임교원이 3명이어서, 대학원 내 다른 학과 전임교원을 4명 더 추천하였습니다.)  그런데 서류심사위원으로 추천한 7명 중 일부를 지금 다른 사람으로 교체할 수 있을까요? (대학원 내 다른 학과 전임교원보다는, '보건의료실행과학'과 관련 있는 교내 다른 대학원의 전
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 81
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

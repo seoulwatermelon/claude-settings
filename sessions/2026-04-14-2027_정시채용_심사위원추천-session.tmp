@@ -1,0 +1,43 @@
+# Session: 2026-04-14
+**Date:** 2026-04-14
+**Started:** 17:04
+**Last Updated:** 17:33
+**Project:** 2027_정시채용_심사위원추천
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <task-notification> <task-id>adb19992ffedef676</task-id> <tool-use-id>toolu_01FvT28VqmJykfoYvWCfGsiG</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a98c62a408370d9cb</task-id> <tool-use-id>toolu_01DJ2wksb2ABpJ9UmZ24Rro7</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a193e0c19dbaf86f6</task-id> <tool-use-id>toolu_01Mc5m4Kfy9FF2dbwio9dnWb</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>aede3fdd9ae17f35d</task-id> <tool-use-id>toolu_01HSGs1yeQ9LnriYDBzYcpV2</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a5740c8f0c4effa7b</task-id> <tool-use-id>toolu_012tnguqJkTiYsVF2a3N6Pny</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a4199353a3268591f</task-id> <tool-use-id>toolu_01GAu5bzbemLFTZAyFbcb2A2</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>ae2cc6ad9de99b59a</task-id> <tool-use-id>toolu_01PKzMj8CbHzM3bGzyk1GN1M</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>aadd6ac866e626c12</task-id> <tool-use-id>toolu_015iV4Ns3SxP4iRtPTVwDFVh</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- pdf 파일은 중복이더라도 바깥에 별도로 빼놔줬음 좋겠어. 폴더안에는 당연히 있고 말이야
+- 아니 공문이랑 회의록은 빼내주지 말고.... 너가 건제순 넘버링한것만
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_gen_phase1.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_data/600_통계학과.json
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_gen_phase3_excel.py
+
+### Tools Used
+Bash, Write, Read, Agent, ToolSearch, TaskCreate, TaskUpdate
+
+### Stats
+- Total user messages: 17
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

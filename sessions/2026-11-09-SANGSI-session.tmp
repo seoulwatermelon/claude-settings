@@ -1,0 +1,73 @@
+# Session: 2026-11-09
+**Date:** 2026-11-09
+**Started:** 10:28
+**Last Updated:** 11:50
+**Project:** SANGSI
+**Branch:** unknown
+**Worktree:** E:\SANGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Image: original 2976x701, displayed at 2576x607. Multiply coordinates by 1.16 to map to original image.]
+- 최재웅은 컨퍼런스 실적이 강한 걸 써줘야 할 거 같은데? 1. 동의 2. 내가 E:\SANGSI\02_연구력검증(IOU,퀵패스,GPR)\15. 유학대학_유학동양학과_1명_261026\1_최초요청 > 1-1, 1-2, 1-3 파일을 안줬구나? 학장의견은 1-1 보면 되는데 빈칸이셨네. 너가 적당한 학장의견을 작성해주고, 그걸로 작성하면 될지 박소정 학과장에게
+- 최재웅은 컨퍼런스 실적이 강한 걸 써줘야 할 거 같은데? 1. 동의 2. 내가 E:\SANGSI\02_연구력검증(IOU,퀵패스,GPR)\15. 유학대학_유학동양학과_1명_261026\1_최초요청 > 1-1, 1-2, 1-3 파일을 안줬구나? 학장의견은 1-1 보면 되는데 빈칸이셨네. 너가 적당한 학장의견을 작성해주고, 그걸로 작성하면 될지 박소정 학과장에게
+- E:\SANGSI\03_원테이블 파일 정리도 좀 하자. 그리고 1. 상시채용_사전심사_제출자료_20261012, 2. 상시채용_사전심사_제출자료_유학동양학과_20261030 이거 연구력 검증의 각 해당 폴더에 정리하는 건 어때? 2차 제출도 그쪽에 정리했잖아
+- E:\SANGSI\03_원테이블 파일 정리도 좀 하자. 그리고 1. 상시채용_사전심사_제출자료_20261012, 2. 상시채용_사전심사_제출자료_유학동양학과_20261030 이거 연구력 검증의 각 해당 폴더에 정리하는 건 어때? 2차 제출도 그쪽에 정리했잖아
+- 지금 국어국문학과 박진영 학과장에게 외국인 NTT 채용 관련 제도 안내 설명, 유학동양학과 사례 안내를 해야하는데 안내 메일을 작성해줘. 관련 컨텍스트가 C:\Users\SKKU\Downloads\claudecode\professor_NTT 에서 안끌어와져 있으면 여기서 끌어오면 돼
+- 지금 국어국문학과 박진영 학과장에게 외국인 NTT 채용 관련 제도 안내 설명, 유학동양학과 사례 안내를 해야하는데 안내 메일을 작성해줘. 관련 컨텍스트가 C:\Users\SKKU\Downloads\claudecode\professor_NTT 에서 안끌어와져 있으면 여기서 끌어오면 돼
+- Tool loaded.
+- 2026 제8차 채용심의위원회 회의자료(안)_편집본_강복경_통계학과, 2026 제8차 채용심의위원회 회의자료(안)_편집본_Martin Gehlmann_유학동양학과 에 왜 양식 2-1, 1-1 추가(PDF파일), 연구력분석 파일(퀵패스, GPR) 은 안넣었어?
+- 2026 제8차 채용심의위원회 회의자료(안)_편집본_강복경_통계학과, 2026 제8차 채용심의위원회 회의자료(안)_편집본_Martin Gehlmann_유학동양학과 에 왜 양식 2-1, 1-1 추가(PDF파일), 연구력분석 파일(퀵패스, GPR) 은 안넣었어?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep, TaskStop, mcp__worksmail__list_folders, mcp__worksmail__search_mail, mcp__worksmail__save_draft, mcp__worksmail__read_mail
+
+### Stats
+- Total user messages: 1181
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 12:44]** - Context was summarized

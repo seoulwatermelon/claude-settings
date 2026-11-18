@@ -1,0 +1,65 @@
+# Session: 2026-04-27
+**Date:** 2026-04-27
+**Started:** 10:20
+**Last Updated:** 14:39
+**Project:** 2027_정시채용_우수학술지_업데이트
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ sudo apt update && sudo apt install cmake build-essential git -y Hit:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu focal I
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ sudo apt update && sudo apt install cmake build-essential git -y Hit:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu focal I
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent:    The 
+- 예전에 너가 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트 에서 우수학술지목록(교수채용)_2025업데이트_최종_정보통신팀 을 만들어줬거든. 그래서 해당 파일의 2번째 시트를 보면 어떤 학술지가 어떤 표기명으로 나오는지가 적혀 있어. 지금 필요한 건 학술지정보업로드_2027_종합 에 이번에 지
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- 나 기억이 안나는데, C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천 에서 심사위원 선정 폴더는 왜 만들었었지?
+- 지금 엑셀이 [Image #1] I열~K열 이런 식으로 되어 있는데, 이메일이  I=J, J=K, I=K 인 케이스가 여러개 있어. 지금 이메일을 각 사람에게 쓰려고 할 때 놓치면 안되니까 다 보내려고 하는데 이러다가는 중복되는 케이스가 많을 거 같은거야. 중복 빼고 I, J, K에서 중복 안되게 합쳐서 가져오려면 엑셀로 무슨 식 써야해?? 구분자는 "; 
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\1.png]
+- 너가 저번주에 서류 심사위원들에게 발송한 메일 작성해준 거 있잖아? 다시 보여줄래?
+- 혹시 내가 너한테 노무사 관련 메일 정리해달라고 한 적 있니? 너한테 조언 받고 막
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep
+
+### Stats
+- Total user messages: 182
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 14:41]** - Context was summarized

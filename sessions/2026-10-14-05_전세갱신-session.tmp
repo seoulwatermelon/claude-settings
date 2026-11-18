@@ -1,0 +1,31 @@
+# Session: 2026-10-14
+**Date:** 2026-10-14
+**Started:** 16:45
+**Last Updated:** 17:20
+**Project:** 05_전세갱신
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\privacy\05_전세갱신
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <pasted_content id="9aa6"> 이전 전세 계약서 근거로 주택임대차 표준계약서 양식을 근간하여 이번에 진행할 오피스텔 전세 갱신 계약서 초안을 작성해줘  [작성 지침 및 필수 반영 조건] 1. 부동산 표시 및 당사자 정보: 이전 계약서의 '부동산의 표시'와 임대인/임차인 인적사항(성명, 주소, 연락처, 주민번호 등)을 그대로 반영해 줘. 2
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 근데 갱신할 때 굳이 부동산 안 거쳐도 되겠지?
+
+### Tools Used
+Bash, Read, Skill, PowerShell
+
+### Stats
+- Total user messages: 3
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

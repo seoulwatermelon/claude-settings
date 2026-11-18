@@ -1,0 +1,70 @@
+# Session: 2026-07-28
+**Date:** 2026-07-28
+**Started:** 10:01
+**Last Updated:** 10:29
+**Project:** calendar_recruiting
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 팀장님께 교원인사협의회 자료에서 정시채용 평가 결과 1번째 표에서 국제A(주) 편수와 후보자 상세 분석 표에 나오는 논문편수 주저자 편수, 그리고 Global Peer Review 에 나오는 논문수 가 서로 맞지 않는 이유에 대해 설명하는 자료를 하나 만들어야 할 거 같아. 먼저 1번째 표에 나오는 편수는 소스가 지원자가 낸 지원서류 기반에서 가져오는 편수
+- 이거를 카톡으로 보고 드리려고 해. 카톡으로 보고드리는 내용 작성해줘 상세하게 설명하면서
+- 너가 아까 만들어준 당연직 안내 https://claude.ai/code/artifact/ddac3013-0c34-4ce9-943c-7c3ffe5642a9?via=auto_preview 학장별 안내 https://claude.ai/code/artifact/80fa4833-de05-4a51-add1-3bf521c8d6df?via=auto_preview 합격자
+- 근데 학장들에게 보내는 메일에 보면 왜 한국시간 기준 화요일 10시부터 예정된 공과대학 정시채용 면접 진행을 위한, 이런 식으로 써있어? 시작시간도 틀리고 한국시간 기준은 시간 옆에 ()로 붙여놓으면 되잖아
+- Continue from where you left off.
+- 지금 내가 너랑 작업한 파일들을 노트북으로 옮겨서 면접때 실시간으로 물어보려고 하는데, 이런 기억들과 규칙들을 어떻게 그대로 옮기지?
+- 사용자면 user 야
+- 그냥 일부 필요한 폴더랑 파일만 옮겨서 클로드한테 시켜야 할 거 같은데 프롬프트를 뭐라고 주지
+- 너가 당연직 안내 https://claude.ai/code/artifact/ddac3013-0c34-4ce9-943c-7c3ffe5642a9?via=auto_preview 이거 만들어준 것중에서 7/30(목) 버전이 2027 상시,정시채용 일정표_260723_ver22 로 바뀌었거든? 그래서 이거 보면 이토 가 새로 생겼어. 학장별 안내 https://cl
+- 분야명은 나노소재로 해줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch, Glob, PowerShell, Agent, SendMessage, Artifact, ScheduleWakeup, SendUserFile
+
+### Stats
+- Total user messages: 877
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

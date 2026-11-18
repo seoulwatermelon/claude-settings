@@ -1,0 +1,59 @@
+# Session: 2026-09-29
+**Date:** 2026-09-29
+**Started:** 09:32
+**Last Updated:** 16:38
+**Project:** 06_Hybrid_260918
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 흐름도 일단 구도가 좋은데? 이거를 한글 표로 디자인 해서 만들어봐. 셀병합 하고 이리저리 하면 만들수 있잖아.
+- 너가 만든 표를 이렇게 바꿔봤는데 첫 행을 목표로 좀 부각 시키려면 어떻게 디자인 해야해? 너가 좀 해봐
+- 너 하기 싫지..? 글자 크기만 키운다고 되는게 아니잖아...
+- 표 디자인은 정리 내가 했어. 너는 관리트랙 육성트랙 단계별 내용을 1줄로 정리해줘. 지금 너무 세밀하게 들어가 있어
+- 지금 v6 내가 만들어 논거 다른건 손도 대지말고 건드리지도 마. 4페이지 판정 결과와 지원 이력 표에 아래 내용 업데이트 좀 해봐봐. 다른 항목은 아랫줄에 써.   <pasted_content id="99a4">  1. 이승원 (의학과)     → SKKU Rising-Fellowship '25 (1,000만원*4회)   2. 김대식 (의학과)     →
+- 등재 공적 기준 너가 설정해준거 보는데, 국제학회 Fellow 는 뭐야?? 왜 중요해? 그리고 대한민국학술원 회원 한국과학기술한림원 정회원 이게 중요한 거야??
+- 아냐아냐 수상이랑, 회원 으로 구분해야지... Fellow 면 그럼 그 안에서도 인정받는 거구나?
+- 박희태 책임에게 검토의견 요청하는 메일 작성해줘. 이 파일로 보낼거야
+- 대한민국최고과학기술인상·삼성호암상·대한민국학술원상 이런거는 보통 발표나면 기사가 나오나?? 그리고 각 대학에서 홍보기사를 뿌리나??
+- 근데 이걸 일일이 매일 조회할 수 없는데, 어떻게 우리가 딱 알고 공표하지??
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch
+
+### Stats
+- Total user messages: 150
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

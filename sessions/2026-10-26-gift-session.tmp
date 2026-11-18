@@ -1,0 +1,32 @@
+# Session: 2026-10-26
+**Date:** 2026-10-26
+**Started:** 10:45
+**Last Updated:** 10:45
+**Project:** gift
+**Branch:** unknown
+**Worktree:** E:\Daily\gift
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 미사점 행복장난감도서관 신규회원(승주완) pdf 참고해서 미사점 행복장난감도서관 신규회원(승주완) hwpx 작성
+- <system-reminder> Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly 
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+
+### Tools Used
+Skill, PowerShell, Read, Bash
+
+### Stats
+- Total user messages: 4
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

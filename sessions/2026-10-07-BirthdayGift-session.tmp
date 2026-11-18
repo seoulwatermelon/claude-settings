@@ -1,0 +1,71 @@
+# Session: 2026-10-07
+**Date:** 2026-10-07
+**Started:** 13:53
+**Last Updated:** 13:53
+**Project:** BirthdayGift
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 도식에서 열제목과 내용 간의 경계가 잘 안보이고... 지원 종료 후 없음이 뭐가 없다는거지?? 말도 이상하고. 성장 궤적 그래프에서 3번은 내용도 안써져 있고, 2번은 실제 번호랑 멀리 떨어져있고, 4번은 저럴거면 선으로 이어놓던가.... 해야할거 같아.
+- 수여금 낮음 — Rising 0.4억 · SKKU 0.5억 -> SKKU 가 아니지 않아? Fellow 잖아. 위치도 Rising 보다 앞에 나와야지... Review 결과 미통지 이것도 어떤거 Review 결과 미통지인지 안 써져 있잖아. 2nd Year Review 임을 써줘야지. 성장궤적 에 3, 4번은 왜 앞에 번호를 안써줘?? 그럴거면 1,2 번도
+- 정례 Review 부재 성장궤적에서 너무 그래프에 붙어있어
+- 보완(안) 에서 나 항목 박스는 왜 점선이야? 똑같이 실선으로 해줘. 그리고 가 나 모두 네모박스가 다, 라 네모박스 스타일처럼 나오게 해줘
+- 열제목 재직 년차 가 행제목 임용 이랑 겹치고 지금. +4년 이것도 두 줄로 보여. 현 지원 항목에서 왜 SKKU-Fellowship은 높이가 Rising-Fellow랑 맞춰서 나와도 되는데 저래?? 석좌-특임도 마찬가지. 공백에서 수여금 낮음 네모박스도 왜 저렇게 내려가 있어. 마지막으로 디자인 evaluator 돌려서 100점 나오면 그만해
+- Another Claude session sent a message: <teammate-message teammate_id="design-eval" color="yellow"> {"type":"idle_notification","from":"design-eval","timestamp":"2026-10-07T04:32:25.356Z","idleReason":
+- Another Claude session sent a message: <teammate-message teammate_id="design-eval" color="yellow"> {"type":"idle_notification","from":"design-eval","timestamp":"2026-10-07T04:37:59.573Z","idleReason":
+- Another Claude session sent a message: <teammate-message teammate_id="design-eval" color="yellow"> {"type":"idle_notification","from":"design-eval","timestamp":"2026-10-07T04:40:17.354Z","idleReason":
+- 공백 파트는 더 납작하게 할 수 있지 않을까?? 그리고 현 지원 파트에서 SKKU-Fellowship -> Fellowship 으로 바꾸고, 이거랑 석좌특임 박스를 더 올려서 Rising-Fellow 세로 위치로 맞추면 더 납작해지잖아.
+- Another Claude session sent a message: <teammate-message teammate_id="design-eval" color="yellow"> {"type":"idle_notification","from":"design-eval","timestamp":"2026-10-07T04:52:34.940Z","idleReason":
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_matrix.py
+
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_criteria.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_rows.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\명예의전당 등재기준 조회처.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\hwpxsurg.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch6.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch789.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_fix_gap.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval1.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval2.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch, ReadNotifications
+
+### Stats
+- Total user messages: 247
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

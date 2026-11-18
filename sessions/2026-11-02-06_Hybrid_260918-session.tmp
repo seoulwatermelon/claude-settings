@@ -1,0 +1,71 @@
+# Session: 2026-11-02
+**Date:** 2026-11-02
+**Started:** 09:40
+**Last Updated:** 09:49
+**Project:** 06_Hybrid_260918
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 v12 수정된 거 그대로 두고 이 기반으로 수정 가자. 1. 우수 교원 → 핵심 연구진 으로 통일. 2.     (‘23(12명) → ’25(19명) → ’26(현재 11명)) 이거 원래 이직 교원 전체 다 썼었는데, Tier 1 교원 이탈 인원으로만 채우기. 아마 1명일거야 각 년도별, 3.   2. 탁월한 교수성장 사례 발굴 및 성장지원 강화 이거
+- 지금 v12 수정된 거 그대로 두고 이 기반으로 수정 가자. 1. 우수 교원 → 핵심 연구진 으로 통일. 2.     (‘23(12명) → ’25(19명) → ’26(현재 11명)) 이거 원래 이직 교원 전체 다 썼었는데, Tier 1 교원 이탈 인원으로만 채우기. 아마 1명일거야 각 년도별, 3.   2. 탁월한 교수성장 사례 발굴 및 성장지원 강화 이거
+- <system-reminder> Contents of C:\Users\SKKU\.claude\rules\python\coding-style.md:  # Python Coding Style  > This file extends [common/coding-style.md](../common/coding-style.md) with Python specific
+- 면담 기록이 있는건 아닌데... 그냥 지원내역을 보고 유추해야지 뭐... 배경 1번은 내용좀 바꿔보고 약간만.
+- 면담 기록이 있는건 아닌데... 그냥 지원내역을 보고 유추해야지 뭐... 배경 1번은 내용좀 바꿔보고 약간만.
+- 팀장님이 리텐션 에 탑저널 주저자 발간시 경영진 축하레터 포함하셔요. 이렇게 얘기하는데 (과제3) SKKU-Fellowship·Rising-Fellowship 지원 강화 에 넣으라는 얘긴데 어디에 어떻게 넣는 게 나을까? [초안] 핵심 연구진 관리·육성 실행 방안_v13 파일은 건드리지마. 지금 완성본이라..
+- 아 미안 (과제2) 명예의 전당 신설 에 넣어야 할 거 같아
+- 아 미안 (과제2) 명예의 전당 신설 에 넣어야 할 거 같아
+- 그냥 표에 당구장 표시로만 넣을거야
+- 그냥 표에 당구장 표시로만 넣을거야
+
+### Files Modified
+- C:\Users\SKKU\.claude\settings.json
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\hwpx_builder.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\EVAL_RUBRIC.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_QS.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_THE.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_HCR_학회_분야별.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_성균관대현황.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\지표조사_출처.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_work\기획안_A_반박.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_report.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_v3_summary.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\skku-report-typesetting.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\_scripts\build_sources_xlsx.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\05_Award체계_260901\출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\연구SW 출처 확인표.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\build_v5.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BirthdayGift\memory\report-tone-nominal.md
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\추진 흐름도.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_matrix.py
+
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_criteria.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\patch_rows.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\명예의전당 등재기준 조회처.html
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\hwpxsurg.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch6.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_ch789.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_fix_gap.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval1.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\06_Hybrid_260918\_scripts\v7_eval2.py
+
+### Tools Used
+Bash, Skill, Read, Edit, Agent, Write, ToolSearch, SendMessage, ListAgents, AskUserQuestion, SendUserFile, PowerShell, WebFetch, WebSearch, ReadNotifications
+
+### Stats
+- Total user messages: 490
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

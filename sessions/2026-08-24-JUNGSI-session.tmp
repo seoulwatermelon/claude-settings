@@ -1,0 +1,65 @@
+# Session: 2026-08-24
+**Date:** 2026-08-24
+**Started:** 12:49
+**Last Updated:** 13:19
+**Project:** JUNGSI
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates  # 심사위원 communication 템플릿  성균관대 교원인사팀이 심사위원에게 보내는 메일/문자의 표준 톤·구조.  ---  ## 보편 톤 가이드 (★) 
+- 다음으로는 직급산정을 실시해야 하는데, C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정 > 2026학년도 2학기 신임교원 직급산정_31명 을 보면 작년에 실시한 내역이 나올거야. 보면 내가 D열과 같이 이력서 상 써있는것과 증빙으로 제출한 학력, 경력증명서를 대조해가면서 재직기간 산정을 진
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification  # Excel 결과물 작성 4대 원칙 (사용자 자체 검증 가능성)  사용자(교원인사팀 행정직)는 결과물의 **모든 셀을 직접 클릭하며 추적·검증**할 수 있
+- Another Claude session sent a message: <teammate-message teammate_id="ext-parkangela" color="purple"> {"type":"idle_notification","from":"ext-parkangela","timestamp":"2026-08-24T02:23:16.404Z","idleRe
+- 지금 후보들이 사람별로 구분지어서 몇칸 띄고 이런 식으로 되어 있는데 나는 연속적이었음 좋겠어. 작년꺼를 참고하면 사람별로 행 몇칸 띄워놓거나 그러진 않았잖아
+- Another Claude session sent a message: <teammate-message teammate_id="rev-ohjuntaek" color="cyan"> {"type":"idle_notification","from":"rev-ohjuntaek","timestamp":"2026-08-24T03:40:26.670Z","idleReason
+- Another Claude session sent a message: <teammate-message teammate_id="aud-ohjuntaek" color="green"> {"type":"idle_notification","from":"aud-ohjuntaek","timestamp":"2026-08-24T03:56:09.545Z","idleReaso
+- Another Claude session sent a message: <teammate-message teammate_id="aud-rest4" color="orange"> {"type":"idle_notification","from":"aud-rest4","timestamp":"2026-08-24T04:02:29.291Z","idleReason":"ava
+- Another Claude session sent a message: <teammate-message teammate_id="aud2-kimseokjin" color="pink"> {"type":"idle_notification","from":"aud2-kimseokjin","timestamp":"2026-08-24T04:07:42.742Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="aud3-final" color="blue"> {"type":"idle_notification","from":"aud3-final","timestamp":"2026-08-24T04:17:03.617Z","idleReason":"ava
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\12. 임용조건동의서\_scripts\_build_mail_agreement.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\EXTRACT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\test_rank_rules.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_data.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_segments.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_style.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_rows.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_candidates.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\xl_recalc.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\excel-continuous-rows.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\dump_draft.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\REVIEW_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\rank_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\build_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\salvage_lastyear.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\mistake-output-overwrote-source.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\verify_final.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\export_audit.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_work\AUDIT_SPEC.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\audit_summary.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\apply_corrections.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\13. 직급산정\_scripts\README.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\openpyxl-column-width-trap.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-JUNGSI\memory\verification-two-axes.md
+
+### Tools Used
+Bash, Skill, Write, Edit, SendUserFile, Agent, AskUserQuestion, PowerShell
+
+### Stats
+- Total user messages: 11
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

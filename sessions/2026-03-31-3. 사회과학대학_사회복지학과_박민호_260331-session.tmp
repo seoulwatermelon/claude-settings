@@ -1,0 +1,42 @@
+# Session: 2026-03-31
+**Date:** 2026-03-31
+**Started:** 11:34
+**Last Updated:** 16:57
+**Project:** 3. 사회과학대학_사회복지학과_박민호_260331
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\퀵패스\3. 사회과학대학_사회복지학과_박민호_260331
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 1.개입/실행과학만 바꿔줘 / 2.기존 양식 관행대로 해줘
+- 아니 2014년은 2014    A.M., UChicago, Crown Family School  Clinical Concentration  이거인데 social work가 왜나와?? 그리고 AM이 석사야? MS 처럼?
+- AM이랑 MS는 차이가 뭐야?
+- 2022 –     Assistant Professor and Chancellor’s Scholar for Inclusive Excellence in Racial Minority Health, School of Social Work, Rutgers, The State University of New Jersey  2020 – 2022     NIMH T32
+- 응응 넣고, 뉴저지 대학교가 아니야 Rutgers 대학교야?
+- 근데 지금 박민호 후보자 있잖아. Scopus_20260331 에는 논문이 21개인데, 왜 너가 써준건 논문 20개지? 마지막 표에?
+- 너가 작성한 파일에 논문 상세 표를 보면 논문 중에 탑티어인지 표시를 해야하는데, ★학문단위별 Top-tier 리스트_20250528 파일에서 단과대학, 학과/전공 매핑해서 있는 저널명/학회명은 다 탑티어거든. 탑티어를 찾아서 표의 비고에 처음에 탑티어 라고 추가해줄래?
+- JCR % 는 어디서 찾았어?
+- 왜 v2는 논문 상세 표에서 저자명이 줄바꿈 되어 잘 나오고, v3는 한줄로 쓰려고 막 겹치게 나와??
+- 아니 나는 비결을 물어본건데...
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\박민호_template\Contents\section0.xml
+- C:\Users\SKKU\AppData\Local\Temp\fix_template.py
+
+### Tools Used
+Glob, Bash, Read, Skill, Grep, Edit, Write
+
+### Stats
+- Total user messages: 18
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

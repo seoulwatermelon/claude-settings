@@ -1,8 +1,0 @@
-{
-  "id": "6",
-  "subject": "Task 1: to_haejung 테이블 스키마 추가",
-  "description": "database/schema.sql에 to_haejung 테이블 DDL 추가",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

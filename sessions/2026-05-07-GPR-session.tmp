@@ -1,0 +1,35 @@
+# Session: 2026-05-07
+**Date:** 2026-05-07
+**Started:** 09:07
+**Last Updated:** 09:24
+**Project:** GPR
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\GPR
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 기존에 해오던 Domestic Peer Review를 Global Peer Review로 전환하고자 프로젝트 진행 중인데, 쭉 읽어보고 @Global Peer Review 검증 결과_20260424_v4_샘플보고서 수정 검토의견 좀 줘
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 6개 지표 2개 이상 상위 X% 이내 → 50% 라고 적는게 어떨까 DPR 우수자 125명 - 우수 기준은? 13페이지 매칭률 표 p < 0.01 ** 오류 아닌지 Pearson n 값이 다른 이유 써주는게 낫지 않나 이거 4개만 피드백 해주려 하거든. 안녕하세요, 교원인사팀 박희태입니다.  처장회의 보고자료 초안을 공유드립니다. 기존 경영진 보고자료와 F
+- Continue from where you left off.
+- GPR_처장회의_보고자료 를 피드백 해달라는 거였대... 그거를 검토해줘
+- FAQ 보고 고치거나 좀 더 들어가면 좋겠는 3가지 없나?
+- 3은 너무 딥하고 1-2 만 정리해서 박희태 책임에게 검토 의견 메일 작성해줘. GPR_처장회의_보고자료 는 별도 의견 없고, FAQ 의견만 드린다고 하면서. 어제 보냈던 메일 내용 참고해. 안녕하세요. 저는 교원인사팀 승주완입니다.  GPR 도입은 박희태 님의 훌륭한 업적입니다! 감사합니다!!  검토의견 4가지 정리하여 드립니다.    1. DPR ↔ G
+
+### Tools Used
+Bash, Glob, Skill, ToolSearch, TaskCreate, TaskUpdate
+
+### Stats
+- Total user messages: 7
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

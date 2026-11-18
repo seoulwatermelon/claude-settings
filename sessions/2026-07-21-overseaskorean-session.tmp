@@ -1,0 +1,41 @@
+# Session: 2026-07-21
+**Date:** 2026-07-21
+**Started:** 15:45
+**Last Updated:** 16:14
+**Project:** overseaskorean
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\overseaskorean
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 재외국민 서류평가를 해야하는데 지금부터 모의평가, 의견작성을 시작할거야. Document_260721_154842 을 읽고 서류 엑셀 시트에 나와있는 정보를 기반(C~AH열)해서 AI~AL열을 입력해줘. 점수는 매우 후하게 부여해야해. 기준은 IB 30, SAT 1200 정도면 AP열 총점이 600 이상은 나와야해. 그리고 C열 최종고교명이 같을 경우 일단
+- 표준화학력자료 있는 친구들은 어느 과목 어느 레벨 IB는 Predict인지 Final인지 이런 것도 언급 해줘야 해. IB는 HL 도 있으면 그거에 대해 언급 해줘야 하고 의견에. 보완 가자
+- 표준화 자료 이런 말은 쓰지마. 되게 너가 얘기한 것 같아.
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_score.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_op_a.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_op_b.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_op_c.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_op_d.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_op_e.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_apply.py
+- C:\Users\SKKU\Downloads\claudecode\overseaskorean\_op_std.py
+
+### Tools Used
+Bash, Read, Write, Edit
+
+### Stats
+- Total user messages: 3
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

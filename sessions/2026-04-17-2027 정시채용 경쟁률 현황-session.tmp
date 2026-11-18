@@ -1,0 +1,45 @@
+# Session: 2026-04-17
+**Date:** 2026-04-17
+**Started:** 16:33
+**Last Updated:** 17:19
+**Project:** 2027 정시채용 경쟁률 현황
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun\2027 정시채용 경쟁률 현황
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 안녕하세요. 조은영(교육전담_스피치/글쓰기)지원자입니다.  “국내전문학술지” “기타연구실적”내용과 “[학부대학] 교육관련(전문학술지, 전문교육저술, 전문학술지 논문)”의 실적이 겹치면 어떻게 해야할까요? 현재는 학부대학 교육관련이 공란(첨부파일 2페이지 캡쳐본 수록)으로 프린트됩니다.  연구실적 입력할 때 따로 “[학부대학] 교육관련(전문학술지, 전문교육저
+- 3
+- 교육전담교원(학부대학) 심사 기준 이 어디있어?
+- 오늘도 경쟁률 현황을 학과장들에게 메일 보내야 하는데, 지난번 참조했던 파일들이 뭐였는지 기억나?
+- 응 그리고 지난번처럼 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_gonggomun의 2027_교수초빙_회신체크리스트 1번째 시트 '경쟁률 현황' 도 업데이트 해줘
+- 아니 메일머지 워드로 써준건 어딨어?
+- 바쁘신 가운데 리마인더 메일을 주셔서 감사합니다.  지원 서류 양식과 관련하여 질문이 있습니다. Pool 등록 시 학점 기입 방법과 관련된 것입니다. 홈페이지를 보면, "평점 표기방식이 다른 경우 5.00만점으로 환산하여 입력할 것"이라고 되어 있는 것 같습니다. 저의 경우 석사 학위 하나가 영국 LSE에서 취득한 것인데, 이 학교는 공식적인 환산 기준을 
+- 근데 요강에 5.0 기준으로 작성하라고 되어있어??
+- Dear Faculty Recruitment Team,  I am applying to a faculty recruitment:  https://faculty.skku.edu/faculty/invite_prof/board.do?mode=view&articleNo=215514&article.offset=0&articleLimit=10  But I do not
+- 표까지는 이메일에 복붙이 안돼...
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 32
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

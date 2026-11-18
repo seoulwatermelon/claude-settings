@@ -1,0 +1,85 @@
+# Session: 2026-11-05
+**Date:** 2026-11-05
+**Started:** 10:32
+**Last Updated:** 17:49
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 수정한 상태에서 추가 작업을 해줘. 내가 표 간격이랑 줄간격 이런거 다 조정해 놨단 말이야. 2027학년도 단기 연구실 부족 전망은 2.에 학기별 임용인원에 따른 공실 부족 시뮬레이션 표를 만들어줘. 그리고 2028~2030학년도 중기 전망 표에 지금 2027 상반기 공채 인원은 27-2에 반영 안됐는데??
+- 지금 수정한 상태에서 추가 작업을 해줘. 내가 표 간격이랑 줄간격 이런거 다 조정해 놨단 말이야. 2027학년도 단기 연구실 부족 전망은 2.에 학기별 임용인원에 따른 공실 부족 시뮬레이션 표를 만들어줘. 그리고 2028~2030학년도 중기 전망 표에 지금 2027 상반기 공채 인원은 27-2에 반영 안됐는데??
+- 왜 자꾸 렌더 완료 기다린다고 하고 대기중이지?
+- 왜 자꾸 렌더 완료 기다린다고 하고 대기중이지?
+- 다 된건가?
+- 다 된건가?
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>bhc5rkqj0</task-id> <tool-use-id>toolu_01C1p8EMTR8bcecESM2enPy2</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\b55b14dcec8c0287\20fdf2b2-581c-4c33-81f8
+- <system-reminder> [SYSTEM NOTIFICATION - NOT USER INPUT] This is an automated background-task event, NOT a message from the user. Do NOT interpret this as user acknowledgement, confirmation, or respon
+- <task-notification> <task-id>bplfrcope</task-id> <tool-use-id>toolu_01Cn5EhcBdq8LvQiDQ8bZR2c</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\b55b14dcec8c0287\20fdf2b2-581c-4c33-81f8
+
+### Files Modified
+- /tmp/transform_v7.py
+- C:\tmp\make_coop_mail.py
+- C:\tmp\make_send_gongmun.py
+- C:\tmp\make_objection_report.py
+- C:\tmp\make_objection_report2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\06_이의제기\00_자료목록(시간순).txt
+- C:\tmp\add_coop_section.py
+- C:\tmp\add_phone_col.py
+- C:\tmp\sim_alloc.py
+- C:\tmp\sim_alloc2.py
+- C:\tmp\fill_minwon.py
+- C:\tmp\build_vp_report.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_choocheon.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_ilja_final.py
+- C:\tmp\build_ilja_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_shortage_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_space.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract3.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\splice_table.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_sim.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_ijik.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_midterm.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\check_campus.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/skku_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\b55b14dcec8c0287\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\spike_bar.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\gen_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_fill.py
+
+### Tools Used
+Glob, Bash, Read, AskUserQuestion, Skill, ToolSearch, TaskCreate, Write, TaskUpdate, Edit, Agent, SendMessage, mcp__claude-artifacts__guide, mcp__claude-artifacts__publish_files, TaskStop, Grep
+
+### Stats
+- Total user messages: 229
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 11:07]** - Context was summarized
+
+---
+**[Compaction occurred at 12:40]** - Context was summarized
+
+---
+**[Compaction occurred at 16:18]** - Context was summarized
+
+---
+**[Compaction occurred at 18:22]** - Context was summarized
+
+---
+**[Compaction occurred at 18:43]** - Context was summarized

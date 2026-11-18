@@ -1,0 +1,73 @@
+# Session: 2026-11-16
+**Date:** 2026-11-16
+**Started:** 09:15
+**Last Updated:** 17:31
+**Project:** recruiting_page
+**Branch:** feat/data-cards
+**Worktree:** C:\Users\SKKU\Downloads\codex\recruiting_page
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 가장 진도율이 높은거 순으로 현황판 나오게끔 하기. 정시는 이사회에서 승인이 다 됐으므로 임용이 된것.. 임용이 되면 뒷순서로 남겨지면 되는데 일단 스크린샷 보고서 쓰려면 찍어야 하니 냅두기. 상시는 학과장, 학장들이 쓰는 양식 참고해서  카드로 넣어줄 수 있잖아. 예시 보여주려고. GPR, 퀵패스 하는 것도 후보자 별로 양식 E:\SANGSI 참고 받아서
+- 가장 진도율이 높은거 순으로 현황판 나오게끔 하기. 정시는 이사회에서 승인이 다 됐으므로 임용이 된것.. 임용이 되면 뒷순서로 남겨지면 되는데 일단 스크린샷 보고서 쓰려면 찍어야 하니 냅두기. 상시는 학과장, 학장들이 쓰는 양식 참고해서  카드로 넣어줄 수 있잖아. 예시 보여주려고. GPR, 퀵패스 하는 것도 후보자 별로 양식 E:\SANGSI 참고 받아서
+- Another Claude session sent a message: <teammate-message teammate_id="sangsi-forms" color="purple"> {"type":"idle_notification","from":"sangsi-forms","timestamp":"2026-11-16T07:03:54.779Z","idleReason
+- Another Claude session sent a message: <teammate-message teammate_id="sangsi-forms" color="purple"> {"type":"idle_notification","from":"sangsi-forms","timestamp":"2026-11-16T07:03:54.779Z","idleReason
+- Another Claude session sent a message: <teammate-message teammate_id="sangsi-forms" color="purple" summary="Resend report sections 4-6"> Report sections 4-6, resent in full.  ## 4. GPR / 퀵패스 coverage 
+- Another Claude session sent a message: <teammate-message teammate_id="sangsi-forms" color="purple" summary="Resend report sections 4-6"> Report sections 4-6, resent in full.  ## 4. GPR / 퀵패스 coverage 
+- Another Claude session sent a message: <teammate-message teammate_id="sangsi-forms" color="purple"> {"type":"idle_notification","from":"sangsi-forms","timestamp":"2026-11-16T07:04:24.799Z","idleReason
+- <task-notification> <task-id>b1d0vwc0w</task-id> <tool-use-id>toolu_019rzYscSr2kBTeAtkyhHHWH</tool-use-id> <status>stopped</status> <summary>Background shell command didn't finish before the previous 
+- 사이트 열어줘
+- <system-reminder> Instruction files were re-read when this session started; these differ from their earlier copies — each replaces its earlier copy, and the instructions preamble above still applies: 
+
+### Files Modified
+- C:\Users\SKKU\Downloads\codex\recruiting_page\docs\superpowers\specs\2026-11-10-rebuild-design.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-codex-recruiting-page\memory\rebuild-purpose-and-direction.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-codex-recruiting-page\memory\MEMORY.md
+- C:\Users\SKKU\Downloads\codex\recruiting_page\e2e\02-flows.spec.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\components\ui\brand-hero.tsx
+- C:\Users\SKKU\AppData\Local\Temp\claude\6be495699c7ac421\a9e37e26-77bb-46fa-822a-b0cf1773a13e\scratchpad\hero.py
+- C:\Users\SKKU\Downloads\codex\recruiting_page\_shot.cjs
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\exec\mind-map.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\components\exec\mind-map.tsx
+- C:\Users\SKKU\AppData\Local\Temp\claude\6be495699c7ac421\a9e37e26-77bb-46fa-822a-b0cf1773a13e\scratchpad\mm.py
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\exec\overview-charts.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\components\exec\overview-charts.tsx
+- C:\Users\SKKU\AppData\Local\Temp\claude\6be495699c7ac421\a9e37e26-77bb-46fa-822a-b0cf1773a13e\scratchpad\exec.py
+- C:\Users\SKKU\Downloads\codex\recruiting_page\db\migrations\006_dept_yearly_stats.sql
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\repo\history.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\import\history.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\import\history-apply.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\scripts\import-history.ts
+- C:\Users\SKKU\AppData\Local\Temp\claude\6be495699c7ac421\a9e37e26-77bb-46fa-822a-b0cf1773a13e\scratchpad\hist.py
+- C:\Users\SKKU\Downloads\codex\recruiting_page\components\exec\decision-queue.tsx
+- C:\Users\SKKU\Downloads\codex\recruiting_page\tests\exec\overview-charts.test.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\tests\import\history.test.ts
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-codex-recruiting-page\memory\screen-design-preferences.md
+- C:\Users\SKKU\Downloads\codex\recruiting_page\components\exec\onepage-screening.tsx
+- C:\Users\SKKU\AppData\Local\Temp\claude\6be495699c7ac421\a9e37e26-77bb-46fa-822a-b0cf1773a13e\scratchpad\card.py
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\import\quickpass.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\import\quickpass-apply.ts
+- C:\Users\SKKU\AppData\Local\Temp\claude\6be495699c7ac421\a9e37e26-77bb-46fa-822a-b0cf1773a13e\scratchpad\qp.py
+- C:\Users\SKKU\Downloads\codex\recruiting_page\tests\import\quickpass.test.ts
+- C:\Users\SKKU\Downloads\codex\recruiting_page\lib\import\gpr.ts
+
+### Tools Used
+Skill, Glob, PowerShell, Read, Bash, Agent, Write, ListAgents, Grep, Edit, ToolSearch, TaskStop, SendMessage, AskUserQuestion
+
+### Stats
+- Total user messages: 202
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 11:19]** - Context was summarized

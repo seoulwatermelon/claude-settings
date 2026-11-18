@@ -1,0 +1,37 @@
+# Session: 2026-09-17
+**Date:** 2026-09-17
+**Started:** 09:23
+**Last Updated:** 11:03
+**Project:** SANGSI
+**Branch:** unknown
+**Worktree:** E:\SANGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- E:\SANGSI\01_참고 두 파일을 읽고 상시채용 전반, 이번 TO 배정에 대해 이해한 뒤 아래 메일에 답변 작성해줘. 저희 심리학과 상시채용 진행 관련해서 오전에 유선으로 연락드렸는데, 부재 중이셔서 메모를 남겨드렸으나, 일단 제가 문의드릴 내용을 정리할 겸 이메일로도 보내드립니다.  현재 학과 진행 상황인 이렇습니다. 이전에 문의드렸을 때 저희가 채
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 팀장님께 보고 드려야 하니까 간단하게 보고드리는 메일로 작성해봐. 이렇게 답변하려 한다고. 일단 학과에서는 2개 분야로 진행을 하다가 우수한 1명을 추리는 것으로 하려는 것처럼 보이지만, 우리는 2개 중 1개 옵션을 택하라고 하려 한다. 1번 옵션은 일단 5명 후보자에 대한 검토를 받고 더 좋은 풀의 1개 분야로 가는 방안, 2번 옵션은 정말 우수한 지원자
+- html로 주면 내가 복붙해서 보낼게
+- 너무 AI가 쓴거 같다...그냥 표 이런 거 없이 줄글로 보고하는 식으로 작성해봐 담백하게
+- 심리학과 학과장한테 보낼 메일도 작성해줘. 팀장님한테는 이렇게 보냈으니 참고하고. 팀장님, 심리학과에서 상시채용 진행 관련해 아래 문의가 왔는데요.  학과에서는 기존 산업 및 조직심리 외에 임상심리까지 분야를 넓히기를 희망하고 있고, 이 부분은 부총장님께도 말씀드렸다고 합니다. 학과 채용위원회에서 후보자를 찾아본 결과 산업·조직 3명, 임상 2명으로 총 5
+
+### Files Modified
+- E:\SANGSI\02_산출물\보고메일_심리학과_상시채용.html
+
+### Tools Used
+Bash, Skill, Write
+
+### Stats
+- Total user messages: 6
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

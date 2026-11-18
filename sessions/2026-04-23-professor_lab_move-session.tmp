@@ -1,0 +1,48 @@
+# Session: 2026-04-23
+**Date:** 2026-04-23
+**Started:** 10:23
+**Last Updated:** 13:42
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 추첨 참관 안내를 넣어야 할 거 같아
+- 지금 그리고 [안내문] 인사캠 신축사업 연계 교수연구실 배정 안내_v4 이 파일을 읽고 쓴게 아닌거 같아
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 안녕하세요 선생님,  안내 감사합니다. 28일 화요일 2시부터 몇시까지 하나요?  공사는 언제 완료되나요? 즉, 언제까지 임시공간에 있어야하나요?  결과에 대해서 혹시 불만있으면 항소할 수 있나요?   감사합니다  이지은 드림  답변좀 해줘... 30분 정도 한다고 해주고
+- 안녕하세요,  개인 사정으로 공개 추첨 일시에 참석하기 어려운데, 이 경우 어떻게 하나요? 위임이 가능한지, 아니면 추후에 다시 추첨 기회를 주시는 것인지 궁금합니다. 이거 답 메일좀 써줘... 아니 분명히 원하는 사람만 오라고 했는데 왜이러지?
+- 너무 길어... 짧게 만들어줘
+- 교원인사팀 선생님께   안녕하십니까.   교수회관 철거 및 연구실 이전·배정 관련 공지를 잘 확인했습니다. 교수님들의 연구 환경을 위해 세심하게 준비하고 배려해 주신 점에 깊이 감사드립니다.   저는 이번 학기 연구년으로 현재 미국 워싱턴 대학교에 체류 중이므로 추첨에 직접 참석할 수 없습니다. 이에 두 가지 질문을 드리고자 합니다. 추첨에 반드시 직접 참
+- Hi,   I am a professor in the College of Economics, and I understand that I may be required to relocate to Dasan Economics Hall. I would appreciate it if you could advise me on the next steps, includi
+- 안녕하세요 승주완 책임님,  건축학과 슛제 토스텐 교수님이 심사위원으로 대체하는데 건축학과 교수님들이 동의했고, 슛제 교수님도 동의하셨습니다.  감사합니다. 행복한 하루 되세요. 이중원 드림 이렇게 이중원 학과장님이 메일 주셨는데, 기존 제출한 추천서 양식에 해당 명단 추가 후 서명하여 재송부 부탁드린다는 메일을 작성해줘
+- 아 여기에 지금 미래융합건축 분야 한정으로 바꾸시는 거 맞는지 재확인 부탁드린다고도 적어ㅓ줘
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/make_gonmun.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v2.py
+- C:/Users/SKKU/AppData/Local/Temp/make_lottery_v3.py
+- C:/Users/SKKU/AppData/Local/Temp/fix_vba.py
+- C:/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- /c/Users/SKKU/AppData/Local/Temp/lottery_final.py
+- C:/Users/SKKU/Downloads/claudecode/professor_lab_move/lottery_final.py
+
+### Tools Used
+Glob, Skill, Bash, Read, Write, Edit, Grep
+
+### Stats
+- Total user messages: 44
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

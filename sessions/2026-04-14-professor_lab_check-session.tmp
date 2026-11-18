@@ -1,0 +1,36 @@
+# Session: 2026-04-14
+**Date:** 2026-04-14
+**Started:** 11:42
+**Last Updated:** 13:21
+**Project:** professor_lab_check
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_check
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 팀장님이 지금 성균관대학교 인문사회과학캠퍼스 연구실 향후 5년(26~30 학년도) 시뮬레이션을 써서 보고서를 만들어 보라고 하시는데, ★ 260413_인사캠교수연구실현황_복사본 에 보면 G열에 연구실 만 연구실로 사용할 수 있는거고, 공실에 1로 되어 있으면 현재 공실인 거거든, M열에 정년일을 보면 언제 누가 어디서 정년퇴직인지 알 수 있을거야. 이직현황
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- Re: [교원인사팀]2027 전임교원 정시채용 지원현황 안내(의학과(기초)) - 4.13.(월) 14시 기준 새 창으로 메일 보기 보내기 번역 인쇄 받은날짜 :2026. 4. 13. (월) 17:23 받는사람/참조 접기/펴기보낸사람 즐겨찾는 연락처로 추가하기Kwan Soo Ko<ksko@skku.edu> 메시지 약속초대 받는사람 승주완<seong728@sk
+- 안녕하세요 고려대학교 IBS 연구교수 김주영입니다. 다름이 아니라 이번 성균관대학교 전임교원 (정년트랙) 정시채용에, 나노기술학과 나노포토닉스 분야로 지원을 진행 중인데요, (지원자번호 20272AU001). 기존에 업로드한 이력서를 삭제하고 새로운 이력서 파일을 업로드하는 과정에서, 기존 업로드한 파일을 선택해도 삭제가 되지 않습니다. 지원 마감인 20일
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/professor_lab_check/new_section0.xml
+- C:/Users/SKKU/Downloads/claudecode/professor_lab_check/gen_tables.py
+
+### Tools Used
+Bash, Skill, ToolSearch, TaskCreate, TaskUpdate, Read, Write, Edit
+
+### Stats
+- Total user messages: 4
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

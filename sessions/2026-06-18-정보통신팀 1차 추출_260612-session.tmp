@@ -1,0 +1,70 @@
+# Session: 2026-06-18
+**Date:** 2026-06-18
+**Started:** 15:49
+**Last Updated:** 16:54
+**Project:** 정보통신팀 1차 추출_260612
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\정보통신팀 1차 추출_260612
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 이제 매핑은 얼추 다 끝났어. 이제 해야할 일은 우리 지원자별로 연구실적 별 탑티어 매핑을 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\03_학술지정보업로드 > 학술지정보업로드_2027_종합_표기값매핑 에 했잖아. 이때 2번째 시트에서 K열 학술지명 기준으로 매핑한 게 기억이나. 이 매핑을
+- 아 그리고 미안 JIF를 기존에 _JCR2024_ref 시트의 IF 로 보라고 했었는데 그건 아니었어. 만약에 그 기준대로 본 게 있다면 그 조건은 제해줘. 그리고 지금 알게된 사실인데, 너가 학술지정보업로드_2027_종합_표기값매핑_v2_탑티어재매핑 에 만든 것중에 sheet 시트에서 G열 국제학술회의논문, 우수국제학술회의논문이 정보통신대학, 소프트웨어대
+- 근데 너 있잖아. 각 학과별로 저널이나 컨퍼런스가 똑같아도 다르게 인정되는거 적용한거지? 예를 들어 ★학과별 탑티어 리스트 시트에서는 C열 학과가 적혀져 있잖아. 해당 학과에서만 그렇게 인정한다는거야. 컨퍼런스도 마찬가지고. 너가 SW컨퍼런스목록, 정통컨퍼런스목록 시트에서 가져왔어도 그 대학에서만 그렇게 인정되는거야
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent:    The 
+- _journal_ref 시트랑 _JCR2024_ref 시트의 차이는 뭐야??
+- 이제 이렇게 지원자 연구실적별로 학술지정보업로드_2027_종합_표기값매핑_v2_탑티어재매핑에 AO열(★최종_tier), AN열(주요지 NSC) 데이터를 쌓았잖아. 이제 관리번호를 키값으로 해서 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\정보통신팀 1차 추출_260612 > 2027 정시채용 
+- 아 근데 너가 빼먹은게 있어. 탑티어 적을때 총개수 2 이렇게 적으면 괄호 안에 숫자로 주저자로 쓴 게 몇편인지가 또 들어가줘야해. 학술지정보업로드_2027_종합_표기값매핑_v2_탑티어재매핑 > sheet 를 보면 I열에 책임 또는 제2저자면 주저자야. 일반공저자면 공동저자니까 괄호안에 주저자로 참여한 편소에 안들어가는거지. 2(1) 이런 식으로 들어가야해
+- 이제 우리 어제 작업했던 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협 폴더 로 돌아가자. 여기 보면 너가 C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\정보통신팀 1차 추출_260612 > 2027 정시채용 2단계 지원자 평가의견 
+- Base directory for this skill: C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context  # 2027 정시채용 행정업무 컨텍스트  사용자는 **성균관대학교 교무처 교원인사팀** 직원 (\`fainsa@g.skku.edu\`). 2027학년도 전임교원 정시
+- 2027 정시채용 2단계 지원자 평가의견 취합_통합_260618_탑티어NSC_학부대학 에다가 안하고 왜 2027 정시채용 2단계 지원자 평가의견 취합_통합_260618_추천반영 을 또 만들었어? 2027 정시채용 2단계 지원자 평가의견 취합_통합_260618_탑티어NSC_학부대학 는 지워도 되지?
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_우수학술지_업데이트\_build_journal_mapping.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\calendar_recruiting\_build_decision_calendar.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_eng_skku_recheck.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\_build_ver03_stage2_eng_skku.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\excel-self-verification\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jungsi-admin-context\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\openpyxl-korean-windows\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\jecheok-verification-patterns\SKILL.md
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\.claude\skills\reviewer-comm-templates\SKILL.md
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, Grep, ToolSearch, TaskCreate, TaskUpdate, AskUserQuestion, WebSearch, WebFetch, Glob, PowerShell, Agent
+
+### Stats
+- Total user messages: 558
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,70 @@
+# Session: 2026-11-10
+**Date:** 2026-11-10
+**Started:** 09:13
+**Last Updated:** 14:42
+**Project:** professor_lab_move
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_lab_move
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 내가 또 수정했으니까 건들지 말고 이거 기본으로 수정하고.   2. 신규임용 규모에 따른 연구실 부족 시뮬레이션(2027~2030) 표에서 27-2 신규임용은 10이 아니라 13으로 해야지.
+- 435명 2027년 예정은 중도퇴직, 정년 다 반영한거야?
+- 435명 2027년 예정은 중도퇴직, 정년 다 반영한거야?
+- 지금 이정도 톤의 보고서, 규칙들을 현재 우리 메모리나 보고서 스킬에 업데이트 해서 넣을게 있다면 넣어서 개선해저
+- 지금 이정도 톤의 보고서, 규칙들을 현재 우리 메모리나 보고서 스킬에 업데이트 해서 넣을게 있다면 넣어서 개선해저
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  <system-reminder> <tools-used-before-summary>Ag
+- [교원인사팀]2027학년도 인사캠 교수연구실 공간 현황 및 부족 전망_261110_v2 으로 전략 이승훈 책임께 메일 작성해줘. 뒤에 5,6 파트 부탁드린다고 하면 돼. 목적은 원테이블(12월 1일 예정) 보고(총장님, 상임이사, 교무처장 참석). 그러려면 사전에 11월 마지막 주에 처장님, 상임이사, 법인보고 해야하므로 11월 20일 까지 주시면 가장 좋
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  <system-reminder> <tools-used-before-summary>Ag
+- <system-reminder> Called the Read tool with the following input: {"file_path":"C:\\Users\\SKKU\\.claude\\projects\\C--Users-SKKU-Downloads-claudecode-professor-lab-move\\memory\\hwpx-direct-edit-lines
+- <system-reminder> Result of calling the Read tool: 1	--- 2	name: hwpx-direct-edit-lineseg-and-render 3	description: "HWPX section0.xml 직접 편집 시 낡은 linesegarray가 글자를 눌러 한 줄에 욱여넣는 문제와, 한글 COM으로 PDF 렌더해 눈
+
+### Files Modified
+- /tmp/transform_v7.py
+- C:\tmp\make_coop_mail.py
+- C:\tmp\make_send_gongmun.py
+- C:\tmp\make_objection_report.py
+- C:\tmp\make_objection_report2.py
+- C:\Users\SKKU\Downloads\claudecode\professor_lab_move\06_이의제기\00_자료목록(시간순).txt
+- C:\tmp\add_coop_section.py
+- C:\tmp\add_phone_col.py
+- C:\tmp\sim_alloc.py
+- C:\tmp\sim_alloc2.py
+- C:\tmp\fill_minwon.py
+- C:\tmp\build_vp_report.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_choocheon.py
+- C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_원테이블,교인협\_build_ilja_final.py
+- C:\tmp\build_ilja_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_shortage_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_space.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract2.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract3.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\splice_table.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_sim.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\extract_ijik.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\build_midterm.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\check_campus.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/skku_report.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\b55b14dcec8c0287\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\spike_bar.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_viz.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\gen_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-professor-lab-move\71add993-a020-4614-abd5-ccb65d5a6738\scratchpad\test_fill.py
+
+### Tools Used
+Glob, Bash, Read, AskUserQuestion, Skill, ToolSearch, TaskCreate, Write, TaskUpdate, Edit, Agent, SendMessage, mcp__claude-artifacts__guide, mcp__claude-artifacts__publish_files, TaskStop, Grep, WebSearch, PowerShell, mcp__worksmail__search_mail, mcp__worksmail__save_draft
+
+### Stats
+- Total user messages: 310
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,70 @@
+# Session: 2026-10-21
+**Date:** 2026-10-21
+**Started:** 13:31
+**Last Updated:** 13:31
+**Project:** _attach_stat
+**Branch:** unknown
+**Worktree:** E:\SANGSI\03_원테이블\_scripts\_attach_stat
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent  1.1 Use
+- <system-reminder> Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly 
+- Base directory for this skill: E:\SANGSI\.claude\skills\onetable  # 원테이블 + 붙임 만들기  스크립트: \`E:\SANGSI\03_원테이블\_scripts\` - \`build_ot.py\` 원테이블 빌더(레퍼런스 \`0. 샘플\…7차_편집본.hwpx\` 의 행만 교체) - \`spec_<학과>.py\` 학과별 내용
+- Base directory for this skill: E:\SANGSI\.claude\skills\onetable  # 원테이블 + 붙임 만들기  스크립트: \`E:\SANGSI\03_원테이블\_scripts\` - \`build_ot.py\` 원테이블 빌더(레퍼런스 \`0. 샘플\…7차_편집본.hwpx\` 의 행만 교체) - \`spec_<학과>.py\` 학과별 내용
+- <pasted_content id="8f18"> *심리학과 - 산업조직심리 3명 / 임상심리 2명 - 임상심리: 후보자 pool 더 써치 해볼 것 - 산조심리     > 우상은 다시 설득 해볼 것(우상은, 조인철 이직의사 철회)     > 최진수만 추천할 경우 지난 정시 때에 비해 나아진 실적 등이 있는지 확인 필요 </pasted_content id="8
+- <pasted_content id="8f18"> *심리학과 - 산업조직심리 3명 / 임상심리 2명 - 임상심리: 후보자 pool 더 써치 해볼 것 - 산조심리     > 우상은 다시 설득 해볼 것(우상은, 조인철 이직의사 철회)     > 최진수만 추천할 경우 지난 정시 때에 비해 나아진 실적 등이 있는지 확인 필요 </pasted_content id="8
+- 너 퀵패스 할 때 퀵패스_데이터통합 업데이트 하는거 스킬에 안넣었니?? 왜 안들어가있지??
+- 너 퀵패스 할 때 퀵패스_데이터통합 업데이트 하는거 스킬에 안넣었니?? 왜 안들어가있지??
+- 통계학과 원테이블 자료   <pasted_content id="8f18"> 학장 의견: 교육경험(조교·일부 강의)과 경력이 짧아 보완 필요, 해외 박사후 2~3년 후 국내 진출이 바람직함 </pasted_content id="8f18">   학장 의견 어디에 나와있어?
+- 통계학과 원테이블 자료   <pasted_content id="8f18"> 학장 의견: 교육경험(조교·일부 강의)과 경력이 짧아 보완 필요, 해외 박사후 2~3년 후 국내 진출이 바람직함 </pasted_content id="8f18">   학장 의견 어디에 나와있어?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep
+
+### Stats
+- Total user messages: 373
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

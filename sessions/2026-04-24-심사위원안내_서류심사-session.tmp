@@ -1,0 +1,64 @@
+# Session: 2026-04-24
+**Date:** 2026-04-24
+**Started:** 14:00
+**Last Updated:** 17:42
+**Project:** 심사위원안내_서류심사
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천\심사위원안내_서류심사
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- ubuntu@ip-172-26-0-90:~/pycdc$   ~/bithumb_trader_bytecode.txt -bash: /home/ubuntu/bithumb_trader_bytecode.txt: No such file or directory ubuntu@ip-172-26-0-90:~/pycdc$ wc -l ~/bithumb_trader_bytecode
+- ubuntu@ip-172-26-0-90:~/pycdc$   ~/bithumb_trader_bytecode.txt -bash: /home/ubuntu/bithumb_trader_bytecode.txt: No such file or directory
+- ubuntu@ip-172-26-0-90:~/pycdc$  ubuntu@ip-172-26-0-90:~/pycdc$   /home/ubuntu/bithumb_trader_bytecode.txt -bash: /home/ubuntu/bithumb_trader_bytecode.txt: No such file or directory ubuntu@ip-172-26-0-
+- 4단계 결과 응답 없음
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ pwd /home/ubuntu/dist/bithumb_trader/bithumb_trader_extracted ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ sudo apt update && sudo apt install cmake build-essential git -y Hit:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu focal I
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ cd ~ ubuntu@ip-172-26-0-90:~$  ubuntu@ip-172-26-0-90:~$   tar -czf recovered.tar.gz telegram_bot.py bithumb_trader_final.py bithum
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ sudo apt update && sudo apt install cmake build-essential git -y Hit:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu focal I
+- ubuntu@ip-172-26-0-90:~/dist/bithumb_trader/bithumb_trader_extracted$ sudo apt update && sudo apt install cmake build-essential git -y Hit:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu focal I
+- This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.  Summary: 1. Primary Request and Intent:    The 
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원 선정/_build_new_reviewers.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_add_birthdate_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_applicant_key_to_ctrl.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_split_pdf_by_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/심사위원안내_서류심사/_메일_제목_본문.txt
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 175
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 17:41]** - Context was summarized

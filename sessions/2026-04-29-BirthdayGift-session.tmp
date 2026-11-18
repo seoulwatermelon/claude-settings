@@ -1,0 +1,56 @@
+# Session: 2026-04-29
+**Date:** 2026-04-29
+**Started:** 10:16
+**Last Updated:** 15:27
+**Project:** BirthdayGift
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BirthdayGift
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- [Image: source: C:\Users\SKKU\.claude\image-cache\cfa7274d-0f6d-42f1-a365-3ccf18420a34\4.png]
+- 아니 도서관에서 발급받은 Institutional Token 이 있으면 내가 굳이 안받아도 되는건가? 아니면 이게 개인별 API 당 하나를 받아서 식별 되어야 해서 그런건가?
+- 아니 근데 Q: I have access to some API resources, but others are returning "unauthorized" or "insufficient privileges" responses. Can this be fixed?  A: Your API key has default settings ; access to some 
+- 아 응응 해줘
+- ▶ TEST 1. Scopus Author Search (이름+소속으로 author-id 찾기)   GET https://api.elsevier.com/content/search/author   params: {'query': 'AUTHLAST(Hong) AND AFFIL("Sungkyunkwan University")', 'count': 3}   stat
+- 너가 C:\Users\SKKU\Downloads\claudecode\BirthdayGift 여기 파일들좀 정리해줘. 지금 너무 지저분해
+- 응응 깔끔하다
+- ▶ TEST 1. SKKU AF-ID로 저자 검색 (상위 20명)   status: 200 | X-RateLimit-Remaining: 4999   → 전체 20건 중 SKKU 현직 17명     · Yu Intae                  | id=35228244700 | docs=2186     · Choi Y. K.                |
+- ▶ TEST 1. SKKU AF-ID로 저자 검색 (상위 20명)   status: 200 | X-RateLimit-Remaining: 4998   → 전체 20건 중 SKKU 현직 17명     · Yu Intae                  | id=35228244700 | docs=2186     · Choi Y. K.                |
+- 1. 모니터링 대상은 내가 S급 명단을 주면 그 대상으로 작업하는 거임. 내가 엑셀로 업로드 하면 연동되어서 1달에 1번 검사하는 형태가 되어야 함. 데이터 저장은 일단 로컬로 하고, 추후 필요하면 변경. 근데 지금 Test 코드 설명 해줘야함. 우리 보고서 상에 타대 신규 공저자 3명+ +2 / 경쟁대 affiliation +2 / Q1 급증 +1 이렇게
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/중견연구진_리텐션_강화방안_v1.md
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/[V] 중견 연구진 리텐션 강화 방안.md
+- C:/Users/SKKU/.claude/skills/hwpxskill/scripts/build_hwpx.py
+- C:/Users/SKKU/.claude/skills/hwpxskill/templates/skku/README.md
+- C:/Users/SKKU/.claude/skills/hwpxskill/SKILL.md
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/build_retention_hwpx.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_eval_loop.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v3.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v4.py
+- C:/Users/SKKU/Downloads/claudecode/BirthdayGift/gen_v5.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\elsevier_api_probe.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\elsevier_api_probe_v2.py
+- C:\Users\SKKU\Downloads\claudecode\BirthdayGift\03_위험도시스템\elsevier_api_probe_v2.py
+
+### Tools Used
+Bash, Agent, Read, Write, Skill, Grep, Edit
+
+### Stats
+- Total user messages: 37
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 13:34]** - Context was summarized

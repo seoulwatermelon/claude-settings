@@ -1,8 +1,0 @@
-{
-  "id": "7",
-  "subject": "Task 2: ToHaejungRow 타입 추가",
-  "description": "lib/types.ts에 ToHaejungRow 인터페이스 추가",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,0 +1,44 @@
+# Session: 2026-04-15
+**Date:** 2026-04-15
+**Started:** 14:08
+**Last Updated:** 15:28
+**Project:** 2027_정시채용_심사위원추천
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <task-notification> <task-id>afdb3167519f6c907</task-id> <tool-use-id>toolu_015enNC9R5QJgqqey54dJ6m4</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a79b14f18cf033856</task-id> <tool-use-id>toolu_01SNXciag8hFiuZy2aUN71Mv</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a0c2393c747618825</task-id> <tool-use-id>toolu_0177SLsnQAG3SGcGzryY3GrQ</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- 작업 이어서 해줄래? 컴퓨터가 꺼졌어
+- <task-notification> <task-id>afcee24dc7b648f12</task-id> <tool-use-id>toolu_01TjTtWptE29DnnLTfB5bHXu</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a666bd917a249076c</task-id> <tool-use-id>toolu_017NijbgcsH7295NQPT1TsCD</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>ab27c1d5c238deb75</task-id> <tool-use-id>toolu_01Wip8889Gqy7veXmtvHoWuC</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>ae0116404425926d1</task-id> <tool-use-id>toolu_01NNiSTy9EWcuszvVbe8NquX</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>ab40069b9dd29ff2e</task-id> <tool-use-id>toolu_01AZLtT5MDNAku5Uj6yNeqNQ</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>a670a2bb4a9cc8d3d</task-id> <tool-use-id>toolu_01QHDoqQ7khpUpmb26YrHuWt</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_gen_phase1.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_data/600_통계학과.json
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_gen_phase3_excel.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_fix_phones.py
+
+### Tools Used
+Bash, Write, Read, Agent, ToolSearch, TaskCreate, TaskUpdate, Edit
+
+### Stats
+- Total user messages: 30
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

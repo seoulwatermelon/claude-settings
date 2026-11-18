@@ -1,0 +1,56 @@
+# Session: 2026-07-08
+**Date:** 2026-07-08
+**Started:** 09:31
+**Last Updated:** 17:33
+**Project:** Congress_ArtProfessorRecruit
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\Congress_ArtProfessorRecruit
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 아 그럼 심리 - 양자 순으로 먼저 하자.
+- 아 지금 논문 정렬한 거를 봤는데 너랑 나랑 반대로 해석한 거 같아. 이대로 한다면 연도 역할 JCR 순이 맞아
+- 응 진행해줘
+- 응 너가 말한대로 국어국문 건축 순으로 하면 되는데, C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_교인협\3.IOU작업\퀵패스 에 있는 엑셀파일이거든. 이제까지와 약간 성격이 다를거야. 너가 쭉 보고 양식과 어울리게끔 맞춰서 작성해줘
+- 계속 진행해
+- 건축 하기 전에 면접 대상자 1명씩이었던 심리, 양자 있잖아. 대상자가 1명이더라도 평가는 2순위까지 넣어야해. 정시채용 평가 결과 파트 표에서 2순위도 써줘야해. 면접진행 열을 X로 할 뿐이지
+- 왜 2순위는 학부, 최종학위 밑에 (18.02.) 이런걸 안써줘??
+- 건축 진행하자
+- 지금 예술대학 전임교원 확보 현황 및 대응 방향(초안) 업데이트 했거든. 근데 처장님이 교수 확보율은 문과대랑 비교해주면 좋을 듯 이렇게 하셨어. 전임교원 확보율_2026년 2월 기준(3월 신임교원 포함) 에 문과대학 업데이트 해놨으니까 보고서도 업데이트 해줘. 근데 양식 글자체 다른 파트는 절대 건드리지 마
+- 아니 문과대학도 학과별로 쭉 보여주면서 비교해야지
+
+### Files Modified
+- C:/Users/SKKU/AppData/Local/Temp/claude/C--Users-SKKU-Downloads-claudecode-Congress-ArtProfessorRecruit/2294c2aa-c343-457a-80bc-46a2b6fdf23d/scratchpad/gen_section.py
+- C:/Users/SKKU/AppData/Local/Temp/claude/C--Users-SKKU-Downloads-claudecode-Congress-ArtProfessorRecruit/2294c2aa-c343-457a-80bc-46a2b6fdf23d/scratchpad/gen_v2.py
+- C:/Users/SKKU/AppData/Local/Temp/claude/C--Users-SKKU-Downloads-claudecode-Congress-ArtProfessorRecruit/2294c2aa-c343-457a-80bc-46a2b6fdf23d/scratchpad/edit_mail.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_교인협자료_매핑표_검증용.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_extract_config.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_opinions_의학과.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_build_field.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_opinions_심리학과.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_opinions_양자정보공학과_광집적.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_opinions_국어국문학과.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_xlsx_qp.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_opinions_건축학과_미래건축설계.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_교인협/_opinions_건축학과_미래융합건축.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, AskUserQuestion
+
+### Stats
+- Total user messages: 30
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 17:03]** - Context was summarized

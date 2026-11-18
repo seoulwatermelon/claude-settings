@@ -1,0 +1,70 @@
+# Session: 2026-10-20
+**Date:** 2026-10-20
+**Started:** 14:58
+**Last Updated:** 15:48
+**Project:** 10. 경제대학_경제학과_1명_261020
+**Branch:** unknown
+**Worktree:** E:\SANGSI\00_퀵패스\10. 경제대학_경제학과_1명_261020
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 굳이 훅으로 안넣어도 되나??? 근데 너 20261014 1. 2026 채용 진행 경과 대상자 보고_통계학과_v1_페이지번호 추가 만들때 페이지 번호 추가 제목 추가 같은거 어떻게 했어? 방법좀 알려줘 나도
+- 굳이 훅으로 안넣어도 되나??? 근데 너 20261014 1. 2026 채용 진행 경과 대상자 보고_통계학과_v1_페이지번호 추가 만들때 페이지 번호 추가 제목 추가 같은거 어떻게 했어? 방법좀 알려줘 나도
+- E:\SANGSI\00_퀵패스\10. 경제대학_경제학과_1명_261020 을 보면 퀵패스 거리가 하나 더 생겼는데, 그 전에   <pasted_content id="8f18"> 팀장님께,  경제학과에서 잠재력이 있는 신진 여성연구자로 "신재연 후보자"를 추천하였습니다.   - 신재연 (女, 94년생(32세) 추정) - (학) 연세대('18) / (석) 연세
+- <system-reminder> Instruction files were re-read when this session started; these differ from their earlier copies — each replaces its earlier copy, and the instructions preamble above still applies: 
+- 너 복붙하려면 왼쪽에 긴 줄 쳐있는게 계속 복사되어서 안좋아. 이런건 하지 말아줘 이제
+- 너 복붙하려면 왼쪽에 긴 줄 쳐있는게 계속 복사되어서 안좋아. 이런건 하지 말아줘 이제
+- 우현 책임이   <pasted_content id="8f18"> 승주완 책임님께,   1. 발전계획  > 2026년 4월에 경제대학 발전계획을 발표하였었습니다.(경제학과,통계학과,무역학과 포함)  > 발전계획은 추가로 요청하지는 않아도 될 것 같습니다.   발전계획 별도 요구보다는 아래 2번,3번을 같이 묶어서 요청하면 좋을 것 같습니다.   2. 전공분야
+- 우현 책임이   <pasted_content id="8f18"> 승주완 책임님께,   1. 발전계획  > 2026년 4월에 경제대학 발전계획을 발표하였었습니다.(경제학과,통계학과,무역학과 포함)  > 발전계획은 추가로 요청하지는 않아도 될 것 같습니다.   발전계획 별도 요구보다는 아래 2번,3번을 같이 묶어서 요청하면 좋을 것 같습니다.   2. 전공분야
+- 지금 상시가 많이 돌아가고 있는데, 이걸 한 번에 어떻게 정리해야 할까? 어떻게 정리하고 최신화해야 다른 사람들도 같이 공유하면서 보고 수정할 수 있을까?
+- 지금 상시가 많이 돌아가고 있는데, 이걸 한 번에 어떻게 정리해야 할까? 어떻게 정리하고 최신화해야 다른 사람들도 같이 공유하면서 보고 수정할 수 있을까?
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep
+
+### Stats
+- Total user messages: 353
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

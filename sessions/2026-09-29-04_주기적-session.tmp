@@ -1,0 +1,61 @@
+# Session: 2026-09-29
+**Date:** 2026-09-29
+**Started:** 13:05
+**Last Updated:** 16:35
+**Project:** 04_주기적
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\privacy\04_주기적
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01FpnAaEk7LpU1UAoiAfFTce</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01GACYwqZnGfFCBbTNXEXedN</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- 참 그리고, 1학년에서 3학년까지 주요교과 성적이 상승세인지, 하락세인지, 보합세인지를 적시해주고. 가로열고 몇등급에서 몇등급으로 학년별로 바뀌었는지 적어줘 초반에) 상승세 크면 인상적 표현도 적어주고. 앞단에 적어줘 이건
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01KYM3CuDDoTGX1NU3YuBtgm</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01D7eF8UdM6v9SYnBuzac5Xo</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01Dj58S2UuAXyxerAoU7K5p1</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_011ggGEDnKby9Fjckfw9h7tf</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- 2학년까지만 성적이 있다면 과고라서 그 고교 유형은 표시를 해줘야해. 영재학교는 학점처럼 4.5 3.0 이렇잖아 이것도 그렇고. 그거 체크 된건가?
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01QyyaQEocGN2EMFjLhtLjxA</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+- <task-notification> <task-id>acc7234154d82e229</task-id> <tool-use-id>toolu_01CA3iD9wxGZEMQ7TfYar3Mw</tool-use-id> <output-file>C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudeco
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\ev_data.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\ev_score.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\ev_opinion.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\ev_special.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\ev_build.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\ev_verify.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch7.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch8.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch9.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch10.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch11.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch13.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch14.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch15.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch16.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch17.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch18.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch19.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch20.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\C--Users-SKKU-Downloads-claudecode-privacy-04----\b148c475-63e9-4581-828c-fe4eae3a5062\scratchpad\patch21.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-privacy-04----\memory\admissions-opinion-style.md
+
+### Tools Used
+Skill, Bash, Write, Grep, Read, Edit, Agent, SendMessage, AskUserQuestion
+
+### Stats
+- Total user messages: 30
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,38 @@
+# Session: 2026-06-05
+**Date:** 2026-06-05
+**Started:** 14:52
+**Last Updated:** 16:26
+**Project:** BK
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\BK
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 전략기획팀에서 BK 보고서를 작성하라고 협조요청 공문이 왔어. 외국인교원들에게 지원금이 얼마나 나갔는지 작성하는건데, 나는 2-4. 외국인교원 지원프로그램 현황 및 실적(2024718 기준)_교원인사팀(승주완) 파일을 작성하면 돼. 기간은 2026년 2월 28일까지(2025학년도 2학기) 조사하면 돼. 일단 외국인교원 리스트를 모두  다운받아 놨어. 그게 
+- 부서별결의서조회_230301~260228_종합 에서 U열 예금주명이 한글인 것도 일치하는 게 있는지 본거야? 그리고 2018~2023은 아예 안건드렸지?
+- P열(2023) 누락분(우사이먼성일 23M, 션노르만딘 21M 등 합 75M) 이 뭔지 좀 자세히 설명해주
+- 2번으로 가고 비고에 적어줘
+- 김영준 책임님 한테 제출하는 메일 작성해줘
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\BK\_build_bk_update.py
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BK\memory\bk-foreign-faculty-support-methodology.md
+- C:\Users\SKKU\.claude\projects\C--Users-SKKU-Downloads-claudecode-BK\memory\MEMORY.md
+
+### Tools Used
+Bash, ToolSearch, Read, AskUserQuestion, Write, Edit
+
+### Stats
+- Total user messages: 5
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

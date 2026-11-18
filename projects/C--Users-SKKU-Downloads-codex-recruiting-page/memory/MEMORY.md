@@ -1,0 +1,3 @@
+- [재구축 목적과 방향](rebuild-purpose-and-direction.md) — 사용자가 정립한 출발 문제(버려지는 데이터·전달-전달·ASIS 한계)와 기준 설계 문서 위치
+- [화면 디자인 지침](screen-design-preferences.md) — 「한 장」 개편(2026-11-16) 기준: 보고서식 제목, 종이·머리띠·진행선, 정체성 요소 유지
+- [데이터 카드 진행 상태](data-cards-status.md) — 1차·2차 완료, demo.db 재생성 완료, 정식 e2e는 전체 완성 뒤, 실DB(WP13) 반영 완료

@@ -1,0 +1,42 @@
+# Session: 2026-07-15
+**Date:** 2026-07-15
+**Started:** 16:51
+**Last Updated:** 17:00
+**Project:** professor_NTT
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\professor_NTT
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- C:\Users\SKKU\Downloads\claudecode\professor_NTT > 2026. 9. 1.자 외국인전담교원 연봉책정(안) 을 보고 하면서 학부대학 외국인NTT 연봉 인상을 보고서와 달리 요구했다고 했더니, 현재 외국인 NTT가 맡고있는 교육과정 개편에 대한 내용과, 현재 제프리라츠가 퇴직하면 19명 정도 되는데 현 인원수를 유지할 지 
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\hwpxskill  # HWPX 문서 스킬 — 레퍼런스 복원 우선(XML-first) 워크플로우  한글(Hancom Office)의 HWPX 파일을 **XML 직접 작성** 중심으로 생성, 편집, 읽기할 수 있는 스킬. HWPX는 ZIP 기반 X
+- 김영훈 책임님께는 연봉을 다 요청 드릴 수 없으니 예시로 다니엘클리븐(개인번호: 215638) 의 2016~2025 연봉 추이를 요청드린다고 메일 다시 작성해줘
+- 아니 요청하게 된 배경도 써줘야 하고 좀 더 공손하게 부탁해야지. 그리고 지금 너 꺼를 복붙하면 이상한 기호들이 나와. 깔끔하게 복붙하게 해줘
+- 이전에 정시초반 진행할때 너가 C:\Users\SKKU\Downloads\claudecode\JUNGSI\recruit_jungsi_detailfieldsubmit\엑셀통합본(2026,2027) > 성균관대_2027_정시채용_한영통합 1번째 시트에 각 학과별로 제출한 학부/대학, 전공학과, 초빙분야, 한글 안내문을 정리해준 적이 있는데 팀장님이 이거를 한글
+- [100] 이런 건 필요없어. 용지 여백을 전반적으로 위아래오른쪽왼쪽 10으로 맞추고 머리말, 꼬리말은 0으로 해
+- 이제 2026. 9. 1.자 외국인전담교원 연봉책정(안) 을 보고 계약서를 작성 해야하는데,  엘로이즈뫼르 막스알텐호펜 비탈리파노프  3명 꺼만 작성하면 돼. 202609_Faculty Employment Agreement_Prof. POPOVA EKATERINA 초안이 준비되어 있으니까 내용만 고쳐서 3명꺼 계약서 초안을 만들어줘. 이전 계약서는 _24.
+- 막스 알텐호펜은 2년마다 갱신·최대 6년 이 표현을 바꿔야 하지 않아? 최대 6년이라는 표현을 또 쓰면 또 6년 연장된다는 느낌이잖아
+- i.e. until 31/08/2030 이 뜻은 뭐야?
+- 기존 Dismissal 조항을 풀로 한 번 써줄래?
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원테이블,교인협/_build_field_detail.py
+- C:/Users/SKKU/Downloads/claudecode/professor_NTT/_build_contracts.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit, AskUserQuestion
+
+### Stats
+- Total user messages: 10
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,59 @@
+# Session: 2026-04-22
+**Date:** 2026-04-22
+**Started:** 09:39
+**Last Updated:** 17:12
+**Project:** 2027_정시채용_심사위원추천
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\JUNGSI\2027_정시채용_심사위원추천
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 어떻게 해결한거야?
+- 어디어디를 수정한거야 그러면??
+- 너가 만들어준 제척_인원집계 시트에서 [Image #13] 는 위에랑 똑같은 학과인데 왜 별도로 아래에 또 나오는거야? 뭐가 잘못된건 아니지?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\13.png]
+- 엑셀을 열고 변경할 때마다 (스레드)16개00% 라고 뜨면서 되게 로딩이 오래걸리는데.. 변경할 목적이 아니라 그냥 View가 목적이면 더 빠르게 작업할 수 있는 방법이 있나?
+- 이제 이렇게 심사위원 선정이 되면 이제 일일이 우리학교 자체 시스템인 [Image #14] 여기에 위원명에다가 심사위원 명 쓰고 심사위원 리스트에 맞는 사람 찾아서 오른쪽 화살표 버튼 눌러서 추가하고 저장하는 과정을 다 해야하는데, 이걸 일일이 해야해. 혹시 이걸 자동화할 수 있는 방법이 있어?
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\14.png]
+- [Image #15] 파이썬 스크립트로 가고 싶긴 한데, 그렇게 되면 지금 image로 보여주듯이 대학/학부를 눌렀을 때 저렇게 알맞는 걸 또 찾아서 클릭해야 하는데 그것까지 자동화가 돼??
+- [Image: source: C:\Users\SKKU\.claude\image-cache\09227373-c0e6-4afa-899c-8abfb901ae26\15.png]
+- 내가 일단 하는 걸 보여주면 너가 따라서 할 수 있나? 근데 영상을 올려도 너가 학습 가능한가?
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/_build_master_calendar.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Calendar_Survey_UI_학장.html
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/calendar_recruiting/Code_학장.gs.js
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_all.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/create_word_template.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/_build_qualification.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_checklist_column.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_update_checklist_strict.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_원서접수결과/_add_quota_to_common.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_final.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_update_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/recruit_jungsi_gonggomun/2027 정시채용 경쟁률 현황/_create_mailmerge_0421.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v2.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v3.py
+- C:/Users/SKKU/Downloads/claudecode/JUNGSI/2027_정시채용_심사위원추천/_build_jecheck_check_v4.py
+
+### Tools Used
+Bash, Skill, Read, Write, Edit
+
+### Stats
+- Total user messages: 110
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 13:29]** - Context was summarized

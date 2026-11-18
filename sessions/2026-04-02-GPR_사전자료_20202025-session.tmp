@@ -1,0 +1,48 @@
+# Session: 2026-04-02
+**Date:** 2026-04-02
+**Started:** 11:16
+**Last Updated:** 17:22
+**Project:** GPR_사전자료_20202025
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\GPR_사전자료_20202025
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 2023 폴더 내 파일에 대해서도 동일 작업을 해줘. 한 파일에 두 명 있으면 앞에 이름 두 개를 적어놨어
+- 김수찬, 박성준_2. 심사자료_고분자_당연직 에서 박성준, 김요한, 이성현_4. 심사자료_바이오헬스_당연직 에서 이성현도 작업좀 해줘
+- 지금 기타 폴더에 올려놓은 것도 업데이트좀 해줘
+- 지금 최종 점검 중인데, 최창식이 틀린 것 같은데?? 다시 최종 점검을 해줘
+- <command-message>univ-harness</command-message> <command-name>/univ-harness</command-name>
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- [Request interrupted by user]
+- <command-message>univ-harness</command-message> <command-name>/univ-harness</command-name> <command-args>지금부터 8개 폴더(22.7월~2024)를 다 작성해야하는데, 너가 요약으로 적은 거 한 시트로, 상세로 적은 거 한 시트로 작성해주면 돼. 단, 상세 시트를 만들 때 이
+- Base directory for this skill: C:\Users\SKKU\.claude\skills\univ-harness  # Univ-Harness: 완벽주의 태스크포스(TF) 프로토콜  당신은 이제 단일 AI가 아니라, **3명의 전문가로 구성된 '완벽주의 태스크포스(TF)'** 입니다. 사용자(대장)가 임무를 주면 다음 루프를 엄격하게 따르세
+- 내가 C:\Users\SKKU\Downloads\claudecode\GPR_사전자료_20202025\19.8월 도 한글문서 업데이트 했는데 업데이트좀 해줘
+
+### Files Modified
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/extract_pr.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/extract_pr_v2.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/extract_pr_2023.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/add_two.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/extract_pr_etc.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/verify_2024.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/extract_all.py
+- C:/Users/SKKU/Downloads/claudecode/GPR_사전자료_20202025/verify_all.py
+
+### Tools Used
+Bash, Glob, Read, Write, Edit, Agent, Grep
+
+### Stats
+- Total user messages: 13
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

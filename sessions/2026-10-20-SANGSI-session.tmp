@@ -1,0 +1,73 @@
+# Session: 2026-10-20
+**Date:** 2026-10-20
+**Started:** 14:27
+**Last Updated:** 16:03
+**Project:** SANGSI
+**Branch:** unknown
+**Worktree:** E:\SANGSI
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 지금 상시가 많이 돌아가고 있는데, 이걸 한 번에 어떻게 정리해야 할까? 어떻게 정리하고 최신화해야 다른 사람들도 같이 공유하면서 보고 수정할 수 있을까?
+- 지금 상시가 많이 돌아가고 있는데, 이걸 한 번에 어떻게 정리해야 할까? 어떻게 정리하고 최신화해야 다른 사람들도 같이 공유하면서 보고 수정할 수 있을까?
+- 일단 원드라이브 말고 엑셀로 만들어주되, 나는 같은 정보가 여러 시트에 있는 걸 싫어해. 되도록 RAW 데이터는 한 시트에서 관리되면 좋겠어. 그리고 내가 최신화 시킬 수 있는건 최소화 하고 싶고. 요약 시트는 좋아. 근데 운영규칙이 저게 맞나?? 추가자료는 필수가 아니잖아?
+- 일단 원드라이브 말고 엑셀로 만들어주되, 나는 같은 정보가 여러 시트에 있는 걸 싫어해. 되도록 RAW 데이터는 한 시트에서 관리되면 좋겠어. 그리고 내가 최신화 시킬 수 있는건 최소화 하고 싶고. 요약 시트는 좋아. 근데 운영규칙이 저게 맞나?? 추가자료는 필수가 아니잖아?
+- 그럼 중간중간 학과에서 발생되는 예외 상황들은 어떻게 메모하면 좋을까? 그리고 이런 식의 데이터 적립이 AI가 읽을때에도 최상인가??
+- 그럼 중간중간 학과에서 발생되는 예외 상황들은 어떻게 메모하면 좋을까? 그리고 이런 식의 데이터 적립이 AI가 읽을때에도 최상인가??
+- 너가 여태 오간 메일들을 다 알고 있으니까 각 후보자 메모들도 작성해봐
+- 너가 여태 오간 메일들을 다 알고 있으니까 각 후보자 메모들도 작성해봐
+- 아니 사실만 쓰면 어떡해... 내용도 넣어야지. 어떤 내용이었는지가 안보이잖아 간단하게하도
+- 아니 사실만 쓰면 어떡해... 내용도 넣어야지. 어떤 내용이었는지가 안보이잖아 간단하게하도
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep
+
+### Stats
+- Total user messages: 361
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
+
+---
+**[Compaction occurred at 16:14]** - Context was summarized

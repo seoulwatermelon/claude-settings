@@ -1,0 +1,70 @@
+# Session: 2026-10-02
+**Date:** 2026-10-02
+**Started:** 09:24
+**Last Updated:** 10:20
+**Project:** 00_퀵패스
+**Branch:** unknown
+**Worktree:** E:\SANGSI\00_퀵패스
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 이정석 FWCI 는 왜 없어?
+- 6. 경제대학_통계학과_3명_260921, 7. 문과대학_철학과_1명_260922, 8. 사회과학대학_심리학과_5명_260922 GPR_결과본에 GPR_결과본 워드파일 넣어놨는데 각 워드파일을 PDF 로 변환해서 해당 각 폴더에 저장해줘
+- 양민정 Respiratory therapy for the treatment of anxiety: Meta-analytic review and regression 는 탑티어 저널이긴 한데 Review 라서 실적 안들어간 거지?? 근데 Review는 논문도 아닌데 왜 쓰는거야?
+- 지금 IOU 와 IF, JCR 등이 다른 것도(양민정) JCR 버전 때문이지?
+- 조덕현 A cross-cultural incremental effects meta-analysis of acceptance and commitment therapy for depression: does targeting depression even matter? 가 FWCI 0 인것도 최신본이라 그런건가??
+- 조인철 Measurement invariance of organizational citizenship behavior across gender 논문은 저널이 Applied Psychology 인데 탑티어라고 한 이유가 뭐야? 탑티어에는 Applied Psychology: An International review 가 되어야 하는데 동일한 저널이라고 어떻게 
+- 최진수 지원자는 왜 정시 때보다 FWCI가 이렇게 높아졌지 갑자기?
+- 너가 7. 문과대학_철학과_1명_260922 에서 이정석 자료를 분석해보면 잠재력이 있어 보이니?
+- 너의 2. 이 설득력이 있는데, 객관적으로 각각 신호에 대해 근거가 있어야해. 너가 고대철학 분야에서 가장 오래되고 권위 있는 전문지 이래도 뭐 얼마나 고대철학 분야에서 대단한건지가 안보이고.... UCLA가 고대철학 교수진이 강한것도 수치로 안보이고 그렇잖아
+- 지금 퀵패스 6. 경제대학_통계학과_3명_260921, 7. 문과대학_철학과_1명_260922, 8. 사회과학대학_심리학과_5명_260922 GPR_결과본 을 다시 올렸거든? PDF 변환 다시 해줄래? 논문수 0인 경쟁자가 빠지는 경우가 있어서 그것만 수정한 마이너 리비전이야
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch
+
+### Stats
+- Total user messages: 145
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

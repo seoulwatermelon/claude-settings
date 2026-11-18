@@ -1,0 +1,64 @@
+# Session: 2026-06-04
+**Date:** 2026-06-04
+**Started:** 12:03
+**Last Updated:** 16:38
+**Project:** 임시
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\codex\임시
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 온비드 데이터는 https://www.data.go.kr/data/15121030/fileData.do 여기서 보여지는 정보를 이용해서 할 수 있니?
+- 일반 인증키 (Encoding)     Rw2hYPr8uwDHflNVbEbkSsP49wqTPgPKf0l6GcUNdBqVhN%2Bw69xxqgZkvwwHSNapZli6VJ7h7Ick8qB87B4K3Q%3D%3D 이거 말하는거야? 근데 한국자산관리공사_차세대 온비드 부동산 물건상세 조회서비스 는 필요 없어?
+- 2번
+- 선순위임차인/보증금까지 보강 해줘. 그리고 내가 그럼 어떻게 추천받고 조회할 수 있는지 알려줘
+- 부동산 경매는 https://data.iros.go.kr/rp/oa/openOapiAppl.do 이런 데에서 너가 가져올 수 있니? madang 이런 곳은 멤버십 이런걸 해야하네
+- 경매 사이트는 https://www.courtauction.go.kr/pgj/index.on 에서 뭔가 API 협조 받아서 가져오는거 아니야?
+- 어떤 사람은 import streamlit as st from selenium import webdriver from selenium.webdriver.chrome.service import Service from selenium.webdriver.common.by import By from selenium.webdriver.support.ui import
+- 이 코드를 템플릿 삼지 않아도 돼. 너가 자유롭게 해보는 게 더 성공률 높을거야. 응 진행해
+- 대학    학과    초빙분야    관리번호    접수번호    성명    "서류심사 (만점 100)"    "전공적합 (만점 5)"    "연구실적 (만점 2.5)"    "연구발표 (만점 2)"    "인성평가 (만점 0.5)"    "소계 (만점 5)" 약학대학    약학과    임상약학    20272AP005    20270110    김윤    
+- 승주완 선생님:  안녕하세요?  심리학과 공채 관련 심사용 서류를 살펴 보고 있는데, 네 분 중 한 분이 유일하게 제출서류 확인 목록이 미비되어 있었습니다. 이 서류는 필수가 아닌지, 혹시 누락된 것은 아닌지 궁금하여 연락드립니다. 확인 부탁드립니다.  감사합니다.  박형인 드림    심사위원이 이렇게 물어보는데 제출서류 체크리스트는 2-2단계 심사에 필수
+
+### Files Modified
+- C:\Users\SKKU\Downloads\codex\임시\config.py
+- C:\Users\SKKU\Downloads\codex\임시\db.py
+- C:\Users\SKKU\Downloads\codex\임시\llm_client.py
+- C:\Users\SKKU\Downloads\codex\임시\sample_data.py
+- C:\Users\SKKU\Downloads\codex\임시\filters.py
+- C:\Users\SKKU\Downloads\codex\임시\agents\__init__.py
+- C:\Users\SKKU\Downloads\codex\임시\agents\hunter.py
+- C:\Users\SKKU\Downloads\codex\임시\locale_hints.py
+- C:\Users\SKKU\Downloads\codex\임시\agents\generator.py
+- C:\Users\SKKU\Downloads\codex\임시\landuse.py
+- C:\Users\SKKU\Downloads\codex\임시\agents\evaluator.py
+- C:\Users\SKKU\Downloads\codex\임시\agents\reporter.py
+- C:\Users\SKKU\Downloads\codex\임시\main.py
+- C:\Users\SKKU\Downloads\codex\임시\auction_hunter.py
+- C:\Users\SKKU\Downloads\codex\임시\requirements.txt
+- C:\Users\SKKU\Downloads\codex\임시\.env.example
+- C:\Users\SKKU\Downloads\codex\임시\README.md
+- C:\Users\SKKU\Downloads\codex\임시\crawlers\__init__.py
+- C:\Users\SKKU\Downloads\codex\임시\crawlers\madangs.py
+- C:\Users\SKKU\Downloads\codex\임시\crawlers\onbid.py
+- C:\Users\SKKU\Downloads\codex\임시\.gitignore
+- C:\Users\SKKU\Downloads\codex\임시\.env
+- C:\Users\SKKU\Downloads\codex\임시\crawlers\_court_discover.py
+- C:\Users\SKKU\Downloads\codex\임시\crawlers\courtauction.py
+
+### Tools Used
+Bash, Write, Edit, ToolSearch, WebSearch, WebFetch, Read, Monitor
+
+### Stats
+- Total user messages: 12
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

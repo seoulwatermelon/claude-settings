@@ -1,0 +1,50 @@
+# Session: 2026-08-31
+**Date:** 2026-08-31
+**Started:** 14:12
+**Last Updated:** 15:44
+**Project:** 1percent
+**Branch:** unknown
+**Worktree:** C:\Users\SKKU\Downloads\claudecode\goto1st\1percent
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 전남중은 어디서 다 찾았어?? 일치하는지?
+- 출생연도는 어떻게 확인해?
+- B ㄱㄱ
+- 김범준은 연구분야가 에너지·전자 소자용 기능성 고분자 소재 개발 이거잖아. 뭐가 근거야? 태양광 쪽 아니야/
+- 이현욱 학사 세종대는 어디서 찾은거야?
+- (2000) 이런 연도 넣은건 빼줘. 주변이랑 양식 맞춰야지. 그리고 김범준 석좌교수는 어디서 찾은거야?
+- 주요경력이 없는 분들은 뭐야?? 인정 못받는건가?
+- 박창민 LG화학(멤브레인 필터 개발) 는 어디서 찾아
+- 응
+- 정후영 UNIST 연구지원본부(UCRF) 전자현미경 그룹장 이런건 어떻게 아는거야
+
+### Files Modified
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\els_client.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\probe.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\sheet_io.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\fetch_scopus.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_work\web_findings.md
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\digest.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_work\findings.md
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\findings_data.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\write_sheet.py
+- C:\Users\SKKU\Downloads\claudecode\goto1st\1percent\_scripts\apply_fixes.py
+
+### Tools Used
+Bash, PowerShell, Write, AskUserQuestion, ToolSearch, WebSearch, WebFetch, SendUserFile, Edit
+
+### Stats
+- Total user messages: 18
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```

@@ -1,0 +1,8 @@
+- [HWPX 네이티브 차트(도형)](hwpx-native-charts.md) — 선 그래프=축정렬 rect 체인(linechart.py), hp:line/ellipse/회전은 렌더 누락, add_char 고딕라벨, 한글 COM 렌더 자가확인, dataviz 평가자 루프
+- [HWPX 셀음영 막대·도식](hwpx-native-bar-charts.md) — 표-셀 음영 렌더조건(id 연속·diagonal·alpha0)
+- [교수연구실 공간 보고서](professor-lab-space-report.md) — 목적=학기별 부족 전망+선제대응, 확보방안은 전략 문서로 이관, 경영진 설득 차트 규율
+- [HWPX 직접 편집: lineseg·PDF 렌더](hwpx-direct-edit-lineseg-and-render.md) — 바꾼 문단은 linesegarray 삭제(안 지우면 글자 눌림), SaveAs PDF+fitz로 눈 확인, Hwp taskkill 주의
+- [수정 지시는 동사 그대로](apply-report-feedback-literally.md) — "다시 작성·보여주기·말하고 싶은 바"를 덧붙이기·주석으로 때우지 말 것, 렌더본을 지시문과 대조
+- [보고서 문체·구성 기준](report-voice-team-lead.md) — 제목에 결론 → 표 앞 `-` 메시지 → 표, →·※ 최소, 본문 산식·구어 금지, 근거는 붙임 표. 전문은 전역 규칙 `rules/common/report-voice.md`
+- [버전 자동 증가 금지](no-auto-version-bump.md) — 수정은 현재 작업본(`_261110_v2`)에 덮어쓰기, 새 파일은 사용자가 "버전 새로 파라"고 할 때만
+- [보고서 dash 들여쓰기](report-dash-indent.md) — '- ' 소항목은 '1.'보다 2칸만 깊게(S_DASH=4칸), 과들여쓰기 금지

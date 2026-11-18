@@ -1,0 +1,70 @@
+# Session: 2026-10-15
+**Date:** 2026-10-15
+**Started:** 11:08
+**Last Updated:** 17:19
+**Project:** 00_2026_초빙검토
+**Branch:** unknown
+**Worktree:** E:\SANGSI\4_무용학과_상시\00_2026_초빙검토
+
+---
+<!-- ECC:SUMMARY:START -->
+## Session Summary
+
+### Tasks
+- 제목이 근데 이게 맞나? 더 적합한 제목 없나? 배경도 일단 TO 받았는데 못 뽑고 중단하고 있단 얘기 하나에 학생들이 전공 교수가 없어 에로사항이 많으니 그 부분도 넣어도 좋을 거 같아. Ⅲ. 2025년 전형 중단 경위(39명 지원) 은 39명 지원은 왜 제목에 들어가 있고, 표는 제목도 없이 왜 갑자기 뚝 하고 나오는 거야??   1. 문제점과 ’26 
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-director" color="purple"> {"type":"idle_notification","from":"eval5-director","timestamp":"2026-10-15T07:36:07.763Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-president" color="yellow"> {"type":"idle_notification","from":"eval5-president","timestamp":"2026-10-15T07:36:11.593Z","idle
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-director" color="purple"> {"type":"idle_notification","from":"eval5-director","timestamp":"2026-10-15T07:40:13.101Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-president" color="yellow"> {"type":"idle_notification","from":"eval5-president","timestamp":"2026-10-15T07:40:28.283Z","idle
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-director" color="purple"> {"type":"idle_notification","from":"eval5-director","timestamp":"2026-10-15T07:41:31.640Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-president" color="yellow"> {"type":"idle_notification","from":"eval5-president","timestamp":"2026-10-15T07:41:46.484Z","idle
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-director" color="purple"> {"type":"idle_notification","from":"eval5-director","timestamp":"2026-10-15T07:42:36.348Z","idleRe
+- Another Claude session sent a message: <teammate-message teammate_id="eval5-president" color="yellow"> {"type":"idle_notification","from":"eval5-president","timestamp":"2026-10-15T07:42:43.134Z","idle
+- 무용학과 회의를 하고 왔는데, 일단   <pasted_content id="8f18"> 학과장님께,  안녕하십니까, 교원인사팀 승주완입니다.  교무처는 2025학년도 무용학과 상시채용 전형이 중단될 당시, 학과에서 "향후에는 학과를 비롯한 대학의 교육·연구 방향에 부합하는 우수 인재를 선발할 수 있도록 심사 기준과 운영 절차를 보다 체계적으로 정비하고 철저
+
+### Files Modified
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_dance.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\patch_rows.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\verify_layout.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-line-width-real-limit.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-report-layout-checklist.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver03.py
+- C:\Users\SKKU\.claude\skills\hwpxskill\scripts\wraputil.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\insert_section.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwpxsec.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\wtable.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\probe.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\measure.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_draft.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\rows.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\dance-dept-2026-recruitment-decisions.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\univ-doc-evaluator-loop.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\hwp_check.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findmulti.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\build_ver04_land.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\findland.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\checknarrow.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--4--------\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\bisect_build.py
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\hwpx-multi-section.md
+- C:\Users\SKKU\.claude\projects\E--4--------\memory\trust-your-validator-last.md
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\dump_hwpx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\peek_xlsx.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\collect.py
+- C:\Users\SKKU\AppData\Local\Temp\claude\E--SANGSI\c826d76b-3760-4394-86eb-d3f49a0c4510\scratchpad\parse_iou.py
+
+### Tools Used
+Bash, Skill, Write, Agent, ToolSearch, SendUserFile, SendMessage, AskUserQuestion, Edit, Read, ListAgents, PowerShell, WebFetch, WebSearch, Grep
+
+### Stats
+- Total user messages: 263
+<!-- ECC:SUMMARY:END -->
+
+### Notes for Next Session
+-
+
+### Context to Load
+```
+[relevant files]
+```
